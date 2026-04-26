@@ -205,29 +205,38 @@
 }
 
 /* ---------------------------------------------------------------
-   4b. MOBILE HERO BACKGROUND
-      Webflow ships .mobile-image as display:none at every
-      breakpoint. We force it visible below 992px and pin it
-      behind the hero content as a fixed full-viewport image,
-      replacing the desktop hero video on phones/tablets.
-      We also hide the desktop video containers on mobile so
-      they don't fight with the static image fallback.
+   4a. ABOUT CONTAINER (mobile) — let it grow with content.
+      Webflow locks .about-container.mobile to height:70vh below 768px
+      and .about-container to 70vh below 480px. The new RDMS dental
+      copy is longer than that, so content overflows the container
+      and bleeds into the next section (light grey bg) where the
+      white text becomes invisible. We unlock the height so the
+      container grows naturally and the fixed video bg stays behind
+      it the whole time.
    --------------------------------------------------------------- */
 @media (max-width: 991px) {
-  .background-video-container,
-  .background-video-2 {
-    display: none !important;
+  .about-container,
+  .about-container.mobile {
+    height: auto !important;
+    min-height: 70vh !important;
+    padding-top: 40px !important;
+    padding-bottom: 60px !important;
   }
-  .mobile-image {
+}
+
+/* ---------------------------------------------------------------
+   4b. MOBILE HERO BACKGROUND — let the video play.
+      Webflow's default mobile rule ".background-video-container
+      { display: none }" was hiding the hero video on phones; we
+      override it so the Rwanda video plays on mobile too
+      (autoplay+muted+playsinline is supported on modern iOS/Android).
+      If autoplay is blocked (iOS low-power mode, cellular, etc.),
+      the <video> element's native poster="..." attribute renders a
+      still image automatically — no separate fallback needed.
+   --------------------------------------------------------------- */
+@media (max-width: 991px) {
+  .background-video-container {
     display: block !important;
-    position: fixed !important;
-    inset: 0 !important;
-    width: 100vw !important;
-    height: 100vh !important;
-    object-fit: cover !important;
-    object-position: center center !important;
-    z-index: 0 !important;
-    pointer-events: none;
   }
 }
 
