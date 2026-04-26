@@ -26,10 +26,16 @@
   flex: 0 0 70px !important;
 }
 
-/* Navbar brand: switch from column to row so logo + text sit side-by-side */
+/* Navbar brand: switch from column to row so logo + text sit side-by-side.
+   width:auto + justify-content:flex-start prevent Webflow's narrow-viewport
+   rule (.brand { width:110px; justify-content:center }) from pushing the
+   logo off-screen. */
 .brand {
   flex-flow: row !important;
+  justify-content: flex-start !important;
   align-items: center !important;
+  width: auto !important;
+  max-width: none !important;
   gap: 12px !important;
 }
 
@@ -37,7 +43,10 @@
 .footer-brand-link {
   display: flex !important;
   flex-flow: row !important;
+  justify-content: flex-start !important;
   align-items: center !important;
+  width: auto !important;
+  max-width: none !important;
   gap: 12px !important;
   text-decoration: none !important;
 }
@@ -185,19 +194,99 @@
 }
 
 /* ---------------------------------------------------------------
-   4. HERO PARAGRAPH — white text + constrained width
+   4. HERO PARAGRAPH — white text + responsive width
+      max-width keeps the desktop look (capped at 308px) but lets
+      the paragraph shrink to fit narrow phones without overflow.
    --------------------------------------------------------------- */
 .paragraph-2.homepage-her {
   color: #fff !important;
-  width: 308px !important;
+  max-width: 308px !important;
+  width: 100% !important;
 }
 
 /* ---------------------------------------------------------------
-   5. BUTTON-3 "Get in touch" nav button — visible on desktop
+   4b. MOBILE HERO BACKGROUND
+      Webflow ships .mobile-image as display:none at every
+      breakpoint. We force it visible below 992px and pin it
+      behind the hero content as a fixed full-viewport image,
+      replacing the desktop hero video on phones/tablets.
+      We also hide the desktop video containers on mobile so
+      they don't fight with the static image fallback.
    --------------------------------------------------------------- */
-.button-3.footer.top.nav {
-  opacity: 1 !important;
-  display: flex !important;
+@media (max-width: 991px) {
+  .background-video-container,
+  .background-video-2 {
+    display: none !important;
+  }
+  .mobile-image {
+    display: block !important;
+    position: fixed !important;
+    inset: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    object-fit: cover !important;
+    object-position: center center !important;
+    z-index: 0 !important;
+    pointer-events: none;
+  }
+}
+
+/* ---------------------------------------------------------------
+   4c. MOBILE BRAND TEXT — scale down + handle narrow viewports.
+      On phones the long "Dento-Medical Society Rwanda" name can
+      crowd the navbar. We shrink it on small screens and collapse
+      to just "RDMS" on very narrow screens so it always fits.
+   --------------------------------------------------------------- */
+@media (max-width: 600px) {
+  .brand,
+  .footer-brand-link {
+    gap: 8px !important;
+  }
+  .brand-name {
+    font-size: 11px !important;
+    letter-spacing: 0;
+  }
+  .brand-acronym {
+    font-size: 9px !important;
+  }
+}
+
+@media (max-width: 380px) {
+  .brand-name {
+    display: none;
+  }
+  .brand-acronym {
+    font-size: 13px !important;
+    font-weight: 600;
+    opacity: 1;
+  }
+}
+
+/* ---------------------------------------------------------------
+   4d. MOBILE LOGO — slightly smaller so it pairs with the
+      smaller brand text (and recovers nav real-estate).
+   --------------------------------------------------------------- */
+@media (max-width: 600px) {
+  .logo,
+  .image-3 {
+    width: 50px !important;
+    max-width: 50px !important;
+    flex: 0 0 50px !important;
+  }
+}
+
+/* ---------------------------------------------------------------
+   5. BUTTON-3 "Get in touch" nav button — visible on desktop only.
+      Webflow hides this button below 992px and shows the
+      .nav-link-2.mobile text link instead. We force it visible only
+      at desktop sizes so we don't end up with two duplicate
+      "Get in touch" controls in the mobile navbar.
+   --------------------------------------------------------------- */
+@media (min-width: 992px) {
+  .button-3.footer.top.nav {
+    opacity: 1 !important;
+    display: flex !important;
+  }
 }
 
 /* ---------------------------------------------------------------
@@ -230,15 +319,20 @@
   pointer-events: none;
 }
 
-.column-scroll-content-title,
-.column-scroll-content-text,
-.column-scroll-content-text strong,
-.column-scroll-content-text .bold-text-4 {
-  color: #fff !important;
-}
+/* White text + light line-breakers ONLY on desktop, where the bg is
+   the dark Rwanda video. On mobile, Webflow paints the section in
+   light grey, so we let the default dark text color through. */
+@media (min-width: 992px) {
+  .column-scroll-content-title,
+  .column-scroll-content-text,
+  .column-scroll-content-text strong,
+  .column-scroll-content-text .bold-text-4 {
+    color: #fff !important;
+  }
 
-.line-breaker {
-  background-color: rgba(255, 255, 255, 0.35) !important;
+  .line-breaker {
+    background-color: rgba(255, 255, 255, 0.35) !important;
+  }
 }
 
 /* ---------------------------------------------------------------
