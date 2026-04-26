@@ -1,0 +1,206 @@
+/* ================================================================
+   LOCAL OVERRIDES — tech-ish.org clone
+   Webflow IX2/IX3 fetches its animation config from Webflow's API
+   using the site domain; that call fails on localhost, leaving
+   elements frozen in their CSS "initial" states.
+
+   Strategy: script.js adds w-mod-ix + w-mod-ix3 IMMEDIATELY,
+   deactivating all Webflow IX CSS rules. GSAP then uses gsap.set()
+   to set animation start states and animates from there.
+   ================================================================ */
+
+
+/* ---------------------------------------------------------------
+   1. BUTTON ARROW WRAPPERS
+      Webflow IX animates the arrow wrappers; keep them visible.
+   --------------------------------------------------------------- */
+.button-3_arrow-wrapper-2.white {
+  display: flex !important;
+}
+.button-3_arrow-wrapper-2 {
+  display: flex !important;
+}
+
+/* ---------------------------------------------------------------
+   2. GET IN TOUCH OVERLAY position + glassmorphism styles
+   --------------------------------------------------------------- */
+.get-in-touch-overlay {
+  position: fixed !important;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2000;
+  display: none;
+  flex-direction: column;
+  gap: 21px;
+  -webkit-backdrop-filter: blur(18px);
+  backdrop-filter: blur(18px);
+  background-color: rgba(255, 255, 255, 0.7);
+  border-left: 1px solid #fff;
+  padding: 60px;
+  width: 45vw;
+  overflow-y: auto;
+}
+/* ---------------------------------------------------------------
+   2b. HERO VIDEO — fills the clip-path container
+   --------------------------------------------------------------- */
+.hero-bg-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+
+.hero-video-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(0, 0, 0, 0.55) 0%,
+    rgba(0, 0, 0, 0.30) 45%,
+    rgba(0, 0, 0, 0.20) 100%
+  );
+  pointer-events: none;
+}
+/* ---------------------------------------------------------------
+   2c. TEXT CALLOUT SECTION — use hero video-poster.jpg as static bg
+   --------------------------------------------------------------- */
+.image-6.dev.homepage {
+  background-image: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,0)),
+                    url("assets/img/hero-bg-rwanda-vivid.jpg") !important;
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+}
+
+/* ---------------------------------------------------------------
+   2d. FOOTER CIRCLE VIDEO — fills the circle-color element
+   --------------------------------------------------------------- */
+.circle-color {
+  position: relative;
+  overflow: hidden;
+}
+
+.circle-bg-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+}
+
+/* ---------------------------------------------------------------
+   3. HEADING-12 (hero headline) — force white text
+   --------------------------------------------------------------- */
+.heading-12 {
+  color: #fff !important;
+}
+
+/* ---------------------------------------------------------------
+   4. HERO PARAGRAPH — white text + constrained width
+   --------------------------------------------------------------- */
+.paragraph-2.homepage-her {
+  color: #fff !important;
+  width: 308px !important;
+}
+
+/* ---------------------------------------------------------------
+   5. BUTTON-3 "Get in touch" nav button — visible on desktop
+   --------------------------------------------------------------- */
+.button-3.footer.top.nav {
+  opacity: 1 !important;
+  display: flex !important;
+}
+
+/* ---------------------------------------------------------------
+   6. COLUMN SCROLL CONTENT LAYOUT FIX
+      Content-wrapper floats left while images occupy right.
+   --------------------------------------------------------------- */
+.column-scroll-content-wrapper {
+  position: relative !important;
+  z-index: 3 !important;
+}
+
+/* ---------------------------------------------------------------
+   6b. SPONSOR TECH SECTION — hero-style video bg + white text.
+      Phase 2 in script.js fans the 3 images into the right ~50 %
+      of the viewport, leaving the left ~50 % clear for the text
+      panel (which is already 50vw wide via webflow.css). The video
+      shows through the cleared left half as the section background.
+   --------------------------------------------------------------- */
+.sponsor-your-city {
+  background-color: #0a0a0a !important;  /* fallback while video loads */
+}
+
+.sponsor-bg-video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  pointer-events: none;
+}
+
+.column-scroll-content-title,
+.column-scroll-content-text,
+.column-scroll-content-text strong,
+.column-scroll-content-text .bold-text-4 {
+  color: #fff !important;
+}
+
+.line-breaker {
+  background-color: rgba(255, 255, 255, 0.35) !important;
+}
+
+/* ---------------------------------------------------------------
+   7. BUG (CTA) button — ensure visible
+   --------------------------------------------------------------- */
+.bug.new-hero {
+  opacity: 1 !important;
+  display: flex !important;
+}
+
+/* ---------------------------------------------------------------
+   8. CARDS (event grid) — ensure visible inside hero
+   --------------------------------------------------------------- */
+.cards.new-grid {
+  display: block !important;
+}
+
+/* ---------------------------------------------------------------
+   9. COLUMN SCROLL DESKTOP — triptych three-panel reveal
+      Webflow IX sets the inner to width:100vw via inline style.
+      Items are 33.33vw each → they tile as perfect thirds across
+      the full viewport width (3 × 33.33vw = 100vw).
+      The content wrapper (z-index 3, transparent bg) overlays the
+      left two-thirds so text floats above the images — matching the
+      reference site exactly.
+      We only need overflow:hidden (already in webflow.css) and
+      the inner's border-radius for the panel look; NO width
+      overrides — Webflow IX's inline 100vw must win.
+   --------------------------------------------------------------- */
+@media (min-width: 992px) {
+  /* Clip the image panel when it slides right (Phase 2 X-shift). */
+  .column-scroll-sticky {
+    overflow: hidden;
+  }
+  .column-scroll-sticky-inner {
+    /* Normally Webflow IX sets this to 100vw inline, but we removed
+       data-w-id from the wrapper to stop IX fighting our GSAP.
+       Replicate the same 100vw explicitly here so items tile as thirds. */
+    width: 100vw !important;
+    overflow: hidden;
+    border-radius: 20px;
+  }
+}
+
+/* ---------------------------------------------------------------
+   10. FOOTER BUTTON initial transform reset
+   --------------------------------------------------------------- */
+html.w-mod-js [data-w-id="8bda5446-33b5-878e-7c09-3e2a8d9ef3d2"] {
+  transform: none !important;
+}

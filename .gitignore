@@ -1,0 +1,17 @@
+# Claude Code session data
+.claude/
+
+# Unused source videos (working files, not referenced in site)
+kling_20260319_*.mp4
+
+# Python
+__pycache__/
+*.pyc
+
+# OS junk
+.DS_Store
+Thumbs.db
+
+# Editor
+.vscode/
+.idea/
