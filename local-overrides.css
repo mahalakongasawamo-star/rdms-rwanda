@@ -238,6 +238,12 @@
   .background-video-container {
     display: block !important;
   }
+  /* Webflow also hides the inner .background-video element at the
+     <479px breakpoint (line 6758 in webflow.css). Un-hide it too —
+     :not(.footer) leaves any footer variant alone. */
+  .background-video:not(.footer) {
+    display: block !important;
+  }
 }
 
 /* ---------------------------------------------------------------
