@@ -11,6 +11,72 @@
 
 
 /* ---------------------------------------------------------------
+   0. RDMS LOGO + BRAND TEXT — 70px square logo with two-line
+      "Dento-Medical Society Rwanda / (RDMS)" beside it in both
+      the navbar (white text on dark hero) and the footer (dark
+      text on light page bg).
+   --------------------------------------------------------------- */
+.logo,
+.image-3 {
+  width: 70px !important;
+  height: auto !important;
+  max-width: 70px !important;
+  padding: 0 !important;
+  display: block !important;
+  flex: 0 0 70px !important;
+}
+
+/* Navbar brand: switch from column to row so logo + text sit side-by-side */
+.brand {
+  flex-flow: row !important;
+  align-items: center !important;
+  gap: 12px !important;
+}
+
+/* Footer brand link: same row layout */
+.footer-brand-link {
+  display: flex !important;
+  flex-flow: row !important;
+  align-items: center !important;
+  gap: 12px !important;
+  text-decoration: none !important;
+}
+
+/* Two-line text block */
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+  white-space: nowrap;
+}
+
+.brand-name {
+  font-family: 'Google Sans Flex', 'Montserrat', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+}
+
+.brand-acronym {
+  font-size: 11px;
+  font-weight: 400;
+  opacity: 0.85;
+  margin-top: 2px;
+}
+
+/* Navbar variant — white text on dark hero video */
+.brand .brand-name,
+.brand .brand-acronym {
+  color: #fff;
+}
+
+/* Footer variant — dark text on light page bg */
+.footer-brand-text .brand-name,
+.footer-brand-text .brand-acronym {
+  color: #1a1a1a;
+}
+
+/* ---------------------------------------------------------------
    1. BUTTON ARROW WRAPPERS
       Webflow IX animates the arrow wrappers; keep them visible.
    --------------------------------------------------------------- */
@@ -97,6 +163,25 @@
    --------------------------------------------------------------- */
 .heading-12 {
   color: #fff !important;
+}
+
+/* ---------------------------------------------------------------
+   3b. HERO SECOND HEADLINE (the long RDMS sub-tagline).
+      Original copy "in AI decisions" was 16 chars at 105px and
+      used white-space:nowrap. The new copy is ~80 chars, so we
+      drop nowrap, shrink the font fluidly with clamp(), and cap
+      the width so it wraps cleanly on every viewport.
+        clamp(min, fluid, max):
+          min  18px  (very small phones — readable floor)
+          fluid 2.6vw (scales with viewport width)
+          max  40px  (large desktops — headline ceiling)
+   --------------------------------------------------------------- */
+.in-ai .heading-12 {
+  white-space: normal !important;
+  font-size: clamp(18px, 2.6vw, 40px) !important;
+  line-height: 1.25 !important;
+  max-width: min(640px, 90vw);
+  font-weight: 500;
 }
 
 /* ---------------------------------------------------------------
