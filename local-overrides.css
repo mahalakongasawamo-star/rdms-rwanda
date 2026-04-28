@@ -175,36 +175,6 @@
 }
 
 /* ---------------------------------------------------------------
-   3b. HERO SECOND HEADLINE (the long RDMS sub-tagline).
-      Original copy "in AI decisions" was 16 chars at 105px and
-      used white-space:nowrap. The new copy is ~80 chars, so we
-      drop nowrap, shrink the font fluidly with clamp(), and cap
-      the width so it wraps cleanly on every viewport.
-        clamp(min, fluid, max):
-          min  18px  (very small phones — readable floor)
-          fluid 2.6vw (scales with viewport width)
-          max  40px  (large desktops — headline ceiling)
-   --------------------------------------------------------------- */
-.in-ai .heading-12 {
-  white-space: normal !important;
-  font-size: clamp(18px, 2.6vw, 40px) !important;
-  line-height: 1.25 !important;
-  max-width: min(640px, 90vw);
-  font-weight: 500;
-}
-
-/* ---------------------------------------------------------------
-   4. HERO PARAGRAPH — white text + responsive width
-      max-width keeps the desktop look (capped at 308px) but lets
-      the paragraph shrink to fit narrow phones without overflow.
-   --------------------------------------------------------------- */
-.paragraph-2.homepage-her {
-  color: #fff !important;
-  max-width: 308px !important;
-  width: 100% !important;
-}
-
-/* ---------------------------------------------------------------
    4a. ABOUT CONTAINER (mobile) — let it grow with content.
       Webflow locks .about-container.mobile to height:70vh below 768px
       and .about-container to 70vh below 480px. The new RDMS dental
@@ -351,21 +321,6 @@
 }
 
 /* ---------------------------------------------------------------
-   7. BUG (CTA) button — ensure visible
-   --------------------------------------------------------------- */
-.bug.new-hero {
-  opacity: 1 !important;
-  display: flex !important;
-}
-
-/* ---------------------------------------------------------------
-   8. CARDS (event grid) — ensure visible inside hero
-   --------------------------------------------------------------- */
-.cards.new-grid {
-  display: block !important;
-}
-
-/* ---------------------------------------------------------------
    9. COLUMN SCROLL DESKTOP — triptych three-panel reveal
       Webflow IX sets the inner to width:100vw via inline style.
       Items are 33.33vw each → they tile as perfect thirds across
@@ -397,4 +352,218 @@
    --------------------------------------------------------------- */
 html.w-mod-js [data-w-id="8bda5446-33b5-878e-7c09-3e2a8d9ef3d2"] {
   transform: none !important;
+}
+
+/* ================================================================
+   11. RDMS HERO — LAYOUT B (split two-column)
+   Replaces the original "Partnering to Transform" two-column +
+   3-card grid. Left column: badge + headline + sub + CTAs + stats.
+   Right column: program card. Bottom strip: credibility badges.
+   ================================================================ */
+
+/* Allow the long RDMS headline to wrap and scale */
+.hero .heading-12.rdms {
+  white-space: normal;
+  font-size: clamp(36px, 5vw, 76px);
+  line-height: 1.05;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+}
+.hero .paragraph-2.rdms {
+  width: 100%;
+  max-width: 640px;
+  font-size: clamp(15px, 1.2vw, 19px);
+  line-height: 1.45;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* Eyebrow badge (Rwanda's Leading Non-Profit Oral Health Society) */
+.rdms-eyebrow-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 16px;
+  border: 1px solid rgba(255,255,255,0.25);
+  border-radius: 999px;
+  background: rgba(255,255,255,0.06);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  color: #fff;
+  font-family: 'Google Sans Flex', sans-serif;
+  font-size: 13px;
+  letter-spacing: 0.04em;
+  font-weight: 400;
+  width: fit-content;
+}
+.rdms-eyebrow-badge::before {
+  content: "";
+  width: 8px; height: 8px;
+  border-radius: 50%;
+  background: #58cc6f;
+  box-shadow: 0 0 0 4px rgba(88,204,111,0.18);
+}
+
+/* Stats line */
+.rdms-stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 18px;
+  color: rgba(255,255,255,0.78);
+  font-family: 'Google Sans', sans-serif;
+  font-size: 14px;
+  letter-spacing: 0.02em;
+}
+.rdms-stats strong { color: #fff; font-weight: 600; }
+
+/* CTA buttons */
+.rdms-ctas { display: flex; flex-wrap: wrap; gap: 12px; }
+.rdms-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 24px;
+  border-radius: 999px;
+  font-family: 'Google Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: transform .25s ease, background .25s ease, border-color .25s ease;
+}
+.rdms-cta:hover { transform: translateY(-1px); }
+.rdms-cta.primary {
+  background: #fff;
+  color: #0a0a0a;
+}
+.rdms-cta.primary:hover { background: #ededed; }
+.rdms-cta.secondary {
+  background: rgba(255,255,255,0.06);
+  color: #fff;
+  border: 1px solid rgba(255,255,255,0.30);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+.rdms-cta.secondary:hover { border-color: rgba(255,255,255,0.6); }
+.rdms-cta .arrow { display: inline-block; transition: transform .25s ease; }
+.rdms-cta:hover .arrow { transform: translateX(3px); }
+
+/* Program card */
+.rdms-program-card {
+  border: 1px solid rgba(255,255,255,0.18);
+  background: rgba(15,15,18,0.55);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-radius: 18px;
+  padding: 28px;
+  color: #fff;
+  font-family: 'Google Sans', sans-serif;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.3);
+}
+.rdms-program-card .pc-title {
+  font-size: 22px;
+  font-weight: 600;
+  margin: 0 0 8px;
+  line-height: 1.2;
+}
+.rdms-program-card .pc-desc {
+  font-size: 14px;
+  line-height: 1.5;
+  color: rgba(255,255,255,0.78);
+  margin: 0 0 18px;
+}
+.rdms-program-card .pc-services {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: 1fr;
+}
+.rdms-program-card .pc-services li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  color: #fff;
+}
+.rdms-program-card .pc-services li::before {
+  content: "";
+  width: 6px; height: 6px;
+  background: #58cc6f;
+  border-radius: 50%;
+  flex: none;
+}
+
+/* Bottom credibility badges (RDB + Location) */
+.rdms-bottom-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.rdms-bottom-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border: 1px solid rgba(255,255,255,0.18);
+  border-radius: 8px;
+  background: rgba(0,0,0,0.30);
+  color: rgba(255,255,255,0.85);
+  font-family: 'Google Sans', sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.02em;
+}
+.rdms-bottom-badge .ico {
+  font-size: 13px;
+  opacity: 0.85;
+}
+
+/* Layout B grid on the hero container */
+.hero.layout-b .hero-container {
+  height: 100%;
+  display: grid !important;
+  grid-template-columns: 1.2fr 1fr;
+  grid-template-rows: 1fr auto;
+  gap: 40px 56px;
+  align-items: center;
+  padding-top: 7rem;
+  padding-bottom: 3rem;
+  position: relative;
+  z-index: 2;
+}
+.hero.layout-b .left-col {
+  grid-column: 1;
+  grid-row: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+.hero.layout-b .right-col { grid-column: 2; grid-row: 1; }
+.hero.layout-b .bottom-strip {
+  grid-column: 1 / -1;
+  grid-row: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(255,255,255,0.10);
+}
+
+/* Mobile: collapse split into stack */
+@media (max-width: 991px) {
+  .hero.layout-b .hero-container {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    padding-top: 5rem;
+  }
+  .hero.layout-b .left-col,
+  .hero.layout-b .right-col,
+  .hero.layout-b .bottom-strip {
+    grid-column: 1;
+  }
+  .hero.layout-b .left-col { grid-row: 1; }
+  .hero.layout-b .right-col { grid-row: 2; }
+  .hero.layout-b .bottom-strip { grid-row: 3; }
 }
