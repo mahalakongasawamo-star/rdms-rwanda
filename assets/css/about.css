@@ -70,3 +70,30 @@ body.page-about .brand-name,
 body.page-about .brand-acronym {
   color: var(--text-primary) !important;
 }
+
+/* -------- 1. HEADER -------- */
+
+.about-header {
+  padding-top: clamp(54px, 7vw, 88px);
+  padding-bottom: clamp(40px, 5vw, 56px);
+  border-bottom: 1px solid var(--card-border);
+}
+
+.about-title {
+  font-family: 'Google Sans', sans-serif;
+  font-size: clamp(28px, 4vw, 38px);
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  font-weight: 500;
+  color: var(--text-primary);
+  max-width: 780px;
+  margin: 0;
+}
+
+.about-subtitle {
+  font-size: clamp(14px, 1.1vw, 15px);
+  line-height: 1.5;
+  color: var(--text-secondary);
+  max-width: 680px;
+  margin: 14px 0 0;
+}
