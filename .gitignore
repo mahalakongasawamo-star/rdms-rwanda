@@ -1,6 +1,9 @@
 # Claude Code session data
 .claude/
 
+# Superpowers brainstorming mockups
+.superpowers/
+
 # Unused source videos (working files, not referenced in site)
 kling_20260319_*.mp4
 
