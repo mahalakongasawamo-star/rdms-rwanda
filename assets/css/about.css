@@ -1,0 +1,78 @@
+/* ============================================================
+   /about page styles — cream palette, flush-left typography
+   ============================================================ */
+
+:root {
+  --cream-bg:        #f6f3ec;
+  --cream-tint:      #ece6d6;
+  --card-bg:         #ffffff;
+  --card-border:     #e3ddd1;
+  --text-primary:    #0a0a0a;
+  --text-body:       #2a2a2a;
+  --text-secondary:  #4a4a4a;
+  --text-muted:      #7a7a7a;
+  --green-on-light:  #1f6b3a;
+  --green-on-dark:   #a9e0b6;
+  --green-accent:    #58cc6f;
+  --dark-band:       #0a0a0a;
+  --vision-overlay:  linear-gradient(135deg, #1c3a2c, #3d6b52);
+  --mission-overlay: linear-gradient(135deg, #3d3a32, #1f1d18);
+}
+
+body.page-about {
+  background: var(--cream-bg);
+  color: var(--text-primary);
+  font-family: 'Google Sans', sans-serif;
+  text-align: left;
+  margin: 0;
+}
+
+body.page-about main {
+  display: block;
+}
+
+/* All text on this page is flush-left. Project-wide rule. */
+body.page-about h1,
+body.page-about h2,
+body.page-about h3,
+body.page-about p,
+body.page-about li,
+body.page-about blockquote {
+  text-align: left;
+}
+
+/* Page section container — applies to most blocks except full-bleed bands */
+.about-section {
+  padding: clamp(48px, 7vw, 80px) clamp(20px, 4vw, 36px);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Eyebrow label — used across most blocks */
+.about-eyebrow {
+  font-family: 'Google Sans', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--green-on-light);
+  margin: 0 0 14px;
+  font-weight: 500;
+}
+
+.about-eyebrow.on-dark {
+  color: var(--green-on-dark);
+}
+
+/* Navbar override — flip to dark text on cream */
+body.page-about .navbar {
+  background: var(--cream-bg) !important;
+}
+body.page-about .nav-link,
+body.page-about .nav-link-2,
+body.page-about .brand-name,
+body.page-about .brand-acronym {
+  color: var(--text-primary) !important;
+}
+body.page-about .navbar {
+  border-bottom: 1px solid var(--card-border);
+}
