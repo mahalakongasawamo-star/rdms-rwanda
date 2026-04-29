@@ -774,6 +774,19 @@ html.w-mod-js [data-w-id="8bda5446-33b5-878e-7c09-3e2a8d9ef3d2"] {
   object-fit: cover;
   border-radius: 12px;
   filter: grayscale(0.15) saturate(0.92);
+  transition:
+    transform 320ms ease-out,
+    filter 320ms ease-out,
+    box-shadow 320ms ease-out;
+}
+
+.leadership__featured-photo:hover {
+  transform: translateY(-6px) scale(1.03);
+  filter: grayscale(0) saturate(1);
+  box-shadow:
+    0 0 0 1px rgba(88, 204, 111, 0.5),
+    0 12px 32px rgba(0, 0, 0, 0.35),
+    0 0 40px rgba(88, 204, 111, 0.3);
 }
 
 .leadership__featured-content {
@@ -835,6 +848,19 @@ html.w-mod-js [data-w-id="8bda5446-33b5-878e-7c09-3e2a8d9ef3d2"] {
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   box-shadow: 0 8px 28px rgba(0, 0, 0, 0.25);
+  transition:
+    transform 320ms ease-out,
+    border-color 320ms ease-out,
+    box-shadow 320ms ease-out;
+}
+
+.leadership__card:hover {
+  transform: translateY(-6px) scale(1.03);
+  border-color: rgba(88, 204, 111, 0.5);
+  box-shadow:
+    0 0 0 1px rgba(88, 204, 111, 0.35),
+    0 12px 32px rgba(0, 0, 0, 0.35),
+    0 0 40px rgba(88, 204, 111, 0.28);
 }
 
 .leadership__card-photo {
@@ -846,6 +872,24 @@ html.w-mod-js [data-w-id="8bda5446-33b5-878e-7c09-3e2a8d9ef3d2"] {
   border-radius: 10px;
   margin-bottom: 14px;
   filter: grayscale(0.15) saturate(0.92);
+  transition: filter 320ms ease-out;
+}
+
+.leadership__card:hover .leadership__card-photo {
+  filter: grayscale(0) saturate(1);
+}
+
+/* Reduced motion — disable transforms/transitions on Leadership hover */
+@media (prefers-reduced-motion: reduce) {
+  .leadership__card,
+  .leadership__card-photo,
+  .leadership__featured-photo {
+    transition: none !important;
+  }
+  .leadership__card:hover,
+  .leadership__featured-photo:hover {
+    transform: none !important;
+  }
 }
 
 .leadership__card-name {
