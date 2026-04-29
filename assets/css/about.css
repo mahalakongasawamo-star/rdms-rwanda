@@ -425,3 +425,53 @@ body.page-about .brand-acronym {
     grid-template-columns: 1fr 1fr;
   }
 }
+
+/* -------- Scroll reveal (paired with assets/js/about.js) -------- */
+
+.about-header,
+.about-vision__inner,
+.about-story__label,
+.about-story__body,
+.about-mission__inner,
+.about-info__card,
+.about-values__title,
+.about-values__item,
+.about-credibility__inner {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 600ms ease-out, transform 600ms ease-out;
+}
+
+.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger value items slightly so they cascade in. */
+.about-values__item:nth-child(1) { transition-delay: 0ms; }
+.about-values__item:nth-child(2) { transition-delay: 80ms; }
+.about-values__item:nth-child(3) { transition-delay: 160ms; }
+.about-values__item:nth-child(4) { transition-delay: 240ms; }
+.about-values__item:nth-child(5) { transition-delay: 320ms; }
+
+/* Stagger info cards. */
+.about-info__card:nth-child(1) { transition-delay: 0ms; }
+.about-info__card:nth-child(2) { transition-delay: 100ms; }
+.about-info__card:nth-child(3) { transition-delay: 200ms; }
+
+/* Reduced motion — hard reset. */
+@media (prefers-reduced-motion: reduce) {
+  .about-header,
+  .about-vision__inner,
+  .about-story__label,
+  .about-story__body,
+  .about-mission__inner,
+  .about-info__card,
+  .about-values__title,
+  .about-values__item,
+  .about-credibility__inner {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
