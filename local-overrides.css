@@ -1361,37 +1361,96 @@ html.w-mod-js [data-w-id="8bda5446-33b5-878e-7c09-3e2a8d9ef3d2"] {
 
 .navbar.w-nav {
   position: fixed !important;
-  top: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
+  top: 18px;
+  left: 50% !important;
+  right: auto !important;
+  transform: translateX(-50%);
+  width: auto !important;
+  max-width: 800px;
   z-index: 1000;
   background: rgba(15, 15, 18, 0.65) !important;
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 999px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+  padding: 0;
+  overflow: hidden;
 }
 
-/* Make sure all the nav links stay white on the glass bg (overrides any
-   prior cream-page rules from about.html). */
+/* Inner container — flex row, no wrap, internal padding. */
+.navbar.w-nav .container-2 {
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  align-items: center;
+  gap: 12px;
+  padding: 6px 14px !important;
+  width: auto !important;
+  max-width: none !important;
+  margin: 0 !important;
+}
+
+/* Hide the long brand text on the floating nav — keep only the logo
+   so the pill stays compact. (Brand text still appears in the footer.) */
+.navbar.w-nav .brand .brand-text {
+  display: none !important;
+}
+.navbar.w-nav .brand .logo {
+  width: 36px !important;
+  max-width: 36px !important;
+  flex: 0 0 36px !important;
+}
+
+/* Nav menu — flex row, no wrap, tight gap. */
+.navbar.w-nav .nav-menu {
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  align-items: center;
+  gap: 2px;
+  padding: 0;
+  width: auto !important;
+}
+
+/* All nav links uniform: pill chips, white text, hover bg. */
 .navbar.w-nav .nav-link,
 .navbar.w-nav .nav-link-2,
 .navbar.w-nav .brand-name,
 .navbar.w-nav .brand-acronym {
+  color: rgba(255, 255, 255, 0.85) !important;
+}
+
+.navbar.w-nav .nav-link,
+.navbar.w-nav .nav-link-2 {
+  padding: 8px 14px !important;
+  font-size: 13px !important;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  border-radius: 999px;
+  transition: background-color 200ms ease, color 200ms ease;
+  text-decoration: none;
+}
+
+.navbar.w-nav .nav-link:hover,
+.navbar.w-nav .nav-link-2:hover {
+  background-color: rgba(255, 255, 255, 0.10);
   color: #fff !important;
 }
 
-/* Dial down the lots-of-nav-items spacing slightly so 5 text links + button
-   fit on standard desktops without wrapping. */
-@media (min-width: 992px) {
-  .navbar.w-nav .nav-menu {
-    gap: 8px;
+.navbar.w-nav .nav-link[aria-current="page"] {
+  color: #fff !important;
+  background-color: rgba(88, 204, 111, 0.18);
+}
+
+@media (max-width: 991px) {
+  .navbar.w-nav .container-2 {
+    padding: 6px 10px !important;
+    gap: 6px;
   }
   .navbar.w-nav .nav-link,
   .navbar.w-nav .nav-link-2 {
-    padding: 10px 14px;
-    font-size: 14px;
+    padding: 6px 10px !important;
+    font-size: 12px !important;
   }
 }
 
