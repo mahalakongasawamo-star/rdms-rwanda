@@ -73,6 +73,8 @@ body.page-about .brand-acronym {
 
 /* -------- 1. HEADER -------- */
 
+/* .about-header overrides only the top/bottom padding from .about-section;
+   horizontal padding (clamp(20px, 4vw, 36px)) is inherited from the base. */
 .about-header {
   padding-top: clamp(54px, 7vw, 88px);
   padding-bottom: clamp(40px, 5vw, 56px);
@@ -91,7 +93,7 @@ body.page-about .brand-acronym {
 }
 
 .about-subtitle {
-  font-size: clamp(14px, 1.1vw, 15px);
+  font-size: 15px;
   line-height: 1.5;
   color: var(--text-secondary);
   max-width: 680px;
