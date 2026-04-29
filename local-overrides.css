@@ -692,3 +692,187 @@ html.w-mod-js [data-w-id="8bda5446-33b5-878e-7c09-3e2a8d9ef3d2"] {
 
 /* .about-teaser__cta inherits everything (inline-flex, gap, .arrow hover)
    from .rdms-cta and .rdms-cta.secondary — no extra rules needed here. */
+
+/* ---------------------------------------------------------------
+   LEADERSHIP — homepage section between about teaser and 3-col scroll.
+   Dark palette to bridge the surrounding dark sections. Featured
+   CEO card on top + 4-up team grid below. Subtle uniform grayscale
+   filter on portraits harmonises mismatched source photos.
+   --------------------------------------------------------------- */
+
+.leadership {
+  background: #0a0a0a;
+  color: #fff;
+  padding: clamp(56px, 8vw, 96px) clamp(20px, 4vw, 36px);
+  text-align: left;
+}
+
+.leadership__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.leadership__eyebrow {
+  font-family: 'Google Sans', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #58cc6f;
+  font-weight: 500;
+  margin: 0 0 14px;
+}
+
+.leadership__title {
+  font-family: 'Google Sans', sans-serif;
+  font-size: clamp(28px, 3.6vw, 38px);
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  font-weight: 500;
+  color: #fff;
+  margin: 0 0 14px;
+  max-width: 780px;
+}
+
+.leadership__subtitle {
+  font-family: 'Google Sans', sans-serif;
+  font-size: 15px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0 0 48px;
+  max-width: 680px;
+}
+
+/* Featured CEO card: photo left, content right at desktop; stack on mobile */
+.leadership__featured {
+  display: grid;
+  grid-template-columns: minmax(240px, 360px) 1fr;
+  gap: clamp(24px, 4vw, 48px);
+  align-items: center;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: clamp(20px, 3vw, 32px);
+  margin-bottom: clamp(32px, 5vw, 56px);
+}
+
+.leadership__featured-photo {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: 12px;
+  filter: grayscale(0.15) saturate(0.92);
+}
+
+.leadership__featured-content {
+  min-width: 0;
+}
+
+.leadership__role {
+  font-family: 'Google Sans', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #58cc6f;
+  font-weight: 500;
+  margin: 0 0 10px;
+}
+
+.leadership__featured-name {
+  font-family: 'Google Sans', sans-serif;
+  font-size: clamp(22px, 2.8vw, 28px);
+  line-height: 1.1;
+  font-weight: 600;
+  color: #fff;
+  margin: 0 0 6px;
+}
+
+.leadership__featured-meta {
+  font-family: 'Google Sans', sans-serif;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0 0 18px;
+}
+
+.leadership__featured-meta strong {
+  color: rgba(255, 255, 255, 0.9);
+  font-weight: 500;
+}
+
+.leadership__featured-bio {
+  font-family: 'Google Sans', sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.78);
+  margin: 0;
+  max-width: 640px;
+}
+
+/* Team grid: 4-up at desktop, 2-up at tablet, single column at mobile */
+.leadership__grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: clamp(16px, 2.5vw, 24px);
+}
+
+.leadership__card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 16px;
+}
+
+.leadership__card-photo {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 10px;
+  margin-bottom: 14px;
+  filter: grayscale(0.15) saturate(0.92);
+}
+
+.leadership__card-name {
+  font-family: 'Google Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: #fff;
+  margin: 0 0 4px;
+  line-height: 1.25;
+}
+
+.leadership__card-role {
+  font-family: 'Google Sans', sans-serif;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0 0 2px;
+  line-height: 1.4;
+}
+
+.leadership__card-discipline {
+  font-family: 'Google Sans', sans-serif;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.45);
+  margin: 0;
+  line-height: 1.4;
+}
+
+@media (max-width: 991px) {
+  .leadership__grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .leadership__featured {
+    grid-template-columns: 1fr;
+  }
+  .leadership__featured-photo {
+    max-width: 320px;
+    aspect-ratio: 1 / 1;
+  }
+  .leadership__grid {
+    grid-template-columns: 1fr;
+  }
+}
