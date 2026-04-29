@@ -191,6 +191,9 @@
     min-height: 70vh !important;
     padding-top: 40px !important;
     padding-bottom: 60px !important;
+    /* Dark backplate: white text was unreadable in patches over the
+       warmer zones of the live hero gradient. */
+    background-color: rgba(0, 0, 0, 0.40) !important;
   }
 }
 
@@ -231,19 +234,25 @@
     font-size: 11px !important;
     letter-spacing: 0;
   }
+  /* Footer acronym stays at 11px for readability — the navbar acronym
+     gets bumped to 13px below by the .brand-scoped rule. */
   .brand-acronym {
-    font-size: 9px !important;
+    font-size: 11px !important;
   }
 }
 
-@media (max-width: 380px) {
-  .brand-name {
-    display: none;
+/* Hide wordmark in NAVBAR below tablet width — the wordmark + nav links
+   no longer fit on one row below ~600px and the navbar wraps to two rows,
+   wasting ~70px above the fold. Footer wordmark stays visible (plenty of
+   room there and footer benefits from the full org name). */
+@media (max-width: 767px) {
+  .brand .brand-name {
+    display: none !important;
   }
-  .brand-acronym {
+  .brand .brand-acronym {
     font-size: 13px !important;
-    font-weight: 600;
-    opacity: 1;
+    font-weight: 600 !important;
+    opacity: 1 !important;
   }
 }
 
@@ -566,4 +575,78 @@ html.w-mod-js [data-w-id="8bda5446-33b5-878e-7c09-3e2a8d9ef3d2"] {
   .hero.layout-b .left-col { grid-row: 1; }
   .hero.layout-b .right-col { grid-row: 2; }
   .hero.layout-b .bottom-strip { grid-row: 3; }
+}
+
+/* ================================================================
+   12. MOBILE OPTIMIZATION PASS (audit 2026-04-29)
+   Findings at 360 / 390 / 768 viewports — fixes for image cropping,
+   text contrast, vertical-space waste, tap targets, and polish.
+   ================================================================ */
+
+/* 12a. Doctor photos in sponsor section — Webflow sets
+   .column-scroll-item { aspect-ratio: 3/2 } on mobile, but source
+   images are portrait (~3:4). object-fit: cover then guillotines the
+   tops and bottoms of faces, leaving an eye-mouth strip. Override to
+   3:4 to match source aspect; add object-position: center top so any
+   residual crop favors the face over the chin. */
+@media (max-width: 991px) {
+  .column-scroll-item {
+    aspect-ratio: 3 / 4 !important;
+  }
+  .column-scroll-image {
+    object-position: center top !important;
+  }
+}
+
+/* 12b. Hero Layout B — tighten vertical rhythm on mobile.
+   At 360px the hero is 1200px tall (1.5 phone screens) before any
+   secondary content. Cut padding + gaps and shrink program card
+   padding to recover above-the-fold real estate. */
+@media (max-width: 991px) {
+  .hero.layout-b .hero-container {
+    gap: 24px 0 !important;
+    padding-top: 4.5rem !important;
+    padding-bottom: 2rem !important;
+  }
+  .hero.layout-b .left-col {
+    gap: 16px !important;
+  }
+  .rdms-program-card {
+    padding: 20px !important;
+  }
+  /* Bump program card backplate opacity (0.55 → 0.72) so its edges
+     read against the live video gradient instead of blurring into it. */
+  .rdms-program-card {
+    background: rgba(15, 15, 18, 0.72) !important;
+  }
+}
+
+/* 12c. Footer link tap targets — .link-3 (About / Events / Linkedin)
+   render at 20px tall, well below Apple HIG (44pt) and Material (48dp)
+   touch-target minimums. Pad to ~44px hit area. */
+@media (max-width: 991px) {
+  .footer-div .link-3 {
+    padding: 12px 0 !important;
+    display: block;
+  }
+}
+
+/* 12d. Eyebrow badge wraps to two lines below 380px because the long
+   "Rwanda's Leading Non-Profit Oral Health Society" string can't fit.
+   Shrink font + padding so it stays single-line on iPhone SE. */
+@media (max-width: 380px) {
+  .rdms-eyebrow-badge {
+    font-size: 12px !important;
+    padding: 6px 12px !important;
+  }
+}
+
+/* 12e. Stats line ("Founded 2024 · 5+ Core Services · 30+ Members")
+   wraps "30+ Members" to its own row at 360px. Shrink + tighten gap
+   to keep it on one line. */
+@media (max-width: 380px) {
+  .rdms-stats {
+    font-size: 13px !important;
+    gap: 6px 14px !important;
+  }
 }
