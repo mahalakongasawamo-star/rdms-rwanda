@@ -361,3 +361,67 @@ body.page-about .brand-acronym {
     grid-column: auto;
   }
 }
+
+/* -------- 7. CREDIBILITY BAND -------- */
+
+.about-credibility {
+  background: var(--dark-band);
+  color: #fff;
+  padding: clamp(40px, 6vw, 56px) clamp(20px, 4vw, 36px);
+}
+
+.about-credibility__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Eyebrow variant on the dark band uses the existing site green accent */
+.about-eyebrow.on-accent {
+  color: var(--green-accent);
+}
+
+.about-credibility__kpis {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.about-credibility__kpi {
+  margin: 0;
+}
+
+.about-credibility__label {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.5);
+  margin: 0 0 4px;
+}
+
+.about-credibility__value {
+  font-family: 'Google Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+  margin: 0;
+}
+
+.about-credibility__facts {
+  list-style: none;
+  padding: 24px 0 0;
+  margin: 24px 0 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.about-credibility__facts li {
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .about-credibility__kpis {
+    grid-template-columns: 1fr 1fr;
+  }
+}
