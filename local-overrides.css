@@ -701,6 +701,9 @@ html.w-mod-js [data-w-id="8bda5446-33b5-878e-7c09-3e2a8d9ef3d2"] {
    --------------------------------------------------------------- */
 
 .leadership {
+  position: relative;
+  z-index: 2;
+  isolation: isolate;
   background: #0a0a0a;
   color: #fff;
   padding: clamp(56px, 8vw, 96px) clamp(20px, 4vw, 36px);
