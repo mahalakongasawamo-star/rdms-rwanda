@@ -27,10 +27,6 @@ body.page-about {
   margin: 0;
 }
 
-body.page-about main {
-  display: block;
-}
-
 /* All text on this page is flush-left. Project-wide rule. */
 body.page-about h1,
 body.page-about h2,
@@ -66,13 +62,11 @@ body.page-about blockquote {
 /* Navbar override — flip to dark text on cream */
 body.page-about .navbar {
   background: var(--cream-bg) !important;
+  border-bottom: 1px solid var(--card-border);
 }
 body.page-about .nav-link,
 body.page-about .nav-link-2,
 body.page-about .brand-name,
 body.page-about .brand-acronym {
   color: var(--text-primary) !important;
-}
-body.page-about .navbar {
-  border-bottom: 1px solid var(--card-border);
 }
