@@ -1351,3 +1351,46 @@ html.w-mod-js [data-w-id="8bda5446-33b5-878e-7c09-3e2a8d9ef3d2"] {
     grid-template-columns: 1fr 1fr;
   }
 }
+
+/* ===============================================================
+   STICKY GLASSMORPHIC NAVBAR
+   The navbar lives inside the hero section in markup, but we pull it
+   out of the section's flow with position:fixed so it stays pinned
+   to the top of the viewport across all sections.
+   =============================================================== */
+
+.navbar.w-nav {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1000;
+  background: rgba(15, 15, 18, 0.65) !important;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.25);
+}
+
+/* Make sure all the nav links stay white on the glass bg (overrides any
+   prior cream-page rules from about.html). */
+.navbar.w-nav .nav-link,
+.navbar.w-nav .nav-link-2,
+.navbar.w-nav .brand-name,
+.navbar.w-nav .brand-acronym {
+  color: #fff !important;
+}
+
+/* Dial down the lots-of-nav-items spacing slightly so 5 text links + button
+   fit on standard desktops without wrapping. */
+@media (min-width: 992px) {
+  .navbar.w-nav .nav-menu {
+    gap: 8px;
+  }
+  .navbar.w-nav .nav-link,
+  .navbar.w-nav .nav-link-2 {
+    padding: 10px 14px;
+    font-size: 14px;
+  }
+}
