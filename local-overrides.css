@@ -650,3 +650,48 @@ html.w-mod-js [data-w-id="8bda5446-33b5-878e-7c09-3e2a8d9ef3d2"] {
     gap: 6px 14px !important;
   }
 }
+
+/* ---------------------------------------------------------------
+   ABOUT TEASER (homepage) — refresh of the legacy .about-container
+   block. Sits over the dark hero video on mobile and over the dark
+   hero gradient on desktop, so all text is white and the CTA uses
+   the existing .rdms-cta.secondary glassmorphic styling.
+   --------------------------------------------------------------- */
+
+.about-teaser__title {
+  font-family: 'Google Sans', sans-serif;
+  font-size: clamp(24px, 3.4vw, 36px);
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  font-weight: 500;
+  color: #fff;
+  margin: 16px 0 14px;
+  max-width: 720px;
+  text-align: left;
+}
+
+.about-teaser__body {
+  font-family: 'Google Sans', sans-serif;
+  font-size: clamp(14px, 1.1vw, 16px);
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.85);
+  max-width: 640px;
+  margin: 0 0 22px;
+  text-align: left;
+}
+
+.about-teaser__cta {
+  /* Inherits .rdms-cta.secondary base; this just locks alignment. */
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.about-teaser__cta .arrow {
+  display: inline-block;
+  transition: transform 0.25s ease;
+}
+
+.about-teaser__cta:hover .arrow {
+  transform: translateX(3px);
+}
