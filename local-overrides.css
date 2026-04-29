@@ -778,15 +778,17 @@ html.w-mod-js [data-w-id="8bda5446-33b5-878e-7c09-3e2a8d9ef3d2"] {
     transform 320ms ease-out,
     filter 320ms ease-out,
     box-shadow 320ms ease-out;
+  will-change: transform;
 }
 
-.leadership__featured-photo:hover {
-  transform: translateY(-6px) scale(1.03);
+/* Hover the CEO card → photo pops (bio text stays still per Q3:B) */
+.leadership__featured:hover .leadership__featured-photo {
+  transform: translateY(-12px) scale(1.06);
   filter: grayscale(0) saturate(1);
   box-shadow:
-    0 0 0 1px rgba(88, 204, 111, 0.5),
-    0 12px 32px rgba(0, 0, 0, 0.35),
-    0 0 40px rgba(88, 204, 111, 0.3);
+    0 0 0 2px rgba(88, 204, 111, 0.6),
+    0 18px 40px rgba(0, 0, 0, 0.45),
+    0 0 56px rgba(88, 204, 111, 0.42);
 }
 
 .leadership__featured-content {
@@ -848,19 +850,12 @@ html.w-mod-js [data-w-id="8bda5446-33b5-878e-7c09-3e2a8d9ef3d2"] {
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   box-shadow: 0 8px 28px rgba(0, 0, 0, 0.25);
-  transition:
-    transform 320ms ease-out,
-    border-color 320ms ease-out,
-    box-shadow 320ms ease-out;
+  transition: border-color 320ms ease-out;
 }
 
+/* Card frame stays still; only its border tints green to signal interactivity. */
 .leadership__card:hover {
-  transform: translateY(-6px) scale(1.03);
-  border-color: rgba(88, 204, 111, 0.5);
-  box-shadow:
-    0 0 0 1px rgba(88, 204, 111, 0.35),
-    0 12px 32px rgba(0, 0, 0, 0.35),
-    0 0 40px rgba(88, 204, 111, 0.28);
+  border-color: rgba(88, 204, 111, 0.4);
 }
 
 .leadership__card-photo {
@@ -872,11 +867,21 @@ html.w-mod-js [data-w-id="8bda5446-33b5-878e-7c09-3e2a8d9ef3d2"] {
   border-radius: 10px;
   margin-bottom: 14px;
   filter: grayscale(0.15) saturate(0.92);
-  transition: filter 320ms ease-out;
+  transition:
+    transform 320ms ease-out,
+    filter 320ms ease-out,
+    box-shadow 320ms ease-out;
+  will-change: transform;
 }
 
+/* Hover the team card → photo pops (rest of card stays still) */
 .leadership__card:hover .leadership__card-photo {
+  transform: translateY(-12px) scale(1.06);
   filter: grayscale(0) saturate(1);
+  box-shadow:
+    0 0 0 2px rgba(88, 204, 111, 0.6),
+    0 18px 40px rgba(0, 0, 0, 0.45),
+    0 0 56px rgba(88, 204, 111, 0.42);
 }
 
 /* Reduced motion — disable transforms/transitions on Leadership hover */
