@@ -197,6 +197,16 @@
   }
 }
 
+/* Desktop teaser sits in a much shorter content block (h2 + paragraph
+   + button) than the legacy long-form copy that .about-container was
+   sized for. Relax the 100vh lock so the section hugs the content. */
+@media (min-width: 992px) {
+  .about-container.about-teaser {
+    height: auto !important;
+    min-height: 60vh !important;
+  }
+}
+
 /* ---------------------------------------------------------------
    4b. MOBILE HERO BACKGROUND — let the video play.
       Webflow's default mobile rule ".background-video-container

@@ -123,8 +123,8 @@ body.page-about .brand-acronym {
   position: absolute;
   inset: 0;
   background:
-    var(--vision-overlay),
-    rgba(0, 0, 0, 0.32);
+    linear-gradient(rgba(0, 0, 0, 0.32), rgba(0, 0, 0, 0.32)),
+    var(--vision-overlay);
   background-blend-mode: multiply;
   opacity: 0.85;
   z-index: -1;
@@ -221,8 +221,8 @@ body.page-about .brand-acronym {
   position: absolute;
   inset: 0;
   background:
-    var(--mission-overlay),
-    rgba(0, 0, 0, 0.40);
+    linear-gradient(rgba(0, 0, 0, 0.40), rgba(0, 0, 0, 0.40)),
+    var(--mission-overlay);
   background-blend-mode: multiply;
   opacity: 0.88;
   z-index: -1;
