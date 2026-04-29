@@ -310,7 +310,7 @@ After the closing `</section>` of `.about-header`, add:
 ```html
     <!-- 2. VISION BANNER (full-bleed photo + overlay) -->
     <section class="about-vision" aria-labelledby="vision-heading">
-      <img class="about-vision__img" src="assets/img/hero-bg-rwanda-vivid.jpg" alt="" aria-hidden="true"/>
+      <img class="about-vision__img" src="assets/img/about-vision.png" alt="" aria-hidden="true"/>
       <div class="about-vision__overlay" aria-hidden="true"></div>
       <div class="about-vision__inner">
         <p class="about-eyebrow on-dark">Our Vision</p>
@@ -499,7 +499,7 @@ git commit -m "About page: story block (2-col with mobile stack)"
 ```html
     <!-- 4. MISSION QUOTE (full-bleed photo + overlay) -->
     <section class="about-mission" aria-labelledby="mission-heading">
-      <img class="about-mission__img" src="assets/img/doctor4.jpeg" alt="" aria-hidden="true"/>
+      <img class="about-mission__img" src="assets/img/about-mission.png" alt="" aria-hidden="true"/>
       <div class="about-mission__overlay" aria-hidden="true"></div>
       <div class="about-mission__inner">
         <p class="about-eyebrow on-dark" id="mission-heading">Our Mission</p>
