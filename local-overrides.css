@@ -672,7 +672,7 @@ html.w-mod-js [data-w-id="8bda5446-33b5-878e-7c09-3e2a8d9ef3d2"] {
 
 .about-teaser__body {
   font-family: 'Google Sans', sans-serif;
-  font-size: clamp(14px, 1.1vw, 16px);
+  font-size: 15px;
   line-height: 1.6;
   color: rgba(255, 255, 255, 0.85);
   max-width: 640px;
@@ -680,18 +680,5 @@ html.w-mod-js [data-w-id="8bda5446-33b5-878e-7c09-3e2a8d9ef3d2"] {
   text-align: left;
 }
 
-.about-teaser__cta {
-  /* Inherits .rdms-cta.secondary base; this just locks alignment. */
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-}
-
-.about-teaser__cta .arrow {
-  display: inline-block;
-  transition: transform 0.25s ease;
-}
-
-.about-teaser__cta:hover .arrow {
-  transform: translateX(3px);
-}
+/* .about-teaser__cta inherits everything (inline-flex, gap, .arrow hover)
+   from .rdms-cta and .rdms-cta.secondary — no extra rules needed here. */
