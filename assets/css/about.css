@@ -1,0 +1,477 @@
+/* ============================================================
+   /about page styles — cream palette, flush-left typography
+   ============================================================ */
+
+:root {
+  --cream-bg:        #f6f3ec;
+  --cream-tint:      #ece6d6;
+  --card-bg:         #ffffff;
+  --card-border:     #e3ddd1;
+  --text-primary:    #0a0a0a;
+  --text-body:       #2a2a2a;
+  --text-secondary:  #4a4a4a;
+  --text-muted:      #7a7a7a;
+  --green-on-light:  #1f6b3a;
+  --green-on-dark:   #a9e0b6;
+  --green-accent:    #58cc6f;
+  --dark-band:       #0a0a0a;
+  --vision-overlay:  linear-gradient(135deg, #1c3a2c, #3d6b52);
+  --mission-overlay: linear-gradient(135deg, #3d3a32, #1f1d18);
+}
+
+body.page-about {
+  background: var(--cream-bg);
+  color: var(--text-primary);
+  font-family: 'Google Sans', sans-serif;
+  text-align: left;
+  margin: 0;
+}
+
+/* All text on this page is flush-left. Project-wide rule. */
+body.page-about h1,
+body.page-about h2,
+body.page-about h3,
+body.page-about p,
+body.page-about li,
+body.page-about blockquote {
+  text-align: left;
+}
+
+/* Page section container — applies to most blocks except full-bleed bands */
+.about-section {
+  padding: clamp(48px, 7vw, 80px) clamp(20px, 4vw, 36px);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Eyebrow label — used across most blocks */
+.about-eyebrow {
+  font-family: 'Google Sans', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--green-on-light);
+  margin: 0 0 14px;
+  font-weight: 500;
+}
+
+.about-eyebrow.on-dark {
+  color: var(--green-on-dark);
+}
+
+/* Navbar override — flip to dark text on cream */
+body.page-about .navbar {
+  background: var(--cream-bg) !important;
+  border-bottom: 1px solid var(--card-border);
+}
+body.page-about .nav-link,
+body.page-about .nav-link-2,
+body.page-about .brand-name,
+body.page-about .brand-acronym {
+  color: var(--text-primary) !important;
+}
+
+/* -------- 1. HEADER -------- */
+
+/* .about-header overrides only the top/bottom padding from .about-section;
+   horizontal padding (clamp(20px, 4vw, 36px)) is inherited from the base. */
+.about-header {
+  padding-top: clamp(54px, 7vw, 88px);
+  padding-bottom: clamp(40px, 5vw, 56px);
+  border-bottom: 1px solid var(--card-border);
+}
+
+.about-title {
+  font-family: 'Google Sans', sans-serif;
+  font-size: clamp(28px, 4vw, 38px);
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  font-weight: 500;
+  color: var(--text-primary);
+  max-width: 780px;
+  margin: 0;
+}
+
+.about-subtitle {
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--text-secondary);
+  max-width: 680px;
+  margin: 14px 0 0;
+}
+
+/* -------- 2. VISION BANNER (full-bleed photo) -------- */
+
+.about-vision {
+  position: relative;
+  padding: clamp(56px, 8vw, 96px) clamp(20px, 4vw, 36px);
+  color: #fff;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.about-vision__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+
+.about-vision__overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.32), rgba(0, 0, 0, 0.32)),
+    var(--vision-overlay);
+  background-blend-mode: multiply;
+  opacity: 0.85;
+  z-index: -1;
+}
+
+.about-vision__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about-vision__headline {
+  font-family: 'Google Sans', sans-serif;
+  font-size: clamp(24px, 3.4vw, 32px);
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  font-weight: 500;
+  color: #fff;
+  max-width: 760px;
+  margin: 0;
+}
+
+.about-vision__body {
+  font-size: 14px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.85);
+  max-width: 680px;
+  margin: 16px 0 0;
+}
+
+/* -------- 3. STORY -------- */
+
+.about-story {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 48px;
+  align-items: start;
+  border-bottom: 1px solid var(--card-border);
+}
+
+.about-story__label {
+  margin: 0;
+}
+
+.about-story__meta {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.4;
+  margin: 0;
+}
+
+.about-story__body {
+  max-width: 640px;
+  margin: 0;
+}
+
+.about-story__body p {
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--text-body);
+  margin: 0 0 18px;
+}
+
+.about-story__body p:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .about-story {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+}
+
+/* -------- 4. MISSION QUOTE -------- */
+
+.about-mission {
+  position: relative;
+  padding: clamp(64px, 9vw, 96px) clamp(20px, 4vw, 36px);
+  color: #fff;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.about-mission__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+
+.about-mission__overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(rgba(0, 0, 0, 0.40), rgba(0, 0, 0, 0.40)),
+    var(--mission-overlay);
+  background-blend-mode: multiply;
+  opacity: 0.88;
+  z-index: -1;
+}
+
+.about-mission__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about-mission__quote {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(20px, 2.4vw, 26px);
+  line-height: 1.4;
+  color: #fff;
+  max-width: 820px;
+  margin: 24px 0 0;
+  padding: 0;
+}
+
+/* -------- 5. INFO CARDS -------- */
+
+.about-info {
+  border-bottom: 1px solid var(--card-border);
+}
+
+.about-info__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+.about-info__card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 14px;
+  padding: 22px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+.about-info__icon {
+  font-size: 22px;
+  line-height: 1;
+  margin-bottom: 10px;
+}
+
+.about-info__title {
+  font-family: 'Google Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0 0 8px;
+}
+
+.about-info__body {
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .about-info__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* -------- 6. VALUES -------- */
+
+.about-values {
+  border-bottom: 1px solid var(--card-border);
+}
+
+.about-values__title {
+  font-family: 'Google Sans', sans-serif;
+  font-size: clamp(24px, 3.2vw, 30px);
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  font-weight: 500;
+  color: var(--text-primary);
+  margin: 0 0 36px;
+}
+
+.about-values__list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 36px 48px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.about-values__item {
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+}
+
+/* Item 5: span column 1 of row 3 only — left half, intentionally asymmetric */
+.about-values__item--span-half {
+  grid-column: 1 / span 1;
+}
+
+.about-values__num {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 32px;
+  font-weight: 300;
+  line-height: 1;
+  color: var(--green-on-light);
+  flex: none;
+  min-width: 48px;
+}
+
+.about-values__name {
+  font-family: 'Google Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin: 0 0 6px;
+}
+
+.about-values__desc {
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .about-values__list {
+    grid-template-columns: 1fr;
+  }
+  .about-values__item--span-half {
+    grid-column: auto;
+  }
+}
+
+/* -------- 7. CREDIBILITY BAND -------- */
+
+.about-credibility {
+  background: var(--dark-band);
+  color: #fff;
+  padding: clamp(40px, 6vw, 56px) clamp(20px, 4vw, 36px);
+}
+
+.about-credibility__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Eyebrow variant on the dark band uses the existing site green accent */
+.about-eyebrow.on-accent {
+  color: var(--green-accent);
+}
+
+.about-credibility__kpis {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.about-credibility__kpi {
+  margin: 0;
+}
+
+.about-credibility__label {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.5);
+  margin: 0 0 4px;
+}
+
+.about-credibility__value {
+  font-family: 'Google Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+  margin: 0;
+}
+
+.about-credibility__facts {
+  list-style: none;
+  padding: 24px 0 0;
+  margin: 24px 0 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 32px;
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.about-credibility__facts li {
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .about-credibility__kpis {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* -------- Scroll reveal (paired with assets/js/about.js) -------- */
+
+.about-header,
+.about-vision__inner,
+.about-story__label,
+.about-story__body,
+.about-mission__inner,
+.about-info__card,
+.about-values__title,
+.about-values__item,
+.about-credibility__inner {
+  opacity: 0;
+  transform: translateY(24px);
+  transition: opacity 600ms ease-out, transform 600ms ease-out;
+}
+
+.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Stagger value items slightly so they cascade in. */
+.about-values__item:nth-child(1) { transition-delay: 0ms; }
+.about-values__item:nth-child(2) { transition-delay: 80ms; }
+.about-values__item:nth-child(3) { transition-delay: 160ms; }
+.about-values__item:nth-child(4) { transition-delay: 240ms; }
+.about-values__item:nth-child(5) { transition-delay: 320ms; }
+
+/* Stagger info cards. */
+.about-info__card:nth-child(1) { transition-delay: 0ms; }
+.about-info__card:nth-child(2) { transition-delay: 100ms; }
+.about-info__card:nth-child(3) { transition-delay: 200ms; }
+
+/* Reduced motion — hard reset. */
+@media (prefers-reduced-motion: reduce) {
+  .about-header,
+  .about-vision__inner,
+  .about-story__label,
+  .about-story__body,
+  .about-mission__inner,
+  .about-info__card,
+  .about-values__title,
+  .about-values__item,
+  .about-credibility__inner {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}

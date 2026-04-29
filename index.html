@@ -164,6 +164,35 @@
   </div>
 
   <!-- ============================
+       NAVIGATION
+       Lifted out of the hero section so position:fixed is anchored
+       to the viewport (not contained by hero's GSAP transforms).
+  ============================= -->
+  <div data-animation="default" class="navbar w-nav" data-easing2="ease" data-wf-target="[[[&quot;6996068fb95237c82f43616c&quot;,&quot;5da7e745-947d-7935-3d60-e1a815c44aed&quot;],[]]]" data-easing="ease" data-collapse="none" data-w-id="5da7e745-947d-7935-3d60-e1a815c44aed" role="banner" data-duration="400" data-doc-height="1">
+    <!-- Hamburger icon shown when navbar is collapsed (scrolled down) -->
+    <div class="navbar-collapsed-icon" aria-hidden="true">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+    </div>
+    <div class="container-2 w-container">
+      <a href="/" aria-current="page" class="brand w-nav-brand w--current">
+        <img src="assets/img/rdms-logo.png" loading="eager" fetchpriority="high" decoding="async" alt="RDMS" class="logo"/>
+        <div class="brand-text">
+          <span class="brand-name">Dento-Medical Society Rwanda</span>
+          <span class="brand-acronym">(RDMS)</span>
+        </div>
+      </a>
+      <nav role="navigation" class="nav-menu w-nav-menu">
+        <a href="#about" class="nav-link w-nav-link" aria-current="page">About</a>
+        <a href="#leadership" class="nav-link w-nav-link">Leadership</a>
+        <a href="#" class="nav-link w-nav-link">Services</a>
+        <a href="#" class="nav-link w-nav-link">Projects</a>
+        <a href="#" class="nav-link w-nav-link">Research Academy</a>
+        <a href="#" class="nav-link w-nav-link" id="getInTouchNavBtn">Contact</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- ============================
        HERO SECTION
   ============================= -->
   <section class="hero layout-b">
@@ -177,34 +206,6 @@
 
     <!-- Mobile green image -->
     <img src="assets/img/hero-bg-rwanda-vivid.jpg" loading="lazy" decoding="async" alt="" class="mobile-image"/>
-
-    <!-- Navigation -->
-    <div data-animation="default" class="navbar w-nav" data-easing2="ease" data-wf-target="[[[&quot;6996068fb95237c82f43616c&quot;,&quot;5da7e745-947d-7935-3d60-e1a815c44aed&quot;],[]]]" data-easing="ease" data-collapse="none" data-w-id="5da7e745-947d-7935-3d60-e1a815c44aed" role="banner" data-duration="400" data-doc-height="1">
-      <div class="container-2 w-container">
-        <a href="/" aria-current="page" class="brand w-nav-brand w--current">
-          <img src="assets/img/03_map_tooth_refined.png" loading="eager" fetchpriority="high" decoding="async" alt="RDMS" class="logo"/>
-          <div class="brand-text">
-            <span class="brand-name">Dento-Medical Society Rwanda</span>
-            <span class="brand-acronym">(RDMS)</span>
-          </div>
-        </a>
-        <nav role="navigation" class="nav-menu w-nav-menu">
-          <a href="/about" class="nav-link w-nav-link">About</a>
-          <a href="/events" class="nav-link-2 w-nav-link">Events</a>
-          <a data-w-id="0cf0f2df-dfd2-0c73-e1ad-0e447dd52a9f" href="#" class="nav-link-2 mobile w-nav-link" id="getInTouchMobileLink">Get in touch</a>
-          <a data-w-id="34b6357c-2248-63d6-dcd0-649bf51260bb" style="-webkit-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" href="#" class="button-3 footer top nav w-inline-block" id="getInTouchNavBtn">
-            <div class="svg-filter_embed w-embed">
-              <svg width="0" height="0" class="absolute hidden" color-interpolation-filters="sRGB">
-                <defs><filter id="buttonFilter"><feGaussianBlur in="SourceGraphic" stdDeviation="5" result="blur"></feGaussianBlur><feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="buttonFilter"></feColorMatrix><feComposite in="SourceGraphic" in2="buttonFilter" operator="atop"></feComposite><feBlend in="SourceGraphic" in2="buttonFilter"></feBlend></filter></defs>
-              </svg>
-            </div>
-            <div data-w-id="34b6357c-2248-63d6-dcd0-649bf51260bd" style="background-color:rgba(237,237,237,0)" class="button-3_content-wrap-2">
-              <div class="text-block-2 other top _14">Get in touch</div>
-            </div>
-          </a>
-        </nav>
-      </div>
-    </div>
 
     <!-- UnicornStudio animated background -->
     <!-- Custom background video -->
@@ -251,30 +252,208 @@
         </div>
       </div>
 
-      <div class="bottom-strip">
-        <span class="rdms-bottom-badge"><span class="ico">&#127963;&#65039;</span> RDB Registered · Code: 143885158</span>
-        <span class="rdms-bottom-badge"><span class="ico">&#128205;</span> Huye, Rwanda · Ngoma District</span>
-      </div>
+      <!-- Hero bottom strip removed: registration + location info now lives
+           in the Credibility band of the about section below; keeping them
+           here was visually colliding with the about-header transition. -->
 
     </div><!-- /hero-container -->
   </section><!-- /hero -->
 
   <!-- ============================
-       ABOUT SECTION — Desktop
+       ABOUT — full 7-block content inlined on the homepage.
+       Dark / transparent / glassmorphic palette so the fixed hero
+       video plays through. The cream-palette /about.html still exists
+       as an orphan but is no longer linked from the navigation.
   ============================= -->
-  <div class="w-layout-blockcontainer about-container desktop w-container" id="about">
-    <p class="eyebrow light what-is-techish">About RDMS</p>
-    <p class="paragraph-3">In Rwanda, a concerning trend has emerged among dentists regarding the low rate of dental check-ups nationwide. Alarm bells have been ringing about the potential oral health risks facing the population, highlighting an urgent need for action.</p>
-    <div class="spacer"></div>
-    <p class="paragraph-3">Recognizing the critical importance of regular dental check-ups in identifying and addressing dental issues promptly, the healthcare community has called for transformative change. A recent study by the Rwanda Biomedical Centre revealed a stark reality: only 11.5% of the population sought dental consultation within a year, while a staggering 57% had never received any form of dental care.</p>
-  </div>
 
-  <!-- ABOUT — Mobile -->
-  <div class="w-layout-blockcontainer about-container mobile w-container">
-    <p class="eyebrow light what-is-techish">About RDMS</p>
-    <p class="paragraph-3">In Rwanda, a concerning trend has emerged among dentists regarding the low rate of dental check-ups nationwide. Alarm bells have been ringing about the potential oral health risks facing the population, highlighting an urgent need for action.</p>
-    <p class="paragraph-3">Recognizing the critical importance of regular dental check-ups in identifying and addressing dental issues promptly, the healthcare community has called for transformative change. A recent study by the Rwanda Biomedical Centre revealed a stark reality: only 11.5% of the population sought dental consultation within a year, while a staggering 57% had never received any form of dental care.</p>
-  </div>
+  <!-- 1. HEADER -->
+  <section class="home-about-header" id="about" aria-labelledby="home-about-heading">
+    <div class="home-about__inner">
+      <p class="home-about__eyebrow">Who We Are</p>
+      <h2 class="home-about__title" id="home-about-heading">Rwanda&rsquo;s Dento-Medical Society</h2>
+      <p class="home-about__subtitle">A nonprofit professional organization uniting dental and medical students and professionals to advance oral and public health across Rwanda and beyond.</p>
+    </div>
+  </section>
+
+  <!-- 2. VISION BANNER (full-bleed photo) -->
+  <section class="home-about-vision" aria-labelledby="home-vision-heading">
+    <img class="home-about-vision__img" src="assets/img/about-vision.png" alt="" aria-hidden="true"/>
+    <div class="home-about-vision__overlay" aria-hidden="true"></div>
+    <div class="home-about-vision__inner">
+      <p class="home-about__eyebrow on-photo">Our Vision</p>
+      <h3 class="home-about-vision__headline" id="home-vision-heading">Advancing Oral &amp; Public Health Through Innovation and Partnership</h3>
+      <p class="home-about-vision__body">We envision a Rwanda where oral health is recognized as foundational to general well-being &mdash; where every community, regardless of geography or income, has access to preventive care, modern clinical practice, and the research and education that drive both forward. Our work bridges dentistry and medicine, students and professionals, urban centres and rural districts, to make that vision a reality.</p>
+    </div>
+  </section>
+
+  <!-- 3. STORY -->
+  <section class="home-about-story" aria-labelledby="home-story-heading">
+    <aside class="home-about-story__label">
+      <p class="home-about-story__label-eyebrow" id="home-story-heading">Our Story</p>
+      <p class="home-about-story__meta">Founded 2024 &middot; Ngoma, Huye &middot; Southern Province</p>
+    </aside>
+    <div class="home-about-story__body">
+      <p>In Rwanda, oral health has long existed at the margins of the national healthcare system &mdash; underfunded, underrepresented, and often invisible to the communities that need it most. Dental disease, though largely preventable, continues to affect children, adults, and vulnerable populations who lack access to even the most basic oral care.</p>
+      <p>RDMS was founded in 2024 to confront this reality head-on. Driven by a shared belief that oral health is inseparable from general health, our founders built a society that bridges the gap between dentistry and medicine &mdash; bringing professionals, students, and communities together under one mission.</p>
+      <p>Registered under RDB as a Non-Profit Limited by Guarantee (Code: 143885158), RDMS operates from Huye and reaches communities across Rwanda through field programs, research, education, and policy engagement.</p>
+    </div>
+  </section>
+
+  <!-- 4. MISSION QUOTE (full-bleed photo) -->
+  <section class="home-about-mission" aria-labelledby="home-mission-heading">
+    <img class="home-about-mission__img" src="assets/img/about-mission.png" alt="" aria-hidden="true"/>
+    <div class="home-about-mission__overlay" aria-hidden="true"></div>
+    <div class="home-about-mission__inner">
+      <p class="home-about__eyebrow on-photo" id="home-mission-heading">Our Mission</p>
+      <blockquote class="home-about-mission__quote">&ldquo;To unite dental surgeons, dental therapists, and public health professionals in advancing oral-systemic health through collaborative education, research, outreach, and policy advocacy.&rdquo;</blockquote>
+    </div>
+  </section>
+
+  <!-- 5. INFO CARDS -->
+  <section class="home-about-info" aria-label="Where We Operate, Who We Bring Together, and Our Reach">
+    <div class="home-about__inner">
+      <div class="home-about-info__grid">
+        <article class="home-about-info__card">
+          <div class="home-about-info__icon" aria-hidden="true">📍</div>
+          <h3 class="home-about-info__title">Where We Operate</h3>
+          <p class="home-about-info__body">Headquartered in Ngoma, Huye (Southern Province), RDMS conducts programs across Rwanda &mdash; from urban clinics and university campuses to rural schools and underserved communities.</p>
+        </article>
+        <article class="home-about-info__card">
+          <div class="home-about-info__icon" aria-hidden="true">🤝</div>
+          <h3 class="home-about-info__title">Who We Bring Together</h3>
+          <p class="home-about-info__body">Our members include dental surgeons, dental therapists, medical doctors, public health professionals, and students from across Rwanda&rsquo;s health sciences community &mdash; all united by one purpose.</p>
+        </article>
+        <article class="home-about-info__card">
+          <div class="home-about-info__icon" aria-hidden="true">🌍</div>
+          <h3 class="home-about-info__title">Our Reach</h3>
+          <p class="home-about-info__body">While rooted in Rwanda, RDMS engages with global oral health networks, international awareness days, and cross-border partnerships &mdash; contributing to healthcare advancement beyond Rwanda&rsquo;s borders.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. VALUES -->
+  <section class="home-about-values" aria-labelledby="home-values-heading">
+    <div class="home-about__inner">
+      <p class="home-about__eyebrow">What Guides Us</p>
+      <h2 class="home-about-values__title" id="home-values-heading">Our Core Values</h2>
+      <ol class="home-about-values__list">
+        <li class="home-about-values__item">
+          <span class="home-about-values__num" aria-hidden="true">01</span>
+          <div>
+            <h3 class="home-about-values__name">Transparency &amp; Accountability</h3>
+            <p class="home-about-values__desc">We operate with openness in all our activities &mdash; from governance and finance to research and community engagement. Trust is the foundation of everything we do.</p>
+          </div>
+        </li>
+        <li class="home-about-values__item">
+          <span class="home-about-values__num" aria-hidden="true">02</span>
+          <div>
+            <h3 class="home-about-values__name">Teamwork &amp; Collaboration</h3>
+            <p class="home-about-values__desc">Progress in oral health requires collective effort. We unite professionals across disciplines, institutions, and borders to achieve outcomes no single actor could accomplish alone.</p>
+          </div>
+        </li>
+        <li class="home-about-values__item">
+          <span class="home-about-values__num" aria-hidden="true">03</span>
+          <div>
+            <h3 class="home-about-values__name">Selflessness &amp; Compassion</h3>
+            <p class="home-about-values__desc">Our work is driven by genuine care for the communities we serve. We place patients and populations at the heart of every decision we make.</p>
+          </div>
+        </li>
+        <li class="home-about-values__item">
+          <span class="home-about-values__num" aria-hidden="true">04</span>
+          <div>
+            <h3 class="home-about-values__name">Equity &amp; Equality</h3>
+            <p class="home-about-values__desc">Quality oral healthcare is a right, not a privilege. We actively work to eliminate disparities &mdash; ensuring geography, income, or background never determines the care someone receives.</p>
+          </div>
+        </li>
+        <li class="home-about-values__item home-about-values__item--span-half">
+          <span class="home-about-values__num" aria-hidden="true">05</span>
+          <div>
+            <h3 class="home-about-values__name">Human Rights &amp; Environment</h3>
+            <p class="home-about-values__desc">We uphold the dignity and rights of every individual we serve, and recognise that human health and environmental health are deeply interconnected.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- 7. CREDIBILITY BAND -->
+  <section class="home-about-credibility" aria-labelledby="home-credibility-heading">
+    <div class="home-about-credibility__inner">
+      <p class="home-about-credibility__eyebrow" id="home-credibility-heading">RDMS at a Glance</p>
+      <div class="home-about-credibility__kpis">
+        <div>
+          <p class="home-about-credibility__label">Founded</p>
+          <p class="home-about-credibility__value">1 July 2024</p>
+        </div>
+        <div>
+          <p class="home-about-credibility__label">RDB Code</p>
+          <p class="home-about-credibility__value">143885158</p>
+        </div>
+        <div>
+          <p class="home-about-credibility__label">Headquarters</p>
+          <p class="home-about-credibility__value">Ngoma, Huye</p>
+        </div>
+        <div>
+          <p class="home-about-credibility__label">Members</p>
+          <p class="home-about-credibility__value">30+</p>
+        </div>
+      </div>
+      <ul class="home-about-credibility__facts">
+        <li><span aria-hidden="true">📞</span> +250 791 853 120</li>
+        <li><span aria-hidden="true">📍</span> Southern Province, Rwanda</li>
+        <li>5+ Core Services</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============================
+       LEADERSHIP — featured CEO + team grid
+  ============================= -->
+  <section class="leadership" id="leadership" aria-labelledby="leadership-heading">
+    <div class="leadership__inner">
+      <p class="leadership__eyebrow">Leadership</p>
+      <h2 class="leadership__title" id="leadership-heading">Meet the Team</h2>
+      <p class="leadership__subtitle">Dedicated dental and medical professionals leading RDMS&rsquo;s mission across Rwanda.</p>
+
+      <article class="leadership__featured">
+        <img class="leadership__featured-photo" src="assets/img/team-igisubizo-jimmy.jpeg" alt="Igisubizo Jimmy Confiance" loading="lazy" decoding="async"/>
+        <div class="leadership__featured-content">
+          <p class="leadership__role">CEO &amp; Founder</p>
+          <h3 class="leadership__featured-name">Igisubizo Jimmy Confiance</h3>
+          <p class="leadership__featured-meta"><strong>CEO &amp; President, RDMS</strong> &middot; Dental Surgeon</p>
+          <p class="leadership__featured-bio">Dental professional and public health advocate committed to transforming oral healthcare access across Rwanda. Founder and driving force behind RDMS since its establishment in 2024.</p>
+        </div>
+      </article>
+
+      <div class="leadership__grid">
+        <article class="leadership__card">
+          <img class="leadership__card-photo" src="assets/img/team-natukunda-sharon.jpeg" alt="Natukunda Sharon" loading="lazy" decoding="async"/>
+          <h3 class="leadership__card-name">Natukunda Sharon</h3>
+          <p class="leadership__card-role">General Secretary</p>
+          <p class="leadership__card-discipline">Medicine</p>
+        </article>
+        <article class="leadership__card">
+          <img class="leadership__card-photo" src="assets/img/team-dushimitanga-luc.jpeg" alt="Dushimitanga Luc" loading="lazy" decoding="async"/>
+          <h3 class="leadership__card-name">Dushimitanga Luc</h3>
+          <p class="leadership__card-role">VP of Finance</p>
+          <p class="leadership__card-discipline">Medicine</p>
+        </article>
+        <article class="leadership__card">
+          <img class="leadership__card-photo" src="assets/img/team-kubwimana-steven.jpeg" alt="Kubwimana Steven" loading="lazy" decoding="async"/>
+          <h3 class="leadership__card-name">Kubwimana Steven</h3>
+          <p class="leadership__card-role">VP of External Affairs</p>
+          <p class="leadership__card-discipline">Dental Surgeon</p>
+        </article>
+        <article class="leadership__card">
+          <img class="leadership__card-photo" src="assets/img/team-mbagoroziki-samuel.jpeg" alt="Mbagoroziki Samuel" loading="lazy" decoding="async"/>
+          <h3 class="leadership__card-name">Mbagoroziki Samuel</h3>
+          <p class="leadership__card-role">VP of Internal Affairs</p>
+          <p class="leadership__card-discipline">Dental Surgeon</p>
+        </article>
+      </div>
+    </div>
+  </section>
 
   <!-- ============================
        SPONSOR / 3-COLUMN SCROLL
@@ -298,13 +477,13 @@
             </video>
             <div class="column-scroll-sticky-inner">
               <div class="column-scroll-item is-3">
-                <img loading="lazy" decoding="async" src="assets/img/doctor4.jpeg" alt="" class="column-scroll-image _3"/>
+                <img loading="lazy" decoding="async" src="assets/img/column-scroll-3.jpg" alt="RDMS members at a partner organization" class="column-scroll-image _3"/>
               </div>
               <div class="column-scroll-item is-2">
-                <img loading="lazy" decoding="async" src="assets/img/doctor3.jpeg" alt="" class="column-scroll-image _2"/>
+                <img loading="lazy" decoding="async" src="assets/img/column-scroll-2.jpg" alt="RDMS members representing the society" class="column-scroll-image _2"/>
               </div>
               <div class="column-scroll-item is-1">
-                <img loading="lazy" decoding="async" src="assets/img/doctor1.jpeg" alt="" class="column-scroll-image _1"/>
+                <img loading="lazy" decoding="async" src="assets/img/column-scroll-1.jpg" alt="RDMS team at the Rwanda Broadcasting Authority" class="column-scroll-image _1"/>
               </div>
             </div>
           </div>
@@ -404,7 +583,7 @@
       <div class="w-layout-blockcontainer container-3 w-container">
         <div class="left-footer-things">
           <a href="/" aria-current="page" class="footer-brand-link w-inline-block w--current">
-            <img src="assets/img/03_map_tooth_refined.png" loading="lazy" decoding="async" alt="RDMS" class="image-3"/>
+            <img src="assets/img/rdms-logo.png" loading="lazy" decoding="async" alt="RDMS" class="image-3"/>
             <div class="brand-text footer-brand-text">
               <span class="brand-name">Dento-Medical Society Rwanda</span>
               <span class="brand-acronym">(RDMS)</span>
@@ -414,7 +593,7 @@
         </div>
         <div class="right-footer-things">
           <div class="text-block-4">navigate</div>
-          <a href="/about" class="link-3">About</a>
+          <a href="#about" class="link-3">About</a>
           <a href="/events" class="link-3">Events</a>
         </div>
         <div class="right-footer-things">

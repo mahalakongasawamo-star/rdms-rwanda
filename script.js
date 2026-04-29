@@ -336,3 +336,78 @@
   }());
 
 })();
+
+/* ================================================================
+   COLLAPSE-ON-SCROLL NAVBAR
+   Vanilla port of the framer-motion behavior:
+   - Scroll DOWN past 150px → collapse (.is-collapsed class)
+   - Scroll UP 80px from collapse point → expand
+   - Click the collapsed circle → expand
+   Disabled below 992px (Webflow's mobile pattern owns small viewports).
+   ================================================================ */
+(function () {
+  'use strict';
+
+  var navbar = document.querySelector('.navbar.w-nav');
+  if (!navbar) return;
+
+  var COLLAPSE_THRESHOLD = 150;
+  var EXPAND_THRESHOLD = 80;
+  var DESKTOP_QUERY = window.matchMedia('(min-width: 992px)');
+
+  var lastScrollY = window.scrollY || 0;
+  var collapsedAt = 0;
+  var isCollapsed = false;
+  var ticking = false;
+
+  function setCollapsed(next) {
+    if (next === isCollapsed) return;
+    isCollapsed = next;
+    navbar.classList.toggle('is-collapsed', next);
+  }
+
+  function update() {
+    if (!DESKTOP_QUERY.matches) {
+      // Below 992px: ensure expanded state and skip scroll handling.
+      if (isCollapsed) setCollapsed(false);
+      ticking = false;
+      return;
+    }
+
+    var currentY = window.scrollY || 0;
+    var direction = currentY > lastScrollY ? 'down' : 'up';
+
+    if (!isCollapsed && direction === 'down' && currentY > COLLAPSE_THRESHOLD) {
+      collapsedAt = currentY;
+      setCollapsed(true);
+    } else if (isCollapsed && direction === 'up' && (collapsedAt - currentY) > EXPAND_THRESHOLD) {
+      setCollapsed(false);
+    }
+
+    // Always expand at the very top.
+    if (currentY < 30 && isCollapsed) setCollapsed(false);
+
+    lastScrollY = currentY;
+    ticking = false;
+  }
+
+  window.addEventListener('scroll', function () {
+    if (!ticking) {
+      window.requestAnimationFrame(update);
+      ticking = true;
+    }
+  }, { passive: true });
+
+  // Click the collapsed circle to expand back manually.
+  navbar.addEventListener('click', function (e) {
+    if (isCollapsed) {
+      e.preventDefault();
+      setCollapsed(false);
+    }
+  });
+
+  // If the viewport crosses the breakpoint, re-evaluate.
+  DESKTOP_QUERY.addEventListener
+    ? DESKTOP_QUERY.addEventListener('change', update)
+    : DESKTOP_QUERY.addListener(update);
+})();
