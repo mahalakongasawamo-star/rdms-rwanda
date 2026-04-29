@@ -131,11 +131,14 @@
 .hero-video-overlay {
   position: absolute;
   inset: 0;
+  /* Rwanda-tinted dark wash (#0d241c = very dark forest green) instead of
+     pure black — keeps the video legible for white text but hints at the
+     brand identity rather than reading as a generic dark overlay. */
   background: linear-gradient(
     135deg,
-    rgba(0, 0, 0, 0.55) 0%,
-    rgba(0, 0, 0, 0.30) 45%,
-    rgba(0, 0, 0, 0.20) 100%
+    rgba(13, 36, 28, 0.55) 0%,
+    rgba(13, 36, 28, 0.30) 45%,
+    rgba(13, 36, 28, 0.20) 100%
   );
   pointer-events: none;
 }
@@ -310,7 +313,7 @@
       shows through the cleared left half as the section background.
    --------------------------------------------------------------- */
 .sponsor-your-city {
-  background-color: #0a0a0a !important;  /* fallback while video loads */
+  background-color: #1a3d2c !important;  /* deep forest green fallback (Rwanda flag green tone) while video loads */
 }
 
 .sponsor-bg-video {
@@ -1028,9 +1031,10 @@ html.w-mod-js [data-w-id="8bda5446-33b5-878e-7c09-3e2a8d9ef3d2"] {
 .home-about-vision__overlay {
   position: absolute;
   inset: 0;
+  /* Rwanda flag-green gradient (deepened, sophisticated) over photo. */
   background:
     linear-gradient(rgba(0, 0, 0, 0.32), rgba(0, 0, 0, 0.32)),
-    linear-gradient(135deg, #1c3a2c, #3d6b52);
+    linear-gradient(135deg, #1a4d2e, #2d6e4a);
   background-blend-mode: multiply;
   opacity: 0.85;
   z-index: -1;
@@ -1136,9 +1140,11 @@ html.w-mod-js [data-w-id="8bda5446-33b5-878e-7c09-3e2a8d9ef3d2"] {
 .home-about-mission__overlay {
   position: absolute;
   inset: 0;
+  /* Rwanda flag-blue gradient (deepened, sophisticated) over photo —
+     pairs with the Vision Banner's green for a green-and-blue identity duo. */
   background:
     linear-gradient(rgba(0, 0, 0, 0.40), rgba(0, 0, 0, 0.40)),
-    linear-gradient(135deg, #3d3a32, #1f1d18);
+    linear-gradient(135deg, #0a2540, #1d4862);
   background-blend-mode: multiply;
   opacity: 0.88;
   z-index: -1;
@@ -1280,7 +1286,10 @@ html.w-mod-js [data-w-id="8bda5446-33b5-878e-7c09-3e2a8d9ef3d2"] {
 .home-about-credibility {
   position: relative;
   z-index: 2;
-  background: #0a0a0a;
+  /* Deep teal-navy (Rwanda flag-blue tone, deepened for white text contrast).
+     Acts as the definitive closer band before Leadership; the cool blue
+     contrasts the green-toned hero video band that surrounds it. */
+  background: #0d2438;
   color: #fff;
   text-align: left;
   padding: clamp(40px, 6vw, 56px) clamp(20px, 4vw, 36px);
