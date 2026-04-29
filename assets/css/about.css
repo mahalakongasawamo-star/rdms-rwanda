@@ -153,3 +153,47 @@ body.page-about .brand-acronym {
   max-width: 680px;
   margin: 16px 0 0;
 }
+
+/* -------- 3. STORY -------- */
+
+.about-story {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 48px;
+  align-items: start;
+  border-bottom: 1px solid var(--card-border);
+}
+
+.about-story__label {
+  margin: 0;
+}
+
+.about-story__meta {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.4;
+  margin: 0;
+}
+
+.about-story__body {
+  max-width: 640px;
+  margin: 0;
+}
+
+.about-story__body p {
+  font-size: 16px;
+  line-height: 1.65;
+  color: var(--text-body);
+  margin: 0 0 18px;
+}
+
+.about-story__body p:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 768px) {
+  .about-story {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+}
