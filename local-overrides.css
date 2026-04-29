@@ -1367,7 +1367,10 @@ html.w-mod-js [data-w-id="8bda5446-33b5-878e-7c09-3e2a8d9ef3d2"] {
   transform: translateX(-50%);
   width: auto !important;
   max-width: 800px;
-  z-index: 1000;
+  /* Maxed-out z-index + isolation so the nav (especially the collapsed
+     circle) is never stacked behind any section / photo band / glass card. */
+  z-index: 9999;
+  isolation: isolate;
   background: rgba(15, 15, 18, 0.65) !important;
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
