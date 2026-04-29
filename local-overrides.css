@@ -1394,3 +1394,114 @@ html.w-mod-js [data-w-id="8bda5446-33b5-878e-7c09-3e2a8d9ef3d2"] {
     font-size: 14px;
   }
 }
+
+/* ===============================================================
+   COLLAPSE-ON-SCROLL NAVBAR
+   Vanilla port of the framer-motion pattern: scroll DOWN past 150px
+   collapses the full-width nav into a small floating circle (showing
+   just a hamburger icon); scroll UP 80px from the collapse point or
+   click the circle expands it back. Spring-like easing via cubic-bezier.
+   =============================================================== */
+
+/* Spring-ish transition applied to the expanded → collapsed and back. */
+.navbar.w-nav {
+  transition:
+    width 600ms cubic-bezier(0.34, 1.56, 0.64, 1),
+    max-width 600ms cubic-bezier(0.34, 1.56, 0.64, 1),
+    height 500ms cubic-bezier(0.34, 1.56, 0.64, 1),
+    left 500ms cubic-bezier(0.34, 1.56, 0.64, 1),
+    transform 500ms cubic-bezier(0.34, 1.56, 0.64, 1),
+    border-radius 400ms ease-out,
+    top 500ms ease-out;
+}
+
+.navbar.w-nav .container-2 {
+  transition: opacity 220ms ease-out;
+}
+
+/* Hamburger icon — sits centered behind the navbar content; only visible
+   when the navbar collapses. */
+.navbar-collapsed-icon {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  color: #fff;
+  transition: opacity 200ms ease-out;
+}
+.navbar-collapsed-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* Collapsed state — small floating circle at top-center. */
+.navbar.w-nav.is-collapsed {
+  width: 56px !important;
+  max-width: 56px !important;
+  height: 56px;
+  left: 50% !important;
+  right: auto !important;
+  transform: translateX(-50%);
+  border-radius: 50%;
+  top: 18px;
+  cursor: pointer;
+  border-bottom: none;
+}
+.navbar.w-nav.is-collapsed:hover {
+  transform: translateX(-50%) scale(1.08);
+}
+.navbar.w-nav.is-collapsed:active {
+  transform: translateX(-50%) scale(0.95);
+}
+
+/* Hide brand + nav-menu when collapsed (fast fade). */
+.navbar.w-nav.is-collapsed .container-2 {
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* Show hamburger when collapsed (delayed fade-in so it appears as the
+   nav finishes shrinking, mirroring the framer-motion stagger). */
+.navbar.w-nav.is-collapsed .navbar-collapsed-icon {
+  opacity: 1;
+  transition: opacity 280ms ease-out 200ms;
+}
+
+/* Reduced motion — disable transitions. */
+@media (prefers-reduced-motion: reduce) {
+  .navbar.w-nav,
+  .navbar.w-nav .container-2,
+  .navbar-collapsed-icon {
+    transition: none !important;
+  }
+  .navbar.w-nav.is-collapsed:hover,
+  .navbar.w-nav.is-collapsed:active {
+    transform: translateX(-50%) !important;
+  }
+}
+
+/* Don't apply collapse on small viewports — Webflow's mobile pattern
+   handles narrow screens already. */
+@media (max-width: 991px) {
+  .navbar.w-nav.is-collapsed {
+    width: 100% !important;
+    max-width: none !important;
+    height: auto;
+    left: 0 !important;
+    right: 0 !important;
+    transform: none;
+    border-radius: 0;
+    top: 0;
+    cursor: auto;
+  }
+  .navbar.w-nav.is-collapsed .container-2 {
+    opacity: 1;
+    pointer-events: auto;
+  }
+  .navbar.w-nav.is-collapsed .navbar-collapsed-icon {
+    opacity: 0;
+  }
+}
