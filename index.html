@@ -189,7 +189,7 @@
           </div>
         </a>
         <nav role="navigation" class="nav-menu w-nav-menu">
-          <a href="about.html" class="nav-link w-nav-link">About</a>
+          <a href="#about" class="nav-link w-nav-link">About</a>
           <a href="/events" class="nav-link-2 w-nav-link">Events</a>
           <a data-w-id="0cf0f2df-dfd2-0c73-e1ad-0e447dd52a9f" href="#" class="nav-link-2 mobile w-nav-link" id="getInTouchMobileLink">Get in touch</a>
           <a data-w-id="34b6357c-2248-63d6-dcd0-649bf51260bb" style="-webkit-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" href="#" class="button-3 footer top nav w-inline-block" id="getInTouchNavBtn">
@@ -260,23 +260,152 @@
   </section><!-- /hero -->
 
   <!-- ============================
-       ABOUT TEASER — Desktop
-       Short hook on the homepage. Long-form content lives on /about.html.
+       ABOUT — full 7-block content inlined on the homepage.
+       Dark / transparent / glassmorphic palette so the fixed hero
+       video plays through. The cream-palette /about.html still exists
+       as an orphan but is no longer linked from the navigation.
   ============================= -->
-  <div class="w-layout-blockcontainer about-container desktop about-teaser w-container" id="about">
-    <p class="eyebrow light what-is-techish">About RDMS</p>
-    <h2 class="about-teaser__title">Uniting dental and medical professionals for healthier communities.</h2>
-    <p class="about-teaser__body">RDMS Rwanda is a nonprofit professional society advancing oral and public health through education, research, and outreach. Founded in 2024 in Ngoma, Huye, we bring dental surgeons, therapists, doctors, and students together under one mission.</p>
-    <a href="about.html" class="rdms-cta secondary about-teaser__cta">Read our story <span class="arrow">&rarr;</span></a>
-  </div>
 
-  <!-- ABOUT TEASER — Mobile -->
-  <div class="w-layout-blockcontainer about-container mobile about-teaser w-container">
-    <p class="eyebrow light what-is-techish">About RDMS</p>
-    <h2 class="about-teaser__title">Uniting dental and medical professionals for healthier communities.</h2>
-    <p class="about-teaser__body">RDMS Rwanda is a nonprofit professional society advancing oral and public health through education, research, and outreach. Founded in 2024 in Ngoma, Huye, we bring dental surgeons, therapists, doctors, and students together under one mission.</p>
-    <a href="about.html" class="rdms-cta secondary about-teaser__cta">Read our story <span class="arrow">&rarr;</span></a>
-  </div>
+  <!-- 1. HEADER -->
+  <section class="home-about-header" id="about" aria-labelledby="home-about-heading">
+    <div class="home-about__inner">
+      <p class="home-about__eyebrow">Who We Are</p>
+      <h2 class="home-about__title" id="home-about-heading">Rwanda&rsquo;s Dento-Medical Society</h2>
+      <p class="home-about__subtitle">A nonprofit professional organization uniting dental and medical students and professionals to advance oral and public health across Rwanda and beyond.</p>
+    </div>
+  </section>
+
+  <!-- 2. VISION BANNER (full-bleed photo) -->
+  <section class="home-about-vision" aria-labelledby="home-vision-heading">
+    <img class="home-about-vision__img" src="assets/img/about-vision.png" alt="" aria-hidden="true"/>
+    <div class="home-about-vision__overlay" aria-hidden="true"></div>
+    <div class="home-about-vision__inner">
+      <p class="home-about__eyebrow on-photo">Our Vision</p>
+      <h3 class="home-about-vision__headline" id="home-vision-heading">Advancing Oral &amp; Public Health Through Innovation and Partnership</h3>
+      <p class="home-about-vision__body">We envision a Rwanda where oral health is recognized as foundational to general well-being &mdash; where every community, regardless of geography or income, has access to preventive care, modern clinical practice, and the research and education that drive both forward. Our work bridges dentistry and medicine, students and professionals, urban centres and rural districts, to make that vision a reality.</p>
+    </div>
+  </section>
+
+  <!-- 3. STORY -->
+  <section class="home-about-story" aria-labelledby="home-story-heading">
+    <aside class="home-about-story__label">
+      <p class="home-about-story__label-eyebrow" id="home-story-heading">Our Story</p>
+      <p class="home-about-story__meta">Founded 2024 &middot; Ngoma, Huye &middot; Southern Province</p>
+    </aside>
+    <div class="home-about-story__body">
+      <p>In Rwanda, oral health has long existed at the margins of the national healthcare system &mdash; underfunded, underrepresented, and often invisible to the communities that need it most. Dental disease, though largely preventable, continues to affect children, adults, and vulnerable populations who lack access to even the most basic oral care.</p>
+      <p>RDMS was founded in 2024 to confront this reality head-on. Driven by a shared belief that oral health is inseparable from general health, our founders built a society that bridges the gap between dentistry and medicine &mdash; bringing professionals, students, and communities together under one mission.</p>
+      <p>Registered under RDB as a Non-Profit Limited by Guarantee (Code: 143885158), RDMS operates from Huye and reaches communities across Rwanda through field programs, research, education, and policy engagement.</p>
+    </div>
+  </section>
+
+  <!-- 4. MISSION QUOTE (full-bleed photo) -->
+  <section class="home-about-mission" aria-labelledby="home-mission-heading">
+    <img class="home-about-mission__img" src="assets/img/about-mission.png" alt="" aria-hidden="true"/>
+    <div class="home-about-mission__overlay" aria-hidden="true"></div>
+    <div class="home-about-mission__inner">
+      <p class="home-about__eyebrow on-photo" id="home-mission-heading">Our Mission</p>
+      <blockquote class="home-about-mission__quote">&ldquo;To unite dental surgeons, dental therapists, and public health professionals in advancing oral-systemic health through collaborative education, research, outreach, and policy advocacy.&rdquo;</blockquote>
+    </div>
+  </section>
+
+  <!-- 5. INFO CARDS -->
+  <section class="home-about-info" aria-label="Where We Operate, Who We Bring Together, and Our Reach">
+    <div class="home-about__inner">
+      <div class="home-about-info__grid">
+        <article class="home-about-info__card">
+          <div class="home-about-info__icon" aria-hidden="true">📍</div>
+          <h3 class="home-about-info__title">Where We Operate</h3>
+          <p class="home-about-info__body">Headquartered in Ngoma, Huye (Southern Province), RDMS conducts programs across Rwanda &mdash; from urban clinics and university campuses to rural schools and underserved communities.</p>
+        </article>
+        <article class="home-about-info__card">
+          <div class="home-about-info__icon" aria-hidden="true">🤝</div>
+          <h3 class="home-about-info__title">Who We Bring Together</h3>
+          <p class="home-about-info__body">Our members include dental surgeons, dental therapists, medical doctors, public health professionals, and students from across Rwanda&rsquo;s health sciences community &mdash; all united by one purpose.</p>
+        </article>
+        <article class="home-about-info__card">
+          <div class="home-about-info__icon" aria-hidden="true">🌍</div>
+          <h3 class="home-about-info__title">Our Reach</h3>
+          <p class="home-about-info__body">While rooted in Rwanda, RDMS engages with global oral health networks, international awareness days, and cross-border partnerships &mdash; contributing to healthcare advancement beyond Rwanda&rsquo;s borders.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. VALUES -->
+  <section class="home-about-values" aria-labelledby="home-values-heading">
+    <div class="home-about__inner">
+      <p class="home-about__eyebrow">What Guides Us</p>
+      <h2 class="home-about-values__title" id="home-values-heading">Our Core Values</h2>
+      <ol class="home-about-values__list">
+        <li class="home-about-values__item">
+          <span class="home-about-values__num" aria-hidden="true">01</span>
+          <div>
+            <h3 class="home-about-values__name">Transparency &amp; Accountability</h3>
+            <p class="home-about-values__desc">We operate with openness in all our activities &mdash; from governance and finance to research and community engagement. Trust is the foundation of everything we do.</p>
+          </div>
+        </li>
+        <li class="home-about-values__item">
+          <span class="home-about-values__num" aria-hidden="true">02</span>
+          <div>
+            <h3 class="home-about-values__name">Teamwork &amp; Collaboration</h3>
+            <p class="home-about-values__desc">Progress in oral health requires collective effort. We unite professionals across disciplines, institutions, and borders to achieve outcomes no single actor could accomplish alone.</p>
+          </div>
+        </li>
+        <li class="home-about-values__item">
+          <span class="home-about-values__num" aria-hidden="true">03</span>
+          <div>
+            <h3 class="home-about-values__name">Selflessness &amp; Compassion</h3>
+            <p class="home-about-values__desc">Our work is driven by genuine care for the communities we serve. We place patients and populations at the heart of every decision we make.</p>
+          </div>
+        </li>
+        <li class="home-about-values__item">
+          <span class="home-about-values__num" aria-hidden="true">04</span>
+          <div>
+            <h3 class="home-about-values__name">Equity &amp; Equality</h3>
+            <p class="home-about-values__desc">Quality oral healthcare is a right, not a privilege. We actively work to eliminate disparities &mdash; ensuring geography, income, or background never determines the care someone receives.</p>
+          </div>
+        </li>
+        <li class="home-about-values__item home-about-values__item--span-half">
+          <span class="home-about-values__num" aria-hidden="true">05</span>
+          <div>
+            <h3 class="home-about-values__name">Human Rights &amp; Environment</h3>
+            <p class="home-about-values__desc">We uphold the dignity and rights of every individual we serve, and recognise that human health and environmental health are deeply interconnected.</p>
+          </div>
+        </li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- 7. CREDIBILITY BAND -->
+  <section class="home-about-credibility" aria-labelledby="home-credibility-heading">
+    <div class="home-about-credibility__inner">
+      <p class="home-about-credibility__eyebrow" id="home-credibility-heading">RDMS at a Glance</p>
+      <div class="home-about-credibility__kpis">
+        <div>
+          <p class="home-about-credibility__label">Founded</p>
+          <p class="home-about-credibility__value">1 July 2024</p>
+        </div>
+        <div>
+          <p class="home-about-credibility__label">RDB Code</p>
+          <p class="home-about-credibility__value">143885158</p>
+        </div>
+        <div>
+          <p class="home-about-credibility__label">Headquarters</p>
+          <p class="home-about-credibility__value">Ngoma, Huye</p>
+        </div>
+        <div>
+          <p class="home-about-credibility__label">Members</p>
+          <p class="home-about-credibility__value">30+</p>
+        </div>
+      </div>
+      <ul class="home-about-credibility__facts">
+        <li><span aria-hidden="true">📞</span> +250 791 853 120</li>
+        <li><span aria-hidden="true">📍</span> Southern Province, Rwanda</li>
+        <li>5+ Core Services</li>
+      </ul>
+    </div>
+  </section>
 
   <!-- ============================
        LEADERSHIP — featured CEO + team grid
@@ -464,7 +593,7 @@
         </div>
         <div class="right-footer-things">
           <div class="text-block-4">navigate</div>
-          <a href="about.html" class="link-3">About</a>
+          <a href="#about" class="link-3">About</a>
           <a href="/events" class="link-3">Events</a>
         </div>
         <div class="right-footer-things">
