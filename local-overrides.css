@@ -1981,3 +1981,280 @@ html.w-mod-js [data-w-id="8bda5446-33b5-878e-7c09-3e2a8d9ef3d2"] {
     grid-template-columns: 1fr;
   }
 }
+
+/* ===============================================================
+   RESEARCH ACADEMY SECTION (homepage)
+   Section hero (eyebrow + title + body + Join button) → Lessons
+   subheader → 3x2 glassmorphic lesson grid → Chronicles CTA band.
+   Same visual language as Projects — green-to-teal hover gradient.
+   =============================================================== */
+
+.academy {
+  position: relative;
+  z-index: 2;
+  isolation: isolate;
+  color: #fff;
+  text-align: left;
+  padding: clamp(56px, 8vw, 96px) clamp(20px, 4vw, 36px) 0;
+}
+
+.academy__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.academy__eyebrow {
+  font-family: 'Google Sans', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #58cc6f;
+  font-weight: 500;
+  margin: 0 0 14px;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.55);
+}
+
+.academy__title {
+  font-family: 'Google Sans', sans-serif;
+  font-size: clamp(28px, 3.6vw, 38px);
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  font-weight: 500;
+  color: #fff;
+  margin: 0 0 18px;
+  max-width: 780px;
+  text-shadow: 0 1px 16px rgba(0, 0, 0, 0.6);
+}
+
+.academy__subtitle {
+  font-size: 15px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0 0 24px;
+  max-width: 720px;
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.55);
+}
+
+.academy__hero-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 26px;
+  border-radius: 999px;
+  background: rgba(88, 204, 111, 0.18);
+  color: #fff;
+  border: 1px solid rgba(88, 204, 111, 0.5);
+  font-family: 'Google Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: transform 200ms ease, background 200ms ease, border-color 200ms ease;
+  white-space: nowrap;
+  margin-bottom: clamp(48px, 6vw, 72px);
+}
+.academy__hero-btn:hover {
+  transform: translateY(-1px);
+  background: rgba(88, 204, 111, 0.3);
+  border-color: rgba(88, 204, 111, 0.7);
+}
+.academy__hero-btn .arrow {
+  display: inline-block;
+  transition: transform 0.25s ease;
+}
+.academy__hero-btn:hover .arrow {
+  transform: translateX(3px);
+}
+
+/* Lessons subheader — visually quieter than the section title */
+.academy__lessons-header {
+  margin: 0 0 28px;
+}
+
+.academy__lessons-eyebrow {
+  font-family: 'Google Sans', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.55);
+  font-weight: 500;
+  margin: 0 0 8px;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.55);
+}
+
+.academy__lessons-title {
+  font-family: 'Google Sans', sans-serif;
+  font-size: clamp(20px, 2.4vw, 26px);
+  line-height: 1.1;
+  font-weight: 600;
+  color: #fff;
+  margin: 0;
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.55);
+}
+
+/* 3x2 lesson grid */
+.academy__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(18px, 2.2vw, 24px);
+  margin-bottom: clamp(48px, 6vw, 72px);
+}
+
+.academy__card {
+  position: relative;
+  background: rgba(15, 15, 18, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 14px;
+  padding: 22px;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.3);
+  transition: transform 240ms ease, border-color 240ms ease, box-shadow 240ms ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.academy__card:hover {
+  transform: translateY(-3px);
+  border-color: transparent;
+  box-shadow:
+    0 0 0 1.5px rgba(88, 204, 111, 0.55),
+    0 0 0 3px rgba(13, 142, 166, 0.3),
+    0 14px 36px rgba(0, 0, 0, 0.4),
+    0 0 32px rgba(88, 204, 111, 0.2),
+    0 0 48px rgba(13, 142, 166, 0.18);
+}
+
+.academy__category {
+  display: inline-flex;
+  align-items: center;
+  font-family: 'Google Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  margin: 0 0 14px;
+  align-self: flex-start;
+  white-space: nowrap;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.academy__name {
+  font-family: 'Google Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: #fff;
+  margin: 0 0 10px;
+  line-height: 1.3;
+}
+
+.academy__desc {
+  font-size: 13px;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.78);
+  margin: 0 0 14px;
+  flex: 1;
+}
+
+.academy__date {
+  font-family: 'Google Sans', sans-serif;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.5);
+  margin: 0;
+  letter-spacing: 0.02em;
+}
+
+@media (max-width: 991px) {
+  .academy__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .academy__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Chronicles CTA band — sits at the bottom of the academy section,
+   mirrors the Services CTA band visual treatment for consistency. */
+.academy-cta {
+  position: relative;
+  z-index: 2;
+  isolation: isolate;
+  background:
+    linear-gradient(135deg, rgba(13, 36, 56, 0.95), rgba(26, 61, 44, 0.95));
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding: clamp(40px, 6vw, 64px) clamp(20px, 4vw, 36px);
+  color: #fff;
+  text-align: left;
+}
+
+.academy-cta__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: clamp(20px, 4vw, 48px);
+  align-items: center;
+}
+
+.academy-cta__copy {
+  min-width: 0;
+}
+
+.academy-cta__heading {
+  font-family: 'Google Sans', sans-serif;
+  font-size: clamp(22px, 2.8vw, 28px);
+  line-height: 1.15;
+  font-weight: 600;
+  color: #fff;
+  margin: 0 0 8px;
+}
+
+.academy-cta__text {
+  font-size: 15px;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.82);
+  margin: 0;
+  max-width: 640px;
+}
+
+.academy-cta__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 26px;
+  border-radius: 999px;
+  background: #fff;
+  color: #0a0a0a;
+  font-family: 'Google Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: transform 200ms ease, background 200ms ease;
+  white-space: nowrap;
+}
+.academy-cta__btn:hover {
+  transform: translateY(-1px);
+  background: #ededed;
+}
+.academy-cta__btn .arrow {
+  display: inline-block;
+  transition: transform 0.25s ease;
+}
+.academy-cta__btn:hover .arrow {
+  transform: translateX(3px);
+}
+
+@media (max-width: 768px) {
+  .academy-cta__inner {
+    grid-template-columns: 1fr;
+  }
+}

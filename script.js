@@ -147,7 +147,9 @@
       document.getElementById('getInTouchMobileLink'),
       document.getElementById('footerConnectBtn'),
       document.getElementById('sponsorGetInTouchBtn'),
-      document.getElementById('servicesCtaBtn')
+      document.getElementById('servicesCtaBtn'),
+      document.getElementById('academyJoinBtn'),
+      document.getElementById('chroniclesSubscribeBtn')
     ];
 
     function openOverlay(e) {
