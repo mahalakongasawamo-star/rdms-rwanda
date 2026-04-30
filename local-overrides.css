@@ -2832,15 +2832,17 @@ html.w-mod-js [data-w-id="8bda5446-33b5-878e-7c09-3e2a8d9ef3d2"] {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center top;
+  object-position: center center;
   z-index: -2;
-  opacity: 0.32;
+  /* Bumped down vs the original portrait — the Rwanda flag has a very
+     bright yellow stripe + sun that needs more dimming for white text. */
+  opacity: 0.22;
 }
 .contact__info-bg-overlay {
   position: absolute;
   inset: 0;
   background:
-    linear-gradient(135deg, rgba(10, 22, 32, 0.88), rgba(13, 36, 56, 0.85));
+    linear-gradient(135deg, rgba(10, 22, 32, 0.92), rgba(13, 36, 56, 0.9));
   z-index: -1;
 }
 
