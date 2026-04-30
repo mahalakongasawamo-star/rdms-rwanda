@@ -447,3 +447,57 @@
     });
   });
 })();
+
+/* ================================================================
+   CONTACT FORM — submit via mailto:
+   No backend; we build a mailto: URL from the form fields and open
+   the visitor's mail client with the message pre-filled. Going to
+   both rdmspresident13@gmail.com and igisubizojimmy@gmail.com.
+   ================================================================ */
+(function () {
+  'use strict';
+
+  var form = document.getElementById('contactForm');
+  if (!form) return;
+
+  function val(name) {
+    var el = form.elements[name];
+    return el ? (el.value || '').toString().trim() : '';
+  }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    var firstName = val('firstName');
+    var lastName  = val('lastName');
+    var email     = val('email');
+    var role      = val('role');
+    var subject   = val('subject');
+    var message   = val('message');
+
+    // Minimal client-side validation — required fields per the form.
+    if (!firstName || !email || !message) {
+      var firstMissing = !firstName ? form.elements.firstName
+                       : !email     ? form.elements.email
+                                    : form.elements.message;
+      if (firstMissing && firstMissing.focus) firstMissing.focus();
+      return;
+    }
+
+    var bodyLines = [
+      'Name: ' + firstName + (lastName ? ' ' + lastName : ''),
+      'Email: ' + email,
+      'Role: ' + (role || '(not specified)'),
+      '',
+      'Message:',
+      message,
+      '',
+      '— Sent from rdms-rwanda.com contact form'
+    ];
+    var url = 'mailto:rdmspresident13@gmail.com,igisubizojimmy@gmail.com'
+      + '?subject=' + encodeURIComponent(subject || 'RDMS Contact Form')
+      + '&body='    + encodeURIComponent(bodyLines.join('\n'));
+
+    window.location.href = url;
+  });
+})();
