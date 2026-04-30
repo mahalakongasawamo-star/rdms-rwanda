@@ -185,7 +185,7 @@
         <a href="#about" class="nav-link w-nav-link" aria-current="page">About</a>
         <a href="#leadership" class="nav-link w-nav-link">Leadership</a>
         <a href="#services" class="nav-link w-nav-link">Services</a>
-        <a href="#" class="nav-link w-nav-link">Projects</a>
+        <a href="#projects" class="nav-link w-nav-link">Projects</a>
         <a href="#" class="nav-link w-nav-link">Research Academy</a>
         <a href="#" class="nav-link w-nav-link" id="getInTouchNavBtn">Contact</a>
       </nav>
@@ -598,6 +598,90 @@
         <a href="#" class="services-cta__btn" id="servicesCtaBtn">
           Get In Touch <span class="arrow" aria-hidden="true">&rarr;</span>
         </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================
+       PROJECTS
+  ============================= -->
+  <section class="projects" id="projects" aria-labelledby="projects-heading">
+    <div class="projects__inner">
+      <p class="projects__eyebrow">Our Work</p>
+      <h2 class="projects__title" id="projects-heading">Projects &amp; Daily Activities</h2>
+      <p class="projects__subtitle">Tracking our active programs, campaigns, and field activities across Rwanda.</p>
+
+      <!-- Filter tabs (functional — see filter logic in script.js) -->
+      <div class="projects__filters" role="tablist" aria-label="Filter projects by category">
+        <button type="button" class="projects__filter is-active" data-filter="all" role="tab" aria-selected="true">All Projects</button>
+        <button type="button" class="projects__filter" data-filter="preventive-care" role="tab" aria-selected="false">Preventive Care</button>
+        <button type="button" class="projects__filter" data-filter="screenings" role="tab" aria-selected="false">Screenings</button>
+        <button type="button" class="projects__filter" data-filter="outreach" role="tab" aria-selected="false">Outreach</button>
+        <button type="button" class="projects__filter" data-filter="awareness" role="tab" aria-selected="false">Awareness</button>
+        <button type="button" class="projects__filter" data-filter="research" role="tab" aria-selected="false">Research</button>
+        <button type="button" class="projects__filter" data-filter="training" role="tab" aria-selected="false">Training</button>
+      </div>
+
+      <div class="projects__grid">
+        <article class="projects__card" data-category="awareness">
+          <div class="projects__chips">
+            <span class="projects__status projects__status--completed">Completed</span>
+            <span class="projects__category">Awareness</span>
+          </div>
+          <h3 class="projects__name">World Ectodermal Dysplasia Day 2026</h3>
+          <p class="projects__desc">Community awareness event raising support for individuals and families affected by Ectodermal Dysplasia in Rwanda and beyond.</p>
+          <p class="projects__date">20 Feb 2026</p>
+        </article>
+
+        <article class="projects__card" data-category="preventive-care">
+          <div class="projects__chips">
+            <span class="projects__status projects__status--active">Active</span>
+            <span class="projects__category">Preventive Care</span>
+          </div>
+          <h3 class="projects__name">Daily Oral Health Messaging Campaign</h3>
+          <p class="projects__desc">Automated daily preventive care messages distributed to community members via SMS and social media platforms.</p>
+          <p class="projects__date">Ongoing &middot; 2026</p>
+        </article>
+
+        <article class="projects__card" data-category="screenings">
+          <div class="projects__chips">
+            <span class="projects__status projects__status--active">Active</span>
+            <span class="projects__category">Screenings</span>
+          </div>
+          <h3 class="projects__name">Huye District School Dental Screening Drive</h3>
+          <p class="projects__desc">Systematic oral health screenings across 7 primary schools in Huye District, identifying untreated caries and periodontal conditions.</p>
+          <p class="projects__date">Q1 2026</p>
+        </article>
+
+        <article class="projects__card" data-category="outreach">
+          <div class="projects__chips">
+            <span class="projects__status projects__status--planned">Planned</span>
+            <span class="projects__category">Outreach</span>
+          </div>
+          <h3 class="projects__name">Mobile Dental Clinic &mdash; Rural Outreach Q1</h3>
+          <p class="projects__desc">Mobile dental unit providing free extractions, fluoride treatment, and oral hygiene kits to communities in underserved areas.</p>
+          <p class="projects__date">March 2026</p>
+        </article>
+
+        <article class="projects__card" data-category="research">
+          <div class="projects__chips">
+            <span class="projects__status projects__status--ongoing">Ongoing</span>
+            <span class="projects__category">Research</span>
+          </div>
+          <h3 class="projects__name">Oral-Systemic Health Baseline Study &mdash; Rwanda</h3>
+          <p class="projects__desc">A cross-sectional research study documenting the prevalence of dental conditions and their systemic health correlations in Rwandan adults.</p>
+          <p class="projects__date">2025&ndash;2026</p>
+        </article>
+
+        <article class="projects__card" data-category="training">
+          <div class="projects__chips">
+            <span class="projects__status projects__status--planned">Planned</span>
+            <span class="projects__category">Training</span>
+          </div>
+          <h3 class="projects__name">Interdisciplinary Health Workshop Series</h3>
+          <p class="projects__desc">Training workshops for dental and medical professionals on integrating oral and systemic health in patient care.</p>
+          <p class="projects__date">Q2 2026</p>
+        </article>
       </div>
     </div>
   </section>
