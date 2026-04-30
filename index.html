@@ -291,6 +291,7 @@
     <aside class="home-about-story__label">
       <p class="home-about-story__label-eyebrow" id="home-story-heading">Our Story</p>
       <p class="home-about-story__meta">Founded 2024 &middot; Ngoma, Huye &middot; Southern Province</p>
+      <img class="home-about-story__photo reveal-photo" src="assets/img/bg-story.jpg" alt="RDMS World Ectodermal Dysplasia Day educational session" loading="lazy" decoding="async"/>
     </aside>
     <div class="home-about-story__body">
       <p>In Rwanda, oral health has long existed at the margins of the national healthcare system &mdash; underfunded, underrepresented, and often invisible to the communities that need it most. Dental disease, though largely preventable, continues to affect children, adults, and vulnerable populations who lack access to even the most basic oral care.</p>
@@ -532,6 +533,8 @@
        SERVICES
   ============================= -->
   <section class="services" id="services" aria-labelledby="services-heading">
+    <img class="services__bg-img reveal-photo" src="assets/img/bg-services.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async"/>
+    <div class="services__bg-overlay" aria-hidden="true"></div>
     <div class="services__inner">
       <p class="services__eyebrow">What We Do</p>
       <h2 class="services__title" id="services-heading">Our Core Services</h2>
@@ -607,20 +610,24 @@
   ============================= -->
   <section class="projects" id="projects" aria-labelledby="projects-heading">
     <div class="projects__inner">
-      <p class="projects__eyebrow">Our Work</p>
-      <h2 class="projects__title" id="projects-heading">Projects &amp; Daily Activities</h2>
-      <p class="projects__subtitle">Tracking our active programs, campaigns, and field activities across Rwanda.</p>
+      <div class="projects__header">
+        <img class="projects__bg-img reveal-photo" src="assets/img/bg-projects.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async"/>
+        <div class="projects__bg-overlay" aria-hidden="true"></div>
+        <p class="projects__eyebrow">Our Work</p>
+        <h2 class="projects__title" id="projects-heading">Projects &amp; Daily Activities</h2>
+        <p class="projects__subtitle">Tracking our active programs, campaigns, and field activities across Rwanda.</p>
 
-      <!-- Filter tabs (functional — see filter logic in script.js) -->
-      <div class="projects__filters" role="tablist" aria-label="Filter projects by category">
+        <!-- Filter tabs (functional — see filter logic in script.js) -->
+        <div class="projects__filters" role="tablist" aria-label="Filter projects by category">
         <button type="button" class="projects__filter is-active" data-filter="all" role="tab" aria-selected="true">All Projects</button>
         <button type="button" class="projects__filter" data-filter="preventive-care" role="tab" aria-selected="false">Preventive Care</button>
         <button type="button" class="projects__filter" data-filter="screenings" role="tab" aria-selected="false">Screenings</button>
         <button type="button" class="projects__filter" data-filter="outreach" role="tab" aria-selected="false">Outreach</button>
         <button type="button" class="projects__filter" data-filter="awareness" role="tab" aria-selected="false">Awareness</button>
         <button type="button" class="projects__filter" data-filter="research" role="tab" aria-selected="false">Research</button>
-        <button type="button" class="projects__filter" data-filter="training" role="tab" aria-selected="false">Training</button>
-      </div>
+          <button type="button" class="projects__filter" data-filter="training" role="tab" aria-selected="false">Training</button>
+        </div>
+      </div><!-- /.projects__header -->
 
       <div class="projects__grid">
         <article class="projects__card" data-category="awareness">
@@ -750,6 +757,8 @@
 
     <!-- Chronicles CTA band -->
     <div class="academy-cta">
+      <img class="academy-cta__bg-img reveal-photo" src="assets/img/bg-academy.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async"/>
+      <div class="academy-cta__bg-overlay" aria-hidden="true"></div>
       <div class="academy-cta__inner">
         <div class="academy-cta__copy">
           <h3 class="academy-cta__heading">Dental Medicine Chronicles</h3>
@@ -774,6 +783,8 @@
       <div class="contact__grid">
         <!-- LEFT: info + socials -->
         <div class="contact__info">
+          <img class="contact__info-bg-img reveal-photo" src="assets/img/bg-contact.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async"/>
+          <div class="contact__info-bg-overlay" aria-hidden="true"></div>
           <h3 class="contact__info-heading">We&rsquo;re here for Rwanda&rsquo;s oral health</h3>
           <p class="contact__info-text">Reach out to learn more about our programs, partnership opportunities, research collaborations, or to refer patients to our community services.</p>
 

@@ -501,3 +501,34 @@
     window.location.href = url;
   });
 })();
+
+/* ================================================================
+   REVEAL-ON-SCROLL — fade-in + slight zoom on .reveal-photo elements
+   when they enter the viewport. Paired with CSS in local-overrides.css.
+   prefers-reduced-motion: skip observer, mark all visible immediately.
+   ================================================================ */
+(function () {
+  'use strict';
+
+  var targets = document.querySelectorAll('.reveal-photo');
+  if (!targets.length) return;
+
+  var prefersReduced = window.matchMedia &&
+    window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (prefersReduced || !('IntersectionObserver' in window)) {
+    targets.forEach(function (el) { el.classList.add('is-visible'); });
+    return;
+  }
+
+  var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+  targets.forEach(function (el) { observer.observe(el); });
+})();

@@ -2691,3 +2691,174 @@ html.w-mod-js [data-w-id="8bda5446-33b5-878e-7c09-3e2a8d9ef3d2"] {
   align-items: center;
   gap: 6px;
 }
+
+/* ===============================================================
+   PHOTO BACKDROPS + LIVELY EFFECTS
+   - Section-level photo backdrops with dark overlays for: Services,
+     Projects (header band only), Research Academy CTA, Contact (left
+     info column), About Story (small sidebar inset).
+   - Ken Burns idle pan/zoom on Vision Banner + Mission Quote photos.
+   - Reveal-on-scroll utility: opacity 0 → 1 + scale 0.96 → 1 when the
+     element enters the viewport (IntersectionObserver in script.js).
+   =============================================================== */
+
+/* Reveal-on-scroll utility */
+.reveal-photo {
+  opacity: 0;
+  transform: scale(0.96);
+  transition: opacity 700ms ease-out, transform 700ms ease-out;
+}
+.reveal-photo.is-visible {
+  opacity: 1;
+  transform: scale(1);
+}
+@media (prefers-reduced-motion: reduce) {
+  .reveal-photo,
+  .reveal-photo.is-visible {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+/* Ken Burns — slow infinite pan/zoom on the Vision + Mission photos.
+   Targets BOTH /about (cream page) and homepage (transparent). */
+@keyframes kenBurns {
+  0%   { transform: scale(1.02) translate(0, 0); }
+  50%  { transform: scale(1.08) translate(-1.5%, -1%); }
+  100% { transform: scale(1.02) translate(0, 0); }
+}
+.about-vision__img,
+.about-mission__img,
+.home-about-vision__img,
+.home-about-mission__img {
+  animation: kenBurns 22s ease-in-out infinite;
+  transform-origin: center center;
+  will-change: transform;
+}
+@media (prefers-reduced-motion: reduce) {
+  .about-vision__img,
+  .about-mission__img,
+  .home-about-vision__img,
+  .home-about-mission__img {
+    animation: none;
+  }
+}
+
+/* -------- 1. Services — full-section photo backdrop -------- */
+.services {
+  overflow: hidden;
+}
+.services__bg-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+  opacity: 0.32;
+}
+.services__bg-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(rgba(10, 22, 32, 0.78), rgba(10, 22, 32, 0.85)),
+    linear-gradient(135deg, rgba(26, 61, 44, 0.4), rgba(13, 36, 56, 0.4));
+  z-index: -1;
+}
+
+/* -------- 2. Projects — header band only gets the photo backdrop -------- */
+.projects__header {
+  position: relative;
+  isolation: isolate;
+  margin: 0 -clamp(20px, 4vw, 36px) clamp(36px, 5vw, 56px);
+  padding: clamp(40px, 6vw, 64px) clamp(20px, 4vw, 36px) clamp(28px, 4vw, 40px);
+  border-radius: 0;
+  overflow: hidden;
+}
+.projects__bg-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  z-index: -2;
+  opacity: 0.5;
+}
+.projects__bg-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(rgba(10, 22, 32, 0.62), rgba(10, 22, 32, 0.78)),
+    linear-gradient(135deg, rgba(26, 61, 44, 0.3), rgba(13, 36, 56, 0.3));
+  z-index: -1;
+}
+
+/* -------- 3. Research Academy — CTA band photo backdrop -------- */
+.academy-cta {
+  overflow: hidden;
+}
+.academy-cta__bg-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 35%;
+  z-index: -2;
+  opacity: 0.4;
+}
+.academy-cta__bg-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(135deg, rgba(13, 36, 56, 0.85), rgba(26, 61, 44, 0.85));
+  z-index: -1;
+}
+
+/* -------- 4. Contact — left info column photo backdrop -------- */
+.contact__info {
+  position: relative;
+  isolation: isolate;
+  border-radius: 18px;
+  padding: clamp(22px, 3vw, 32px);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+.contact__info-bg-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  z-index: -2;
+  opacity: 0.32;
+}
+.contact__info-bg-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(135deg, rgba(10, 22, 32, 0.88), rgba(13, 36, 56, 0.85));
+  z-index: -1;
+}
+
+/* -------- 5. About Story — small inline sidebar photo, slotted into
+   the existing 2-col grid's left label column. -------- */
+.home-about-story__photo {
+  display: block;
+  width: 100%;
+  max-width: 240px;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-top: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+@media (max-width: 768px) {
+  .home-about-story__photo {
+    max-width: 320px;
+  }
+}
