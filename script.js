@@ -146,7 +146,10 @@
       document.getElementById('getInTouchNavBtn'),
       document.getElementById('getInTouchMobileLink'),
       document.getElementById('footerConnectBtn'),
-      document.getElementById('sponsorGetInTouchBtn')
+      document.getElementById('sponsorGetInTouchBtn'),
+      document.getElementById('servicesCtaBtn'),
+      document.getElementById('academyJoinBtn'),
+      document.getElementById('chroniclesSubscribeBtn')
     ];
 
     function openOverlay(e) {
@@ -410,4 +413,169 @@
   DESKTOP_QUERY.addEventListener
     ? DESKTOP_QUERY.addEventListener('change', update)
     : DESKTOP_QUERY.addListener(update);
+})();
+
+/* ================================================================
+   PROJECTS FILTER TABS
+   Click a tab → show only project cards whose data-category matches.
+   "all" → show everything.
+   ================================================================ */
+(function () {
+  'use strict';
+
+  var filters = document.querySelectorAll('.projects__filter');
+  var cards = document.querySelectorAll('.projects__card');
+  if (!filters.length || !cards.length) return;
+
+  function applyFilter(filter) {
+    cards.forEach(function (card) {
+      var category = card.getAttribute('data-category') || '';
+      var match = (filter === 'all') || (category === filter);
+      card.classList.toggle('is-hidden', !match);
+    });
+    filters.forEach(function (btn) {
+      var active = btn.getAttribute('data-filter') === filter;
+      btn.classList.toggle('is-active', active);
+      btn.setAttribute('aria-selected', active ? 'true' : 'false');
+    });
+  }
+
+  filters.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var filter = btn.getAttribute('data-filter') || 'all';
+      applyFilter(filter);
+    });
+  });
+})();
+
+/* ================================================================
+   CONTACT FORM — submit via mailto:
+   No backend; we build a mailto: URL from the form fields and open
+   the visitor's mail client with the message pre-filled. Going to
+   both rdmspresident13@gmail.com and igisubizojimmy@gmail.com.
+   ================================================================ */
+(function () {
+  'use strict';
+
+  var form = document.getElementById('contactForm');
+  if (!form) return;
+
+  function val(name) {
+    var el = form.elements[name];
+    return el ? (el.value || '').toString().trim() : '';
+  }
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    var firstName = val('firstName');
+    var lastName  = val('lastName');
+    var email     = val('email');
+    var role      = val('role');
+    var subject   = val('subject');
+    var message   = val('message');
+
+    // Minimal client-side validation — required fields per the form.
+    if (!firstName || !email || !message) {
+      var firstMissing = !firstName ? form.elements.firstName
+                       : !email     ? form.elements.email
+                                    : form.elements.message;
+      if (firstMissing && firstMissing.focus) firstMissing.focus();
+      return;
+    }
+
+    var bodyLines = [
+      'Name: ' + firstName + (lastName ? ' ' + lastName : ''),
+      'Email: ' + email,
+      'Role: ' + (role || '(not specified)'),
+      '',
+      'Message:',
+      message,
+      '',
+      '— Sent from rdms-rwanda.com contact form'
+    ];
+    var url = 'mailto:rdmspresident13@gmail.com,igisubizojimmy@gmail.com'
+      + '?subject=' + encodeURIComponent(subject || 'RDMS Contact Form')
+      + '&body='    + encodeURIComponent(bodyLines.join('\n'));
+
+    window.location.href = url;
+  });
+})();
+
+/* ================================================================
+   REVEAL-ON-SCROLL — fade-in + slight zoom on .reveal-photo elements
+   when they enter the viewport. Paired with CSS in local-overrides.css.
+   prefers-reduced-motion: skip observer, mark all visible immediately.
+   ================================================================ */
+(function () {
+  'use strict';
+
+  var targets = document.querySelectorAll('.reveal-photo');
+  if (!targets.length) return;
+
+  var prefersReduced = window.matchMedia &&
+    window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (prefersReduced || !('IntersectionObserver' in window)) {
+    targets.forEach(function (el) { el.classList.add('is-visible'); });
+    return;
+  }
+
+  var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+
+  targets.forEach(function (el) { observer.observe(el); });
+})();
+
+/* ================================================================
+   MOBILE MENU OVERLAY
+   Open via the hamburger button (.navbar-mobile-toggle), close via
+   the X button, the backdrop, the Esc key, or any link click.
+   ================================================================ */
+(function () {
+  'use strict';
+
+  var toggle   = document.querySelector('.navbar-mobile-toggle');
+  var menu     = document.getElementById('mobileMenu');
+  var backdrop = document.querySelector('.mobile-menu__backdrop');
+  if (!toggle || !menu) return;
+
+  var closeBtn = menu.querySelector('.mobile-menu__close');
+  var links    = menu.querySelectorAll('.mobile-menu__link');
+
+  function openMenu() {
+    menu.classList.add('is-open');
+    if (backdrop) backdrop.classList.add('is-open');
+    toggle.setAttribute('aria-expanded', 'true');
+    menu.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeMenu() {
+    menu.classList.remove('is-open');
+    if (backdrop) backdrop.classList.remove('is-open');
+    toggle.setAttribute('aria-expanded', 'false');
+    menu.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+  }
+
+  toggle.addEventListener('click', openMenu);
+  if (closeBtn) closeBtn.addEventListener('click', closeMenu);
+  if (backdrop) backdrop.addEventListener('click', closeMenu);
+
+  links.forEach(function (link) {
+    link.addEventListener('click', closeMenu);
+  });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && menu.classList.contains('is-open')) {
+      closeMenu();
+    }
+  });
 })();

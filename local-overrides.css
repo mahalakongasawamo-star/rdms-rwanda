@@ -1567,3 +1567,1575 @@ html.w-mod-js [data-w-id="8bda5446-33b5-878e-7c09-3e2a8d9ef3d2"] {
     opacity: 0;
   }
 }
+
+/* ===============================================================
+   SERVICES SECTION (homepage)
+   Transparent dark section + 2x3 glassmorphic card grid + featured
+   CTA band at the bottom. Lucide-style stroke SVG icons per service.
+   =============================================================== */
+
+.services {
+  position: relative;
+  z-index: 2;
+  isolation: isolate;
+  color: #fff;
+  text-align: left;
+  padding: clamp(56px, 8vw, 96px) clamp(20px, 4vw, 36px) 0;
+}
+
+.services__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.services__eyebrow {
+  font-family: 'Google Sans', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #58cc6f;
+  font-weight: 500;
+  margin: 0 0 14px;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.55);
+}
+
+.services__title {
+  font-family: 'Google Sans', sans-serif;
+  font-size: clamp(28px, 3.6vw, 38px);
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  font-weight: 500;
+  color: #fff;
+  margin: 0 0 14px;
+  max-width: 780px;
+  text-shadow: 0 1px 16px rgba(0, 0, 0, 0.6);
+}
+
+.services__subtitle {
+  font-size: 15px;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0 0 48px;
+  max-width: 780px;
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.55);
+}
+
+/* 2-up grid at desktop, single column at mobile */
+.services__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(20px, 2.5vw, 28px);
+  margin-bottom: clamp(48px, 6vw, 72px);
+}
+
+.services__card {
+  background: rgba(15, 15, 18, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 16px;
+  padding: clamp(22px, 3vw, 32px);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.3);
+  transition: border-color 240ms ease, transform 240ms ease, box-shadow 240ms ease;
+}
+
+.services__card:hover {
+  border-color: rgba(88, 204, 111, 0.4);
+  transform: translateY(-3px);
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.4), 0 0 28px rgba(88, 204, 111, 0.18);
+}
+
+.services__icon {
+  width: 44px;
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  background: rgba(88, 204, 111, 0.12);
+  border: 1px solid rgba(88, 204, 111, 0.28);
+  color: #a9e0b6;
+  margin-bottom: 18px;
+}
+.services__icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.services__name {
+  font-family: 'Google Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+  margin: 0 0 10px;
+  line-height: 1.25;
+}
+
+.services__desc {
+  font-size: 14px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.78);
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .services__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Featured CTA band — sits below the grid, full-bleed within section,
+   uses the deep teal-navy + green-edge gradient to pull the eye. */
+.services-cta {
+  position: relative;
+  z-index: 2;
+  isolation: isolate;
+  background:
+    linear-gradient(135deg, rgba(26, 61, 44, 0.95), rgba(13, 36, 56, 0.95));
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding: clamp(40px, 6vw, 64px) clamp(20px, 4vw, 36px);
+  color: #fff;
+  text-align: left;
+}
+
+.services-cta__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: clamp(20px, 4vw, 48px);
+  align-items: center;
+}
+
+.services-cta__copy {
+  min-width: 0;
+}
+
+.services-cta__heading {
+  font-family: 'Google Sans', sans-serif;
+  font-size: clamp(22px, 2.8vw, 28px);
+  line-height: 1.15;
+  font-weight: 600;
+  color: #fff;
+  margin: 0 0 8px;
+}
+
+.services-cta__text {
+  font-size: 15px;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.82);
+  margin: 0;
+  max-width: 640px;
+}
+
+.services-cta__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 26px;
+  border-radius: 999px;
+  background: #fff;
+  color: #0a0a0a;
+  font-family: 'Google Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: transform 200ms ease, background 200ms ease;
+  white-space: nowrap;
+}
+.services-cta__btn:hover {
+  transform: translateY(-1px);
+  background: #ededed;
+}
+.services-cta__btn .arrow {
+  display: inline-block;
+  transition: transform 0.25s ease;
+}
+.services-cta__btn:hover .arrow {
+  transform: translateX(3px);
+}
+
+@media (max-width: 768px) {
+  .services-cta__inner {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===============================================================
+   PROJECTS SECTION (homepage)
+   3x2 glassmorphic card grid + functional filter tabs.
+   Hover: 3px lift + green-to-teal gradient ring/glow.
+   Each card has a colored Status chip + neutral Category chip.
+   =============================================================== */
+
+.projects {
+  position: relative;
+  z-index: 2;
+  isolation: isolate;
+  color: #fff;
+  text-align: left;
+  padding: clamp(56px, 8vw, 96px) clamp(20px, 4vw, 36px);
+}
+
+.projects__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.projects__eyebrow {
+  font-family: 'Google Sans', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #58cc6f;
+  font-weight: 500;
+  margin: 0 0 14px;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.55);
+}
+
+.projects__title {
+  font-family: 'Google Sans', sans-serif;
+  font-size: clamp(28px, 3.6vw, 38px);
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  font-weight: 500;
+  color: #fff;
+  margin: 0 0 14px;
+  max-width: 780px;
+  text-shadow: 0 1px 16px rgba(0, 0, 0, 0.6);
+}
+
+.projects__subtitle {
+  font-size: 15px;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0 0 32px;
+  max-width: 780px;
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.55);
+}
+
+/* Filter tabs */
+.projects__filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 36px;
+}
+
+.projects__filter {
+  appearance: none;
+  -webkit-appearance: none;
+  background: rgba(15, 15, 18, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: rgba(255, 255, 255, 0.78);
+  font-family: 'Google Sans', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 999px;
+  cursor: pointer;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: background-color 200ms ease, color 200ms ease, border-color 200ms ease;
+}
+
+.projects__filter:hover {
+  background: rgba(255, 255, 255, 0.08);
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.projects__filter.is-active {
+  background: rgba(88, 204, 111, 0.2);
+  color: #fff;
+  border-color: rgba(88, 204, 111, 0.5);
+}
+
+/* 3x2 grid */
+.projects__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(18px, 2.2vw, 24px);
+}
+
+.projects__card {
+  position: relative;
+  background: rgba(15, 15, 18, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 14px;
+  padding: 22px;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.3);
+  transition:
+    transform 240ms ease,
+    border-color 240ms ease,
+    box-shadow 240ms ease,
+    opacity 240ms ease;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Hover: 3px lift + green-to-teal gradient ring/glow */
+.projects__card:hover {
+  transform: translateY(-3px);
+  border-color: transparent;
+  box-shadow:
+    0 0 0 1.5px rgba(88, 204, 111, 0.55),
+    0 0 0 3px rgba(13, 142, 166, 0.3),
+    0 14px 36px rgba(0, 0, 0, 0.4),
+    0 0 32px rgba(88, 204, 111, 0.2),
+    0 0 48px rgba(13, 142, 166, 0.18);
+}
+
+/* Hidden when filtered out */
+.projects__card.is-hidden {
+  display: none;
+}
+
+/* Chips row */
+.projects__chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 0 0 14px;
+}
+
+.projects__status,
+.projects__category {
+  display: inline-flex;
+  align-items: center;
+  font-family: 'Google Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  white-space: nowrap;
+}
+
+/* Status variants — colored differently per state */
+.projects__status--active {
+  background: rgba(88, 204, 111, 0.18);
+  color: #a9e0b6;
+  border-color: rgba(88, 204, 111, 0.4);
+}
+.projects__status--ongoing {
+  background: rgba(13, 142, 166, 0.18);
+  color: #7fd3e4;
+  border-color: rgba(13, 142, 166, 0.4);
+}
+.projects__status--completed {
+  background: rgba(255, 255, 255, 0.06);
+  color: rgba(255, 255, 255, 0.55);
+  border-color: rgba(255, 255, 255, 0.18);
+}
+.projects__status--planned {
+  background: rgba(220, 168, 60, 0.18);
+  color: #f5d28a;
+  border-color: rgba(220, 168, 60, 0.4);
+}
+
+/* Category chip — neutral */
+.projects__category {
+  background: rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.7);
+  border-color: rgba(255, 255, 255, 0.14);
+}
+
+.projects__name {
+  font-family: 'Google Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  margin: 0 0 8px;
+  line-height: 1.3;
+}
+
+.projects__desc {
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.78);
+  margin: 0 0 14px;
+  flex: 1;
+}
+
+.projects__date {
+  font-family: 'Google Sans', sans-serif;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.5);
+  margin: 0;
+  letter-spacing: 0.02em;
+}
+
+@media (max-width: 991px) {
+  .projects__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .projects__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===============================================================
+   RESEARCH ACADEMY SECTION (homepage)
+   Section hero (eyebrow + title + body + Join button) → Lessons
+   subheader → 3x2 glassmorphic lesson grid → Chronicles CTA band.
+   Same visual language as Projects — green-to-teal hover gradient.
+   =============================================================== */
+
+.academy {
+  position: relative;
+  z-index: 2;
+  isolation: isolate;
+  color: #fff;
+  text-align: left;
+  padding: clamp(56px, 8vw, 96px) clamp(20px, 4vw, 36px) 0;
+}
+
+.academy__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.academy__eyebrow {
+  font-family: 'Google Sans', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #58cc6f;
+  font-weight: 500;
+  margin: 0 0 14px;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.55);
+}
+
+.academy__title {
+  font-family: 'Google Sans', sans-serif;
+  font-size: clamp(28px, 3.6vw, 38px);
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  font-weight: 500;
+  color: #fff;
+  margin: 0 0 18px;
+  max-width: 780px;
+  text-shadow: 0 1px 16px rgba(0, 0, 0, 0.6);
+}
+
+.academy__subtitle {
+  font-size: 15px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0 0 24px;
+  max-width: 720px;
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.55);
+}
+
+.academy__hero-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 26px;
+  border-radius: 999px;
+  background: rgba(88, 204, 111, 0.18);
+  color: #fff;
+  border: 1px solid rgba(88, 204, 111, 0.5);
+  font-family: 'Google Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: transform 200ms ease, background 200ms ease, border-color 200ms ease;
+  white-space: nowrap;
+  margin-bottom: clamp(48px, 6vw, 72px);
+}
+.academy__hero-btn:hover {
+  transform: translateY(-1px);
+  background: rgba(88, 204, 111, 0.3);
+  border-color: rgba(88, 204, 111, 0.7);
+}
+.academy__hero-btn .arrow {
+  display: inline-block;
+  transition: transform 0.25s ease;
+}
+.academy__hero-btn:hover .arrow {
+  transform: translateX(3px);
+}
+
+/* Lessons subheader — visually quieter than the section title */
+.academy__lessons-header {
+  margin: 0 0 28px;
+}
+
+.academy__lessons-eyebrow {
+  font-family: 'Google Sans', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.55);
+  font-weight: 500;
+  margin: 0 0 8px;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.55);
+}
+
+.academy__lessons-title {
+  font-family: 'Google Sans', sans-serif;
+  font-size: clamp(20px, 2.4vw, 26px);
+  line-height: 1.1;
+  font-weight: 600;
+  color: #fff;
+  margin: 0;
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.55);
+}
+
+/* 3x2 lesson grid */
+.academy__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(18px, 2.2vw, 24px);
+  margin-bottom: clamp(48px, 6vw, 72px);
+}
+
+.academy__card {
+  position: relative;
+  background: rgba(15, 15, 18, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 14px;
+  padding: 22px;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.3);
+  transition: transform 240ms ease, border-color 240ms ease, box-shadow 240ms ease;
+  display: flex;
+  flex-direction: column;
+}
+
+.academy__card:hover {
+  transform: translateY(-3px);
+  border-color: transparent;
+  box-shadow:
+    0 0 0 1.5px rgba(88, 204, 111, 0.55),
+    0 0 0 3px rgba(13, 142, 166, 0.3),
+    0 14px 36px rgba(0, 0, 0, 0.4),
+    0 0 32px rgba(88, 204, 111, 0.2),
+    0 0 48px rgba(13, 142, 166, 0.18);
+}
+
+.academy__category {
+  display: inline-flex;
+  align-items: center;
+  font-family: 'Google Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.05);
+  color: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  margin: 0 0 14px;
+  align-self: flex-start;
+  white-space: nowrap;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.academy__name {
+  font-family: 'Google Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  color: #fff;
+  margin: 0 0 10px;
+  line-height: 1.3;
+}
+
+.academy__desc {
+  font-size: 13px;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.78);
+  margin: 0 0 14px;
+  flex: 1;
+}
+
+.academy__date {
+  font-family: 'Google Sans', sans-serif;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.5);
+  margin: 0;
+  letter-spacing: 0.02em;
+}
+
+@media (max-width: 991px) {
+  .academy__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .academy__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Chronicles CTA band — sits at the bottom of the academy section,
+   mirrors the Services CTA band visual treatment for consistency. */
+.academy-cta {
+  position: relative;
+  z-index: 2;
+  isolation: isolate;
+  background:
+    linear-gradient(135deg, rgba(13, 36, 56, 0.95), rgba(26, 61, 44, 0.95));
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  padding: clamp(40px, 6vw, 64px) clamp(20px, 4vw, 36px);
+  color: #fff;
+  text-align: left;
+}
+
+.academy-cta__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: clamp(20px, 4vw, 48px);
+  align-items: center;
+}
+
+.academy-cta__copy {
+  min-width: 0;
+}
+
+.academy-cta__heading {
+  font-family: 'Google Sans', sans-serif;
+  font-size: clamp(22px, 2.8vw, 28px);
+  line-height: 1.15;
+  font-weight: 600;
+  color: #fff;
+  margin: 0 0 8px;
+}
+
+.academy-cta__text {
+  font-size: 15px;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.82);
+  margin: 0;
+  max-width: 640px;
+}
+
+.academy-cta__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 26px;
+  border-radius: 999px;
+  background: #fff;
+  color: #0a0a0a;
+  font-family: 'Google Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: transform 200ms ease, background 200ms ease;
+  white-space: nowrap;
+}
+.academy-cta__btn:hover {
+  transform: translateY(-1px);
+  background: #ededed;
+}
+.academy-cta__btn .arrow {
+  display: inline-block;
+  transition: transform 0.25s ease;
+}
+.academy-cta__btn:hover .arrow {
+  transform: translateX(3px);
+}
+
+@media (max-width: 768px) {
+  .academy-cta__inner {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===============================================================
+   CONTACT SECTION (homepage)
+   2-col layout: left = info + socials; right = glassmorphic form.
+   Form submits via JS to a mailto: link (no backend).
+   =============================================================== */
+
+.contact {
+  position: relative;
+  z-index: 2;
+  isolation: isolate;
+  color: #fff;
+  text-align: left;
+  padding: clamp(56px, 8vw, 96px) clamp(20px, 4vw, 36px);
+}
+
+.contact__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.contact__eyebrow {
+  font-family: 'Google Sans', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #58cc6f;
+  font-weight: 500;
+  margin: 0 0 14px;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.55);
+}
+
+.contact__title {
+  font-family: 'Google Sans', sans-serif;
+  font-size: clamp(28px, 3.6vw, 38px);
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  font-weight: 500;
+  color: #fff;
+  margin: 0 0 14px;
+  max-width: 780px;
+  text-shadow: 0 1px 16px rgba(0, 0, 0, 0.6);
+}
+
+.contact__subtitle {
+  font-size: 15px;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0 0 48px;
+  max-width: 720px;
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.55);
+}
+
+/* Two-column grid */
+.contact__grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: clamp(24px, 4vw, 56px);
+  align-items: start;
+}
+
+@media (max-width: 991px) {
+  .contact__grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Left column — info */
+.contact__info-heading {
+  font-family: 'Google Sans', sans-serif;
+  font-size: clamp(20px, 2.4vw, 24px);
+  line-height: 1.2;
+  font-weight: 600;
+  color: #fff;
+  margin: 0 0 14px;
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.55);
+}
+
+.contact__info-text {
+  font-size: 14px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.78);
+  margin: 0 0 28px;
+  max-width: 480px;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
+}
+
+.contact__details {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.contact__detail {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.85);
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
+}
+
+.contact__detail-icon {
+  flex: none;
+  width: 32px;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background: rgba(88, 204, 111, 0.12);
+  border: 1px solid rgba(88, 204, 111, 0.28);
+  color: #a9e0b6;
+}
+.contact__detail-icon svg {
+  width: 16px;
+  height: 16px;
+}
+
+.contact__detail-content {
+  min-width: 0;
+}
+.contact__detail-label {
+  display: block;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+  margin-bottom: 2px;
+}
+.contact__detail-value {
+  display: block;
+  color: rgba(255, 255, 255, 0.92);
+}
+.contact__detail-value a {
+  color: inherit;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color 200ms ease;
+}
+.contact__detail-value a:hover {
+  border-bottom-color: rgba(88, 204, 111, 0.6);
+}
+
+/* Social icons row */
+.contact__socials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.contact__social {
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(15, 15, 18, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  transition: transform 200ms ease, border-color 200ms ease, color 200ms ease, background 200ms ease;
+}
+.contact__social:hover {
+  transform: translateY(-2px);
+  background: rgba(88, 204, 111, 0.18);
+  border-color: rgba(88, 204, 111, 0.5);
+  color: #fff;
+}
+.contact__social svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+
+/* Right column — form */
+.contact__form-card {
+  background: rgba(15, 15, 18, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 18px;
+  padding: clamp(22px, 3vw, 32px);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.3);
+}
+
+.contact__form-title {
+  font-family: 'Google Sans', sans-serif;
+  font-size: clamp(18px, 2.2vw, 22px);
+  font-weight: 600;
+  color: #fff;
+  margin: 0 0 22px;
+}
+
+.contact__form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.contact__field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.contact__field--full {
+  grid-column: 1 / -1;
+}
+
+.contact__field label {
+  font-family: 'Google Sans', sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.04em;
+  color: rgba(255, 255, 255, 0.7);
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.contact__field input,
+.contact__field select,
+.contact__field textarea {
+  appearance: none;
+  -webkit-appearance: none;
+  font-family: 'Google Sans', sans-serif;
+  font-size: 14px;
+  line-height: 1.4;
+  color: #fff;
+  background: rgba(0, 0, 0, 0.28);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: 10px;
+  padding: 12px 14px;
+  transition: border-color 200ms ease, background 200ms ease;
+  width: 100%;
+}
+
+.contact__field input::placeholder,
+.contact__field textarea::placeholder {
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.contact__field input:focus,
+.contact__field select:focus,
+.contact__field textarea:focus {
+  outline: none;
+  border-color: rgba(88, 204, 111, 0.6);
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.contact__field textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* Custom select chevron */
+.contact__field select {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8' fill='none'><path d='M1 1.5L6 6.5L11 1.5' stroke='rgba(255,255,255,0.6)' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 36px;
+}
+.contact__field select option {
+  background: #0d2438;
+  color: #fff;
+}
+
+.contact__submit {
+  grid-column: 1 / -1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 26px;
+  border-radius: 999px;
+  background: #fff;
+  color: #0a0a0a;
+  border: none;
+  font-family: 'Google Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform 200ms ease, background 200ms ease;
+  margin-top: 6px;
+}
+.contact__submit:hover {
+  transform: translateY(-1px);
+  background: #ededed;
+}
+.contact__submit .arrow {
+  display: inline-block;
+  transition: transform 0.25s ease;
+}
+.contact__submit:hover .arrow {
+  transform: translateX(3px);
+}
+
+@media (max-width: 600px) {
+  .contact__form {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===============================================================
+   FOOTER (rebuilt — replaces the legacy Webflow .footer-div)
+   Brand + tagline up top, 3 columns (Navigation / Programs / Contact),
+   copyright + "Made for Rwanda" bottom strip.
+   =============================================================== */
+
+.site-footer {
+  position: relative;
+  z-index: 2;
+  background: #0a1620;
+  color: rgba(255, 255, 255, 0.85);
+  padding: clamp(48px, 6vw, 72px) clamp(20px, 4vw, 36px) 24px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.site-footer__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* Brand block at the top */
+.site-footer__brand {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin: 0 0 48px;
+  max-width: 720px;
+}
+
+.site-footer__brand-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.site-footer__brand-logo {
+  width: 44px;
+  height: 44px;
+  flex: none;
+}
+
+.site-footer__brand-name {
+  font-family: 'Google Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+  line-height: 1.15;
+  margin: 0;
+}
+
+.site-footer__tagline {
+  font-size: 14px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.72);
+  margin: 0;
+}
+
+/* 3-column grid */
+.site-footer__columns {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(24px, 4vw, 48px);
+  margin: 0 0 40px;
+}
+
+@media (max-width: 768px) {
+  .site-footer__columns {
+    grid-template-columns: 1fr;
+  }
+}
+
+.site-footer__col-title {
+  font-family: 'Google Sans', sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #58cc6f;
+  margin: 0 0 14px;
+}
+
+.site-footer__col ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.site-footer__col a,
+.site-footer__col li > span.site-footer__static {
+  color: rgba(255, 255, 255, 0.78);
+  text-decoration: none;
+  font-size: 13.5px;
+  line-height: 1.45;
+  transition: color 200ms ease;
+}
+.site-footer__col a:hover {
+  color: #fff;
+}
+
+/* Bottom strip */
+.site-footer__bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding-top: 22px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.site-footer__copyright {
+  margin: 0;
+}
+
+.site-footer__made {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* ===============================================================
+   PHOTO BACKDROPS + LIVELY EFFECTS
+   - Section-level photo backdrops with dark overlays for: Services,
+     Projects (header band only), Research Academy CTA, Contact (left
+     info column), About Story (small sidebar inset).
+   - Ken Burns idle pan/zoom on Vision Banner + Mission Quote photos.
+   - Reveal-on-scroll utility: opacity 0 → 1 + scale 0.96 → 1 when the
+     element enters the viewport (IntersectionObserver in script.js).
+   =============================================================== */
+
+/* Reveal-on-scroll utility */
+.reveal-photo {
+  opacity: 0;
+  transform: scale(0.96);
+  transition: opacity 700ms ease-out, transform 700ms ease-out;
+}
+.reveal-photo.is-visible {
+  opacity: 1;
+  transform: scale(1);
+}
+@media (prefers-reduced-motion: reduce) {
+  .reveal-photo,
+  .reveal-photo.is-visible {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+/* Ken Burns — slow infinite pan/zoom on the Vision + Mission photos.
+   Targets BOTH /about (cream page) and homepage (transparent). */
+@keyframes kenBurns {
+  0%   { transform: scale(1.02) translate(0, 0); }
+  50%  { transform: scale(1.08) translate(-1.5%, -1%); }
+  100% { transform: scale(1.02) translate(0, 0); }
+}
+.about-vision__img,
+.about-mission__img,
+.home-about-vision__img,
+.home-about-mission__img {
+  animation: kenBurns 22s ease-in-out infinite;
+  transform-origin: center center;
+  will-change: transform;
+}
+@media (prefers-reduced-motion: reduce) {
+  .about-vision__img,
+  .about-mission__img,
+  .home-about-vision__img,
+  .home-about-mission__img {
+    animation: none;
+  }
+}
+
+/* -------- 1. Services — full-section photo backdrop -------- */
+.services {
+  overflow: hidden;
+}
+.services__bg-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+  opacity: 0.32;
+}
+.services__bg-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(rgba(10, 22, 32, 0.78), rgba(10, 22, 32, 0.85)),
+    linear-gradient(135deg, rgba(26, 61, 44, 0.4), rgba(13, 36, 56, 0.4));
+  z-index: -1;
+}
+
+/* -------- 2. Projects — header band only gets the photo backdrop -------- */
+.projects__header {
+  position: relative;
+  isolation: isolate;
+  margin: 0 -clamp(20px, 4vw, 36px) clamp(36px, 5vw, 56px);
+  padding: clamp(40px, 6vw, 64px) clamp(20px, 4vw, 36px) clamp(28px, 4vw, 40px);
+  border-radius: 0;
+  overflow: hidden;
+}
+.projects__bg-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  z-index: -2;
+  opacity: 0.5;
+}
+.projects__bg-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(rgba(10, 22, 32, 0.62), rgba(10, 22, 32, 0.78)),
+    linear-gradient(135deg, rgba(26, 61, 44, 0.3), rgba(13, 36, 56, 0.3));
+  z-index: -1;
+}
+
+/* -------- 3. Research Academy — CTA band photo backdrop -------- */
+.academy-cta {
+  overflow: hidden;
+}
+.academy-cta__bg-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 35%;
+  z-index: -2;
+  opacity: 0.4;
+}
+.academy-cta__bg-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(135deg, rgba(13, 36, 56, 0.85), rgba(26, 61, 44, 0.85));
+  z-index: -1;
+}
+
+/* -------- 4. Contact — left info column photo backdrop -------- */
+.contact__info {
+  position: relative;
+  isolation: isolate;
+  border-radius: 18px;
+  padding: clamp(22px, 3vw, 32px);
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+.contact__info-bg-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  z-index: -2;
+  /* Bumped down vs the original portrait — the Rwanda flag has a very
+     bright yellow stripe + sun that needs more dimming for white text. */
+  opacity: 0.22;
+}
+.contact__info-bg-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(135deg, rgba(10, 22, 32, 0.92), rgba(13, 36, 56, 0.9));
+  z-index: -1;
+}
+
+/* -------- 5. About Story — small inline sidebar photo, slotted into
+   the existing 2-col grid's left label column. -------- */
+.home-about-story__photo {
+  display: block;
+  width: 100%;
+  max-width: 240px;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-top: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+@media (max-width: 768px) {
+  .home-about-story__photo {
+    max-width: 320px;
+  }
+}
+
+/* ===============================================================
+   MOBILE NAV (<=768px) — hamburger toggle + slide-from-right overlay
+   =============================================================== */
+
+/* Hamburger button — hidden on desktop, shown on mobile */
+.navbar-mobile-toggle {
+  display: none;
+  appearance: none;
+  -webkit-appearance: none;
+  background: transparent;
+  border: 0;
+  color: rgba(255, 255, 255, 0.9);
+  padding: 8px 10px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background-color 200ms ease;
+}
+.navbar-mobile-toggle:hover,
+.navbar-mobile-toggle:focus-visible {
+  background: rgba(255, 255, 255, 0.08);
+  outline: none;
+}
+.navbar-mobile-toggle svg {
+  width: 22px;
+  height: 22px;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  /* Hide inline nav-menu on mobile */
+  .navbar.w-nav .nav-menu {
+    display: none !important;
+  }
+  /* Show hamburger toggle */
+  .navbar.w-nav .navbar-mobile-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  /* Compact pill on mobile — sized to logo + hamburger */
+  .navbar.w-nav {
+    max-width: calc(100% - 24px);
+  }
+  /* The collapse-on-scroll-down state is desktop-only; on mobile the
+     pill stays compact at all scroll positions. (Existing media query
+     in this file already disables .is-collapsed below 991px.) */
+}
+
+/* Backdrop dim layer (sits above page content, below mobile menu) */
+.mobile-menu__backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 9998;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 280ms ease-out;
+}
+.mobile-menu__backdrop.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* The menu panel itself — fixed, slides from right */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: min(360px, 92vw);
+  background: rgba(13, 18, 26, 0.97);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border-left: 1px solid rgba(255, 255, 255, 0.12);
+  z-index: 10000;
+  transform: translateX(100%);
+  transition: transform 320ms cubic-bezier(0.34, 1.56, 0.64, 1);
+  display: flex;
+  flex-direction: column;
+  padding: 18px 22px 22px;
+  pointer-events: none;
+  visibility: hidden;
+  box-shadow: -8px 0 40px rgba(0, 0, 0, 0.5);
+}
+.mobile-menu.is-open {
+  transform: translateX(0);
+  pointer-events: auto;
+  visibility: visible;
+}
+
+.mobile-menu__header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 18px;
+  padding-bottom: 14px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.mobile-menu__brand {
+  font-family: 'Google Sans', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.mobile-menu__close {
+  appearance: none;
+  -webkit-appearance: none;
+  background: transparent;
+  border: 0;
+  color: rgba(255, 255, 255, 0.85);
+  padding: 8px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background-color 200ms ease;
+}
+.mobile-menu__close:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+.mobile-menu__close svg {
+  width: 22px;
+  height: 22px;
+  display: block;
+}
+
+.mobile-menu__nav {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+  margin-bottom: 18px;
+}
+
+.mobile-menu__link {
+  display: block;
+  padding: 14px 14px;
+  border-radius: 10px;
+  font-family: 'Google Sans', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.92);
+  text-decoration: none;
+  transition: background-color 180ms ease;
+}
+.mobile-menu__link:hover,
+.mobile-menu__link:active,
+.mobile-menu__link:focus-visible {
+  background: rgba(255, 255, 255, 0.08);
+  outline: none;
+}
+
+.mobile-menu__socials {
+  display: flex;
+  gap: 10px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.mobile-menu__social {
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: rgba(255, 255, 255, 0.85);
+  text-decoration: none;
+  transition: background-color 180ms ease, border-color 180ms ease, color 180ms ease;
+}
+.mobile-menu__social:hover {
+  background: rgba(88, 204, 111, 0.18);
+  border-color: rgba(88, 204, 111, 0.5);
+  color: #fff;
+}
+.mobile-menu__social svg {
+  width: 18px;
+  height: 18px;
+  fill: currentColor;
+}
+
+/* Reduced motion — skip the slide */
+@media (prefers-reduced-motion: reduce) {
+  .mobile-menu {
+    transition: none;
+  }
+  .mobile-menu__backdrop {
+    transition: none;
+  }
+}
+
+/* Hide the menu panel + backdrop entirely above mobile breakpoint */
+@media (min-width: 769px) {
+  .mobile-menu,
+  .mobile-menu__backdrop {
+    display: none !important;
+  }
+}
+
+/* ===============================================================
+   THREE PILLARS — repurposed 3-column scroll content panel
+   Sits inside the existing .column-scroll-content; the sticky-image
+   IX animation alongside is unchanged.
+   =============================================================== */
+
+.pillars-eyebrow {
+  font-family: 'Google Sans', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #58cc6f;
+  font-weight: 500;
+  margin: 0 0 12px;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.55);
+}
+
+.pillars-lead {
+  font-size: 15px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0 0 28px;
+  max-width: 580px;
+}
+
+.pillars-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.pillar {
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+}
+
+.pillar__num {
+  flex: none;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 28px;
+  font-weight: 300;
+  line-height: 1;
+  color: #58cc6f;
+  min-width: 44px;
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.5);
+}
+
+.pillar__body {
+  min-width: 0;
+}
+
+.pillar__title {
+  font-family: 'Google Sans', sans-serif;
+  font-size: 17px;
+  font-weight: 600;
+  color: #fff;
+  margin: 0 0 6px;
+  line-height: 1.2;
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.55);
+}
+
+.pillar__desc {
+  font-size: 14px;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.78);
+  margin: 0;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
+}

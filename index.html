@@ -184,13 +184,57 @@
       <nav role="navigation" class="nav-menu w-nav-menu">
         <a href="#about" class="nav-link w-nav-link" aria-current="page">About</a>
         <a href="#leadership" class="nav-link w-nav-link">Leadership</a>
-        <a href="#" class="nav-link w-nav-link">Services</a>
-        <a href="#" class="nav-link w-nav-link">Projects</a>
-        <a href="#" class="nav-link w-nav-link">Research Academy</a>
-        <a href="#" class="nav-link w-nav-link" id="getInTouchNavBtn">Contact</a>
+        <a href="#services" class="nav-link w-nav-link">Services</a>
+        <a href="#projects" class="nav-link w-nav-link">Projects</a>
+        <a href="#research-academy" class="nav-link w-nav-link">Research Academy</a>
+        <a href="#contact" class="nav-link w-nav-link">Contact</a>
       </nav>
+      <!-- Mobile hamburger toggle (only visible at <=768px) -->
+      <button type="button" class="navbar-mobile-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
+      </button>
     </div>
   </div>
+
+  <!-- ============================
+       MOBILE MENU OVERLAY
+       Slides from the right at <=768px when the navbar hamburger
+       is tapped. Mirrors the nav links + adds social icons at bottom.
+  ============================= -->
+  <div class="mobile-menu__backdrop" aria-hidden="true"></div>
+  <aside class="mobile-menu" id="mobileMenu" aria-hidden="true" aria-label="Mobile navigation">
+    <div class="mobile-menu__header">
+      <span class="mobile-menu__brand">RDMS</span>
+      <button type="button" class="mobile-menu__close" aria-label="Close menu">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <nav class="mobile-menu__nav" aria-label="Site navigation">
+      <a href="#about" class="mobile-menu__link">About</a>
+      <a href="#leadership" class="mobile-menu__link">Leadership</a>
+      <a href="#services" class="mobile-menu__link">Services</a>
+      <a href="#projects" class="mobile-menu__link">Projects</a>
+      <a href="#research-academy" class="mobile-menu__link">Research Academy</a>
+      <a href="#contact" class="mobile-menu__link">Contact</a>
+    </nav>
+    <div class="mobile-menu__socials" aria-label="RDMS on social media">
+      <a class="mobile-menu__social" href="https://x.com/RDMS_rw" target="_blank" rel="noopener" aria-label="RDMS on X (Twitter)">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      </a>
+      <a class="mobile-menu__social" href="https://www.instagram.com/rdms_rw/" target="_blank" rel="noopener" aria-label="RDMS on Instagram">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+      </a>
+      <a class="mobile-menu__social" href="https://www.linkedin.com/in/rdms-dento-medical-society-rwanda-24035029b" target="_blank" rel="noopener" aria-label="RDMS on LinkedIn">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+      </a>
+      <a class="mobile-menu__social" href="https://www.tiktok.com/@rdmsrw" target="_blank" rel="noopener" aria-label="RDMS on TikTok">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5.66 20.1a6.34 6.34 0 0 0 10.86-4.43V8.16a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.7-.06z"/></svg>
+      </a>
+      <a class="mobile-menu__social" href="mailto:rdmspresident13@gmail.com" aria-label="Email RDMS">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+      </a>
+    </div>
+  </aside>
 
   <!-- ============================
        HERO SECTION
@@ -241,7 +285,7 @@
 
       <div class="right-col">
         <div class="rdms-program-card">
-          <h3 class="pc-title">Integrated Oral &amp; General Health</h3>
+          <h2 class="pc-title">Integrated Oral &amp; General Health</h2>
           <p class="pc-desc">Connecting communities with professional dental care, preventive education, and research innovation across Rwanda.</p>
           <ul class="pc-services">
             <li>School-Based Dental Screenings</li>
@@ -291,6 +335,7 @@
     <aside class="home-about-story__label">
       <p class="home-about-story__label-eyebrow" id="home-story-heading">Our Story</p>
       <p class="home-about-story__meta">Founded 2024 &middot; Ngoma, Huye &middot; Southern Province</p>
+      <img class="home-about-story__photo reveal-photo" src="assets/img/bg-story.jpg" alt="RDMS World Ectodermal Dysplasia Day educational session" loading="lazy" decoding="async"/>
     </aside>
     <div class="home-about-story__body">
       <p>In Rwanda, oral health has long existed at the margins of the national healthcare system &mdash; underfunded, underrepresented, and often invisible to the communities that need it most. Dental disease, though largely preventable, continues to affect children, adults, and vulnerable populations who lack access to even the most basic oral care.</p>
@@ -494,28 +539,49 @@
           <div class="page-padding">
             <div class="column-scroll-content">
 
+              <p class="pillars-eyebrow">How We Work</p>
+
               <div class="overflow-hidden">
-                <div class="column-scroll-content-title is-1">Oral Health Advocacy</div>
+                <h2 class="column-scroll-content-title is-1">Three Pillars of Our Work</h2>
               </div>
 
               <div data-w-id="0893435b-dc33-e8eb-d149-dc508672782c" class="line-breaker"></div>
 
               <div class="column-scroll-content-copy">
-                <p class="column-scroll-content-text paragraph">Advocates for proactive oral healthcare have emerged, emphasizing the interconnectedness of oral health and overall physical well-being. Efforts have been made to educate the public about the importance of maintaining good oral hygiene.<br/><br/>Initiatives such as awareness campaigns, themed &ldquo;happy mouth, happy body,&rdquo; have gained traction. Collaborations with NGOs and partners have led to outreach programs aimed at empowering residents with the knowledge and resources needed to prioritize their oral hygiene.</p>
+                <p class="column-scroll-content-text paragraph pillars-lead">RDMS organizes everything we do around three reinforcing pillars &mdash; together, they shape how we show up across Rwanda.</p>
+
+                <ol class="pillars-list">
+                  <li class="pillar">
+                    <span class="pillar__num" aria-hidden="true">01</span>
+                    <div class="pillar__body">
+                      <h3 class="pillar__title">Care</h3>
+                      <p class="pillar__desc">Bringing dental services directly to underserved communities through school screenings, mobile clinics, and preventive programs.</p>
+                    </div>
+                  </li>
+                  <li class="pillar">
+                    <span class="pillar__num" aria-hidden="true">02</span>
+                    <div class="pillar__body">
+                      <h3 class="pillar__title">Knowledge</h3>
+                      <p class="pillar__desc">Equipping health professionals with research, lessons, and clinical guidelines through the Research Academy and Dental Medicine Chronicles.</p>
+                    </div>
+                  </li>
+                  <li class="pillar">
+                    <span class="pillar__num" aria-hidden="true">03</span>
+                    <div class="pillar__body">
+                      <h3 class="pillar__title">Advocacy</h3>
+                      <p class="pillar__desc">Partnering with government, NGOs, and international bodies to advance oral-systemic health policy and community impact in Rwanda.</p>
+                    </div>
+                  </li>
+                </ol>
               </div>
 
-              <!-- Get in touch button (dark arrow version) -->
-              <a data-w-id="7715b61b-f86c-c114-4a31-4ca469696c05" style="-webkit-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" href="#" class="button-3 footer w-inline-block" id="sponsorGetInTouchBtn">
-                <div class="svg-filter_embed w-embed">
-                  <svg width="0" height="0" class="absolute hidden" color-interpolation-filters="sRGB">
-                    <defs><filter id="buttonFilter4"><feGaussianBlur in="SourceGraphic" stdDeviation="5" result="blur"></feGaussianBlur><feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="buttonFilter4"></feColorMatrix><feComposite in="SourceGraphic" in2="buttonFilter4" operator="atop"></feComposite><feBlend in="SourceGraphic" in2="buttonFilter4"></feBlend></filter></defs>
-                  </svg>
-                </div>
+              <!-- CTA: anchor to #services rather than the contact overlay -->
+              <a href="#services" class="button-3 footer w-inline-block">
                 <div style="background-color:rgba(237,237,237,0)" class="button-3_content-wrap-2">
-                  <div class="text-block-2 other">Get in touch</div>
+                  <div class="text-block-2 other">Explore Our Programs</div>
                 </div>
                 <div style="background-color:rgba(237,237,237,0)" class="button-3_arrow-wrapper-2">
-                  <img style="-webkit-transform:translate3d(0, 0%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0deg) skew(0, 0);-moz-transform:translate3d(0, 0%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0deg) skew(0, 0);-ms-transform:translate3d(0, 0%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0deg) skew(0, 0);transform:translate3d(0, 0%, 0) scale3d(1, 1, 1) rotateX(0) rotateY(0) rotateZ(0deg) skew(0, 0)" loading="lazy" decoding="async" alt="" src="assets/img/arrow-dark.png" class="button-icon"/>
+                  <img loading="lazy" decoding="async" alt="" src="assets/img/arrow-dark.png" class="button-icon"/>
                   <img loading="lazy" decoding="async" src="assets/img/arrow-dark.png" alt="" class="button-icon absoulte"/>
                 </div>
               </a>
@@ -529,83 +595,422 @@
   </div><!-- /sponsor-your-city -->
 
   <!-- ============================
-       TEXT CALL-OUT
+       SERVICES
   ============================= -->
-  <div class="text-call-out homepage">
-    <div class="w-layout-vflex image--wrapper border">
-      <div class="div-block-18">
-        <h1 data-w-id="2245c8bb-a84b-8764-92b9-47604cf25415" class="heading-6">Many have expressed their commitment to improving their dental care habits, vowing to adopt better practices and prioritize oral hygiene. As education and empowerment ripple through communities, smiles have begun to brighten, reflecting not only improved oral health but also an enhanced sense of well-being.<br/><br/>Through collective efforts and individual commitment, Rwanda is embarking on a journey toward a healthier, brighter future&mdash;one smile at a time. The commitment to transforming dental health is paving the way for a community that understands the importance of oral care, ultimately leading to improved quality of life and well-being for all.</h1>
+  <section class="services" id="services" aria-labelledby="services-heading">
+    <img class="services__bg-img reveal-photo" src="assets/img/bg-services.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async"/>
+    <div class="services__bg-overlay" aria-hidden="true"></div>
+    <div class="services__inner">
+      <p class="services__eyebrow">What We Do</p>
+      <h2 class="services__title" id="services-heading">Our Core Services</h2>
+      <p class="services__subtitle">From school screenings and preventive programs to research and professional education &mdash; RDMS delivers integrated oral health services across Rwanda.</p>
+
+      <div class="services__grid">
+        <article class="services__card">
+          <div class="services__icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.42 10.922a1 1 0 0 0-.019-1.838L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.832l8.57 3.908a2 2 0 0 0 1.66 0z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg>
+          </div>
+          <h3 class="services__name">School-Based Dental Screenings</h3>
+          <p class="services__desc">Healthy teeth start young. RDMS conducts systematic dental screenings at primary and secondary schools across Rwanda, identifying untreated caries, gum problems, and developmental issues before they become serious. Our teams visit schools with portable equipment, assess students, and connect those who need follow-up care with local dental services. We also provide on-the-spot oral hygiene education to students and teachers alike &mdash; making schools a frontline of oral health prevention.</p>
+        </article>
+
+        <article class="services__card">
+          <div class="services__icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"/><path d="m9 12 2 2 4-4"/></svg>
+          </div>
+          <h3 class="services__name">Preventive Care Programs</h3>
+          <p class="services__desc">Prevention is more powerful &mdash; and more affordable &mdash; than treatment. RDMS runs structured preventive care programs that reach communities through multiple channels: daily oral health messaging, fluoride application sessions, oral hygiene kits distribution, and community workshops on brushing, diet, and dental habits. Our preventive programs are designed for schools, health centers, and community groups &mdash; with content tailored to both children and adults.</p>
+        </article>
+
+        <article class="services__card">
+          <div class="services__icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 18h8"/><path d="M3 22h18"/><path d="M14 22a7 7 0 1 0 0-14h-1"/><path d="M9 14h2"/><path d="M9 12a2 2 0 0 1-2-2V6h6v4a2 2 0 0 1-2 2Z"/><path d="M12 6V3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v3"/></svg>
+          </div>
+          <h3 class="services__name">Oral Health Research &amp; Data Collection</h3>
+          <p class="services__desc">Evidence drives change. RDMS conducts and supports oral health research across Rwanda &mdash; collecting data on disease prevalence, care access, and health behaviors to build the evidence base needed for policy reform. We collaborate with academic institutions, hospitals, and international research bodies to generate studies that are both locally relevant and globally significant.</p>
+        </article>
+
+        <article class="services__card">
+          <div class="services__icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9c0-1.1.9-2 2-2h2"/><path d="M18 14h-8"/><path d="M15 18h-5"/><path d="M10 6h8v4h-8V6Z"/></svg>
+          </div>
+          <h3 class="services__name">Dental Medicine Chronicles</h3>
+          <p class="services__desc">Knowledge should be shared. The Dental Medicine Chronicles is RDMS&rsquo;s regular publication series &mdash; covering clinical case studies, public health updates, policy commentary, and innovations in dental medicine. Written by and for dental and medical professionals in Rwanda, the Chronicles bridge the gap between academic research and everyday clinical practice.</p>
+        </article>
+
+        <article class="services__card">
+          <div class="services__icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M2 3h6a4 4 0 0 1 4 4v14a3 3 0 0 0-3-3H2z"/><path d="M22 3h-6a4 4 0 0 0-4 4v14a3 3 0 0 1 3-3h7z"/></svg>
+          </div>
+          <h3 class="services__name">RDMS Research Academy</h3>
+          <p class="services__desc">Continuous learning is the backbone of a strong health system. The RDMS Research Academy is a structured educational platform providing dental and health professionals in Rwanda with access to curated research lessons, case-based discussions, and continuing professional development content. Topics range from oral-systemic health links and preventive dentistry to emerging clinical techniques and public health policy.</p>
+        </article>
+
+        <article class="services__card">
+          <div class="services__icon" aria-hidden="true">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 2v2"/><path d="M5 2v2"/><path d="M5 3H4a2 2 0 0 0-2 2v4a6 6 0 0 0 12 0V5a2 2 0 0 0-2-2h-1"/><path d="M8 15a6 6 0 0 0 12 0v-3"/><circle cx="20" cy="10" r="2"/></svg>
+          </div>
+          <h3 class="services__name">Community Mobile Clinics</h3>
+          <p class="services__desc">Access to dental care should not depend on where you live. RDMS deploys mobile dental clinics into underserved rural and peri-urban communities across Rwanda &mdash; bringing professional oral healthcare directly to people who might otherwise never see a dentist. Services include free dental examinations, extractions, fluoride treatment, and distribution of oral hygiene supplies.</p>
+        </article>
       </div>
-      <div data-w-id="87e2df68-8bbc-1e33-9225-95e126944757" class="image-6 dev homepage"></div>
-    </div>
-  </div>
-
-  <!-- ============================
-       FOOTER
-  ============================= -->
-  <div class="footer-div">
-
-    <!-- Decorative circle abstract -->
-    <div class="circle-abstract">
-      <img src="assets/img/ellipse.svg" loading="lazy" decoding="async" alt="" class="image-4"/>
-      <div data-w-id="8bda5446-33b5-878e-7c09-3e2a8d9ef3ca" style="-webkit-transform:translate3d(0, 0, 0) scale3d(1.1, 1.1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1.1, 1.1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1.1, 1.1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1.1, 1.1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="circle-dots large"></div>
-      <div style="clip-path:circle(50% at 50% 50%)" class="circle-color">
-        <video class="circle-bg-video" autoplay muted loop playsinline preload="metadata" poster="assets/img/video-poster.jpg">
-          <source src="assets/video/Rwanda_Colors_Video_Stitch.mp4" type="video/mp4"/>
-        </video>
-      </div>
     </div>
 
-    <!-- Let's Connect + footer nav -->
-    <div class="w-layout-blockcontainer footer w-container">
-      <div class="lets-connect">
-        <div class="eyebrow top">Let's Connect</div>
-        <div class="text-7">Want to contribute? We'd love to hear from you.</div>
-        <a data-w-id="8bda5446-33b5-878e-7c09-3e2a8d9ef3d2" href="#" class="button-3 footer w-inline-block" id="footerConnectBtn">
-          <div class="svg-filter_embed w-embed">
-            <svg width="0" height="0" class="absolute hidden" color-interpolation-filters="sRGB">
-              <defs><filter id="buttonFilter5"><feGaussianBlur in="SourceGraphic" stdDeviation="5" result="blur"></feGaussianBlur><feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 19 -9" result="buttonFilter5"></feColorMatrix><feComposite in="SourceGraphic" in2="buttonFilter5" operator="atop"></feComposite><feBlend in="SourceGraphic" in2="buttonFilter5"></feBlend></filter></defs>
-            </svg>
-          </div>
-          <div data-w-id="8bda5446-33b5-878e-7c09-3e2a8d9ef3d4" class="button-3_content-wrap-2">
-            <div class="text-block-2 other">Connect with a human</div>
-          </div>
-          <div data-w-id="8bda5446-33b5-878e-7c09-3e2a8d9ef3d7" class="button-3_arrow-wrapper-2">
-            <img data-w-id="8bda5446-33b5-878e-7c09-3e2a8d9ef3d8" src="assets/img/arrow-dark.png" alt="" loading="lazy" decoding="async" class="button-icon"/>
-            <img src="assets/img/arrow-dark.png" loading="lazy" decoding="async" alt="" class="button-icon absoulte"/>
-          </div>
+    <!-- Featured CTA band -->
+    <div class="services-cta">
+      <div class="services-cta__inner">
+        <div class="services-cta__copy">
+          <h3 class="services-cta__heading">Partner with RDMS</h3>
+          <p class="services-cta__text">We work with government institutions, NGOs, dental associations, and international partners to scale our impact across Rwanda.</p>
+        </div>
+        <a href="#" class="services-cta__btn" id="servicesCtaBtn">
+          Get In Touch <span class="arrow" aria-hidden="true">&rarr;</span>
         </a>
       </div>
     </div>
+  </section>
 
-    <!-- Footer nav bar -->
-    <div class="div-block-3">
-      <div class="w-layout-blockcontainer container-3 w-container">
-        <div class="left-footer-things">
-          <a href="/" aria-current="page" class="footer-brand-link w-inline-block w--current">
-            <img src="assets/img/rdms-logo.png" loading="lazy" decoding="async" alt="RDMS" class="image-3"/>
-            <div class="brand-text footer-brand-text">
-              <span class="brand-name">Dento-Medical Society Rwanda</span>
-              <span class="brand-acronym">(RDMS)</span>
-            </div>
-          </a>
-          <p class="paragraph-5">Partnering to Transform Oral &amp; Public Health in Rwanda Through Innovation, Research &amp; Community Impact</p>
+  <!-- ============================
+       PROJECTS
+  ============================= -->
+  <section class="projects" id="projects" aria-labelledby="projects-heading">
+    <div class="projects__inner">
+      <div class="projects__header">
+        <img class="projects__bg-img reveal-photo" src="assets/img/bg-projects.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async"/>
+        <div class="projects__bg-overlay" aria-hidden="true"></div>
+        <p class="projects__eyebrow">Our Work</p>
+        <h2 class="projects__title" id="projects-heading">Projects &amp; Daily Activities</h2>
+        <p class="projects__subtitle">Tracking our active programs, campaigns, and field activities across Rwanda.</p>
+
+        <!-- Filter tabs (functional — see filter logic in script.js) -->
+        <div class="projects__filters" role="tablist" aria-label="Filter projects by category">
+        <button type="button" class="projects__filter is-active" data-filter="all" role="tab" aria-selected="true">All Projects</button>
+        <button type="button" class="projects__filter" data-filter="preventive-care" role="tab" aria-selected="false">Preventive Care</button>
+        <button type="button" class="projects__filter" data-filter="screenings" role="tab" aria-selected="false">Screenings</button>
+        <button type="button" class="projects__filter" data-filter="outreach" role="tab" aria-selected="false">Outreach</button>
+        <button type="button" class="projects__filter" data-filter="awareness" role="tab" aria-selected="false">Awareness</button>
+        <button type="button" class="projects__filter" data-filter="research" role="tab" aria-selected="false">Research</button>
+          <button type="button" class="projects__filter" data-filter="training" role="tab" aria-selected="false">Training</button>
         </div>
-        <div class="right-footer-things">
-          <div class="text-block-4">navigate</div>
-          <a href="#about" class="link-3">About</a>
-          <a href="/events" class="link-3">Events</a>
-        </div>
-        <div class="right-footer-things">
-          <div class="text-block-4">connect</div>
-          <a href="https://www.linkedin.com/company/tech-ish/" target="_blank" class="link-3">Linkedin</a>
-        </div>
+      </div><!-- /.projects__header -->
+
+      <div class="projects__grid">
+        <article class="projects__card" data-category="awareness">
+          <div class="projects__chips">
+            <span class="projects__status projects__status--completed">Completed</span>
+            <span class="projects__category">Awareness</span>
+          </div>
+          <h3 class="projects__name">World Ectodermal Dysplasia Day 2026</h3>
+          <p class="projects__desc">Community awareness event raising support for individuals and families affected by Ectodermal Dysplasia in Rwanda and beyond.</p>
+          <p class="projects__date">20 Feb 2026</p>
+        </article>
+
+        <article class="projects__card" data-category="preventive-care">
+          <div class="projects__chips">
+            <span class="projects__status projects__status--active">Active</span>
+            <span class="projects__category">Preventive Care</span>
+          </div>
+          <h3 class="projects__name">Daily Oral Health Messaging Campaign</h3>
+          <p class="projects__desc">Automated daily preventive care messages distributed to community members via SMS and social media platforms.</p>
+          <p class="projects__date">Ongoing &middot; 2026</p>
+        </article>
+
+        <article class="projects__card" data-category="screenings">
+          <div class="projects__chips">
+            <span class="projects__status projects__status--active">Active</span>
+            <span class="projects__category">Screenings</span>
+          </div>
+          <h3 class="projects__name">Huye District School Dental Screening Drive</h3>
+          <p class="projects__desc">Systematic oral health screenings across 7 primary schools in Huye District, identifying untreated caries and periodontal conditions.</p>
+          <p class="projects__date">Q1 2026</p>
+        </article>
+
+        <article class="projects__card" data-category="outreach">
+          <div class="projects__chips">
+            <span class="projects__status projects__status--planned">Planned</span>
+            <span class="projects__category">Outreach</span>
+          </div>
+          <h3 class="projects__name">Mobile Dental Clinic &mdash; Rural Outreach Q1</h3>
+          <p class="projects__desc">Mobile dental unit providing free extractions, fluoride treatment, and oral hygiene kits to communities in underserved areas.</p>
+          <p class="projects__date">March 2026</p>
+        </article>
+
+        <article class="projects__card" data-category="research">
+          <div class="projects__chips">
+            <span class="projects__status projects__status--ongoing">Ongoing</span>
+            <span class="projects__category">Research</span>
+          </div>
+          <h3 class="projects__name">Oral-Systemic Health Baseline Study &mdash; Rwanda</h3>
+          <p class="projects__desc">A cross-sectional research study documenting the prevalence of dental conditions and their systemic health correlations in Rwandan adults.</p>
+          <p class="projects__date">2025&ndash;2026</p>
+        </article>
+
+        <article class="projects__card" data-category="training">
+          <div class="projects__chips">
+            <span class="projects__status projects__status--planned">Planned</span>
+            <span class="projects__category">Training</span>
+          </div>
+          <h3 class="projects__name">Interdisciplinary Health Workshop Series</h3>
+          <p class="projects__desc">Training workshops for dental and medical professionals on integrating oral and systemic health in patient care.</p>
+          <p class="projects__date">Q2 2026</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================
+       RESEARCH ACADEMY
+  ============================= -->
+  <section class="academy" id="research-academy" aria-labelledby="academy-heading">
+    <div class="academy__inner">
+      <p class="academy__eyebrow">RDMS Research Academy</p>
+      <h2 class="academy__title" id="academy-heading">Where Knowledge Meets Practice</h2>
+      <p class="academy__subtitle">The RDMS Research Academy is a continuous learning platform for dental and health professionals in Rwanda &mdash; curating the latest research, publishing lessons, and advancing evidence-based oral health practice.</p>
+      <a href="#" class="academy__hero-btn" id="academyJoinBtn">
+        Join the Academy <span class="arrow" aria-hidden="true">&rarr;</span>
+      </a>
+
+      <div class="academy__lessons-header">
+        <p class="academy__lessons-eyebrow">Latest Lessons</p>
+        <h3 class="academy__lessons-title">Research-Based Learning</h3>
+      </div>
+
+      <div class="academy__grid">
+        <article class="academy__card">
+          <span class="academy__category">Oral-Systemic Health</span>
+          <h4 class="academy__name">The Link Between Periodontal Disease and Diabetes: Evidence from Sub-Saharan Africa</h4>
+          <p class="academy__desc">Emerging data from Sub-Saharan Africa highlights bidirectional associations between periodontitis and glycaemic control, with implications for integrated care pathways.</p>
+          <p class="academy__date">March 2026</p>
+        </article>
+
+        <article class="academy__card">
+          <span class="academy__category">Preventive Dentistry</span>
+          <h4 class="academy__name">Fluoride Varnish Efficacy in Primary School Children: A Systematic Review</h4>
+          <p class="academy__desc">This review synthesizes evidence on fluoride varnish application frequency and effectiveness in reducing early childhood caries in low-resource settings.</p>
+          <p class="academy__date">February 2026</p>
+        </article>
+
+        <article class="academy__card">
+          <span class="academy__category">Ectodermal Dysplasia</span>
+          <h4 class="academy__name">Dental Management of Ectodermal Dysplasia: Clinical Guidelines for Rwandan Practitioners</h4>
+          <p class="academy__desc">A practical clinical guide for Rwandan dental professionals managing patients with hypohidrotic ectodermal dysplasia, including prosthetic and implant considerations.</p>
+          <p class="academy__date">February 2026</p>
+        </article>
+
+        <article class="academy__card">
+          <span class="academy__category">Public Health</span>
+          <h4 class="academy__name">Oral Health Literacy in Rwanda: Survey Findings and Implications</h4>
+          <p class="academy__desc">A community survey examining awareness of dental hygiene practices, barriers to dental visits, and the role of community health workers.</p>
+          <p class="academy__date">January 2026</p>
+        </article>
+
+        <article class="academy__card">
+          <span class="academy__category">Oral Oncology</span>
+          <h4 class="academy__name">Early Detection of Oral Cancer in Low-Income Settings: A Rwanda Case Study</h4>
+          <p class="academy__desc">Reviewing current screening methods and community-based detection strategies feasible in Rwanda&rsquo;s primary healthcare system.</p>
+          <p class="academy__date">December 2025</p>
+        </article>
+
+        <article class="academy__card">
+          <span class="academy__category">Dental Materials</span>
+          <h4 class="academy__name">Glass Ionomer vs Composite Resin in Resource-Limited Settings: Clinical Comparison</h4>
+          <p class="academy__desc">Comparing durability, patient outcomes, and cost-effectiveness of two restorative materials commonly available in Rwandan dental clinics.</p>
+          <p class="academy__date">November 2025</p>
+        </article>
       </div>
     </div>
 
-    <div data-w-id="8bda5446-33b5-878e-7c09-3e2a8d9ef3ed" style="-webkit-transform:translate3d(0, 0, 0) scale3d(1.1, 1.1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-moz-transform:translate3d(0, 0, 0) scale3d(1.1, 1.1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);-ms-transform:translate3d(0, 0, 0) scale3d(1.1, 1.1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0);transform:translate3d(0, 0, 0) scale3d(1.1, 1.1, 1) rotateX(0) rotateY(0) rotateZ(0) skew(0, 0)" class="circle-dots bottom"></div>
+    <!-- Chronicles CTA band -->
+    <div class="academy-cta">
+      <img class="academy-cta__bg-img reveal-photo" src="assets/img/bg-academy.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async"/>
+      <div class="academy-cta__bg-overlay" aria-hidden="true"></div>
+      <div class="academy-cta__inner">
+        <div class="academy-cta__copy">
+          <h3 class="academy-cta__heading">Dental Medicine Chronicles</h3>
+          <p class="academy-cta__text">Stay current with RDMS&rsquo;s regular publication of dental medicine updates, case studies, and clinical commentary.</p>
+        </div>
+        <a href="#" class="academy-cta__btn" id="chroniclesSubscribeBtn">
+          Subscribe to Chronicles <span class="arrow" aria-hidden="true">&rarr;</span>
+        </a>
+      </div>
+    </div>
+  </section>
 
-  </div><!-- /footer-div -->
+  <!-- ============================
+       CONTACT
+  ============================= -->
+  <section class="contact" id="contact" aria-labelledby="contact-heading">
+    <div class="contact__inner">
+      <p class="contact__eyebrow">Get In Touch</p>
+      <h2 class="contact__title" id="contact-heading">Connect with RDMS</h2>
+      <p class="contact__subtitle">Whether you&rsquo;re a professional, partner, donor, or community member &mdash; we&rsquo;d love to hear from you.</p>
+
+      <div class="contact__grid">
+        <!-- LEFT: info + socials -->
+        <div class="contact__info">
+          <img class="contact__info-bg-img reveal-photo" src="assets/img/bg-contact.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async"/>
+          <div class="contact__info-bg-overlay" aria-hidden="true"></div>
+          <h3 class="contact__info-heading">We&rsquo;re here for Rwanda&rsquo;s oral health</h3>
+          <p class="contact__info-text">Reach out to learn more about our programs, partnership opportunities, research collaborations, or to refer patients to our community services.</p>
+
+          <ul class="contact__details">
+            <li class="contact__detail">
+              <span class="contact__detail-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 7-8 12-8 12s-8-5-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              </span>
+              <span class="contact__detail-content">
+                <span class="contact__detail-label">Location</span>
+                <span class="contact__detail-value">Ngoma, Huye, Amajyepfo &middot; Rwanda (Southern Province)</span>
+              </span>
+            </li>
+            <li class="contact__detail">
+              <span class="contact__detail-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              </span>
+              <span class="contact__detail-content">
+                <span class="contact__detail-label">Phone</span>
+                <span class="contact__detail-value"><a href="tel:+250791853120">+250 791 853 120</a></span>
+              </span>
+            </li>
+            <li class="contact__detail">
+              <span class="contact__detail-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+              </span>
+              <span class="contact__detail-content">
+                <span class="contact__detail-label">Email</span>
+                <span class="contact__detail-value">
+                  <a href="mailto:rdmspresident13@gmail.com">rdmspresident13@gmail.com</a><br/>
+                  <a href="mailto:igisubizojimmy@gmail.com">igisubizojimmy@gmail.com</a>
+                </span>
+              </span>
+            </li>
+            <li class="contact__detail">
+              <span class="contact__detail-icon" aria-hidden="true">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l8-4v18"/><path d="M19 21V11l-6-4"/><path d="M9 9v.01"/><path d="M9 12v.01"/><path d="M9 15v.01"/><path d="M9 18v.01"/></svg>
+              </span>
+              <span class="contact__detail-content">
+                <span class="contact__detail-label">Registration</span>
+                <span class="contact__detail-value">RDB Code: 143885158 &middot; Registered: 1 July 2024</span>
+              </span>
+            </li>
+          </ul>
+
+          <div class="contact__socials" aria-label="RDMS on social media">
+            <a class="contact__social" href="https://x.com/RDMS_rw" target="_blank" rel="noopener" aria-label="RDMS on X (Twitter)">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a class="contact__social" href="https://www.instagram.com/rdms_rw/" target="_blank" rel="noopener" aria-label="RDMS on Instagram">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            </a>
+            <a class="contact__social" href="https://www.linkedin.com/in/rdms-dento-medical-society-rwanda-24035029b" target="_blank" rel="noopener" aria-label="RDMS on LinkedIn">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            </a>
+            <a class="contact__social" href="https://www.tiktok.com/@rdmsrw" target="_blank" rel="noopener" aria-label="RDMS on TikTok">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5.66 20.1a6.34 6.34 0 0 0 10.86-4.43V8.16a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.7-.06z"/></svg>
+            </a>
+            <a class="contact__social" href="mailto:rdmspresident13@gmail.com" aria-label="Email RDMS">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- RIGHT: form -->
+        <div class="contact__form-card">
+          <h3 class="contact__form-title">Send Us a Message</h3>
+          <form class="contact__form" id="contactForm" novalidate>
+            <div class="contact__field">
+              <label for="cf-firstName">First Name</label>
+              <input type="text" id="cf-firstName" name="firstName" required autocomplete="given-name"/>
+            </div>
+            <div class="contact__field">
+              <label for="cf-lastName">Last Name</label>
+              <input type="text" id="cf-lastName" name="lastName" autocomplete="family-name"/>
+            </div>
+            <div class="contact__field contact__field--full">
+              <label for="cf-email">Email Address</label>
+              <input type="email" id="cf-email" name="email" required autocomplete="email"/>
+            </div>
+            <div class="contact__field contact__field--full">
+              <label for="cf-role">I am a&hellip;</label>
+              <select id="cf-role" name="role">
+                <option value="">Select one</option>
+                <option>Healthcare Professional</option>
+                <option>Dental Student</option>
+                <option>Partner / Donor</option>
+                <option>Community Member / Patient</option>
+                <option>Researcher</option>
+                <option>Government / NGO</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="contact__field contact__field--full">
+              <label for="cf-subject">Subject</label>
+              <input type="text" id="cf-subject" name="subject"/>
+            </div>
+            <div class="contact__field contact__field--full">
+              <label for="cf-message">Message</label>
+              <textarea id="cf-message" name="message" required rows="5"></textarea>
+            </div>
+            <button type="submit" class="contact__submit">
+              Send Message <span class="arrow" aria-hidden="true">&rarr;</span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================
+       FOOTER (rebuilt)
+  ============================= -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="site-footer__inner">
+      <div class="site-footer__brand">
+        <div class="site-footer__brand-row">
+          <img src="assets/img/rdms-logo.png" loading="lazy" decoding="async" alt="RDMS" class="site-footer__brand-logo"/>
+          <p class="site-footer__brand-name">Dento-Medical Society Rwanda</p>
+        </div>
+        <p class="site-footer__tagline">Uniting dental professionals and public health practitioners to advance oral-systemic health across Rwanda through education, research, outreach, and advocacy.</p>
+      </div>
+
+      <div class="site-footer__columns">
+        <div class="site-footer__col">
+          <p class="site-footer__col-title">Navigation</p>
+          <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#about">About RDMS</a></li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#projects">Projects</a></li>
+          </ul>
+        </div>
+
+        <div class="site-footer__col">
+          <p class="site-footer__col-title">Programs</p>
+          <ul>
+            <li><a href="#services">Preventive Care</a></li>
+            <li><a href="#services">School Screenings</a></li>
+            <li><a href="#research-academy">Research Academy</a></li>
+            <li><a href="#research-academy">Chronicles</a></li>
+          </ul>
+        </div>
+
+        <div class="site-footer__col">
+          <p class="site-footer__col-title">Contact</p>
+          <ul>
+            <li><a href="tel:+250791853120">+250 791 853 120</a></li>
+            <li><a href="mailto:rdmspresident13@gmail.com">rdmspresident13@gmail.com</a></li>
+            <li><a href="https://x.com/RDMS_rw" target="_blank" rel="noopener">Twitter / X</a></li>
+            <li><a href="#" id="footerConnectBtn">Send a Message</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="site-footer__bottom">
+        <p class="site-footer__copyright">&copy; 2024&ndash;2026 Dento-Medical Society Rwanda (RDMS). All rights reserved.</p>
+        <span class="site-footer__made"><span aria-hidden="true">🇷🇼</span> Made for Rwanda</span>
+      </div>
+    </div>
+  </footer>
 
   <!-- ============================
        SCRIPTS
