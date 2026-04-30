@@ -3066,3 +3066,76 @@ html.w-mod-js [data-w-id="8bda5446-33b5-878e-7c09-3e2a8d9ef3d2"] {
     display: none !important;
   }
 }
+
+/* ===============================================================
+   THREE PILLARS — repurposed 3-column scroll content panel
+   Sits inside the existing .column-scroll-content; the sticky-image
+   IX animation alongside is unchanged.
+   =============================================================== */
+
+.pillars-eyebrow {
+  font-family: 'Google Sans', sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #58cc6f;
+  font-weight: 500;
+  margin: 0 0 12px;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.55);
+}
+
+.pillars-lead {
+  font-size: 15px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0 0 28px;
+  max-width: 580px;
+}
+
+.pillars-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+}
+
+.pillar {
+  display: flex;
+  gap: 18px;
+  align-items: flex-start;
+}
+
+.pillar__num {
+  flex: none;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 28px;
+  font-weight: 300;
+  line-height: 1;
+  color: #58cc6f;
+  min-width: 44px;
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.5);
+}
+
+.pillar__body {
+  min-width: 0;
+}
+
+.pillar__title {
+  font-family: 'Google Sans', sans-serif;
+  font-size: 17px;
+  font-weight: 600;
+  color: #fff;
+  margin: 0 0 6px;
+  line-height: 1.2;
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.55);
+}
+
+.pillar__desc {
+  font-size: 14px;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.78);
+  margin: 0;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
+}
