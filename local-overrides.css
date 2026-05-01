@@ -542,12 +542,50 @@ html.w-mod-js [data-w-id="8bda5446-33b5-878e-7c09-3e2a8d9ef3d2"] {
 
 /* Hero section transparent — let the fixed background-video-container
    (hero-bg-rwanda.mp4) bleed through. Webflow's webflow.css sets
-   background-color: var(--grey-5) on .hero by default, which was
-   sitting opaque on top of the fixed video and hiding it. */
+   background-color: var(--grey-5) on .hero AND on the inner
+   .background-video div AND on the body — all of those sat opaque
+   on top of the fixed video and hid it. Strip every grey opaque
+   layer between the viewer and the video. */
 .hero,
 .hero.layout-b {
   background-color: transparent !important;
   background: transparent !important;
+}
+
+/* The inner .background-video div had background-color: var(--grey-5)
+   from webflow.css line 2467. That's the surface immediately wrapping
+   the <video class="hero-bg-video">. Strip it. */
+.background-video,
+.background-video:not(.footer) {
+  background-color: transparent !important;
+}
+
+/* Body grey bg also shows through wherever .hero is transparent.
+   Tint body to deep forest green instead of grey so any sliver that
+   peeks reads as Rwanda-tone, not generic dark grey. */
+body.body-2 {
+  background-color: #0d241c !important;
+}
+
+/* Defensive: bypass the IX3 visibility-hidden rule on the hero video
+   container. Webflow's inline style hides .background-video-container
+   until the page adds .w-mod-ix3 to <html>; if that class never makes
+   it (any JS error, slow load, etc.) the video stays invisible. Force
+   visible regardless. */
+.background-video-container {
+  visibility: visible !important;
+}
+
+/* Soften the dark wash so the Rwanda flag-colors video actually
+   reads as flag colors, not as a tinted grey-green. White text still
+   has enough contrast at this lower opacity. */
+.hero-video-overlay {
+  background: linear-gradient(
+    135deg,
+    rgba(13, 36, 28, 0.30) 0%,
+    rgba(13, 36, 28, 0.15) 45%,
+    rgba(13, 36, 28, 0.10) 100%
+  ) !important;
 }
 
 /* Layout B grid on the hero container */
