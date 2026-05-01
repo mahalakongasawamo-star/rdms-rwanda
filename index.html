@@ -67,37 +67,15 @@
   <script src="assets/js/leaflet.js"></script>
   <script src="assets/js/leaflet.markercluster.js"></script>
 
-  <!-- Background video clip-path animation (from original inline style) -->
+  <!-- Background video sizing (clip-path reveal removed — was clipping
+       the video to a pill in the middle, leaving the rest of the hero
+       opaque-black). Now the full video shows immediately. -->
   <style>
-    .masked-element {
-      -webkit-clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
-      clip-path: polygon(25% 0%, 100% 0%, 75% 100%, 0% 100%);
-    }
     .background-video {
       width: 100vw;
       height: 100vh;
       position: relative;
-      -webkit-clip-path: inset(50% 40% 50% 40% round 60px);
-      clip-path: inset(50% 40% 50% 40% round 60px);
-      animation: revealFull 1.8s cubic-bezier(0.77, 0, 0.18, 1) 0.5s forwards;
-      transition: -webkit-clip-path 0.6s ease, clip-path 0.6s ease;
-      will-change: clip-path;
       overflow: hidden;
-    }
-    @keyframes revealFull {
-      from {
-        -webkit-clip-path: inset(50% 40% 50% 40% round 60px);
-        clip-path: inset(50% 40% 50% 40% round 60px);
-      }
-      to {
-        -webkit-clip-path: inset(1% 0.5% 1% 0.5% round 20px);
-        clip-path: inset(1% 0.5% 1% 0.5% round 20px);
-      }
-    }
-    .background-video.no-clip {
-      -webkit-clip-path: none;
-      clip-path: none;
-      will-change: auto;
     }
 
     /* Fluid typography (from original global-styles) */

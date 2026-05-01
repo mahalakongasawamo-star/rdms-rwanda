@@ -67,28 +67,10 @@
       }
 
 
-      /* ----------------------------------------------------------------
-         HERO BACKGROUND VIDEO — clip-path scroll reveal
-         Expands from a pill shape to full viewport as you scroll.
-      ---------------------------------------------------------------- */
-      gsap.to('.background-video', {
-        clipPath: 'inset(0% 0% 0% 0% round 0px)',
-        ease: 'none',
-        scrollTrigger: {
-          trigger: '.hero',
-          start:   'top top',
-          end:     'bottom top',
-          scrub:   true,
-          onEnter: function () {
-            var el = document.querySelector('.background-video');
-            if (el) el.classList.add('no-clip');
-          },
-          onLeaveBack: function () {
-            var el = document.querySelector('.background-video');
-            if (el) el.classList.remove('no-clip');
-          }
-        }
-      });
+      /* HERO BACKGROUND VIDEO clip-path reveal — REMOVED. The reveal
+         was clipping the video to a tiny pill in the middle and
+         leaving the rest of the hero looking opaque-black. The video
+         now shows full from page load. */
 
 
       /* ----------------------------------------------------------------

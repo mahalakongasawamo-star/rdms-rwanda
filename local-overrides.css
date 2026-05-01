@@ -558,6 +558,12 @@ html.w-mod-js [data-w-id="8bda5446-33b5-878e-7c09-3e2a8d9ef3d2"] {
 .background-video,
 .background-video:not(.footer) {
   background-color: transparent !important;
+  /* Defensive: kill any clip-path that creeps back from cached JS or
+     legacy inline styles. The original Webflow template clipped the
+     video to a pill — we want it fully visible at all times. */
+  clip-path: none !important;
+  -webkit-clip-path: none !important;
+  animation: none !important;
 }
 
 /* Body grey bg also shows through wherever .hero is transparent.
