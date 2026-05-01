@@ -540,6 +540,16 @@ html.w-mod-js [data-w-id="8bda5446-33b5-878e-7c09-3e2a8d9ef3d2"] {
   opacity: 0.85;
 }
 
+/* Hero section transparent — let the fixed background-video-container
+   (hero-bg-rwanda.mp4) bleed through. Webflow's webflow.css sets
+   background-color: var(--grey-5) on .hero by default, which was
+   sitting opaque on top of the fixed video and hiding it. */
+.hero,
+.hero.layout-b {
+  background-color: transparent !important;
+  background: transparent !important;
+}
+
 /* Layout B grid on the hero container */
 .hero.layout-b .hero-container {
   height: 100%;
