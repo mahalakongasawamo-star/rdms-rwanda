@@ -576,16 +576,22 @@ body.body-2 {
   visibility: visible !important;
 }
 
-/* Soften the dark wash so the Rwanda flag-colors video actually
-   reads as flag colors, not as a tinted grey-green. White text still
-   has enough contrast at this lower opacity. */
+/* Dark wash REMOVED per user request — show the Rwanda flag-colors
+   video at full saturation. (Trade-off: white hero text legibility
+   drops on bright video frames; mitigated by adding text-shadow on
+   the hero copy below.) */
 .hero-video-overlay {
-  background: linear-gradient(
-    135deg,
-    rgba(13, 36, 28, 0.30) 0%,
-    rgba(13, 36, 28, 0.15) 45%,
-    rgba(13, 36, 28, 0.10) 100%
-  ) !important;
+  display: none !important;
+}
+
+/* Compensate for the removed overlay: add a text-shadow on the white
+   hero copy so it stays readable when the video shows bright yellow
+   or sky-blue frames. */
+.hero .heading-12.rdms,
+.hero .paragraph-2.rdms,
+.rdms-eyebrow-badge,
+.rdms-stats {
+  text-shadow: 0 1px 14px rgba(0, 0, 0, 0.6), 0 0 30px rgba(0, 0, 0, 0.35);
 }
 
 /* Layout B grid on the hero container */
