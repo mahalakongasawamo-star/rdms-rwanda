@@ -1,5 +1,5 @@
 /* ================================================================
-   LOCAL OVERRIDES — tech-ish.org clone
+   LOCAL OVERRIDES — RDMS Rwanda homepage skin
    Webflow IX2/IX3 fetches its animation config from Webflow's API
    using the site domain; that call fails on localhost, leaving
    elements frozen in their CSS "initial" states.
@@ -2576,13 +2576,30 @@ html.w-mod-js [data-w-id="8bda5446-33b5-878e-7c09-3e2a8d9ef3d2"] {
 .site-footer {
   position: relative;
   z-index: 2;
+  isolation: isolate;
   background: #0a1620;
   color: rgba(255, 255, 255, 0.85);
   padding: clamp(48px, 6vw, 72px) clamp(20px, 4vw, 36px) 24px;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
+  overflow: hidden;  /* clip the decorative .circle-abstract that extends past the footer */
+}
+
+/* The legacy .circle-abstract is 50rem at bottom-right with overflow:visible.
+   On the new dark footer it should sit behind the content as ambient brand
+   vignette — push it to z-index -1 within the footer's stacking context, and
+   dim it so the footer text stays readable. */
+.site-footer .circle-abstract {
+  z-index: -1;
+  opacity: 0.55;
+  pointer-events: none;
+}
+.site-footer .circle-color {
+  filter: saturate(1.05);
 }
 
 .site-footer__inner {
+  position: relative;
+  z-index: 1;
   max-width: 1200px;
   margin: 0 auto;
 }
@@ -3068,74 +3085,307 @@ html.w-mod-js [data-w-id="8bda5446-33b5-878e-7c09-3e2a8d9ef3d2"] {
 }
 
 /* ===============================================================
-   THREE PILLARS — repurposed 3-column scroll content panel
-   Sits inside the existing .column-scroll-content; the sticky-image
-   IX animation alongside is unchanged.
+   THREE PILLARS — documented triptych on cream paper.
+   Replaces the inherited Webflow column-scroll mold with a
+   bespoke section that respects DESIGN.md's two-zone rule and
+   the "specificity over generality" design principle.
+
+   Kinyarwanda ordinals: Mbere (first), Kabiri (two/second),
+   Gatatu (three/three). Bare cardinal forms used for display
+   compactness; formal ordinal would prefix "icya-". Verify with
+   a native speaker before going to print.
    =============================================================== */
 
-.pillars-eyebrow {
+.pillars {
+  background-color: #f6f3ec; /* cream-paper */
+  color: #0a0a0a;
+  padding: clamp(4rem, 8vw, 7rem) clamp(1.5rem, 5vw, 4rem);
+  position: relative;
+  z-index: 2; /* clear the fixed .background-video-container — site convention */
+  isolation: isolate;
+}
+
+.pillars__inner {
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+.pillars__header {
+  margin: 0 0 clamp(1.75rem, 3.5vw, 2.5rem);
+}
+
+.pillars__eyebrow {
   font-family: 'Google Sans', sans-serif;
   font-size: 11px;
-  letter-spacing: 0.18em;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: #58cc6f;
+  color: #1f6b3a; /* field-green-deep — One Green Discipline on cream */
   font-weight: 500;
-  margin: 0 0 12px;
-  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.55);
+  margin: 0 0 1rem;
+  text-shadow: none;
 }
 
-.pillars-lead {
-  font-size: 15px;
+.pillars__title {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(2rem, 4.2vw, 3rem);
+  font-weight: 400;
+  letter-spacing: -0.015em;
+  line-height: 1.1;
+  color: #0a0a0a;
+  margin: 0 0 1rem;
+  max-width: 22ch;
+  text-shadow: none;
+}
+
+.pillars__lead {
+  font-family: 'Google Sans', sans-serif;
+  font-size: 1.0625rem;
   line-height: 1.6;
-  color: rgba(255, 255, 255, 0.85);
-  margin: 0 0 28px;
-  max-width: 580px;
+  color: #2a2a2a;
+  margin: 0;
+  max-width: 60ch;
+  text-shadow: none;
 }
 
-.pillars-list {
+.pillars__rule {
+  border: 0;
+  border-top: 1px solid #1f6b3a;
+  margin: 0 0 clamp(2rem, 4vw, 3rem);
+  height: 0;
+  width: 100%;
+}
+
+.pillars__list {
   list-style: none;
   padding: 0;
-  margin: 0 0 32px;
-  display: flex;
-  flex-direction: column;
-  gap: 22px;
+  margin: 0;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: clamp(2.5rem, 5vw, 3.5rem);
+}
+
+@media (min-width: 900px) {
+  .pillars__list {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: clamp(2rem, 3.5vw, 3rem);
+    align-items: start;
+  }
 }
 
 .pillar {
   display: flex;
-  gap: 18px;
-  align-items: flex-start;
-}
-
-.pillar__num {
-  flex: none;
-  font-family: Georgia, 'Times New Roman', serif;
-  font-size: 28px;
-  font-weight: 300;
-  line-height: 1;
-  color: #58cc6f;
-  min-width: 44px;
-  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.5);
-}
-
-.pillar__body {
-  min-width: 0;
-}
-
-.pillar__title {
-  font-family: 'Google Sans', sans-serif;
-  font-size: 17px;
-  font-weight: 600;
-  color: #fff;
-  margin: 0 0 6px;
-  line-height: 1.2;
-  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.55);
-}
-
-.pillar__desc {
-  font-size: 14px;
-  line-height: 1.55;
-  color: rgba(255, 255, 255, 0.78);
+  flex-direction: column;
   margin: 0;
-  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
+  padding: 0;
+  align-items: stretch;
+}
+
+/* ─── Ordinal block ─────────────────────────────────────────────── */
+
+.pillar__ordinal {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  margin: 0 0 1.25rem;
+  color: #1f6b3a;
+}
+
+.pillar__ordinal-word {
+  font-family: 'Google Sans', sans-serif;
+  font-size: clamp(2.25rem, 4.5vw, 3.25rem);
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  line-height: 0.95;
+  color: #1f6b3a;
+}
+
+.pillar__ordinal-num {
+  font-family: 'Google Sans', sans-serif;
+  font-size: 0.6875rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  color: #4a4a4a;
+  text-transform: uppercase;
+  white-space: nowrap;
+  align-self: flex-start;
+  margin-top: 0.625rem;
+}
+
+/* ─── Photo plate (placeholder + future <picture>) ─────────────── */
+
+.pillar__plate {
+  margin: 0 0 1.25rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.pillar__plate-frame {
+  aspect-ratio: 4 / 5;
+  background-color: #ece6d6; /* cream-tint */
+  border: 1px solid #e3ddd1; /* border-paper */
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  width: 100%;
+  max-width: 480px; /* cap on stacked layouts so the empty plate doesn't sprawl */
+}
+
+@media (min-width: 900px) {
+  .pillar__plate-frame {
+    max-width: none;
+  }
+  /* Middle pillar's plate: +12% taller per shape brief (asymmetric). */
+  .pillars__list > .pillar:nth-child(2) .pillar__plate-frame {
+    aspect-ratio: 4 / 5.6;
+  }
+}
+
+/* Subtle tonal weave — texture in the empty frame without literal
+   pattern mimicry. The future <picture> overlays this. */
+.pillar__plate-frame[data-rdms-photo-state="pending"]::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(45deg, transparent 49.5%, rgba(31, 107, 58, 0.05) 49.5% 50.5%, transparent 50.5%),
+    linear-gradient(-45deg, transparent 49.5%, rgba(31, 107, 58, 0.04) 49.5% 50.5%, transparent 50.5%);
+  background-size: 18px 18px;
+  pointer-events: none;
+  opacity: 0.75;
+}
+
+.pillar__plate-pending {
+  position: relative;
+  z-index: 1;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+  text-align: left;
+}
+
+.pillar__plate-pending-label {
+  font-family: 'Google Sans', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #1f6b3a;
+  font-weight: 500;
+}
+
+.pillar__plate-pending-status {
+  font-family: 'Google Sans', sans-serif;
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #4a4a4a; /* ink-secondary — AA contrast on cream-tint */
+  font-weight: 400;
+}
+
+.pillar__caption {
+  font-family: 'Google Sans', sans-serif;
+  font-size: 12px;
+  line-height: 1.45;
+  letter-spacing: 0.02em;
+  color: #4a4a4a; /* ink-secondary — AA contrast on cream-paper */
+  margin: 0.625rem 0 0;
+  text-align: left;
+}
+
+/* ─── Title, body, link ────────────────────────────────────────── */
+
+.pillar .pillar__title {
+  font-family: 'Google Sans', sans-serif;
+  font-size: 1.375rem;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.005em;
+  color: #0a0a0a;
+  margin: 0.5rem 0 0.625rem;
+  text-shadow: none;
+  text-align: left;
+}
+
+.pillar .pillar__desc {
+  font-family: 'Google Sans', sans-serif;
+  font-size: 0.9375rem;
+  line-height: 1.6;
+  color: #2a2a2a;
+  margin: 0 0 1.25rem;
+  max-width: 60ch;
+  text-shadow: none;
+  text-align: left;
+}
+
+.pillar__link {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  font-family: 'Google Sans', sans-serif;
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.005em;
+  color: #1f6b3a;
+  text-decoration: none;
+  border-bottom: 1px solid currentColor;
+  padding-bottom: 0.125rem;
+  width: max-content;
+  transition: color 200ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.pillar__link:hover {
+  color: #58cc6f; /* cooperative-green — reserved for hover/focus only */
+}
+
+.pillar__link:focus-visible {
+  color: #58cc6f;
+  outline: 2px solid #58cc6f;
+  outline-offset: 4px;
+  border-bottom-color: transparent;
+}
+
+.pillar__link-arrow {
+  display: inline-block;
+  transition: transform 240ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.pillar__link:hover .pillar__link-arrow,
+.pillar__link:focus-visible .pillar__link-arrow {
+  transform: translateX(3px);
+}
+
+/* ─── Reveal stagger (reuses the existing .reveal-photo
+   IntersectionObserver that toggles .is-visible). Override the
+   default scale-fade with a fade-rise tuned for the pillars. */
+
+.pillar.reveal-photo {
+  transform: translateY(14px);
+  transition:
+    opacity 700ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.pillar.reveal-photo.is-visible {
+  transform: translateY(0);
+}
+
+.pillars__list > .pillar:nth-child(2).reveal-photo {
+  transition-delay: 90ms;
+}
+.pillars__list > .pillar:nth-child(3).reveal-photo {
+  transition-delay: 180ms;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pillar.reveal-photo,
+  .pillar.reveal-photo.is-visible {
+    transition-delay: 0s !important;
+    transition: none !important;
+    transform: none !important;
+  }
+  .pillar__link-arrow {
+    transition: none !important;
+  }
 }
