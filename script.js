@@ -397,38 +397,11 @@
     : DESKTOP_QUERY.addListener(update);
 })();
 
-/* ================================================================
-   PROJECTS FILTER TABS
-   Click a tab → show only project cards whose data-category matches.
-   "all" → show everything.
-   ================================================================ */
-(function () {
-  'use strict';
-
-  var filters = document.querySelectorAll('.projects__filter');
-  var cards = document.querySelectorAll('.projects__card');
-  if (!filters.length || !cards.length) return;
-
-  function applyFilter(filter) {
-    cards.forEach(function (card) {
-      var category = card.getAttribute('data-category') || '';
-      var match = (filter === 'all') || (category === filter);
-      card.classList.toggle('is-hidden', !match);
-    });
-    filters.forEach(function (btn) {
-      var active = btn.getAttribute('data-filter') === filter;
-      btn.classList.toggle('is-active', active);
-      btn.setAttribute('aria-selected', active ? 'true' : 'false');
-    });
-  }
-
-  filters.forEach(function (btn) {
-    btn.addEventListener('click', function () {
-      var filter = btn.getAttribute('data-filter') || 'all';
-      applyFilter(filter);
-    });
-  });
-})();
+/* PROJECTS FILTER TABS — removed.
+   The Projects section was redesigned as a press-release-log activity
+   log grouped by status (Active Now / Recently Completed / Coming
+   Next). Status is visible via grouping; no filter UI. The original
+   30-line click-to-filter IIFE was deleted as part of that craft. */
 
 /* ================================================================
    CONTACT FORM — submit via mailto:

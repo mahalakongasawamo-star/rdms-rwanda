@@ -170,12 +170,6 @@
   object-position: center center;
 }
 
-/* ---------------------------------------------------------------
-   3. HEADING-12 (hero headline) — force white text
-   --------------------------------------------------------------- */
-.heading-12 {
-  color: #fff !important;
-}
 
 /* ---------------------------------------------------------------
    4a. ABOUT CONTAINER (mobile) — let it grow with content.
@@ -376,169 +370,6 @@ html.w-mod-js [data-w-id="8bda5446-33b5-878e-7c09-3e2a8d9ef3d2"] {
   transform: none !important;
 }
 
-/* ================================================================
-   11. RDMS HERO — LAYOUT B (split two-column)
-   Replaces the original "Partnering to Transform" two-column +
-   3-card grid. Left column: badge + headline + sub + CTAs + stats.
-   Right column: program card. Bottom strip: credibility badges.
-   ================================================================ */
-
-/* Allow the long RDMS headline to wrap and scale */
-.hero .heading-12.rdms {
-  white-space: normal;
-  font-size: clamp(36px, 5vw, 76px);
-  line-height: 1.05;
-  font-weight: 500;
-  letter-spacing: -0.01em;
-}
-.hero .paragraph-2.rdms {
-  width: 100%;
-  max-width: 640px;
-  font-size: clamp(15px, 1.2vw, 19px);
-  line-height: 1.45;
-  margin-top: 0;
-  margin-bottom: 0;
-}
-
-/* Eyebrow badge (Rwanda's Leading Non-Profit Oral Health Society) */
-.rdms-eyebrow-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 8px 16px;
-  border: 1px solid rgba(255,255,255,0.25);
-  border-radius: 999px;
-  background: rgba(255,255,255,0.06);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  color: #fff;
-  font-family: 'Google Sans Flex', sans-serif;
-  font-size: 13px;
-  letter-spacing: 0.04em;
-  font-weight: 400;
-  width: fit-content;
-}
-.rdms-eyebrow-badge::before {
-  content: "";
-  width: 8px; height: 8px;
-  border-radius: 50%;
-  background: #58cc6f;
-  box-shadow: 0 0 0 4px rgba(88,204,111,0.18);
-}
-
-/* Stats line */
-.rdms-stats {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px 18px;
-  color: rgba(255,255,255,0.78);
-  font-family: 'Google Sans', sans-serif;
-  font-size: 14px;
-  letter-spacing: 0.02em;
-}
-.rdms-stats strong { color: #fff; font-weight: 600; }
-
-/* CTA buttons */
-.rdms-ctas { display: flex; flex-wrap: wrap; gap: 12px; }
-.rdms-cta {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 14px 24px;
-  border-radius: 999px;
-  font-family: 'Google Sans', sans-serif;
-  font-size: 15px;
-  font-weight: 500;
-  text-decoration: none;
-  transition: transform .25s ease, background .25s ease, border-color .25s ease;
-}
-.rdms-cta:hover { transform: translateY(-1px); }
-.rdms-cta.primary {
-  background: #fff;
-  color: #0a0a0a;
-}
-.rdms-cta.primary:hover { background: #ededed; }
-.rdms-cta.secondary {
-  background: rgba(255,255,255,0.06);
-  color: #fff;
-  border: 1px solid rgba(255,255,255,0.30);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-}
-.rdms-cta.secondary:hover { border-color: rgba(255,255,255,0.6); }
-.rdms-cta .arrow { display: inline-block; transition: transform .25s ease; }
-.rdms-cta:hover .arrow { transform: translateX(3px); }
-
-/* Program card */
-.rdms-program-card {
-  border: 1px solid rgba(255,255,255,0.18);
-  background: rgba(15,15,18,0.55);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  border-radius: 18px;
-  padding: 28px;
-  color: #fff;
-  font-family: 'Google Sans', sans-serif;
-  box-shadow: 0 12px 40px rgba(0,0,0,0.3);
-}
-.rdms-program-card .pc-title {
-  font-size: 22px;
-  font-weight: 600;
-  margin: 0 0 8px;
-  line-height: 1.2;
-}
-.rdms-program-card .pc-desc {
-  font-size: 14px;
-  line-height: 1.5;
-  color: rgba(255,255,255,0.78);
-  margin: 0 0 18px;
-}
-.rdms-program-card .pc-services {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: grid;
-  gap: 10px;
-  grid-template-columns: 1fr;
-}
-.rdms-program-card .pc-services li {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  font-size: 14px;
-  color: #fff;
-}
-.rdms-program-card .pc-services li::before {
-  content: "";
-  width: 6px; height: 6px;
-  background: #58cc6f;
-  border-radius: 50%;
-  flex: none;
-}
-
-/* Bottom credibility badges (RDB + Location) */
-.rdms-bottom-badges {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-}
-.rdms-bottom-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 8px 14px;
-  border: 1px solid rgba(255,255,255,0.18);
-  border-radius: 8px;
-  background: rgba(0,0,0,0.30);
-  color: rgba(255,255,255,0.85);
-  font-family: 'Google Sans', sans-serif;
-  font-size: 12px;
-  letter-spacing: 0.02em;
-}
-.rdms-bottom-badge .ico {
-  font-size: 13px;
-  opacity: 0.85;
-}
 
 /* Hero section transparent — let the fixed background-video-container
    (hero-bg-rwanda.mp4) bleed through. Webflow's webflow.css sets
@@ -590,65 +421,7 @@ body.body-2 {
   display: none !important;
 }
 
-/* Compensate for the removed overlay: add a text-shadow on the white
-   hero copy so it stays readable when the video shows bright yellow
-   or sky-blue frames. */
-.hero .heading-12.rdms,
-.hero .paragraph-2.rdms,
-.rdms-eyebrow-badge,
-.rdms-stats {
-  text-shadow: 0 1px 14px rgba(0, 0, 0, 0.6), 0 0 30px rgba(0, 0, 0, 0.35);
-}
 
-/* Layout B grid on the hero container */
-.hero.layout-b .hero-container {
-  height: 100%;
-  display: grid !important;
-  grid-template-columns: 1.2fr 1fr;
-  grid-template-rows: 1fr auto;
-  gap: 40px 56px;
-  align-items: center;
-  padding-top: 7rem;
-  padding-bottom: 3rem;
-  position: relative;
-  z-index: 2;
-}
-.hero.layout-b .left-col {
-  grid-column: 1;
-  grid-row: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 22px;
-}
-.hero.layout-b .right-col { grid-column: 2; grid-row: 1; }
-.hero.layout-b .bottom-strip {
-  grid-column: 1 / -1;
-  grid-row: 2;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 16px;
-  padding-top: 24px;
-  border-top: 1px solid rgba(255,255,255,0.10);
-}
-
-/* Mobile: collapse split into stack */
-@media (max-width: 991px) {
-  .hero.layout-b .hero-container {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto;
-    padding-top: 5rem;
-  }
-  .hero.layout-b .left-col,
-  .hero.layout-b .right-col,
-  .hero.layout-b .bottom-strip {
-    grid-column: 1;
-  }
-  .hero.layout-b .left-col { grid-row: 1; }
-  .hero.layout-b .right-col { grid-row: 2; }
-  .hero.layout-b .bottom-strip { grid-row: 3; }
-}
 
 /* ================================================================
    12. MOBILE OPTIMIZATION PASS (audit 2026-04-29)
@@ -671,28 +444,6 @@ body.body-2 {
   }
 }
 
-/* 12b. Hero Layout B — tighten vertical rhythm on mobile.
-   At 360px the hero is 1200px tall (1.5 phone screens) before any
-   secondary content. Cut padding + gaps and shrink program card
-   padding to recover above-the-fold real estate. */
-@media (max-width: 991px) {
-  .hero.layout-b .hero-container {
-    gap: 24px 0 !important;
-    padding-top: 4.5rem !important;
-    padding-bottom: 2rem !important;
-  }
-  .hero.layout-b .left-col {
-    gap: 16px !important;
-  }
-  .rdms-program-card {
-    padding: 20px !important;
-  }
-  /* Bump program card backplate opacity (0.55 → 0.72) so its edges
-     read against the live video gradient instead of blurring into it. */
-  .rdms-program-card {
-    background: rgba(15, 15, 18, 0.72) !important;
-  }
-}
 
 /* 12c. Footer link tap targets — .link-3 (About / Events / Linkedin)
    render at 20px tall, well below Apple HIG (44pt) and Material (48dp)
@@ -704,57 +455,7 @@ body.body-2 {
   }
 }
 
-/* 12d. Eyebrow badge wraps to two lines below 380px because the long
-   "Rwanda's Leading Non-Profit Oral Health Society" string can't fit.
-   Shrink font + padding so it stays single-line on iPhone SE. */
-@media (max-width: 380px) {
-  .rdms-eyebrow-badge {
-    font-size: 12px !important;
-    padding: 6px 12px !important;
-  }
-}
 
-/* 12e. Stats line ("Founded 2024 · 5+ Core Services · 30+ Members")
-   wraps "30+ Members" to its own row at 360px. Shrink + tighten gap
-   to keep it on one line. */
-@media (max-width: 380px) {
-  .rdms-stats {
-    font-size: 13px !important;
-    gap: 6px 14px !important;
-  }
-}
-
-/* ---------------------------------------------------------------
-   ABOUT TEASER (homepage) — refresh of the legacy .about-container
-   block. Sits over the dark hero video on mobile and over the dark
-   hero gradient on desktop, so all text is white and the CTA uses
-   the existing .rdms-cta.secondary glassmorphic styling.
-   --------------------------------------------------------------- */
-
-.about-teaser__title {
-  font-family: 'Google Sans', sans-serif;
-  font-size: clamp(24px, 3.4vw, 36px);
-  line-height: 1.1;
-  letter-spacing: -0.01em;
-  font-weight: 500;
-  color: #fff;
-  margin: 16px 0 14px;
-  max-width: 720px;
-  text-align: left;
-}
-
-.about-teaser__body {
-  font-family: 'Google Sans', sans-serif;
-  font-size: 15px;
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.85);
-  max-width: 640px;
-  margin: 0 0 22px;
-  text-align: left;
-}
-
-/* .about-teaser__cta inherits everything (inline-flex, gap, .arrow hover)
-   from .rdms-cta and .rdms-cta.secondary — no extra rules needed here. */
 
 /* ---------------------------------------------------------------
    LEADERSHIP — homepage section between about teaser and 3-col scroll.
@@ -835,6 +536,7 @@ body.body-2 {
   width: 100%;
   aspect-ratio: 4 / 5;
   object-fit: cover;
+  object-position: center top;
   border-radius: 12px;
   filter: grayscale(0.15) saturate(0.92);
   transition:
@@ -998,419 +700,6 @@ body.body-2 {
   }
 }
 
-/* ===============================================================
-   HOMEPAGE ABOUT — full 7-block about content, inlined.
-   Dark / transparent / glassmorphic palette so the fixed hero
-   video plays through. The cream-palette /about.html still exists
-   as an orphan; this is the homepage version.
-   =============================================================== */
-
-/* Shared section base */
-.home-about-header,
-.home-about-story,
-.home-about-info,
-.home-about-values {
-  position: relative;
-  z-index: 2;
-  isolation: isolate;
-  color: #fff;
-  text-align: left;
-  padding: clamp(48px, 7vw, 80px) clamp(20px, 4vw, 36px);
-}
-
-.home-about__inner {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-/* Shared eyebrow on transparent dark sections */
-.home-about__eyebrow {
-  font-family: 'Google Sans', sans-serif;
-  font-size: 11px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: #58cc6f;
-  font-weight: 500;
-  margin: 0 0 14px;
-  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.55);
-}
-
-.home-about__eyebrow.on-photo {
-  color: #a9e0b6;
-}
-
-/* -------- 1. HEADER -------- */
-
-.home-about-header {
-  padding-top: clamp(56px, 7vw, 88px);
-  padding-bottom: clamp(40px, 5vw, 56px);
-}
-
-.home-about__title {
-  font-family: 'Google Sans', sans-serif;
-  font-size: clamp(28px, 4vw, 38px);
-  line-height: 1.05;
-  letter-spacing: -0.01em;
-  font-weight: 500;
-  color: #fff;
-  max-width: 780px;
-  margin: 0;
-  text-shadow: 0 1px 16px rgba(0, 0, 0, 0.6);
-}
-
-.home-about__subtitle {
-  font-size: 15px;
-  line-height: 1.5;
-  color: rgba(255, 255, 255, 0.85);
-  max-width: 680px;
-  margin: 14px 0 0;
-  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.55);
-}
-
-/* -------- 2. VISION BANNER (full-bleed photo + overlay) -------- */
-
-.home-about-vision {
-  position: relative;
-  z-index: 2;
-  isolation: isolate;
-  padding: clamp(56px, 8vw, 96px) clamp(20px, 4vw, 36px);
-  color: #fff;
-  text-align: left;
-  overflow: hidden;
-}
-
-.home-about-vision__img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -2;
-}
-
-.home-about-vision__overlay {
-  position: absolute;
-  inset: 0;
-  /* Rwanda flag-green gradient (deepened, sophisticated) over photo. */
-  background:
-    linear-gradient(rgba(0, 0, 0, 0.32), rgba(0, 0, 0, 0.32)),
-    linear-gradient(135deg, #1a4d2e, #2d6e4a);
-  background-blend-mode: multiply;
-  opacity: 0.85;
-  z-index: -1;
-}
-
-.home-about-vision__inner {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.home-about-vision__headline {
-  font-family: 'Google Sans', sans-serif;
-  font-size: clamp(24px, 3.4vw, 32px);
-  line-height: 1.1;
-  letter-spacing: -0.01em;
-  font-weight: 500;
-  color: #fff;
-  max-width: 760px;
-  margin: 0;
-}
-
-.home-about-vision__body {
-  font-size: 14px;
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.85);
-  max-width: 680px;
-  margin: 16px 0 0;
-}
-
-/* -------- 3. STORY -------- */
-
-.home-about-story {
-  display: grid;
-  grid-template-columns: 240px 1fr;
-  gap: 48px;
-  align-items: start;
-}
-
-.home-about-story__label-eyebrow {
-  font-family: 'Google Sans', sans-serif;
-  font-size: 11px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: #58cc6f;
-  font-weight: 500;
-  margin: 0 0 8px;
-  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.55);
-}
-
-.home-about-story__meta {
-  font-size: 14px;
-  color: rgba(255, 255, 255, 0.6);
-  line-height: 1.4;
-  margin: 0;
-  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.55);
-}
-
-.home-about-story__body {
-  max-width: 640px;
-  margin: 0;
-}
-
-.home-about-story__body p {
-  font-size: 16px;
-  line-height: 1.65;
-  color: rgba(255, 255, 255, 0.88);
-  margin: 0 0 18px;
-  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.6);
-}
-
-.home-about-story__body p:last-child {
-  margin-bottom: 0;
-}
-
-@media (max-width: 768px) {
-  .home-about-story {
-    grid-template-columns: 1fr;
-    gap: 18px;
-  }
-}
-
-/* -------- 4. MISSION QUOTE (full-bleed photo + overlay) -------- */
-
-.home-about-mission {
-  position: relative;
-  z-index: 2;
-  isolation: isolate;
-  padding: clamp(64px, 9vw, 96px) clamp(20px, 4vw, 36px);
-  color: #fff;
-  text-align: left;
-  overflow: hidden;
-}
-
-.home-about-mission__img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -2;
-}
-
-.home-about-mission__overlay {
-  position: absolute;
-  inset: 0;
-  /* Rwanda flag-blue gradient (deepened, sophisticated) over photo —
-     pairs with the Vision Banner's green for a green-and-blue identity duo. */
-  background:
-    linear-gradient(rgba(0, 0, 0, 0.40), rgba(0, 0, 0, 0.40)),
-    linear-gradient(135deg, #0a2540, #1d4862);
-  background-blend-mode: multiply;
-  opacity: 0.88;
-  z-index: -1;
-}
-
-.home-about-mission__inner {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.home-about-mission__quote {
-  font-family: Georgia, 'Times New Roman', serif;
-  font-style: italic;
-  font-weight: 400;
-  font-size: clamp(20px, 2.4vw, 26px);
-  line-height: 1.4;
-  color: #fff;
-  max-width: 820px;
-  margin: 24px 0 0;
-  padding: 0;
-}
-
-/* -------- 5. INFO CARDS (glassmorphic 3-up grid) -------- */
-
-.home-about-info__grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 18px;
-}
-
-.home-about-info__card {
-  background: rgba(15, 15, 18, 0.55);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  border-radius: 14px;
-  padding: 22px;
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.25);
-}
-
-.home-about-info__icon {
-  font-size: 22px;
-  line-height: 1;
-  margin-bottom: 10px;
-}
-
-.home-about-info__title {
-  font-family: 'Google Sans', sans-serif;
-  font-size: 15px;
-  font-weight: 600;
-  color: #fff;
-  margin: 0 0 8px;
-}
-
-.home-about-info__body {
-  font-size: 13px;
-  line-height: 1.55;
-  color: rgba(255, 255, 255, 0.78);
-  margin: 0;
-}
-
-@media (max-width: 768px) {
-  .home-about-info__grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* -------- 6. VALUES (numbered manifesto) -------- */
-
-.home-about-values__title {
-  font-family: 'Google Sans', sans-serif;
-  font-size: clamp(24px, 3.2vw, 30px);
-  line-height: 1.05;
-  letter-spacing: -0.01em;
-  font-weight: 500;
-  color: #fff;
-  margin: 0 0 36px;
-  text-shadow: 0 1px 16px rgba(0, 0, 0, 0.6);
-}
-
-.home-about-values__list {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 36px 48px;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.home-about-values__item {
-  display: flex;
-  gap: 18px;
-  align-items: flex-start;
-}
-
-.home-about-values__item--span-half {
-  grid-column: 1 / span 1;
-}
-
-.home-about-values__num {
-  font-family: Georgia, 'Times New Roman', serif;
-  font-size: 32px;
-  font-weight: 300;
-  line-height: 1;
-  color: #58cc6f;
-  flex: none;
-  min-width: 48px;
-  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.5);
-}
-
-.home-about-values__name {
-  font-family: 'Google Sans', sans-serif;
-  font-size: 16px;
-  font-weight: 600;
-  color: #fff;
-  margin: 0 0 6px;
-  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.55);
-}
-
-.home-about-values__desc {
-  font-size: 13px;
-  line-height: 1.55;
-  color: rgba(255, 255, 255, 0.78);
-  margin: 0;
-  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
-}
-
-@media (max-width: 768px) {
-  .home-about-values__list {
-    grid-template-columns: 1fr;
-  }
-  .home-about-values__item--span-half {
-    grid-column: auto;
-  }
-}
-
-/* -------- 7. CREDIBILITY BAND (solid dark — closer before Leadership) -------- */
-
-.home-about-credibility {
-  position: relative;
-  z-index: 2;
-  /* Deep teal-navy (Rwanda flag-blue tone, deepened for white text contrast).
-     Acts as the definitive closer band before Leadership; the cool blue
-     contrasts the green-toned hero video band that surrounds it. */
-  background: #0d2438;
-  color: #fff;
-  text-align: left;
-  padding: clamp(40px, 6vw, 56px) clamp(20px, 4vw, 36px);
-}
-
-.home-about-credibility__inner {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.home-about-credibility__eyebrow {
-  font-family: 'Google Sans', sans-serif;
-  font-size: 11px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: #58cc6f;
-  font-weight: 500;
-  margin: 0 0 18px;
-}
-
-.home-about-credibility__kpis {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
-}
-
-.home-about-credibility__label {
-  font-size: 13px;
-  color: rgba(255, 255, 255, 0.5);
-  margin: 0 0 4px;
-}
-
-.home-about-credibility__value {
-  font-family: 'Google Sans', sans-serif;
-  font-size: 18px;
-  font-weight: 600;
-  color: #fff;
-  margin: 0;
-}
-
-.home-about-credibility__facts {
-  list-style: none;
-  padding: 24px 0 0;
-  margin: 24px 0 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.12);
-  display: flex;
-  flex-wrap: wrap;
-  gap: 32px;
-  font-size: 13px;
-  color: rgba(255, 255, 255, 0.75);
-}
-
-.home-about-credibility__facts li {
-  margin: 0;
-}
-
-@media (max-width: 768px) {
-  .home-about-credibility__kpis {
-    grid-template-columns: 1fr 1fr;
-  }
-}
 
 /* ===============================================================
    STICKY GLASSMORPHIC NAVBAR
@@ -1628,419 +917,7 @@ body.body-2 {
   }
 }
 
-/* ===============================================================
-   SERVICES SECTION (homepage)
-   Transparent dark section + 2x3 glassmorphic card grid + featured
-   CTA band at the bottom. Lucide-style stroke SVG icons per service.
-   =============================================================== */
 
-.services {
-  position: relative;
-  z-index: 2;
-  isolation: isolate;
-  color: #fff;
-  text-align: left;
-  padding: clamp(56px, 8vw, 96px) clamp(20px, 4vw, 36px) 0;
-}
-
-.services__inner {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.services__eyebrow {
-  font-family: 'Google Sans', sans-serif;
-  font-size: 11px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: #58cc6f;
-  font-weight: 500;
-  margin: 0 0 14px;
-  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.55);
-}
-
-.services__title {
-  font-family: 'Google Sans', sans-serif;
-  font-size: clamp(28px, 3.6vw, 38px);
-  line-height: 1.05;
-  letter-spacing: -0.01em;
-  font-weight: 500;
-  color: #fff;
-  margin: 0 0 14px;
-  max-width: 780px;
-  text-shadow: 0 1px 16px rgba(0, 0, 0, 0.6);
-}
-
-.services__subtitle {
-  font-size: 15px;
-  line-height: 1.55;
-  color: rgba(255, 255, 255, 0.85);
-  margin: 0 0 48px;
-  max-width: 780px;
-  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.55);
-}
-
-/* 2-up grid at desktop, single column at mobile */
-.services__grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: clamp(20px, 2.5vw, 28px);
-  margin-bottom: clamp(48px, 6vw, 72px);
-}
-
-.services__card {
-  background: rgba(15, 15, 18, 0.55);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  border-radius: 16px;
-  padding: clamp(22px, 3vw, 32px);
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.3);
-  transition: border-color 240ms ease, transform 240ms ease, box-shadow 240ms ease;
-}
-
-.services__card:hover {
-  border-color: rgba(88, 204, 111, 0.4);
-  transform: translateY(-3px);
-  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.4), 0 0 28px rgba(88, 204, 111, 0.18);
-}
-
-.services__icon {
-  width: 44px;
-  height: 44px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 12px;
-  background: rgba(88, 204, 111, 0.12);
-  border: 1px solid rgba(88, 204, 111, 0.28);
-  color: #a9e0b6;
-  margin-bottom: 18px;
-}
-.services__icon svg {
-  width: 22px;
-  height: 22px;
-}
-
-.services__name {
-  font-family: 'Google Sans', sans-serif;
-  font-size: 18px;
-  font-weight: 600;
-  color: #fff;
-  margin: 0 0 10px;
-  line-height: 1.25;
-}
-
-.services__desc {
-  font-size: 14px;
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.78);
-  margin: 0;
-}
-
-@media (max-width: 768px) {
-  .services__grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* Featured CTA band — sits below the grid, full-bleed within section,
-   uses the deep teal-navy + green-edge gradient to pull the eye. */
-.services-cta {
-  position: relative;
-  z-index: 2;
-  isolation: isolate;
-  background:
-    linear-gradient(135deg, rgba(26, 61, 44, 0.95), rgba(13, 36, 56, 0.95));
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  padding: clamp(40px, 6vw, 64px) clamp(20px, 4vw, 36px);
-  color: #fff;
-  text-align: left;
-}
-
-.services-cta__inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: 1fr auto;
-  gap: clamp(20px, 4vw, 48px);
-  align-items: center;
-}
-
-.services-cta__copy {
-  min-width: 0;
-}
-
-.services-cta__heading {
-  font-family: 'Google Sans', sans-serif;
-  font-size: clamp(22px, 2.8vw, 28px);
-  line-height: 1.15;
-  font-weight: 600;
-  color: #fff;
-  margin: 0 0 8px;
-}
-
-.services-cta__text {
-  font-size: 15px;
-  line-height: 1.55;
-  color: rgba(255, 255, 255, 0.82);
-  margin: 0;
-  max-width: 640px;
-}
-
-.services-cta__btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 10px;
-  padding: 14px 26px;
-  border-radius: 999px;
-  background: #fff;
-  color: #0a0a0a;
-  font-family: 'Google Sans', sans-serif;
-  font-size: 15px;
-  font-weight: 500;
-  text-decoration: none;
-  transition: transform 200ms ease, background 200ms ease;
-  white-space: nowrap;
-}
-.services-cta__btn:hover {
-  transform: translateY(-1px);
-  background: #ededed;
-}
-.services-cta__btn .arrow {
-  display: inline-block;
-  transition: transform 0.25s ease;
-}
-.services-cta__btn:hover .arrow {
-  transform: translateX(3px);
-}
-
-@media (max-width: 768px) {
-  .services-cta__inner {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* ===============================================================
-   PROJECTS SECTION (homepage)
-   3x2 glassmorphic card grid + functional filter tabs.
-   Hover: 3px lift + green-to-teal gradient ring/glow.
-   Each card has a colored Status chip + neutral Category chip.
-   =============================================================== */
-
-.projects {
-  position: relative;
-  z-index: 2;
-  isolation: isolate;
-  color: #fff;
-  text-align: left;
-  padding: clamp(56px, 8vw, 96px) clamp(20px, 4vw, 36px);
-}
-
-.projects__inner {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.projects__eyebrow {
-  font-family: 'Google Sans', sans-serif;
-  font-size: 11px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: #58cc6f;
-  font-weight: 500;
-  margin: 0 0 14px;
-  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.55);
-}
-
-.projects__title {
-  font-family: 'Google Sans', sans-serif;
-  font-size: clamp(28px, 3.6vw, 38px);
-  line-height: 1.05;
-  letter-spacing: -0.01em;
-  font-weight: 500;
-  color: #fff;
-  margin: 0 0 14px;
-  max-width: 780px;
-  text-shadow: 0 1px 16px rgba(0, 0, 0, 0.6);
-}
-
-.projects__subtitle {
-  font-size: 15px;
-  line-height: 1.55;
-  color: rgba(255, 255, 255, 0.85);
-  margin: 0 0 32px;
-  max-width: 780px;
-  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.55);
-}
-
-/* Filter tabs */
-.projects__filters {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin: 0 0 36px;
-}
-
-.projects__filter {
-  appearance: none;
-  -webkit-appearance: none;
-  background: rgba(15, 15, 18, 0.55);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  color: rgba(255, 255, 255, 0.78);
-  font-family: 'Google Sans', sans-serif;
-  font-size: 13px;
-  font-weight: 500;
-  padding: 8px 16px;
-  border-radius: 999px;
-  cursor: pointer;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  transition: background-color 200ms ease, color 200ms ease, border-color 200ms ease;
-}
-
-.projects__filter:hover {
-  background: rgba(255, 255, 255, 0.08);
-  color: #fff;
-  border-color: rgba(255, 255, 255, 0.3);
-}
-
-.projects__filter.is-active {
-  background: rgba(88, 204, 111, 0.2);
-  color: #fff;
-  border-color: rgba(88, 204, 111, 0.5);
-}
-
-/* 3x2 grid */
-.projects__grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: clamp(18px, 2.2vw, 24px);
-}
-
-.projects__card {
-  position: relative;
-  background: rgba(15, 15, 18, 0.55);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  border-radius: 14px;
-  padding: 22px;
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.3);
-  transition:
-    transform 240ms ease,
-    border-color 240ms ease,
-    box-shadow 240ms ease,
-    opacity 240ms ease;
-  display: flex;
-  flex-direction: column;
-}
-
-/* Hover: 3px lift + green-to-teal gradient ring/glow */
-.projects__card:hover {
-  transform: translateY(-3px);
-  border-color: transparent;
-  box-shadow:
-    0 0 0 1.5px rgba(88, 204, 111, 0.55),
-    0 0 0 3px rgba(13, 142, 166, 0.3),
-    0 14px 36px rgba(0, 0, 0, 0.4),
-    0 0 32px rgba(88, 204, 111, 0.2),
-    0 0 48px rgba(13, 142, 166, 0.18);
-}
-
-/* Hidden when filtered out */
-.projects__card.is-hidden {
-  display: none;
-}
-
-/* Chips row */
-.projects__chips {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 6px;
-  margin: 0 0 14px;
-}
-
-.projects__status,
-.projects__category {
-  display: inline-flex;
-  align-items: center;
-  font-family: 'Google Sans', sans-serif;
-  font-size: 11px;
-  font-weight: 600;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
-  padding: 4px 10px;
-  border-radius: 999px;
-  border: 1px solid transparent;
-  white-space: nowrap;
-}
-
-/* Status variants — colored differently per state */
-.projects__status--active {
-  background: rgba(88, 204, 111, 0.18);
-  color: #a9e0b6;
-  border-color: rgba(88, 204, 111, 0.4);
-}
-.projects__status--ongoing {
-  background: rgba(13, 142, 166, 0.18);
-  color: #7fd3e4;
-  border-color: rgba(13, 142, 166, 0.4);
-}
-.projects__status--completed {
-  background: rgba(255, 255, 255, 0.06);
-  color: rgba(255, 255, 255, 0.55);
-  border-color: rgba(255, 255, 255, 0.18);
-}
-.projects__status--planned {
-  background: rgba(220, 168, 60, 0.18);
-  color: #f5d28a;
-  border-color: rgba(220, 168, 60, 0.4);
-}
-
-/* Category chip — neutral */
-.projects__category {
-  background: rgba(255, 255, 255, 0.05);
-  color: rgba(255, 255, 255, 0.7);
-  border-color: rgba(255, 255, 255, 0.14);
-}
-
-.projects__name {
-  font-family: 'Google Sans', sans-serif;
-  font-size: 16px;
-  font-weight: 600;
-  color: #fff;
-  margin: 0 0 8px;
-  line-height: 1.3;
-}
-
-.projects__desc {
-  font-size: 13.5px;
-  line-height: 1.55;
-  color: rgba(255, 255, 255, 0.78);
-  margin: 0 0 14px;
-  flex: 1;
-}
-
-.projects__date {
-  font-family: 'Google Sans', sans-serif;
-  font-size: 12px;
-  color: rgba(255, 255, 255, 0.5);
-  margin: 0;
-  letter-spacing: 0.02em;
-}
-
-@media (max-width: 991px) {
-  .projects__grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 600px) {
-  .projects__grid {
-    grid-template-columns: 1fr;
-  }
-}
 
 /* ===============================================================
    RESEARCH ACADEMY SECTION (homepage)
@@ -2806,71 +1683,18 @@ body.body-2 {
   100% { transform: scale(1.02) translate(0, 0); }
 }
 .about-vision__img,
-.about-mission__img,
-.home-about-vision__img,
-.home-about-mission__img {
+.about-mission__img {
   animation: kenBurns 22s ease-in-out infinite;
   transform-origin: center center;
   will-change: transform;
 }
 @media (prefers-reduced-motion: reduce) {
   .about-vision__img,
-  .about-mission__img,
-  .home-about-vision__img,
-  .home-about-mission__img {
+  .about-mission__img {
     animation: none;
   }
 }
 
-/* -------- 1. Services — full-section photo backdrop -------- */
-.services {
-  overflow: hidden;
-}
-.services__bg-img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: -2;
-  opacity: 0.32;
-}
-.services__bg-overlay {
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(rgba(10, 22, 32, 0.78), rgba(10, 22, 32, 0.85)),
-    linear-gradient(135deg, rgba(26, 61, 44, 0.4), rgba(13, 36, 56, 0.4));
-  z-index: -1;
-}
-
-/* -------- 2. Projects — header band only gets the photo backdrop -------- */
-.projects__header {
-  position: relative;
-  isolation: isolate;
-  margin: 0 -clamp(20px, 4vw, 36px) clamp(36px, 5vw, 56px);
-  padding: clamp(40px, 6vw, 64px) clamp(20px, 4vw, 36px) clamp(28px, 4vw, 40px);
-  border-radius: 0;
-  overflow: hidden;
-}
-.projects__bg-img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 30%;
-  z-index: -2;
-  opacity: 0.5;
-}
-.projects__bg-overlay {
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(rgba(10, 22, 32, 0.62), rgba(10, 22, 32, 0.78)),
-    linear-gradient(135deg, rgba(26, 61, 44, 0.3), rgba(13, 36, 56, 0.3));
-  z-index: -1;
-}
 
 /* -------- 3. Research Academy — CTA band photo backdrop -------- */
 .academy-cta {
@@ -2921,25 +1745,6 @@ body.body-2 {
   background:
     linear-gradient(135deg, rgba(10, 22, 32, 0.92), rgba(13, 36, 56, 0.9));
   z-index: -1;
-}
-
-/* -------- 5. About Story — small inline sidebar photo, slotted into
-   the existing 2-col grid's left label column. -------- */
-.home-about-story__photo {
-  display: block;
-  width: 100%;
-  max-width: 240px;
-  aspect-ratio: 4 / 5;
-  object-fit: cover;
-  border-radius: 12px;
-  margin-top: 14px;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
-}
-@media (max-width: 768px) {
-  .home-about-story__photo {
-    max-width: 320px;
-  }
 }
 
 /* ===============================================================
@@ -3144,308 +1949,1765 @@ body.body-2 {
   }
 }
 
-/* ===============================================================
-   THREE PILLARS — documented triptych on cream paper.
-   Replaces the inherited Webflow column-scroll mold with a
-   bespoke section that respects DESIGN.md's two-zone rule and
-   the "specificity over generality" design principle.
 
-   Kinyarwanda ordinals: Mbere (first), Kabiri (two/second),
-   Gatatu (three/three). Bare cardinal forms used for display
-   compactness; formal ordinal would prefix "icya-". Verify with
-   a native speaker before going to print.
+/* ===============================================================
+   PATH A — STRIP ALL DARK CARD/PANEL BACKPLATES
+   Removes background fill, backdrop blur, and shadow from every
+   dark glass card site-wide so the fixed Rwanda flag-colors video
+   shows through. Borders preserved as thin outlines so card shapes
+   stay readable. Photo-backed CTA bands keep their photos. Utility
+   surfaces (navbar, mobile menu, get-in-touch overlay, skip-link)
+   keep their backplates — they need legibility on any video frame.
+   =============================================================== */
+.leadership__featured,
+.leadership__card,
+.academy__hero-btn,
+.academy__card,
+.contact__form-card,
+.contact__field input,
+.contact__field select,
+.contact__field textarea {
+  background: transparent !important;
+  background-color: transparent !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+  box-shadow: none !important;
+}
+
+/* ===============================================================
+   OPTION A — STRIP DARK OVERLAYS ON PHOTO-BACKED BANDS
+   Six photo-backed sections each layer a dark gradient overlay on
+   top of their photo (the "wash" that makes them read as black
+   despite having a real photo behind). Hiding the overlay element
+   reveals the photo underneath. The Services CTA band has no
+   separate overlay element — it paints the gradient on the section
+   itself, so we override that section's background directly.
+   =============================================================== */
+.academy-cta__bg-overlay,
+.contact__info-bg-overlay {
+  display: none !important;
+}
+
+/* ===============================================================
+   THREE PILLARS — single-line horizontal pillars (V2, accepted via $impeccable live)
+   Each pillar collapses to one row: Kinyarwanda · num · label · description.
+   3 rows total instead of 3 multi-element blocks. Maximum vertical fit
+   so all 3 pillars + section header align with the locked IX cross-fade
+   timing on the right-side sticky photos. Reads like a press-log line.
+
+   Right-side content of the locked Webflow IX 3-column scroll.
+   Each pillar is a whole-block clickable link to a downstream
+   section: Mbere → #services, Kabiri → #research-academy,
+   Gatatu → #contact. Color: Restrained — single mint-on-dark accent.
    =============================================================== */
 
-.pillars {
-  background-color: #f6f3ec; /* cream-paper */
-  color: #0a0a0a;
-  padding: clamp(4rem, 8vw, 7rem) clamp(1.5rem, 5vw, 4rem);
-  position: relative;
-  z-index: 2; /* clear the fixed .background-video-container — site convention */
-  isolation: isolate;
-}
-
-.pillars__inner {
-  max-width: 1240px;
-  margin: 0 auto;
-}
-
-.pillars__header {
-  margin: 0 0 clamp(1.75rem, 3.5vw, 2.5rem);
-}
-
-.pillars__eyebrow {
-  font-family: 'Google Sans', sans-serif;
+/* Section header */
+.three-pillars__eyebrow {
+  font-family: 'Google Sans', 'Google Sans Flex', system-ui, sans-serif;
   font-size: 11px;
-  letter-spacing: 0.2em;
+  letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: #1f6b3a; /* field-green-deep — One Green Discipline on cream */
+  color: #a9e0b6;
   font-weight: 500;
-  margin: 0 0 1rem;
-  text-shadow: none;
+  margin: 0 0 clamp(8px, 1.2vw, 14px);
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.55);
+  text-align: left;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 12px;
+  align-items: center;
 }
-
-.pillars__title {
-  font-family: Georgia, 'Times New Roman', serif;
-  font-size: clamp(2rem, 4.2vw, 3rem);
+.three-pillars__eyebrow-num {
+  color: rgba(255, 255, 255, 0.42);
   font-weight: 400;
-  letter-spacing: -0.015em;
-  line-height: 1.1;
-  color: #0a0a0a;
-  margin: 0 0 1rem;
-  max-width: 22ch;
-  text-shadow: none;
 }
 
-.pillars__lead {
-  font-family: 'Google Sans', sans-serif;
-  font-size: 1.0625rem;
-  line-height: 1.6;
-  color: #2a2a2a;
-  margin: 0;
-  max-width: 60ch;
-  text-shadow: none;
+.three-pillars__title-accent {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-style: italic;
+  font-weight: 400;
+  color: #a9e0b6;
+  letter-spacing: -0.01em;
 }
 
-.pillars__rule {
-  border: 0;
-  border-top: 1px solid #1f6b3a;
-  margin: 0 0 clamp(2rem, 4vw, 3rem);
-  height: 0;
-  width: 100%;
+.three-pillars__lead {
+  margin: 0 !important;
+  max-width: 50ch;
+  font-size: clamp(13px, 0.95vw, 14.5px) !important;
+  line-height: 1.45 !important;
+  color: rgba(255, 255, 255, 0.78);
+  text-align: left !important;
 }
 
-.pillars__list {
+.three-pillars__list {
   list-style: none;
   padding: 0;
   margin: 0;
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: clamp(2.5rem, 5vw, 3.5rem);
-}
-
-@media (min-width: 900px) {
-  .pillars__list {
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: clamp(2rem, 3.5vw, 3rem);
-    align-items: start;
-  }
-}
-
-.pillar {
   display: flex;
   flex-direction: column;
+  gap: 0;
+  max-width: 48ch;
+}
+
+.three-pillars__list > li {
+  list-style: none;
   margin: 0;
   padding: 0;
-  align-items: stretch;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+}
+.three-pillars__list > li:first-child {
+  border-top: 1px solid rgba(169, 224, 182, 0.5);
+}
+.three-pillars__list > li:last-child .three-pillars__item {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
 }
 
-/* ─── Ordinal block ─────────────────────────────────────────────── */
-
-.pillar__ordinal {
-  display: flex;
+/* Single-line horizontal pillar entry: ordinal | label + description.
+   Whole block is the click target. Subtle background tint on hover. */
+.three-pillars__item {
+  display: grid;
+  grid-template-columns: minmax(70px, auto) 1fr;
+  gap: 16px;
   align-items: baseline;
-  gap: 0.5rem;
-  margin: 0 0 1.25rem;
-  color: #1f6b3a;
-}
-
-.pillar__ordinal-word {
-  font-family: 'Google Sans', sans-serif;
-  font-size: clamp(2.25rem, 4.5vw, 3.25rem);
-  font-weight: 600;
-  letter-spacing: -0.025em;
-  line-height: 0.95;
-  color: #1f6b3a;
-}
-
-.pillar__ordinal-num {
-  font-family: 'Google Sans', sans-serif;
-  font-size: 0.6875rem;
-  font-weight: 500;
-  letter-spacing: 0.16em;
-  color: #4a4a4a;
-  text-transform: uppercase;
-  white-space: nowrap;
-  align-self: flex-start;
-  margin-top: 0.625rem;
-}
-
-/* ─── Photo plate (placeholder + future <picture>) ─────────────── */
-
-.pillar__plate {
-  margin: 0 0 1.25rem;
-  display: flex;
-  flex-direction: column;
-}
-
-.pillar__plate-frame {
-  aspect-ratio: 4 / 5;
-  background-color: #ece6d6; /* cream-tint */
-  border: 1px solid #e3ddd1; /* border-paper */
-  position: relative;
-  overflow: hidden;
-  display: flex;
-  align-items: flex-end;
-  justify-content: flex-start;
-  width: 100%;
-  max-width: 480px; /* cap on stacked layouts so the empty plate doesn't sprawl */
-}
-
-@media (min-width: 900px) {
-  .pillar__plate-frame {
-    max-width: none;
-  }
-  /* Middle pillar's plate: +12% taller per shape brief (asymmetric). */
-  .pillars__list > .pillar:nth-child(2) .pillar__plate-frame {
-    aspect-ratio: 4 / 5.6;
-  }
-}
-
-/* Subtle tonal weave — texture in the empty frame without literal
-   pattern mimicry. The future <picture> overlays this. */
-.pillar__plate-frame[data-rdms-photo-state="pending"]::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-image:
-    linear-gradient(45deg, transparent 49.5%, rgba(31, 107, 58, 0.05) 49.5% 50.5%, transparent 50.5%),
-    linear-gradient(-45deg, transparent 49.5%, rgba(31, 107, 58, 0.04) 49.5% 50.5%, transparent 50.5%);
-  background-size: 18px 18px;
-  pointer-events: none;
-  opacity: 0.75;
-}
-
-.pillar__plate-pending {
-  position: relative;
-  z-index: 1;
-  padding: 1.25rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.375rem;
-  text-align: left;
-}
-
-.pillar__plate-pending-label {
-  font-family: 'Google Sans', sans-serif;
-  font-size: 10px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: #1f6b3a;
-  font-weight: 500;
-}
-
-.pillar__plate-pending-status {
-  font-family: 'Google Sans', sans-serif;
-  font-size: 10px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: #4a4a4a; /* ink-secondary — AA contrast on cream-tint */
-  font-weight: 400;
-}
-
-.pillar__caption {
-  font-family: 'Google Sans', sans-serif;
-  font-size: 12px;
-  line-height: 1.45;
-  letter-spacing: 0.02em;
-  color: #4a4a4a; /* ink-secondary — AA contrast on cream-paper */
-  margin: 0.625rem 0 0;
-  text-align: left;
-}
-
-/* ─── Title, body, link ────────────────────────────────────────── */
-
-.pillar .pillar__title {
-  font-family: 'Google Sans', sans-serif;
-  font-size: 1.375rem;
-  font-weight: 600;
-  line-height: 1.25;
-  letter-spacing: -0.005em;
-  color: #0a0a0a;
-  margin: 0.5rem 0 0.625rem;
-  text-shadow: none;
-  text-align: left;
-}
-
-.pillar .pillar__desc {
-  font-family: 'Google Sans', sans-serif;
-  font-size: 0.9375rem;
-  line-height: 1.6;
-  color: #2a2a2a;
-  margin: 0 0 1.25rem;
-  max-width: 60ch;
-  text-shadow: none;
-  text-align: left;
-}
-
-.pillar__link {
-  display: inline-flex;
-  align-items: baseline;
-  gap: 0.5rem;
-  font-family: 'Google Sans', sans-serif;
-  font-size: 0.875rem;
-  font-weight: 500;
-  letter-spacing: 0.005em;
-  color: #1f6b3a;
+  padding: clamp(14px, 2vw, 22px) 0;
   text-decoration: none;
-  border-bottom: 1px solid currentColor;
-  padding-bottom: 0.125rem;
-  width: max-content;
-  transition: color 200ms cubic-bezier(0.22, 1, 0.36, 1);
+  color: inherit;
+  text-align: left;
+  transition: background-color 220ms ease-out;
+}
+.three-pillars__item:hover,
+.three-pillars__item:focus-visible {
+  background-color: rgba(169, 224, 182, 0.05);
+}
+.three-pillars__item:focus-visible {
+  outline: 2px dashed #a9e0b6;
+  outline-offset: 6px;
 }
 
-.pillar__link:hover {
-  color: #58cc6f; /* cooperative-green — reserved for hover/focus only */
+.three-pillars__rw {
+  display: inline-block;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(20px, 2.2vw, 30px);
+  line-height: 1;
+  color: #a9e0b6;
+  margin: 0;
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.55);
+  text-align: left;
 }
 
-.pillar__link:focus-visible {
+.v2-body {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.three-pillars__label {
+  font-family: 'Google Sans', 'Google Sans Flex', system-ui, sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.7);
+  margin: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 10px;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.55);
+  text-align: left;
+}
+.three-pillars__num   { color: rgba(169, 224, 182, 0.85); font-weight: 600; }
+.three-pillars__sep   { color: rgba(255, 255, 255, 0.35); }
+.three-pillars__title { color: rgba(255, 255, 255, 0.92); }
+
+.three-pillars__desc {
+  font-family: 'Google Sans', 'Google Sans Flex', system-ui, sans-serif;
+  font-size: clamp(13px, 0.95vw, 14.5px);
+  line-height: 1.35;
+  color: rgba(255, 255, 255, 0.72);
+  margin: 0;
+  max-width: 38ch;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
+  text-align: left;
+}
+
+@media (max-width: 768px) {
+  .three-pillars__item {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+  .three-pillars__rw {
+    font-size: clamp(22px, 6vw, 28px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .three-pillars__item {
+    transition: none !important;
+  }
+}
+
+/* ===============================================================
+   THREE PILLARS — object-position per pillar image
+   The three pillar photos (care/knowledge/advocacy) are portrait
+   768x1376 with the focal subjects at different vertical positions.
+   Tune object-position so faces and key subjects stay in frame at
+   any panel aspect ratio.
+   =============================================================== */
+.column-scroll-image._1 {  /* care.jpg — child being examined; face upper-middle */
+  object-position: center 35%;
+}
+.column-scroll-image._2 {  /* knowledge.jpg — banner top, people reading at table */
+  object-position: center center;
+}
+.column-scroll-image._3 {  /* advocacy.jpg — meeting around table, faces center-frame */
+  object-position: center 40%;
+}
+
+/* ===============================================================
+   HERO — editorial type-led + field photo, video atmosphere
+   Brief: $impeccable craft Hero (confirmed)
+     - Color: Committed (cooperative-green carries 30-50%)
+     - Composition: type left ~60%, field photo right ~40%
+     - Anchor: Rwandan government brief x serious medical journal
+     - Trust: identity, service summary, audiences, founded date,
+       RDB code, HQ location all visible above fold
+     - Locked: hero-bg-rwanda.mp4 atmosphere (do NOT touch)
+   =============================================================== */
+
+/* Hero zone: keep transparent so the locked fixed bg-video plays
+   through. Section padding accounts for navbar pill clearance.
+   IMPORTANT: webflow.css sets .hero { height: 100vh } (fixed height,
+   not min-height). With overflow: hidden that clips any content
+   that exceeds 100vh — kills the CTAs + credibility row when the
+   text column grows tall. Override height: auto so the section
+   grows with content while still at least 100vh. */
+.hero,
+.hero.layout-b {
+  background: transparent !important;
+  background-color: transparent !important;
+  position: relative;
+  z-index: 2;
+  isolation: isolate;
+  height: auto !important;
+  min-height: 100vh;
+  padding: 0;
+  overflow: visible;
+}
+
+/* Container: 2-column asymmetric grid on desktop. The data-w-id
+   gsap.set(opacity:0, scale:0.75) entrance still animates the
+   whole container in once on load.
+   Grid placement is EXPLICIT (not auto-flow) because Webflow's
+   vendor cascade was reordering the children at certain
+   viewports — text was landing in column 2 and the photo in
+   column 1. Locking grid-column on each child makes the layout
+   deterministic regardless of vendor CSS. */
+.hero.layout-b .hero-container {
+  display: grid !important;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.85fr) !important;
+  gap: clamp(28px, 4vw, 56px) !important;
+  max-width: 1320px !important;
+  width: 100% !important;
+  margin: 0 auto !important;
+  padding: clamp(96px, 11vh, 132px) clamp(20px, 4vw, 48px) clamp(32px, 4vh, 56px) !important;
+  align-items: center;
+  min-height: 100vh;
+  direction: ltr !important;
+}
+
+/* ───────────────────────── LEFT: type column ─────────────────── */
+
+.hero__type {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  max-width: 64ch;
+  position: relative;
+  z-index: 2;
+  text-align: left;
+  /* Lock to grid column 1 (LEFT) per memory rule:
+     "Hero composition: text left, photo right". */
+  grid-column: 1 !important;
+  grid-row: 1 !important;
+}
+.hero__type > * {
+  text-align: left;
+}
+.hero__eyebrow,
+.hero__headline,
+.hero__lead,
+.hero__credibility,
+.hero__cred-item dt,
+.hero__cred-item dd,
+.hero__photo-caption,
+.hero__photo-caption-line,
+.hero__photo-caption-meta {
+  text-align: left;
+}
+
+/* Eyebrow: institutional ID strip. NOT a pill. Uppercase tracking
+   on a hairline rule — gov-brief / medical-journal vocabulary. */
+.hero__eyebrow {
+  font-family: 'Google Sans', 'Google Sans Flex', system-ui, sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.78);
+  margin: 0 0 clamp(14px, 2.2vw, 22px);
+  padding: 0 0 clamp(10px, 1.4vw, 14px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.55);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 12px;
+  align-items: center;
+}
+.hero__eyebrow-sep {
   color: #58cc6f;
+  font-weight: 600;
+}
+
+/* Display headline: massive editorial. Cooperative-green inline
+   accent on "Rwanda" for committed-color discipline. */
+.hero__headline {
+  font-family: 'Google Sans', 'Google Sans Flex', system-ui, sans-serif;
+  font-size: clamp(34px, 5.2vw, 64px);
+  font-weight: 500;
+  line-height: 1.04;
+  letter-spacing: -0.02em;
+  color: #f5faf6;  /* tinted off-white toward cooperative-green hue */
+  margin: 0 0 clamp(16px, 2.2vw, 24px);
+  text-shadow: 0 1px 16px rgba(0, 0, 0, 0.6), 0 0 32px rgba(0, 0, 0, 0.35);
+  text-wrap: balance;
+}
+.hero__headline-accent {
+  color: #58cc6f;
+  font-style: italic;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
+/* Lead: 2-3 lines, 65ch max measure. */
+.hero__lead {
+  font-family: 'Google Sans', 'Google Sans Flex', system-ui, sans-serif;
+  font-size: clamp(15px, 1.1vw, 17px);
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.88);
+  margin: 0 0 clamp(20px, 2.8vw, 32px);
+  max-width: 56ch;
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.55);
+}
+
+/* CTA pair: ONE dominant green pill + ONE quiet text-link. */
+.hero__ctas {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: clamp(8px, 1.5vw, 18px) clamp(14px, 2.5vw, 28px);
+  margin: 0 0 clamp(24px, 3vw, 40px);
+}
+
+.hero__cta-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 14px 28px;
+  background: #58cc6f;
+  color: #0a1a10;
+  font-family: 'Google Sans', 'Google Sans Flex', system-ui, sans-serif;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.005em;
+  text-decoration: none;
+  border-radius: 999px;
+  border: 1px solid rgba(10, 26, 16, 0.15);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35), 0 0 0 0 rgba(88, 204, 111, 0);
+  transition:
+    transform 280ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 280ms cubic-bezier(0.22, 1, 0.36, 1),
+    background-color 200ms ease-out;
+}
+.hero__cta-primary:hover,
+.hero__cta-primary:focus-visible {
+  transform: translateY(-2px);
+  background: #6ad580;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.4), 0 0 0 4px rgba(88, 204, 111, 0.25);
+}
+.hero__cta-primary:focus-visible {
+  outline: 2px solid #a9e0b6;
+  outline-offset: 4px;
+}
+.hero__cta-arrow {
+  display: inline-block;
+  font-size: 1.05em;
+  line-height: 1;
+  transition: transform 280ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+.hero__cta-primary:hover .hero__cta-arrow {
+  transform: translateX(4px);
+}
+
+/* Secondary: quiet text-link, no pill. */
+.hero__cta-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: 'Google Sans', 'Google Sans Flex', system-ui, sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.88);
+  text-decoration: none;
+  padding: 10px 4px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.32);
+  transition: color 200ms ease-out, border-color 200ms ease-out;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.55);
+}
+.hero__cta-secondary:hover {
+  color: #a9e0b6;
+  border-bottom-color: #a9e0b6;
+}
+.hero__cta-secondary:focus-visible {
   outline: 2px solid #58cc6f;
   outline-offset: 4px;
   border-bottom-color: transparent;
 }
-
-.pillar__link-arrow {
+.hero__cta-chev {
   display: inline-block;
-  transition: transform 240ms cubic-bezier(0.22, 1, 0.36, 1);
+  transition: transform 280ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+.hero__cta-secondary:hover .hero__cta-chev {
+  transform: translateY(2px);
 }
 
-.pillar__link:hover .pillar__link-arrow,
-.pillar__link:focus-visible .pillar__link-arrow {
+/* Credibility row: government-brief register. dt/dd as paired
+   institutional facts. NOT stats-with-icons. */
+.hero__credibility {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, auto));
+  column-gap: clamp(24px, 3.5vw, 44px);
+  row-gap: 0;
+  margin: 0;
+  padding: clamp(14px, 1.8vw, 20px) 0 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+  max-width: max-content;
+}
+.hero__cred-item {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.hero__cred-item dt {
+  font-family: 'Google Sans', 'Google Sans Flex', system-ui, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.62);
+  margin: 0;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.55);
+}
+.hero__cred-item dd {
+  font-family: 'Google Sans', 'Google Sans Flex', system-ui, sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.35;
+  letter-spacing: 0.005em;
+  color: #f5faf6;
+  margin: 0;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.55);
+}
+.hero__cred-meta {
+  display: block;
+  font-size: 13px;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.7);
+  letter-spacing: 0.01em;
+  margin-top: 2px;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.55);
+}
+
+/* ────────────────────── RIGHT: field photo ──────────────────── */
+
+.hero__photo {
+  position: relative;
+  margin: 0;
+  height: clamp(340px, 60vh, 560px);
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.08) inset,
+    0 24px 60px rgba(0, 0, 0, 0.45),
+    0 0 0 1px rgba(255, 255, 255, 0.06);
+  z-index: 1;
+  /* Lock to grid column 2 (RIGHT) per memory rule:
+     "Hero composition: text left, photo right". */
+  grid-column: 2 !important;
+  grid-row: 1 !important;
+  min-width: 0;
+}
+.hero__photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* Source is landscape (798x445); the white-coated subject sits
+     center-left. Bias the crop slightly left so subject stays in
+     frame in this portrait-shape container. */
+  object-position: 35% center;
+  filter: contrast(1.02) saturate(0.96);
+}
+.hero__photo-caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: clamp(14px, 2vw, 18px) clamp(16px, 2.4vw, 22px);
+  color: #fff;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.55) 60%, rgba(0, 0, 0, 0.78) 100%);
+  pointer-events: none;
+}
+.hero__photo-caption-line {
+  font-family: 'Google Sans', 'Google Sans Flex', system-ui, sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: #f5faf6;
+}
+.hero__photo-caption-meta {
+  font-family: 'Google Sans', 'Google Sans Flex', system-ui, sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.68);
+}
+
+/* ─────────────────────── RESPONSIVE ────────────────────────── */
+
+@media (max-width: 991px) {
+  .hero.layout-b .hero-container {
+    grid-template-columns: 1fr !important;
+    gap: clamp(28px, 4vw, 40px) !important;
+    padding-top: clamp(100px, 14vh, 140px) !important;
+    padding-bottom: clamp(40px, 6vh, 60px) !important;
+    align-items: start;
+  }
+  /* On stacked single-column layout, photo above type. */
+  .hero__photo {
+    grid-column: 1 !important;
+    grid-row: 1 !important;
+    height: clamp(280px, 40vh, 360px);
+  }
+  .hero__type {
+    grid-column: 1 !important;
+    grid-row: 2 !important;
+  }
+  .hero__credibility {
+    grid-template-columns: 1fr 1fr;
+    row-gap: 14px;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero__credibility {
+    grid-template-columns: 1fr;
+  }
+  .hero__photo {
+    height: clamp(240px, 36vh, 320px);
+  }
+}
+
+/* ─────────────────── REDUCED MOTION ─────────────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__cta-primary,
+  .hero__cta-secondary,
+  .hero__cta-arrow,
+  .hero__cta-chev {
+    transition: none !important;
+  }
+  .hero__cta-primary:hover,
+  .hero__cta-primary:focus-visible {
+    transform: none !important;
+  }
+}
+
+/* ===============================================================
+   ABOUT — 3 consolidated sections per design brief
+   ($impeccable craft about-section, confirmed)
+
+   Per-section composition + color voice for scroll rhythm:
+     Section 1 .about-origin    — Restrained, text-left photo-right
+     Section 2 .about-manifesto — Drenched, type-dominant pull-quote
+     Section 3 .about-credo     — Committed, type-only manifesto
+
+   Anchor: NYT Magazine / The Atlantic editorial.
+   Locked photos preserved: bg-story.jpg in S1, about-mission.png
+   thin-band in S2, about-vision.png unused (still on disk).
+   =============================================================== */
+
+/* ─────────────────── 1. ORIGIN & IDENTITY ───────────────────── */
+/* Restrained: tinted neutrals + single green accent on eyebrow.
+   Composition: text-left + photo-right (matches new hero pattern
+   per saved memory rule for visual continuity). Calm, narrative. */
+
+.about-origin {
+  position: relative;
+  z-index: 2;
+  isolation: isolate;
+  background: transparent !important;
+  /* Big top padding pushes the About content well below the hero's
+     credibility row so the hero's bottom stays visible and the
+     transition has clear breathing room. Hairline at top reinforces
+     the section boundary without shouting. */
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+  margin-top: clamp(48px, 7vh, 96px);
+  padding: clamp(140px, 18vh, 220px) clamp(20px, 4vw, 48px) clamp(72px, 10vh, 120px);
+  color: rgba(255, 255, 255, 0.92);
+  text-align: left;
+}
+
+/* Small "Section 01" tick that reinforces the separator without
+   shouting. Sits at top-left, picks up the green eyebrow color.
+   Top offset bumped to keep it visually balanced inside the
+   larger top padding zone above the section content. */
+.about-origin::before {
+  content: "01 / Origin";
+  position: absolute;
+  top: clamp(48px, 7vh, 88px);
+  left: clamp(20px, 4vw, 48px);
+  font-family: 'Google Sans', 'Google Sans Flex', system-ui, sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(88, 204, 111, 0.78);
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.55);
+  pointer-events: none;
+}
+
+.about-origin__inner {
+  max-width: 1320px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.85fr);
+  gap: clamp(28px, 4vw, 56px);
+  align-items: center;
+  text-align: left;
+}
+
+.about-origin__type {
+  text-align: left;
+  grid-column: 1;
+  grid-row: 1;
+  min-width: 0;
+}
+
+.about-origin__eyebrow {
+  font-family: 'Google Sans', 'Google Sans Flex', system-ui, sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #58cc6f;  /* single green accent — Restrained strategy */
+  margin: 0 0 clamp(14px, 2vw, 22px);
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.55);
+  text-align: left;
+}
+
+.about-origin__headline {
+  font-family: 'Google Sans', 'Google Sans Flex', system-ui, sans-serif;
+  font-size: clamp(28px, 4vw, 48px);
+  font-weight: 500;
+  line-height: 1.05;
+  letter-spacing: -0.015em;
+  color: #f5faf6;
+  margin: 0 0 clamp(20px, 3vw, 28px);
+  text-shadow: 0 1px 14px rgba(0, 0, 0, 0.55);
+  text-wrap: balance;
+  text-align: left;
+}
+
+.about-origin__body {
+  font-family: 'Google Sans', 'Google Sans Flex', system-ui, sans-serif;
+  font-size: clamp(15px, 1.1vw, 17px);
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.85);
+  max-width: 56ch;
+  margin: 0 0 clamp(20px, 3vw, 28px);
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.5);
+  text-align: left;
+}
+
+.about-origin__body p {
+  margin: 0 0 14px;
+  text-align: left;
+}
+
+.about-origin__body p:last-child {
+  margin-bottom: 0;
+}
+
+.about-origin__tag {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(13px, 1vw, 15px);
+  font-style: italic;
+  color: rgba(255, 255, 255, 0.62);
+  margin: 0;
+  letter-spacing: 0.005em;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
+  text-align: left;
+}
+
+.about-origin__photo {
+  position: relative;
+  margin: 0;
+  height: clamp(360px, 56vh, 540px);
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.08) inset,
+    0 24px 60px rgba(0, 0, 0, 0.45),
+    0 0 0 1px rgba(255, 255, 255, 0.06);
+  grid-column: 2;
+  grid-row: 1;
+  min-width: 0;
+}
+
+.about-origin__photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 40%;
+  filter: contrast(1.02) saturate(0.94);
+}
+
+.about-origin__caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: clamp(14px, 2vw, 18px) clamp(16px, 2.4vw, 22px);
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.55) 60%, rgba(0, 0, 0, 0.78) 100%);
+  pointer-events: none;
+  text-align: left;
+}
+
+.about-origin__caption span:first-child {
+  font-family: 'Google Sans', 'Google Sans Flex', system-ui, sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: #f5faf6;
+  text-align: left;
+}
+
+.about-origin__caption-meta {
+  font-family: 'Google Sans', 'Google Sans Flex', system-ui, sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.68);
+  text-align: left;
+}
+
+/* ─────────────────── 2. MISSION MANIFESTO ───────────────────── */
+/* Drenched: full-width dark teal-navy band. Photo as thin top band
+   fades into the section bg. Massive italic Georgia pull-quote
+   dominates ~70% of viewport, flush-left. Loudest typographic
+   moment on the homepage. */
+
+.about-manifesto {
+  position: relative;
+  z-index: 2;
+  isolation: isolate;
+  /* Drenched: dark teal-navy band, draws eye, frames the quote */
+  background:
+    linear-gradient(180deg, #0a2540 0%, #0d3550 50%, #0a2540 100%) !important;
+  padding: 0;
+  color: #f5faf6;
+  text-align: left;
+  overflow: hidden;
+}
+
+.about-manifesto__photo-band {
+  position: relative;
+  width: 100%;
+  height: clamp(180px, 25vh, 280px);
+  overflow: hidden;
+  filter: brightness(0.65) contrast(1.05) saturate(0.8);
+}
+
+.about-manifesto__photo-band img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 35%;
+}
+
+.about-manifesto__photo-band::after {
+  /* fade photo band into the dark section so they read as one */
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 60%;
+  background: linear-gradient(180deg, rgba(10, 37, 64, 0) 0%, rgba(10, 37, 64, 1) 100%);
+  pointer-events: none;
+}
+
+.about-manifesto__inner {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: clamp(56px, 9vw, 96px) clamp(20px, 4vw, 48px) clamp(72px, 11vw, 120px);
+  text-align: left;
+}
+
+.about-manifesto__eyebrow {
+  font-family: 'Google Sans', 'Google Sans Flex', system-ui, sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.62);
+  margin: 0 0 clamp(28px, 4vw, 40px);
+  text-align: left;
+}
+
+.about-manifesto__quote {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(28px, 4.4vw, 56px);
+  line-height: 1.18;
+  letter-spacing: -0.005em;
+  color: #f5faf6;
+  margin: 0 0 clamp(28px, 4vw, 40px);
+  max-width: 32ch;
+  text-align: left;
+  text-wrap: balance;
+}
+
+.about-manifesto__quote-mark {
+  color: #58cc6f;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 1.1em;
+  line-height: 0;
+  vertical-align: -0.05em;
+  margin: 0 0.04em;
+}
+
+.about-manifesto__attribution {
+  font-family: 'Google Sans', 'Google Sans Flex', system-ui, sans-serif;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.52);
+  margin: 0;
+  padding-top: clamp(20px, 3vw, 28px);
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+  max-width: max-content;
+  text-align: left;
+}
+
+/* ─────────────────── 3. VALUES (CREDO) ──────────────────────── */
+/* Committed: cooperative-green carries the numerals + eyebrow.
+   Type-only manifesto, no photos. Hairline top + bottom for
+   editorial frame. Numerals italic Georgia (medical-journal style). */
+
+.about-credo {
+  position: relative;
+  z-index: 2;
+  isolation: isolate;
+  /* Subtle dark band: lifts the section off the green video so the
+     mint numerals + headline italic accent have contrast. NOT
+     Drenched (S2's role) — just a tinted scrim. */
+  background:
+    linear-gradient(180deg,
+      rgba(13, 36, 56, 0) 0%,
+      rgba(13, 36, 56, 0.55) 18%,
+      rgba(13, 36, 56, 0.55) 82%,
+      rgba(13, 36, 56, 0) 100%) !important;
+  padding: clamp(72px, 11vh, 132px) clamp(20px, 4vw, 48px);
+  color: rgba(255, 255, 255, 0.92);
+  text-align: left;
+}
+
+.about-credo__inner {
+  max-width: 980px;
+  margin: 0 auto;
+  /* Thicker editorial frame: 2px green hairline top, 1px white
+     hairline bottom — gives the credo asymmetric institutional
+     character (medical-journal section dividers). */
+  border-top: 2px solid rgba(88, 204, 111, 0.72);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.22);
+  padding: clamp(40px, 6vw, 64px) 0;
+  text-align: left;
+}
+
+.about-credo__eyebrow {
+  font-family: 'Google Sans', 'Google Sans Flex', system-ui, sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #a9e0b6;  /* mint-on-dark, higher contrast against green video */
+  margin: 0 0 clamp(14px, 2vw, 22px);
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.6);
+  text-align: left;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 12px;
+  align-items: center;
+}
+.about-credo__eyebrow-num {
+  color: rgba(255, 255, 255, 0.42);
+  font-weight: 400;
+}
+
+.about-credo__headline {
+  font-family: 'Google Sans', 'Google Sans Flex', system-ui, sans-serif;
+  font-size: clamp(30px, 4.4vw, 50px);
+  font-weight: 500;
+  line-height: 1.05;
+  letter-spacing: -0.015em;
+  color: #f5faf6;
+  margin: 0 0 clamp(36px, 5vw, 56px);
+  text-shadow: 0 1px 14px rgba(0, 0, 0, 0.65);
+  text-wrap: balance;
+  text-align: left;
+}
+.about-credo__headline-accent {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-style: italic;
+  font-weight: 400;
+  color: #a9e0b6;  /* mint serif italic — pairs with numerals */
+  letter-spacing: -0.005em;
+}
+
+.about-credo__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.about-credo__item {
+  display: grid;
+  grid-template-columns: minmax(96px, 132px) 1fr;
+  gap: clamp(20px, 3vw, 36px);
+  align-items: baseline;
+  text-align: left;
+  padding: clamp(22px, 3vw, 32px) 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+}
+.about-credo__item:last-child {
+  border-bottom: none;
+}
+
+.about-credo__num {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(48px, 6.4vw, 88px);
+  line-height: 1;
+  color: #a9e0b6;  /* mint-on-dark — visible against green video */
+  letter-spacing: -0.01em;
+  text-shadow: 0 1px 14px rgba(0, 0, 0, 0.7), 0 0 24px rgba(0, 0, 0, 0.4);
+  text-align: left;
+}
+
+.about-credo__item-body {
+  text-align: left;
+  min-width: 0;
+}
+
+.about-credo__name {
+  font-family: 'Google Sans', 'Google Sans Flex', system-ui, sans-serif;
+  font-size: clamp(17px, 1.4vw, 21px);
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.005em;
+  color: #f5faf6;
+  margin: 0 0 8px;
+  text-align: left;
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.5);
+}
+
+.about-credo__desc {
+  font-family: 'Google Sans', 'Google Sans Flex', system-ui, sans-serif;
+  font-size: clamp(14px, 1vw, 16px);
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.78);
+  margin: 0;
+  max-width: 60ch;
+  text-align: left;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.45);
+}
+
+/* ─────────────────── ABOUT RESPONSIVE ───────────────────────── */
+
+@media (max-width: 991px) {
+  .about-origin__inner {
+    grid-template-columns: 1fr;
+    gap: clamp(24px, 4vw, 36px);
+  }
+  .about-origin__photo {
+    grid-column: 1 !important;
+    grid-row: 1 !important;
+    height: clamp(280px, 40vh, 360px);
+  }
+  .about-origin__type {
+    grid-column: 1 !important;
+    grid-row: 2 !important;
+  }
+  .about-credo__item {
+    grid-template-columns: minmax(60px, 80px) 1fr;
+    gap: 16px;
+  }
+}
+
+@media (max-width: 600px) {
+  .about-credo__item {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+  .about-credo__num {
+    font-size: 36px;
+  }
+}
+
+/* ─────────────────── ABOUT REDUCED MOTION ───────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+  .about-origin__photo img,
+  .about-manifesto__photo-band img {
+    transition: none !important;
+  }
+}
+
+/* ===============================================================
+   SERVICES — National Geographic editorial feature spread
+   ($impeccable craft Services, confirmed)
+
+   Asymmetric layout:
+     01 / Featured (photo-right)  — School Screenings
+     02 + 03 / Pair (small + small)
+     04 / Featured (photo-left)   — Mobile Clinics
+     05 + 06 / Compressed cross-refs
+
+   Color: Restrained (tinted off-white type, single green accent).
+   Anchor: National Geographic / Smithsonian feature spread.
+   No CTAs — visitor reads and scrolls to Projects.
+   =============================================================== */
+
+.services {
+  position: relative;
+  z-index: 2;
+  isolation: isolate;
+  background: transparent !important;
+  padding: clamp(80px, 12vh, 140px) clamp(20px, 4vw, 48px);
+  color: rgba(255, 255, 255, 0.92);
+  text-align: left;
+  overflow: visible;
+}
+
+.services__inner {
+  max-width: 1320px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+/* ─── Section header ─────────────────────────────────────────── */
+
+.services__header {
+  max-width: 920px;
+  margin: 0 0 clamp(40px, 5vw, 64px);
+  text-align: left;
+}
+
+.services__eyebrow {
+  font-family: 'Google Sans', 'Google Sans Flex', system-ui, sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #58cc6f;
+  margin: 0 0 clamp(16px, 2.4vw, 24px);
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.55);
+  text-align: left;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 12px;
+  align-items: center;
+}
+.services__eyebrow-num {
+  color: rgba(255, 255, 255, 0.42);
+  font-weight: 400;
+}
+
+.services__title {
+  font-family: 'Google Sans', 'Google Sans Flex', system-ui, sans-serif;
+  font-size: clamp(32px, 4.6vw, 56px);
+  font-weight: 500;
+  line-height: 1.04;
+  letter-spacing: -0.02em;
+  color: #f5faf6;
+  margin: 0 0 clamp(20px, 2.8vw, 28px);
+  max-width: 22ch;
+  text-shadow: 0 1px 16px rgba(0, 0, 0, 0.6);
+  text-wrap: balance;
+  text-align: left;
+}
+.services__title-accent {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-style: italic;
+  font-weight: 400;
+  color: #a9e0b6;  /* mint-on-dark accent */
+  letter-spacing: -0.01em;
+}
+
+.services__lead {
+  font-family: 'Google Sans', 'Google Sans Flex', system-ui, sans-serif;
+  font-size: clamp(15px, 1.1vw, 17px);
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0;
+  max-width: 60ch;
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.55);
+  text-align: left;
+}
+
+.services__rule {
+  border: 0;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.22);
+  margin: clamp(56px, 7vw, 88px) 0;
+  padding: 0;
+}
+
+.services__rule--quiet {
+  background: rgba(255, 255, 255, 0.12);
+  margin: clamp(44px, 5vw, 64px) 0;
+}
+
+/* ─── Service block — base ───────────────────────────────────── */
+
+.service {
+  margin: 0;
+  text-align: left;
+}
+
+.service__num {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(28px, 3.4vw, 44px);
+  line-height: 1;
+  color: #a9e0b6;
+  margin: 0 0 clamp(12px, 1.6vw, 18px);
+  letter-spacing: -0.01em;
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.55);
+  text-align: left;
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+}
+.service__num-label {
+  font-family: 'Google Sans', 'Google Sans Flex', system-ui, sans-serif;
+  font-style: normal;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.62);
+}
+
+.service__name {
+  font-family: 'Google Sans', 'Google Sans Flex', system-ui, sans-serif;
+  font-size: clamp(22px, 2.6vw, 32px);
+  font-weight: 600;
+  line-height: 1.18;
+  letter-spacing: -0.01em;
+  color: #f5faf6;
+  margin: 0 0 clamp(14px, 2vw, 20px);
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.55);
+  max-width: 22ch;
+  text-align: left;
+  text-wrap: balance;
+}
+
+.service__desc {
+  font-family: 'Google Sans', 'Google Sans Flex', system-ui, sans-serif;
+  font-size: clamp(15px, 1.05vw, 16.5px);
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0 0 clamp(16px, 2vw, 22px);
+  max-width: 56ch;
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.5);
+  text-align: left;
+}
+
+.service__evidence {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+  padding-top: clamp(14px, 1.8vw, 18px);
+  max-width: 56ch;
+}
+
+.service__evidence li {
+  font-family: 'Google Sans', 'Google Sans Flex', system-ui, sans-serif;
+  font-size: clamp(13px, 0.95vw, 14.5px);
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.78);
+  padding-left: 18px;
+  position: relative;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
+  text-align: left;
+}
+.service__evidence li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.6em;
+  width: 8px;
+  height: 1px;
+  background: #a9e0b6;
+}
+
+/* ─── Featured spreads (01 + 04) ────────────────────────────── */
+
+.service--featured {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(28px, 4vw, 56px);
+  align-items: center;
+}
+
+.service--photo-right .service__photo { order: 2; }
+.service--photo-right .service__body { order: 1; }
+.service--photo-left .service__photo { order: 1; }
+.service--photo-left .service__body { order: 2; }
+
+.service__photo {
+  position: relative;
+  margin: 0;
+  height: clamp(320px, 50vh, 480px);
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow:
+    0 1px 0 rgba(255, 255, 255, 0.08) inset,
+    0 24px 60px rgba(0, 0, 0, 0.45),
+    0 0 0 1px rgba(255, 255, 255, 0.06);
+  min-width: 0;
+}
+
+.service__photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 38%;
+  filter: contrast(1.02) saturate(0.94);
+}
+
+.service__photo-caption {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: clamp(14px, 2vw, 18px) clamp(16px, 2.4vw, 22px);
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.55) 60%, rgba(0, 0, 0, 0.78) 100%);
+  pointer-events: none;
+  text-align: left;
+}
+.service__photo-caption span:first-child {
+  font-family: 'Google Sans', 'Google Sans Flex', system-ui, sans-serif;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: #f5faf6;
+  text-align: left;
+}
+.service__photo-caption-meta {
+  font-family: 'Google Sans', 'Google Sans Flex', system-ui, sans-serif;
+  font-size: 11px;
+  font-weight: 400;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.68);
+  text-align: left;
+}
+
+.service__body {
+  min-width: 0;
+  text-align: left;
+}
+
+/* ─── Small pair (02 + 03) ──────────────────────────────────── */
+
+.services__pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(32px, 5vw, 64px);
+  align-items: start;
+}
+
+.service--small .service__photo--small {
+  height: clamp(220px, 30vh, 320px);
+  margin: 0 0 clamp(18px, 2.4vw, 24px);
+  box-shadow:
+    0 16px 40px rgba(0, 0, 0, 0.4),
+    0 0 0 1px rgba(255, 255, 255, 0.06);
+}
+
+/* service-classroom.jpg has the teacher at the chalkboard (upper
+   portion of the source). Push object-position up so the teacher's
+   face stays in frame regardless of container aspect ratio. */
+.service__photo img[src*="service-classroom"] {
+  object-position: center 18% !important;
+}
+.service--small .service__name {
+  font-size: clamp(20px, 2vw, 24px);
+}
+.service--small .service__desc {
+  font-size: clamp(14px, 0.95vw, 15.5px);
+}
+.service--no-photo {
+  padding-top: clamp(20px, 2.6vw, 28px);
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+/* ─── Compressed cross-references (05 + 06) ─────────────────── */
+
+.services__compressed {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: clamp(20px, 3vw, 36px);
+}
+
+.service-link {
+  display: block;
+  padding: clamp(20px, 2.4vw, 28px) clamp(20px, 2.4vw, 28px) clamp(20px, 2.4vw, 28px) 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+  text-decoration: none;
+  color: inherit;
+  transition:
+    border-color 220ms cubic-bezier(0.22, 1, 0.36, 1),
+    transform 280ms cubic-bezier(0.22, 1, 0.36, 1);
+  text-align: left;
+}
+.service-link:hover,
+.service-link:focus-visible {
+  border-top-color: #a9e0b6;
+  transform: translateY(-2px);
+}
+.service-link:focus-visible {
+  outline: 2px solid #58cc6f;
+  outline-offset: 6px;
+}
+.service-link .service__num {
+  font-size: clamp(20px, 2vw, 26px);
+  margin: 0 0 8px;
+}
+.service-link__name {
+  font-family: 'Google Sans', 'Google Sans Flex', system-ui, sans-serif;
+  font-size: clamp(17px, 1.4vw, 20px);
+  font-weight: 600;
+  line-height: 1.2;
+  color: #f5faf6;
+  margin: 0 0 8px;
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.5);
+  text-align: left;
+}
+.service-link__hint {
+  font-family: 'Google Sans', 'Google Sans Flex', system-ui, sans-serif;
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.72);
+  margin: 0;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.45);
+  text-align: left;
+}
+.service-link__arrow {
+  display: inline-block;
+  margin-left: 4px;
+  color: #a9e0b6;
+  font-weight: 500;
+  transition: transform 220ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+.service-link:hover .service-link__arrow {
   transform: translateX(3px);
 }
 
-/* ─── Reveal stagger (reuses the existing .reveal-photo
-   IntersectionObserver that toggles .is-visible). Override the
-   default scale-fade with a fade-rise tuned for the pillars. */
+/* ─── Services responsive ────────────────────────────────────── */
 
-.pillar.reveal-photo {
-  transform: translateY(14px);
-  transition:
-    opacity 700ms cubic-bezier(0.22, 1, 0.36, 1),
-    transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+@media (max-width: 991px) {
+  .service--featured {
+    grid-template-columns: 1fr;
+    gap: clamp(20px, 3vw, 32px);
+  }
+  .service--photo-right .service__photo,
+  .service--photo-left .service__photo {
+    order: 1;
+  }
+  .service--photo-right .service__body,
+  .service--photo-left .service__body {
+    order: 2;
+  }
+  .service__photo {
+    height: clamp(260px, 36vh, 360px);
+  }
+  .services__pair {
+    grid-template-columns: 1fr;
+    gap: clamp(28px, 4vw, 40px);
+  }
+  .services__compressed {
+    grid-template-columns: 1fr;
+    gap: 0;
+  }
 }
 
-.pillar.reveal-photo.is-visible {
-  transform: translateY(0);
-}
-
-.pillars__list > .pillar:nth-child(2).reveal-photo {
-  transition-delay: 90ms;
-}
-.pillars__list > .pillar:nth-child(3).reveal-photo {
-  transition-delay: 180ms;
+@media (max-width: 600px) {
+  .service__num {
+    font-size: clamp(24px, 6vw, 32px);
+  }
+  .service--small .service__photo--small {
+    height: clamp(180px, 28vh, 240px);
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .pillar.reveal-photo,
-  .pillar.reveal-photo.is-visible {
-    transition-delay: 0s !important;
+  .service__photo img,
+  .service-link {
     transition: none !important;
+  }
+  .service-link:hover {
     transform: none !important;
   }
-  .pillar__link-arrow {
-    transition: none !important;
+}
+
+/* ===============================================================
+   PROJECTS — press-release-log style activity log
+   ($impeccable craft Projects, confirmed)
+
+   3 status-grouped bands with per-band color voice:
+     .proj-band--active     Committed green (loudest)
+     .proj-band--completed  Restrained neutral (mid)
+     .proj-band--planned    Restrained-faded (quietest)
+
+   Each band has: sticky-style header (eyebrow + count) and a
+   list of project entries. Each entry has a prominent date
+   column on the left (the spine) and content on the right.
+
+   No JS filter, no badges, no images. Press log discipline.
+   Anchor: GitHub Releases / Stripe Changelog / Vercel Ship Log.
+   =============================================================== */
+
+.projects {
+  position: relative;
+  z-index: 2;
+  isolation: isolate;
+  background: transparent !important;
+  padding: clamp(80px, 12vh, 140px) clamp(20px, 4vw, 48px);
+  color: rgba(255, 255, 255, 0.92);
+  text-align: left;
+  overflow: visible;
+}
+
+.projects__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: left;
+}
+
+/* ─── Section header ─────────────────────────────────────────── */
+
+.projects__header {
+  max-width: 880px;
+  margin: 0 0 clamp(48px, 6vw, 80px);
+  text-align: left;
+  /* Override legacy: no longer a photo-band header */
+  position: static;
+  isolation: auto;
+  padding: 0;
+  border-radius: 0;
+  overflow: visible;
+}
+
+.projects__eyebrow {
+  font-family: 'Google Sans', 'Google Sans Flex', system-ui, sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: #58cc6f;
+  margin: 0 0 clamp(16px, 2.4vw, 24px);
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.55);
+  text-align: left;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0 12px;
+  align-items: center;
+}
+.projects__eyebrow-num {
+  color: rgba(255, 255, 255, 0.42);
+  font-weight: 400;
+}
+
+.projects__title {
+  font-family: 'Google Sans', 'Google Sans Flex', system-ui, sans-serif;
+  font-size: clamp(32px, 4.6vw, 56px);
+  font-weight: 500;
+  line-height: 1.04;
+  letter-spacing: -0.02em;
+  color: #f5faf6;
+  margin: 0 0 clamp(20px, 2.8vw, 28px);
+  max-width: 22ch;
+  text-shadow: 0 1px 16px rgba(0, 0, 0, 0.6);
+  text-wrap: balance;
+  text-align: left;
+}
+.projects__title-accent {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-style: italic;
+  font-weight: 400;
+  color: #a9e0b6;
+  letter-spacing: -0.01em;
+}
+
+.projects__lead {
+  font-family: 'Google Sans', 'Google Sans Flex', system-ui, sans-serif;
+  font-size: clamp(15px, 1.1vw, 17px);
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0;
+  max-width: 60ch;
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.55);
+  text-align: left;
+}
+
+/* ─── Status band — base ─────────────────────────────────────── */
+
+.proj-band {
+  margin: 0 0 clamp(48px, 6vw, 72px);
+  text-align: left;
+}
+.proj-band:last-child {
+  margin-bottom: 0;
+}
+
+.proj-band__header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 0 0 clamp(18px, 2vw, 24px);
+  margin: 0 0 clamp(20px, 2.4vw, 28px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.proj-band__heading {
+  font-family: 'Google Sans', 'Google Sans Flex', system-ui, sans-serif;
+  font-size: clamp(22px, 2.6vw, 32px);
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.005em;
+  text-transform: none;
+  color: #f5faf6;
+  margin: 0;
+  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.6);
+  text-align: left;
+}
+
+.proj-band__count {
+  font-family: 'Google Sans', 'Google Sans Flex', system-ui, sans-serif;
+  font-size: clamp(11px, 0.9vw, 13px);
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.55);
+  flex: none;
+  white-space: nowrap;
+}
+
+.proj-band__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* ─── Project entry — base ───────────────────────────────────── */
+
+.proj-entry {
+  display: grid;
+  grid-template-columns: minmax(120px, 160px) 1fr;
+  gap: clamp(20px, 3vw, 36px);
+  padding: clamp(20px, 2.6vw, 28px) 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.10);
+  text-align: left;
+}
+.proj-entry:last-child {
+  border-bottom: none;
+}
+
+.proj-entry__date {
+  font-family: 'Google Sans', 'Google Sans Flex', system-ui, sans-serif;
+  font-size: clamp(17px, 1.4vw, 22px);
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: 0.005em;
+  color: rgba(255, 255, 255, 0.85);
+  margin: 0;
+  white-space: nowrap;
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.6);
+  text-align: left;
+}
+
+.proj-entry__body {
+  min-width: 0;
+  text-align: left;
+}
+
+.proj-entry__category {
+  font-family: 'Google Sans', 'Google Sans Flex', system-ui, sans-serif;
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.5);
+  margin: 0 0 8px;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.55);
+  text-align: left;
+}
+
+.proj-entry__name {
+  font-family: 'Google Sans', 'Google Sans Flex', system-ui, sans-serif;
+  font-size: clamp(17px, 1.5vw, 22px);
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.005em;
+  color: #f5faf6;
+  margin: 0 0 10px;
+  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.55);
+  text-align: left;
+}
+
+.proj-entry__desc {
+  font-family: 'Google Sans', 'Google Sans Flex', system-ui, sans-serif;
+  font-size: clamp(14px, 1vw, 16px);
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.78);
+  margin: 0;
+  max-width: 60ch;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
+  text-align: left;
+}
+
+/* ─── Per-band color variation ───────────────────────────────── */
+
+/* Active Now: Committed — green carries the temporal energy */
+.proj-band--active .proj-band__header {
+  border-bottom-color: rgba(88, 204, 111, 0.55);
+  border-bottom-width: 2px;
+}
+.proj-band--active .proj-band__heading {
+  color: #58cc6f;
+}
+.proj-band--active .proj-band__count {
+  color: rgba(169, 224, 182, 0.85);
+}
+.proj-band--active .proj-entry__date {
+  color: #a9e0b6;
+  font-weight: 700;
+}
+.proj-band--active .proj-entry__date::before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  background: #58cc6f;
+  border-radius: 50%;
+  margin-right: 12px;
+  vertical-align: 3px;
+  box-shadow: 0 0 0 5px rgba(88, 204, 111, 0.18);
+}
+
+/* Recently Completed: Restrained — neutral, factual */
+.proj-band--completed .proj-band__heading {
+  color: rgba(255, 255, 255, 0.92);
+}
+
+/* Coming Next: Restrained-faded — italic Georgia dates, lower opacity */
+.proj-band--planned {
+  opacity: 0.85;
+}
+.proj-band--planned .proj-band__heading {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-style: italic;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  color: rgba(255, 255, 255, 0.78);
+}
+.proj-band--planned .proj-entry__date {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(18px, 1.5vw, 24px);
+  color: rgba(255, 255, 255, 0.7);
+  letter-spacing: -0.005em;
+}
+.proj-band--planned .proj-entry__name {
+  color: rgba(245, 250, 246, 0.88);
+}
+
+/* ─── Projects responsive ────────────────────────────────────── */
+
+@media (max-width: 768px) {
+  .proj-entry {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    padding: clamp(18px, 2.4vw, 22px) 0;
+  }
+  .proj-entry__date {
+    margin-bottom: 4px;
+  }
+  .proj-band__header {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .proj-band--active .proj-entry__date::before {
+    box-shadow: none;
   }
 }
