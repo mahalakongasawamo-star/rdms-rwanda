@@ -127,10 +127,13 @@
     var openers = [
       document.getElementById('getInTouchNavBtn'),
       document.getElementById('getInTouchMobileLink'),
-      document.getElementById('footerConnectBtn'),
       document.getElementById('sponsorGetInTouchBtn'),
       document.getElementById('servicesCtaBtn'),
-      document.getElementById('chroniclesSubscribeBtn')
+      document.getElementById('chroniclesSubscribeBtn'),
+      document.getElementById('contactWriteBtn'),
+      document.getElementById('navWriteBtn'),
+      document.getElementById('heroPartnerBtn'),
+      document.getElementById('heroMembershipBtn')
     ];
 
     function openOverlay(e) {
@@ -177,10 +180,12 @@
        A rAF deferral gives Webflow's init one tick to finish first.
     ---------------------------------------------------------------- */
     var heroVideos = [
-      document.getElementById('hero-video'),        /* background-video-2 (hidden fallback) */
-      document.querySelector('.hero-bg-video'),     /* clip-path hero background            */
-      document.querySelector('.sponsor-bg-video'),  /* sponsor-tech section background      */
-      document.querySelector('.circle-bg-video')    /* footer circle background             */
+      document.getElementById('hero-video'),         /* background-video-2 (hidden fallback) */
+      document.querySelector('.hero-bg-video'),      /* clip-path hero background            */
+      document.querySelector('.sponsor-bg-video'),   /* sponsor-tech section background      */
+      document.querySelector('.academy__bg-video'),  /* academy section background           */
+      document.querySelector('.contact__bg-video'),  /* contact section background           */
+      document.querySelector('.hero__photo-video')   /* hero right-side photo video          */
     ];
 
     function forcePlay(vid) {
@@ -211,6 +216,7 @@
     requestAnimationFrame(function () {
       heroVideos.forEach(forcePlay);
     });
+
 
 
     /* ----------------------------------------------------------------
@@ -402,59 +408,10 @@
    Next). Status is visible via grouping; no filter UI. The original
    30-line click-to-filter IIFE was deleted as part of that craft. */
 
-/* ================================================================
-   CONTACT FORM — submit via mailto:
-   No backend; we build a mailto: URL from the form fields and open
-   the visitor's mail client with the message pre-filled. Going to
-   both rdmspresident13@gmail.com and igisubizojimmy@gmail.com.
-   ================================================================ */
-(function () {
-  'use strict';
-
-  var form = document.getElementById('contactForm');
-  if (!form) return;
-
-  function val(name) {
-    var el = form.elements[name];
-    return el ? (el.value || '').toString().trim() : '';
-  }
-
-  form.addEventListener('submit', function (e) {
-    e.preventDefault();
-
-    var firstName = val('firstName');
-    var lastName  = val('lastName');
-    var email     = val('email');
-    var role      = val('role');
-    var subject   = val('subject');
-    var message   = val('message');
-
-    // Minimal client-side validation — required fields per the form.
-    if (!firstName || !email || !message) {
-      var firstMissing = !firstName ? form.elements.firstName
-                       : !email     ? form.elements.email
-                                    : form.elements.message;
-      if (firstMissing && firstMissing.focus) firstMissing.focus();
-      return;
-    }
-
-    var bodyLines = [
-      'Name: ' + firstName + (lastName ? ' ' + lastName : ''),
-      'Email: ' + email,
-      'Role: ' + (role || '(not specified)'),
-      '',
-      'Message:',
-      message,
-      '',
-      '— Sent from rdms-rwanda.com contact form'
-    ];
-    var url = 'mailto:rdmspresident13@gmail.com,igisubizojimmy@gmail.com'
-      + '?subject=' + encodeURIComponent(subject || 'RDMS Contact Form')
-      + '&body='    + encodeURIComponent(bodyLines.join('\n'));
-
-    window.location.href = url;
-  });
-})();
+/* (was: CONTACT FORM mailto handler — removed in Letter from Huye craft.
+   The inline 6-field form is gone; the Write to RDMS button on the
+   Contact section opens the get-in-touch overlay via the openers
+   array above, same as every other "Send Message" button on the page.) */
 
 /* ================================================================
    REVEAL-ON-SCROLL — fade-in + slight zoom on .reveal-photo elements
@@ -532,4 +489,108 @@
       closeMenu();
     }
   });
+})();
+
+/* ================================================================
+   NAVBAR ACTIVE-SECTION + ADAPTIVE THEME
+   Two IntersectionObservers, one for each concern, both reading
+   data-nav-theme attributes set on each section.
+
+   - Observer A: tracks which section is currently dominant in the
+     viewport (highest intersectionRatio); sets data-active="true"
+     on the matching nav link (matched by href).
+   - Observer B: tracks each section's data-nav-theme; the dominant
+     section's theme is mirrored onto .navbar via [data-nav-theme].
+
+   Skipped when prefers-reduced-motion is set (theme still swaps,
+   but observation runs without animation jitter — actual transition
+   timing is handled by CSS, which respects the media query).
+   ================================================================ */
+(function () {
+  'use strict';
+
+  var navbar = document.querySelector('.navbar.w-nav');
+  if (!navbar || !('IntersectionObserver' in window)) return;
+
+  var sections = document.querySelectorAll('[data-nav-theme]');
+  if (!sections.length) return;
+
+  var navLinks = Array.prototype.slice.call(
+    document.querySelectorAll('.navbar.w-nav .nav-link[href^="#"]')
+  );
+
+  /* Track every section's current visibility ratio so we can pick the
+     dominant one synchronously on each observer callback. Avoids the
+     "first matched section wins" bug that single-target observers hit. */
+  var ratios = new WeakMap();
+  sections.forEach(function (s) { ratios.set(s, 0); });
+
+  function pickDominant() {
+    var best = null;
+    var bestRatio = 0;
+    sections.forEach(function (s) {
+      var r = ratios.get(s) || 0;
+      if (r > bestRatio) {
+        bestRatio = r;
+        best = s;
+      }
+    });
+    return best;
+  }
+
+  var lastTheme = navbar.getAttribute('data-nav-theme') || 'dark';
+  var lastActiveHref = null;
+
+  function applyDominant() {
+    var dominant = pickDominant();
+    if (!dominant) return;
+
+    /* Theme adaptation. */
+    var theme = dominant.getAttribute('data-nav-theme') || 'dark';
+    if (theme !== lastTheme) {
+      navbar.setAttribute('data-nav-theme', theme);
+      lastTheme = theme;
+    }
+
+    /* Active-link state. Match section.id to nav link href. */
+    var sectionId = dominant.id;
+    var targetHref = sectionId ? '#' + sectionId : null;
+    if (targetHref !== lastActiveHref) {
+      navLinks.forEach(function (link) {
+        if (link.getAttribute('href') === targetHref) {
+          link.setAttribute('data-active', 'true');
+        } else {
+          link.removeAttribute('data-active');
+        }
+      });
+      lastActiveHref = targetHref;
+    }
+  }
+
+  var rafScheduled = false;
+  function scheduleApply() {
+    if (rafScheduled) return;
+    rafScheduled = true;
+    requestAnimationFrame(function () {
+      rafScheduled = false;
+      applyDominant();
+    });
+  }
+
+  var observer = new IntersectionObserver(
+    function (entries) {
+      entries.forEach(function (entry) {
+        ratios.set(entry.target, entry.intersectionRatio);
+      });
+      scheduleApply();
+    },
+    {
+      /* Account for the floating navbar height at the top.
+         Threshold steps so the dominant section flips smoothly. */
+      rootMargin: '-72px 0px -40% 0px',
+      threshold: [0, 0.1, 0.25, 0.5, 0.75, 1]
+    }
+  );
+
+  sections.forEach(function (s) { observer.observe(s); });
 })();

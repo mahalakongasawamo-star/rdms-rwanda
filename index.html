@@ -18,6 +18,8 @@
 
   <!-- Local overrides: IX visibility fixes + column-scroll initial states -->
   <link href="local-overrides.css" rel="stylesheet" type="text/css"/>
+  <!-- Chatbot mockup styles -->
+  <link href="assets/css/chatbot.css" rel="stylesheet" type="text/css"/>
 
   <!-- Webflow IX initial states (exact from original) -->
   <style>
@@ -158,21 +160,22 @@
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
     </div>
     <div class="container-2 w-container">
-      <a href="/" aria-current="page" class="brand w-nav-brand w--current">
-        <img src="assets/img/logo/real-logo-rdms.png" loading="eager" fetchpriority="high" decoding="async" alt="RDMS" class="logo"/>
-        <div class="brand-text">
+      <a href="/" aria-label="RDMS home" class="brand w-nav-brand w--current">
+        <img src="assets/img/logo/real-logo-rdms.png" loading="eager" fetchpriority="high" decoding="async" alt="" class="logo"/>
+        <span class="brand-text">
           <span class="brand-name">Dento-Medical Society Rwanda</span>
-          <span class="brand-acronym">(RDMS)</span>
-        </div>
+          <span class="brand-credibility">RDB 143885158 &middot; Huye, Rwanda</span>
+        </span>
       </a>
       <nav role="navigation" class="nav-menu w-nav-menu">
-        <a href="#about" class="nav-link w-nav-link" aria-current="page">About</a>
+        <a href="#about" class="nav-link w-nav-link">About</a>
         <a href="#leadership" class="nav-link w-nav-link">Leadership</a>
         <a href="#services" class="nav-link w-nav-link">Services</a>
         <a href="#projects" class="nav-link w-nav-link">Projects</a>
         <a href="#research-academy" class="nav-link w-nav-link">Research Academy</a>
         <a href="#contact" class="nav-link w-nav-link">Contact</a>
       </nav>
+      <a href="#" class="navbar__cta" id="navWriteBtn">Write to RDMS</a>
       <!-- Mobile hamburger toggle (only visible at <=768px) -->
       <button type="button" class="navbar-mobile-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
@@ -228,7 +231,7 @@
   <!-- ============================
        HERO SECTION
   ============================= -->
-  <section class="hero layout-b">
+  <section class="hero layout-b" data-nav-theme="dark">
 
     <!-- Background Video (Webflow native bg-video atom) -->
     <div data-poster-url="assets/img/video-poster.jpg" data-video-urls="assets/video/hero-bg-rwanda.mp4" data-autoplay="true" data-loop="true" data-wf-ignore="true" class="background-video-2 w-background-video w-background-video-atom">
@@ -260,15 +263,18 @@
         <p class="hero__lead">RDMS unites dental surgeons, dental therapists, medical doctors, and public health professionals to deliver integrated care, research, and policy advocacy across Rwanda. Free to communities. Member-supported.</p>
 
         <div class="hero__ctas">
-          <a href="#services" class="hero__cta-primary">
-            <span>Explore Our Services</span>
+          <a href="#" class="hero__cta-primary" id="heroPartnerBtn">
+            <span>Partner with RDMS</span>
             <span class="hero__cta-arrow" aria-hidden="true">&rarr;</span>
           </a>
-          <a href="#about" class="hero__cta-secondary">
-            <span>Learn About RDMS</span>
-            <span class="hero__cta-chev" aria-hidden="true">&darr;</span>
+          <a href="#projects" class="hero__cta-secondary">
+            <span>See the work</span>
+            <span class="hero__cta-chev" aria-hidden="true">&rarr;</span>
           </a>
         </div>
+        <p class="hero__cta-tertiary">
+          <a href="#" id="heroMembershipBtn">Apply for membership <span aria-hidden="true">&rarr;</span></a>
+        </p>
 
         <dl class="hero__credibility" aria-label="Registration and location">
           <div class="hero__cred-item">
@@ -287,11 +293,9 @@
       </div>
 
       <figure class="hero__photo">
-        <img src="assets/img/hero-field.jpg" alt="RDMS dental professional in white coat at a community screening, Huye 2024" width="798" height="445" loading="eager" decoding="async" fetchpriority="high"/>
-        <figcaption class="hero__photo-caption">
-          <span class="hero__photo-caption-line">Field screening</span>
-          <span class="hero__photo-caption-meta">Huye, 2024</span>
-        </figcaption>
+        <video class="hero__photo-video" autoplay muted loop playsinline preload="auto" poster="assets/img/video-poster.jpg" aria-label="RDMS dental professional in white coat at a community screening, Huye 2024">
+          <source src="assets/video/kling-hero.mp4" type="video/mp4"/>
+        </video>
       </figure>
 
     </div><!-- /hero-container -->
@@ -310,7 +314,7 @@
   ============================= -->
 
   <!-- 1. ORIGIN & IDENTITY — Restrained, text-left + photo-right -->
-  <section class="about-origin" id="about" aria-labelledby="about-origin-heading">
+  <section class="about-origin" id="about" data-nav-theme="light" aria-labelledby="about-origin-heading">
     <div class="about-origin__inner">
       <div class="about-origin__type">
         <p class="about-origin__eyebrow">Our Story</p>
@@ -332,7 +336,7 @@
   </section>
 
   <!-- 2. MISSION MANIFESTO — Drenched, type-dominant pull-quote -->
-  <section class="about-manifesto" id="vision" aria-labelledby="about-manifesto-heading">
+  <section class="about-manifesto" id="vision" data-nav-theme="dark" aria-labelledby="about-manifesto-heading">
     <div class="about-manifesto__photo-band">
       <img class="reveal-photo" src="assets/img/about-mission.png" alt="" aria-hidden="true" loading="lazy" decoding="async"/>
     </div>
@@ -346,7 +350,7 @@
   </section>
 
   <!-- 3. VALUES (CREDO) — Committed, type-only manifesto -->
-  <section class="about-credo" id="values" aria-labelledby="about-credo-heading">
+  <section class="about-credo" id="values" data-nav-theme="light" aria-labelledby="about-credo-heading">
     <div class="about-credo__inner">
       <p class="about-credo__eyebrow">What Guides Us <span class="about-credo__eyebrow-num" aria-hidden="true">/ Section 03</span></p>
       <h2 class="about-credo__headline" id="about-credo-heading">Five principles, <span class="about-credo__headline-accent">one practice.</span></h2>
@@ -393,7 +397,7 @@
   <!-- ============================
        LEADERSHIP — featured CEO + team grid
   ============================= -->
-  <section class="leadership" id="leadership" aria-labelledby="leadership-heading">
+  <section class="leadership" id="leadership" data-nav-theme="dark" aria-labelledby="leadership-heading">
     <div class="leadership__inner">
       <p class="leadership__eyebrow">Leadership</p>
       <h2 class="leadership__title" id="leadership-heading">Meet the Team</h2>
@@ -450,7 +454,7 @@
     </div>
 
     <div class="main-wrapper">
-      <section id="3-column-scroll-start" class="section-3-column-scroll">
+      <section id="3-column-scroll-start" class="section-3-column-scroll" data-nav-theme="dark">
 
         <!-- Sticky image panels (scroll-driven) -->
         <div class="column-scroll-wrapper">
@@ -531,7 +535,7 @@
        photos + 2 small blocks + 2 compressed cross-references.
        Restrained color, no CTAs. Visitor reads and scrolls to Projects.
   ============================= -->
-  <section class="services" id="services" aria-labelledby="services-heading">
+  <section class="services" id="services" data-nav-theme="light" aria-labelledby="services-heading">
     <div class="services__inner">
       <header class="services__header">
         <p class="services__eyebrow">What We Do <span class="services__eyebrow-num" aria-hidden="true">/ Section 04</span></p>
@@ -634,7 +638,7 @@
        Coming Next) with per-band color voice. No JS filter, no
        photos, no badges. Press log, not Kanban.
   ============================= -->
-  <section class="projects" id="projects" aria-labelledby="projects-heading">
+  <section class="projects" id="projects" data-nav-theme="light" aria-labelledby="projects-heading">
     <div class="projects__inner">
 
       <header class="projects__header">
@@ -733,7 +737,21 @@
        on cream paper, Drenched cooperative-green Chronicles band.
        Was: 6-card glassmorphic grid + Join button + photo CTA.
   ============================= -->
-  <section class="academy" id="research-academy" aria-labelledby="academy-heading">
+  <section class="academy" id="research-academy" data-nav-theme="light" aria-labelledby="academy-heading">
+
+    <!-- Rwanda flag-colors video — full-bleed section background. -->
+    <video class="academy__bg-video" autoplay muted loop playsinline preload="metadata" poster="assets/img/video-poster.jpg" aria-hidden="true">
+      <source src="assets/video/hero-bg-rwanda.mp4" type="video/mp4"/>
+    </video>
+    <div class="academy__bg-vignette" aria-hidden="true"></div>
+
+    <!-- Tricolor letterhead — Rwanda flag colors as a thin top-edge rule. -->
+    <div class="academy__flag-stripes" aria-hidden="true">
+      <span class="academy__stripe academy__stripe--blue"></span>
+      <span class="academy__stripe academy__stripe--yellow"></span>
+      <span class="academy__stripe academy__stripe--green"></span>
+    </div>
+
     <div class="academy__inner">
 
       <header class="academy__header">
@@ -836,7 +854,7 @@
 
     <!-- Chronicles band — Drenched cooperative-green, distinct
          publication identity surface separate from Academy. -->
-    <aside class="chronicles-band" aria-labelledby="chronicles-heading">
+    <aside class="chronicles-band" data-nav-theme="dark" aria-labelledby="chronicles-heading">
       <div class="chronicles-band__inner">
         <div class="chronicles-band__copy">
           <p class="chronicles-band__eyebrow">A monthly publication</p>
@@ -851,64 +869,309 @@
   </section>
 
   <!-- ============================
-       CONTACT
+       FAQ — two-column magazine layout: sticky category nav on the
+       left, Q&A pairs on the right. Nine categories, ~38 questions
+       sourced from the RDMS chatbot questionnaire. Cream paper.
   ============================= -->
-  <section class="contact" id="contact" aria-labelledby="contact-heading">
+  <section class="faq" id="faq" data-nav-theme="light" aria-labelledby="faq-heading">
+    <div class="faq__inner">
+
+      <header class="faq__header">
+        <p class="faq__eyebrow">Frequently Asked <span class="faq__eyebrow-num" aria-hidden="true">/ Section 09</span></p>
+        <h2 class="faq__title" id="faq-heading">Questions, answered.</h2>
+        <p class="faq__lead">Programs, partnerships, services, oral health basics. Still have a question? <a href="#contact">Write to us.</a></p>
+      </header>
+
+      <div class="faq__body">
+
+        <nav class="faq__nav" aria-label="FAQ categories">
+          <p class="faq__nav-label">In this section</p>
+          <ol class="faq__nav-list">
+            <li><a class="faq__nav-link" href="#faq-about"><span class="faq__nav-name">About RDMS</span><span class="faq__nav-count" aria-hidden="true">8</span></a></li>
+            <li><a class="faq__nav-link" href="#faq-services"><span class="faq__nav-name">Services</span><span class="faq__nav-count" aria-hidden="true">5</span></a></li>
+            <li><a class="faq__nav-link" href="#faq-school-screenings"><span class="faq__nav-name">School screenings</span><span class="faq__nav-count" aria-hidden="true">3</span></a></li>
+            <li><a class="faq__nav-link" href="#faq-preventive-care"><span class="faq__nav-name">Preventive care</span><span class="faq__nav-count" aria-hidden="true">4</span></a></li>
+            <li><a class="faq__nav-link" href="#faq-research-academy"><span class="faq__nav-name">Research Academy</span><span class="faq__nav-count" aria-hidden="true">6</span></a></li>
+            <li><a class="faq__nav-link" href="#faq-research-data"><span class="faq__nav-name">Research &amp; data</span><span class="faq__nav-count" aria-hidden="true">3</span></a></li>
+            <li><a class="faq__nav-link" href="#faq-partnerships"><span class="faq__nav-name">Partnerships &amp; donors</span><span class="faq__nav-count" aria-hidden="true">3</span></a></li>
+            <li><a class="faq__nav-link" href="#faq-events"><span class="faq__nav-name">Events &amp; campaigns</span><span class="faq__nav-count" aria-hidden="true">3</span></a></li>
+            <li><a class="faq__nav-link" href="#faq-oral-health"><span class="faq__nav-name">Oral health</span><span class="faq__nav-count" aria-hidden="true">3</span></a></li>
+          </ol>
+        </nav>
+
+        <div class="faq__categories">
+
+          <section class="faq__category" id="faq-about" aria-labelledby="faq-about-heading">
+            <h3 class="faq__category-heading" id="faq-about-heading">About RDMS</h3>
+            <dl class="faq__list">
+              <div class="faq__item">
+                <dt class="faq__question">What is RDMS?</dt>
+                <dd class="faq__answer">RDMS (Dento-Medical Society Rwanda) is a nonprofit, professional organization based in Ngoma, Huye, Rwanda. We unite dental surgeons, dental therapists, medical doctors, and public health professionals to advance oral and public health through outreach, research, innovation, and partnerships.</dd>
+              </div>
+              <div class="faq__item">
+                <dt class="faq__question">When was RDMS founded and is it officially registered?</dt>
+                <dd class="faq__answer">RDMS was founded and registered on 1st July 2024 under the Rwanda Development Board (RDB) as a Non-Profit Limited by Guarantee. Our registration code is 143885158.</dd>
+              </div>
+              <div class="faq__item">
+                <dt class="faq__question">Where is RDMS based?</dt>
+                <dd class="faq__answer">Our registered office is in Ngoma, Huye, Amajyepfo (Southern Province), Rwanda. Our programs reach communities across the country.</dd>
+              </div>
+              <div class="faq__item">
+                <dt class="faq__question">Who leads RDMS?</dt>
+                <dd class="faq__answer">RDMS is led by CEO &amp; President Igisubizo Jimmy Confiance (Dental Surgeon), supported by General Secretary Natukunda Sharon, VP of Finance Dushimitanga Luc, VP of External Affairs Kubwimana Steven, and VP of Internal Affairs Mbagoroziki Samuel.</dd>
+              </div>
+              <div class="faq__item">
+                <dt class="faq__question">What is RDMS&rsquo;s mission?</dt>
+                <dd class="faq__answer">To unite dental surgeons, dental therapists, and public health professionals in advancing oral-systemic health through collaborative education, research, outreach, and policy advocacy.</dd>
+              </div>
+              <div class="faq__item">
+                <dt class="faq__question">What is RDMS&rsquo;s vision?</dt>
+                <dd class="faq__answer">To become a multidisciplinary center of excellence for the integration of oral health and general health in Rwanda, ensuring a healthier nation through unified care and innovation.</dd>
+              </div>
+              <div class="faq__item">
+                <dt class="faq__question">Who can become a member of RDMS?</dt>
+                <dd class="faq__answer">RDMS welcomes dental surgeons, dental therapists, medical doctors, public health professionals, and health sciences students who share our commitment to advancing oral and public health in Rwanda.</dd>
+              </div>
+              <div class="faq__item">
+                <dt class="faq__question">How can I contact RDMS?</dt>
+                <dd class="faq__answer">You can reach us by phone at <a href="tel:+250791853120">+250 791 853 120</a>, by email at <a href="mailto:rdmspresident13@gmail.com">rdmspresident13@gmail.com</a> or <a href="mailto:igisubizojimmy@gmail.com">igisubizojimmy@gmail.com</a>, or follow us on Twitter/X at <a href="https://x.com/RDMS_rw" target="_blank" rel="noopener">@RDMS_rw</a>.</dd>
+              </div>
+            </dl>
+          </section>
+
+          <section class="faq__category" id="faq-services" aria-labelledby="faq-services-heading">
+            <h3 class="faq__category-heading" id="faq-services-heading">Services</h3>
+            <dl class="faq__list">
+              <div class="faq__item">
+                <dt class="faq__question">What services does RDMS offer?</dt>
+                <dd class="faq__answer">RDMS offers six core services: School-Based Dental Screenings, Preventive Care Programs, Oral Health Research &amp; Data Collection, the Dental Medicine Chronicles publication, the RDMS Research Academy, and Community Mobile Clinics.</dd>
+              </div>
+              <div class="faq__item">
+                <dt class="faq__question">Are RDMS services free?</dt>
+                <dd class="faq__answer">Many of RDMS&rsquo;s community outreach services, including school screenings and mobile clinic visits, are provided free of charge to the communities we serve. Contact us for details on specific programs.</dd>
+              </div>
+              <div class="faq__item">
+                <dt class="faq__question">How do I access RDMS&rsquo;s dental services?</dt>
+                <dd class="faq__answer">You can contact us directly at <a href="tel:+250791853120">+250 791 853 120</a> or <a href="mailto:rdmspresident13@gmail.com">rdmspresident13@gmail.com</a> to find out about upcoming programs, screenings, or mobile clinic visits in your area.</dd>
+              </div>
+              <div class="faq__item">
+                <dt class="faq__question">Does RDMS serve rural communities?</dt>
+                <dd class="faq__answer">Yes. Our Community Mobile Clinics specifically target underserved rural and peri-urban communities across Rwanda, bringing professional dental care directly to people who lack access to fixed dental facilities.</dd>
+              </div>
+              <div class="faq__item">
+                <dt class="faq__question">What areas of Rwanda does RDMS cover?</dt>
+                <dd class="faq__answer">While headquartered in Huye (Southern Province), RDMS conducts programs across Rwanda, including schools, health centers, rural communities, and university campuses nationwide.</dd>
+              </div>
+            </dl>
+          </section>
+
+          <section class="faq__category" id="faq-school-screenings" aria-labelledby="faq-school-heading">
+            <h3 class="faq__category-heading" id="faq-school-heading">School screenings</h3>
+            <dl class="faq__list">
+              <div class="faq__item">
+                <dt class="faq__question">How does RDMS&rsquo;s school dental screening program work?</dt>
+                <dd class="faq__answer">Our teams visit schools with portable equipment, conduct dental examinations on students, identify conditions like caries and gum disease, and connect students needing follow-up care with local dental services. We also provide oral hygiene education on-site for students and teachers.</dd>
+              </div>
+              <div class="faq__item">
+                <dt class="faq__question">Which schools does RDMS screen?</dt>
+                <dd class="faq__answer">We currently screen primary and secondary schools across Rwanda, with an active drive covering 7 schools in Huye District in 2026. We are expanding to more districts; contact us to request a screening for your school.</dd>
+              </div>
+              <div class="faq__item">
+                <dt class="faq__question">How can a school request a dental screening visit from RDMS?</dt>
+                <dd class="faq__answer">Contact us at <a href="mailto:rdmspresident13@gmail.com">rdmspresident13@gmail.com</a> or <a href="tel:+250791853120">+250 791 853 120</a> to request a school visit and we will schedule a screening based on our program calendar.</dd>
+              </div>
+            </dl>
+          </section>
+
+          <section class="faq__category" id="faq-preventive-care" aria-labelledby="faq-preventive-heading">
+            <h3 class="faq__category-heading" id="faq-preventive-heading">Preventive care</h3>
+            <dl class="faq__list">
+              <div class="faq__item">
+                <dt class="faq__question">What does RDMS&rsquo;s preventive care program include?</dt>
+                <dd class="faq__answer">Our preventive care programs include daily oral health messaging, fluoride application sessions, oral hygiene kits distribution, and community workshops covering brushing technique, diet, and dental habits, tailored for children and adults.</dd>
+              </div>
+              <div class="faq__item">
+                <dt class="faq__question">How can I receive RDMS&rsquo;s daily oral health tips?</dt>
+                <dd class="faq__answer">Follow us on Twitter/X <a href="https://x.com/RDMS_rw" target="_blank" rel="noopener">@RDMS_rw</a> or contact us at <a href="mailto:rdmspresident13@gmail.com">rdmspresident13@gmail.com</a> to sign up for our daily preventive care messaging program.</dd>
+              </div>
+              <div class="faq__item">
+                <dt class="faq__question">What oral hygiene habits does RDMS recommend?</dt>
+                <dd class="faq__answer">RDMS recommends brushing twice daily with fluoride toothpaste, flossing daily, limiting sugary foods and drinks, drinking clean water, and visiting a dental professional at least once a year for a check-up.</dd>
+              </div>
+              <div class="faq__item">
+                <dt class="faq__question">Does RDMS provide dental education for children?</dt>
+                <dd class="faq__answer">Yes. Our school-based programs and preventive care workshops include age-appropriate dental education for children, covering brushing, diet, and why oral health matters from a young age.</dd>
+              </div>
+            </dl>
+          </section>
+
+          <section class="faq__category" id="faq-research-academy" aria-labelledby="faq-academy-heading">
+            <h3 class="faq__category-heading" id="faq-academy-heading">Research Academy</h3>
+            <dl class="faq__list">
+              <div class="faq__item">
+                <dt class="faq__question">What is the RDMS Research Academy?</dt>
+                <dd class="faq__answer">The RDMS Research Academy is a structured educational platform providing dental and health professionals with access to curated research lessons, case-based discussions, and continuing professional development (CPD) content on oral and systemic health topics.</dd>
+              </div>
+              <div class="faq__item">
+                <dt class="faq__question">Who is the Research Academy for?</dt>
+                <dd class="faq__answer">The Academy is designed for dental surgeons, dental therapists, medical doctors, public health professionals, and health sciences students in Rwanda who want to stay current with evidence-based practice.</dd>
+              </div>
+              <div class="faq__item">
+                <dt class="faq__question">How do I join the RDMS Research Academy?</dt>
+                <dd class="faq__answer">Contact us at <a href="mailto:rdmspresident13@gmail.com">rdmspresident13@gmail.com</a> or visit our website to express your interest in joining the Academy.</dd>
+              </div>
+              <div class="faq__item">
+                <dt class="faq__question">What topics does the Research Academy cover?</dt>
+                <dd class="faq__answer">Topics include oral-systemic health links (e.g. diabetes and periodontitis), preventive dentistry, ectodermal dysplasia management, oral cancer detection, public health, and dental materials science, all with a Rwanda-specific focus.</dd>
+              </div>
+              <div class="faq__item">
+                <dt class="faq__question">What is the Dental Medicine Chronicles?</dt>
+                <dd class="faq__answer">The Dental Medicine Chronicles is RDMS&rsquo;s regular publication covering clinical case studies, public health updates, policy commentary, and innovations in dental medicine, written by and for health professionals in Rwanda.</dd>
+              </div>
+              <div class="faq__item">
+                <dt class="faq__question">How can I subscribe to the Dental Medicine Chronicles?</dt>
+                <dd class="faq__answer">Contact us at <a href="mailto:rdmspresident13@gmail.com">rdmspresident13@gmail.com</a> to subscribe and receive our latest publications directly.</dd>
+              </div>
+            </dl>
+          </section>
+
+          <section class="faq__category" id="faq-research-data" aria-labelledby="faq-research-heading">
+            <h3 class="faq__category-heading" id="faq-research-heading">Research &amp; data</h3>
+            <dl class="faq__list">
+              <div class="faq__item">
+                <dt class="faq__question">Does RDMS conduct research?</dt>
+                <dd class="faq__answer">Yes. RDMS conducts and supports oral health research across Rwanda, including community surveys, clinical studies, and data collection on disease prevalence and care access. We collaborate with academic institutions, hospitals, and international research partners.</dd>
+              </div>
+              <div class="faq__item">
+                <dt class="faq__question">Can I collaborate with RDMS on a research project?</dt>
+                <dd class="faq__answer">Absolutely. We welcome research partnerships with universities, health institutions, and international organizations. Reach out to <a href="mailto:rdmspresident13@gmail.com">rdmspresident13@gmail.com</a> to discuss collaboration opportunities.</dd>
+              </div>
+              <div class="faq__item">
+                <dt class="faq__question">Does RDMS publish its research findings?</dt>
+                <dd class="faq__answer">Yes. Our findings are shared through the Dental Medicine Chronicles and through collaboration with academic and research institutions.</dd>
+              </div>
+            </dl>
+          </section>
+
+          <section class="faq__category" id="faq-partnerships" aria-labelledby="faq-partnerships-heading">
+            <h3 class="faq__category-heading" id="faq-partnerships-heading">Partnerships &amp; donors</h3>
+            <dl class="faq__list">
+              <div class="faq__item">
+                <dt class="faq__question">How can organizations partner with RDMS?</dt>
+                <dd class="faq__answer">RDMS actively seeks partnerships with government institutions, NGOs, dental associations, hospitals, universities, and international health organizations. Email <a href="mailto:rdmspresident13@gmail.com">rdmspresident13@gmail.com</a> to start a conversation.</dd>
+              </div>
+              <div class="faq__item">
+                <dt class="faq__question">How can I support RDMS as a donor?</dt>
+                <dd class="faq__answer">We welcome financial and in-kind support from individuals and organizations who believe in advancing oral health in Rwanda. Contact us at <a href="mailto:rdmspresident13@gmail.com">rdmspresident13@gmail.com</a> to discuss how you can contribute.</dd>
+              </div>
+              <div class="faq__item">
+                <dt class="faq__question">Does RDMS work with the Rwandan government?</dt>
+                <dd class="faq__answer">RDMS engages with government health institutions and advocates for the integration of dentistry into Rwanda&rsquo;s national health agenda through policy dialogues and evidence-based advocacy.</dd>
+              </div>
+            </dl>
+          </section>
+
+          <section class="faq__category" id="faq-events" aria-labelledby="faq-events-heading">
+            <h3 class="faq__category-heading" id="faq-events-heading">Events &amp; campaigns</h3>
+            <dl class="faq__list">
+              <div class="faq__item">
+                <dt class="faq__question">What events does RDMS organize?</dt>
+                <dd class="faq__answer">RDMS organizes school screening drives, community mobile clinic missions, interdisciplinary health workshops, public awareness campaigns, and participates in global oral health observance days such as World Oral Health Day and World Ectodermal Dysplasia Day.</dd>
+              </div>
+              <div class="faq__item">
+                <dt class="faq__question">What is World Ectodermal Dysplasia Day and why does RDMS participate?</dt>
+                <dd class="faq__answer">World Ectodermal Dysplasia Day is observed on 20 February each year to raise awareness about Ectodermal Dysplasia, a condition that significantly affects teeth development. RDMS participates to support affected individuals and families in Rwanda and to raise public awareness about the condition.</dd>
+              </div>
+              <div class="faq__item">
+                <dt class="faq__question">How can I attend or volunteer at an RDMS event?</dt>
+                <dd class="faq__answer">Follow us on Twitter/X <a href="https://x.com/RDMS_rw" target="_blank" rel="noopener">@RDMS_rw</a> or contact us at <a href="mailto:rdmspresident13@gmail.com">rdmspresident13@gmail.com</a> to stay updated on upcoming events and volunteer opportunities.</dd>
+              </div>
+            </dl>
+          </section>
+
+          <section class="faq__category" id="faq-oral-health" aria-labelledby="faq-oral-heading">
+            <h3 class="faq__category-heading" id="faq-oral-heading">General oral health</h3>
+            <dl class="faq__list">
+              <div class="faq__item">
+                <dt class="faq__question">Why is oral health important for overall health?</dt>
+                <dd class="faq__answer">Oral health is directly linked to general health. Poor oral hygiene is associated with diabetes, heart disease, respiratory infections, and complications during pregnancy. Treating oral health as part of whole-body health, which is central to RDMS&rsquo;s approach, leads to better outcomes for patients and communities.</dd>
+              </div>
+              <div class="faq__item">
+                <dt class="faq__question">What are the most common dental problems in Rwanda?</dt>
+                <dd class="faq__answer">Dental caries (tooth decay) and periodontal (gum) disease are among the most prevalent oral health conditions in Rwanda, particularly in children and underserved communities, which is why RDMS&rsquo;s prevention and screening programs focus heavily on these conditions.</dd>
+              </div>
+              <div class="faq__item">
+                <dt class="faq__question">What should I do if I have a dental emergency?</dt>
+                <dd class="faq__answer">For a dental emergency, seek care at your nearest health center or district hospital with dental services. You can also contact RDMS at <a href="tel:+250791853120">+250 791 853 120</a> and we will direct you to the appropriate care provider in your area.</dd>
+              </div>
+            </dl>
+          </section>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================
+       CONTACT — Letter from Huye ($impeccable craft, brief confirmed)
+       Single-column institutional letter, signed by Founder & CEO.
+       Inline form removed; "Write to RDMS" button opens existing
+       get-in-touch overlay. Contact methods ranked donor-first.
+       Background: Rwanda flag-colors video (page-level rhyming with
+       hero), letter sits on an opaque cream-paper card. Top edge
+       carries a three-bar tricolor letterhead in Rwanda flag colors.
+  ============================= -->
+  <section class="contact" id="contact" data-nav-theme="light" aria-labelledby="contact-heading">
+
+    <!-- Rwanda flag-colors video — full-bleed section background. -->
+    <video class="contact__bg-video" autoplay muted loop playsinline preload="metadata" poster="assets/img/video-poster.jpg" aria-hidden="true">
+      <source src="assets/video/hero-bg-rwanda.mp4" type="video/mp4"/>
+    </video>
+    <div class="contact__bg-vignette" aria-hidden="true"></div>
+
+    <!-- Tricolor letterhead — Rwanda flag colors as a thin top-edge rule. -->
+    <div class="contact__flag-stripes" aria-hidden="true">
+      <span class="contact__stripe contact__stripe--blue"></span>
+      <span class="contact__stripe contact__stripe--yellow"></span>
+      <span class="contact__stripe contact__stripe--green"></span>
+    </div>
+
     <div class="contact__inner">
-      <p class="contact__eyebrow">Get In Touch</p>
-      <h2 class="contact__title" id="contact-heading">Connect with RDMS</h2>
-      <p class="contact__subtitle">Whether you&rsquo;re a professional, partner, donor, or community member &mdash; we&rsquo;d love to hear from you.</p>
 
-      <div class="contact__grid">
-        <!-- LEFT: info + socials -->
-        <div class="contact__info">
-          <img class="contact__info-bg-img reveal-photo" src="assets/img/bg-contact.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async"/>
-          <div class="contact__info-bg-overlay" aria-hidden="true"></div>
-          <h3 class="contact__info-heading">We&rsquo;re here for Rwanda&rsquo;s oral health</h3>
-          <p class="contact__info-text">Reach out to learn more about our programs, partnership opportunities, research collaborations, or to refer patients to our community services.</p>
+      <p class="contact__eyebrow">Get In Touch <span class="contact__eyebrow-num" aria-hidden="true">/ Section 08</span></p>
+      <h2 class="contact__title" id="contact-heading">Write to RDMS.</h2>
 
-          <ul class="contact__details">
-            <li class="contact__detail">
-              <span class="contact__detail-icon" aria-hidden="true">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 7-8 12-8 12s-8-5-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-              </span>
-              <span class="contact__detail-content">
-                <span class="contact__detail-label">Location</span>
-                <span class="contact__detail-value">Ngoma, Huye, Amajyepfo &middot; Rwanda (Southern Province)</span>
-              </span>
-            </li>
-            <li class="contact__detail">
-              <span class="contact__detail-icon" aria-hidden="true">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-              </span>
-              <span class="contact__detail-content">
-                <span class="contact__detail-label">Phone</span>
-                <span class="contact__detail-value"><a href="tel:+250791853120">+250 791 853 120</a></span>
-              </span>
-            </li>
-            <li class="contact__detail">
-              <span class="contact__detail-icon" aria-hidden="true">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-              </span>
-              <span class="contact__detail-content">
-                <span class="contact__detail-label">Email</span>
-                <span class="contact__detail-value">
-                  <a href="mailto:rdmspresident13@gmail.com">rdmspresident13@gmail.com</a><br/>
-                  <a href="mailto:igisubizojimmy@gmail.com">igisubizojimmy@gmail.com</a>
-                </span>
-              </span>
-            </li>
-            <li class="contact__detail">
-              <span class="contact__detail-icon" aria-hidden="true">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18"/><path d="M5 21V7l8-4v18"/><path d="M19 21V11l-6-4"/><path d="M9 9v.01"/><path d="M9 12v.01"/><path d="M9 15v.01"/><path d="M9 18v.01"/></svg>
-              </span>
-              <span class="contact__detail-content">
-                <span class="contact__detail-label">Registration</span>
-                <span class="contact__detail-value">RDB Code: 143885158 &middot; Registered: 1 July 2024</span>
-              </span>
-            </li>
-          </ul>
+      <div class="contact__letter">
+        <p>We&rsquo;re glad to hear from anyone considering funding a deployment, partnering with us, joining the society, or bringing a clinical question to the team.</p>
+        <p>Notes addressed to the leadership team are read directly. We try to reply within five working days; partnership proposals and clinical referrals get faster turnaround.</p>
+        <p>You can write through the form, send an email, or call. We are based in Huye, Southern Province, and answer in English, Kinyarwanda, or French.</p>
+      </div>
 
+      <div class="contact__signature">
+        <p class="contact__signature-name">Igisubizo Jimmy Confiance</p>
+        <p class="contact__signature-role">Founder &amp; CEO, RDMS &middot; Huye, Rwanda</p>
+      </div>
+
+      <a href="#" class="contact__write-btn" id="contactWriteBtn">
+        Write to RDMS <span class="arrow" aria-hidden="true">&rarr;</span>
+      </a>
+
+      <ul class="contact__methods" aria-label="Other ways to reach RDMS">
+        <li class="contact__method contact__method--email">
+          <span class="contact__method-label">Email</span>
+          <span class="contact__method-value">
+            <a href="mailto:rdmspresident13@gmail.com">rdmspresident13@gmail.com</a><br/>
+            <a href="mailto:igisubizojimmy@gmail.com">igisubizojimmy@gmail.com</a>
+          </span>
+        </li>
+        <li class="contact__method contact__method--phone">
+          <span class="contact__method-label">Phone</span>
+          <span class="contact__method-value">
+            <a href="tel:+250791853120">+250 791 853 120</a>
+          </span>
+        </li>
+        <li class="contact__method contact__method--social">
+          <span class="contact__method-label">Direct message</span>
           <div class="contact__socials" aria-label="RDMS on social media">
             <a class="contact__social" href="https://x.com/RDMS_rw" target="_blank" rel="noopener" aria-label="RDMS on X (Twitter)">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
@@ -922,124 +1185,136 @@
             <a class="contact__social" href="https://www.tiktok.com/@rdmsrw" target="_blank" rel="noopener" aria-label="RDMS on TikTok">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5.66 20.1a6.34 6.34 0 0 0 10.86-4.43V8.16a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.7-.06z"/></svg>
             </a>
-            <a class="contact__social" href="mailto:rdmspresident13@gmail.com" aria-label="Email RDMS">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-            </a>
           </div>
-        </div>
+        </li>
+        <li class="contact__method contact__method--footnote">
+          <span class="contact__method-label">Office</span>
+          <span class="contact__method-value">Ngoma, Huye, Amajyepfo &middot; Southern Province, Rwanda &middot; RDB Code 143885158 &middot; Registered 1 July 2024</span>
+        </li>
+      </ul>
 
-        <!-- RIGHT: form -->
-        <div class="contact__form-card">
-          <h3 class="contact__form-title">Send Us a Message</h3>
-          <form class="contact__form" id="contactForm" novalidate>
-            <div class="contact__field">
-              <label for="cf-firstName">First Name</label>
-              <input type="text" id="cf-firstName" name="firstName" required autocomplete="given-name"/>
-            </div>
-            <div class="contact__field">
-              <label for="cf-lastName">Last Name</label>
-              <input type="text" id="cf-lastName" name="lastName" autocomplete="family-name"/>
-            </div>
-            <div class="contact__field contact__field--full">
-              <label for="cf-email">Email Address</label>
-              <input type="email" id="cf-email" name="email" required autocomplete="email"/>
-            </div>
-            <div class="contact__field contact__field--full">
-              <label for="cf-role">I am a&hellip;</label>
-              <select id="cf-role" name="role">
-                <option value="">Select one</option>
-                <option>Healthcare Professional</option>
-                <option>Dental Student</option>
-                <option>Partner / Donor</option>
-                <option>Community Member / Patient</option>
-                <option>Researcher</option>
-                <option>Government / NGO</option>
-                <option>Other</option>
-              </select>
-            </div>
-            <div class="contact__field contact__field--full">
-              <label for="cf-subject">Subject</label>
-              <input type="text" id="cf-subject" name="subject"/>
-            </div>
-            <div class="contact__field contact__field--full">
-              <label for="cf-message">Message</label>
-              <textarea id="cf-message" name="message" required rows="5"></textarea>
-            </div>
-            <button type="submit" class="contact__submit">
-              Send Message <span class="arrow" aria-hidden="true">&rarr;</span>
-            </button>
-          </form>
-        </div>
-      </div>
     </div>
   </section>
 
   </main><!-- /#main -->
 
   <!-- ============================
-       FOOTER (rebuilt)
+       FOOTER ($impeccable craft, brief confirmed)
+       Trust + closure masthead. No CTAs, no nav columns. Brand
+       stamp + tagline + partner logos in monochromatic-white
+       treatment + copyright + Made-in-Rwanda mark. Sun-setting
+       Rwanda flag-colors circle video bleeds off bottom-right.
   ============================= -->
-  <footer class="site-footer" role="contentinfo">
-    <!-- Decorative Rwanda-flag-colors circle vignette (restored from
-         the legacy Webflow footer; positioned bottom-right via the
-         existing .circle-abstract rule in webflow.css). -->
-    <div class="circle-abstract" aria-hidden="true">
-      <img src="assets/img/ellipse.svg" loading="lazy" decoding="async" alt="" class="image-4"/>
-      <div class="circle-dots large"></div>
-      <div style="clip-path:circle(50% at 50% 50%)" class="circle-color">
-        <video class="circle-bg-video" autoplay muted loop playsinline preload="metadata" poster="assets/img/video-poster.jpg">
-          <source src="assets/video/Rwanda_Colors_Video_Stitch.mp4" type="video/mp4"/>
-        </video>
-      </div>
-    </div>
+  <footer class="site-footer" role="contentinfo" data-nav-theme="dark">
 
     <div class="site-footer__inner">
-      <div class="site-footer__brand">
-        <div class="site-footer__brand-row">
-          <img src="assets/img/logo/real-logo-rdms.png" loading="lazy" decoding="async" alt="RDMS" class="site-footer__brand-logo"/>
-          <p class="site-footer__brand-name">Dento-Medical Society Rwanda</p>
-        </div>
-        <p class="site-footer__tagline">Uniting dental professionals and public health practitioners to advance oral-systemic health across Rwanda through education, research, outreach, and advocacy.</p>
-      </div>
 
-      <div class="site-footer__columns">
-        <div class="site-footer__col">
-          <p class="site-footer__col-title">Navigation</p>
-          <ul>
-            <li><a href="#">Home</a></li>
-            <li><a href="#about">About RDMS</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#projects">Projects</a></li>
-          </ul>
-        </div>
+      <a class="site-footer__brand" href="/" aria-label="RDMS home">
+        <span class="site-footer__brand-logo" aria-hidden="true">
+          <img src="assets/img/rdms-logo.png" loading="lazy" decoding="async" alt=""/>
+        </span>
+        <span class="site-footer__brand-text">
+          <span class="site-footer__brand-name">Dento-Medical Society Rwanda</span>
+          <span class="site-footer__brand-acronym">RDMS</span>
+        </span>
+      </a>
 
-        <div class="site-footer__col">
-          <p class="site-footer__col-title">Programs</p>
-          <ul>
-            <li><a href="#services">Preventive Care</a></li>
-            <li><a href="#services">School Screenings</a></li>
-            <li><a href="#research-academy">Research Academy</a></li>
-            <li><a href="#research-academy">Chronicles</a></li>
-          </ul>
-        </div>
+      <p class="site-footer__tagline">Uniting dental surgeons, dental therapists, medical doctors, and public-health professionals to advance oral-systemic health across Rwanda.</p>
 
-        <div class="site-footer__col">
-          <p class="site-footer__col-title">Contact</p>
-          <ul>
-            <li><a href="tel:+250791853120">+250 791 853 120</a></li>
-            <li><a href="mailto:rdmspresident13@gmail.com">rdmspresident13@gmail.com</a></li>
-            <li><a href="https://x.com/RDMS_rw" target="_blank" rel="noopener">Twitter / X</a></li>
-            <li><a href="#" id="footerConnectBtn">Send a Message</a></li>
-          </ul>
-        </div>
-      </div>
+      <section class="site-footer__partners" aria-labelledby="footer-partners-label">
+        <p class="site-footer__partners-label" id="footer-partners-label">In partnership with</p>
+        <ul class="site-footer__partners-list">
+          <li><a class="site-footer__partner" href="#" aria-label="CHUB"><img src="assets/img/logo/chub.jpeg" loading="lazy" decoding="async" alt="CHUB" class="site-footer__partner-img"/></a></li>
+          <li><a class="site-footer__partner" href="#" aria-label="FIRAH"><img src="assets/img/logo/firah.jpeg" loading="lazy" decoding="async" alt="FIRAH" class="site-footer__partner-img"/></a></li>
+          <li><a class="site-footer__partner" href="#" aria-label="Hanga Hubs"><img src="assets/img/logo/hanga%20hubs.jpeg" loading="lazy" decoding="async" alt="Hanga Hubs" class="site-footer__partner-img"/></a></li>
+          <li><a class="site-footer__partner" href="#" aria-label="AQS"><img src="assets/img/logo/aqs.jpeg" loading="lazy" decoding="async" alt="AQS" class="site-footer__partner-img"/></a></li>
+          <li><a class="site-footer__partner" href="#" aria-label="Society of Clinical Anatomy of Rwanda"><img src="assets/img/logo/society%20of%20clinical%20anatomy%20of%20rwanda.jpeg" loading="lazy" decoding="async" alt="Society of Clinical Anatomy of Rwanda" class="site-footer__partner-img"/></a></li>
+          <li><a class="site-footer__partner" href="#" aria-label="In Depth Dentistry Africa"><img src="assets/img/logo/In%20depth%20dentistry%20africa.jpeg" loading="lazy" decoding="async" alt="In Depth Dentistry Africa" class="site-footer__partner-img"/></a></li>
+          <li><a class="site-footer__partner" href="#" aria-label="Member of African Dental Congress"><img src="assets/img/logo/Member%20of%20African%20Dental%20Congress.jpeg" loading="lazy" decoding="async" alt="Member of African Dental Congress" class="site-footer__partner-img"/></a></li>
+        </ul>
+      </section>
+
+      <hr class="site-footer__rule" aria-hidden="true"/>
 
       <div class="site-footer__bottom">
         <p class="site-footer__copyright">&copy; 2024&ndash;2026 Dento-Medical Society Rwanda (RDMS). All rights reserved.</p>
-        <span class="site-footer__made"><span aria-hidden="true">🇷🇼</span> Made for Rwanda</span>
+        <span class="site-footer__made">
+          <span class="site-footer__made-text">Made in Rwanda</span>
+          <span class="site-footer__made-mark" aria-hidden="true">
+            <span class="site-footer__made-stripe site-footer__made-stripe--blue"></span>
+            <span class="site-footer__made-stripe site-footer__made-stripe--yellow"></span>
+            <span class="site-footer__made-stripe site-footer__made-stripe--green"></span>
+          </span>
+        </span>
+      </div>
+
+    </div>
+
+    <!-- Sun-setting Rwanda flag-colors circle (legacy Webflow element,
+         repositioned to bleed off the footer's bottom-right edge). -->
+    <div class="circle-abstract" aria-hidden="true">
+      <img src="assets/img/ellipse.svg" loading="lazy" decoding="async" alt="" class="image-4"/>
+      <div class="circle-dots large"></div>
+      <div style="clip-path:circle(50% at 50% 50%);position:relative;width:100%;height:100%;overflow:hidden;border-radius:50%;" class="circle-color">
+        <img class="circle-bg-flag" src="assets/img/rwanda-flag.png" alt="" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;z-index:2;"/>
       </div>
     </div>
+
   </footer>
+
+  <!-- ============================
+       AI CHATBOT (mockup, presentation only)
+       Floating bottom-right launcher opens a chat panel branded to
+       match the RDMS site (cream paper, tricolor letterhead, Georgia
+       title). Knowledge source: the .faq__item entries already in the
+       FAQ section above (parsed at runtime). No backend, no LLM, no
+       data leaves the page.
+  ============================= -->
+  <button type="button" class="chatbot-launcher" id="chatbotLauncher" aria-label="Open chat with RDMS Assistant" aria-expanded="false" aria-controls="chatbotPanel">
+    <span class="chatbot-launcher__icon" aria-hidden="true">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+    </span>
+    <span class="chatbot-launcher__label">Ask RDMS</span>
+  </button>
+
+  <aside class="chatbot-panel" id="chatbotPanel" role="dialog" aria-modal="false" aria-labelledby="chatbotPanelTitle" aria-hidden="true">
+    <header class="chatbot-panel__header">
+      <span class="chatbot-panel__stripe" aria-hidden="true">
+        <span class="chatbot-panel__stripe-bar chatbot-panel__stripe-bar--blue"></span>
+        <span class="chatbot-panel__stripe-bar chatbot-panel__stripe-bar--yellow"></span>
+        <span class="chatbot-panel__stripe-bar chatbot-panel__stripe-bar--green"></span>
+      </span>
+      <div class="chatbot-panel__header-row">
+        <div class="chatbot-panel__brand">
+          <span class="chatbot-panel__avatar" aria-hidden="true">
+            <img src="assets/img/rdms-logo.png" alt=""/>
+          </span>
+          <div class="chatbot-panel__brand-text">
+            <p class="chatbot-panel__title" id="chatbotPanelTitle">RDMS Assistant</p>
+            <p class="chatbot-panel__status"><span class="chatbot-panel__status-dot" aria-hidden="true"></span>Demo &middot; Predefined answers</p>
+          </div>
+        </div>
+        <button type="button" class="chatbot-panel__close" id="chatbotClose" aria-label="Close chat">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+        </button>
+      </div>
+    </header>
+
+    <div class="chatbot-panel__body" id="chatbotBody" role="log" aria-live="polite" aria-label="Chat conversation">
+      <!-- Messages injected by JS -->
+    </div>
+
+    <footer class="chatbot-panel__footer">
+      <p class="chatbot-panel__disclaimer">For dental emergencies, contact a provider directly: <a href="tel:+250791853120">+250 791 853 120</a>.</p>
+      <form class="chatbot-input" id="chatbotForm" autocomplete="off">
+        <label class="visually-hidden" for="chatbotInput">Type your question</label>
+        <input type="text" class="chatbot-input__field" id="chatbotInput" placeholder="Type a question..." maxlength="200"/>
+        <button type="submit" class="chatbot-input__send" aria-label="Send message">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+        </button>
+      </form>
+    </footer>
+  </aside>
 
   <!-- ============================
        SCRIPTS
@@ -1056,6 +1331,8 @@
 
   <!-- All GSAP animations + IX failsafe + overlay logic -->
   <script src="script.js"></script>
+  <!-- Chatbot mockup (presentation demo) -->
+  <script src="assets/js/chatbot.js"></script>
 
 </body>
 </html>
