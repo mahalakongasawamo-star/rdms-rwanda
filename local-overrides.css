@@ -19,11 +19,14 @@
 .logo,
 .image-3 {
   width: 70px !important;
-  height: auto !important;
+  height: 70px !important; /* lock square so border-radius:50% renders a true circle */
   max-width: 70px !important;
   padding: 0 !important;
   display: block !important;
   flex: 0 0 70px !important;
+  border-radius: 50% !important;
+  background-color: transparent !important; /* no white box behind the transparent logo */
+  object-fit: cover !important;
 }
 
 /* Navbar brand: switch from column to row so logo + text sit side-by-side.
@@ -271,6 +274,7 @@
   .logo,
   .image-3 {
     width: 50px !important;
+    height: 50px !important; /* keep square for border-radius:50% circle */
     max-width: 50px !important;
     flex: 0 0 50px !important;
   }
@@ -749,6 +753,7 @@ body.body-2 {
 }
 .navbar.w-nav .brand .logo {
   width: 36px !important;
+  height: 36px !important; /* keep square so border-radius:50% stays a true circle */
   max-width: 36px !important;
   flex: 0 0 36px !important;
 }
@@ -920,279 +925,448 @@ body.body-2 {
 
 
 /* ===============================================================
-   RESEARCH ACADEMY SECTION (homepage)
-   Section hero (eyebrow + title + body + Join button) → Lessons
-   subheader → 3x2 glassmorphic lesson grid → Chronicles CTA band.
-   Same visual language as Projects — green-to-teal hover gradient.
+   RESEARCH ACADEMY ($impeccable craft, brief confirmed).
+   Was: dark band w/ glass card 3x2 grid + Chronicles photo CTA.
+   Now: cream editorial publication — header / standfirst / featured
+   lesson (magazine spread) / 5 dated roll rows / Drenched-green
+   Chronicles band as a visually distinct subscribe surface.
+   Donor-first reading experience: program officer scanning for
+   "RDMS publishes substantive research, named professionals,
+   monthly cadence." Anchors: The Africa Report magazine index,
+   Adi Magazine, The Atlantic feature index. Committed green
+   palette per Q7=B.
    =============================================================== */
 
 .academy {
   position: relative;
   z-index: 2;
   isolation: isolate;
-  color: #fff;
+  background: #f6f3ec;
+  color: #2a2a2a;
   text-align: left;
-  padding: clamp(56px, 8vw, 96px) clamp(20px, 4vw, 36px) 0;
+  padding: clamp(80px, 10vw, 140px) clamp(20px, 4vw, 36px) clamp(48px, 6vw, 72px);
 }
 
 .academy__inner {
-  max-width: 1200px;
+  max-width: 980px;
   margin: 0 auto;
+}
+
+/* — Section header ----------------------------------------------- */
+
+.academy__header {
+  margin: 0 0 clamp(32px, 4vw, 48px);
 }
 
 .academy__eyebrow {
-  font-family: 'Google Sans', sans-serif;
-  font-size: 11px;
+  font-family: 'Google Sans', system-ui, sans-serif;
+  font-size: 12px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: #58cc6f;
+  color: #1f6b3a;
+  font-weight: 600;
+  margin: 0 0 18px;
+  text-shadow: none;
+}
+.academy__eyebrow-num {
+  color: rgba(31, 107, 58, 0.55);
   font-weight: 500;
-  margin: 0 0 14px;
-  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.55);
+  margin-left: 6px;
 }
 
 .academy__title {
-  font-family: 'Google Sans', sans-serif;
-  font-size: clamp(28px, 3.6vw, 38px);
-  line-height: 1.05;
-  letter-spacing: -0.01em;
-  font-weight: 500;
-  color: #fff;
-  margin: 0 0 18px;
-  max-width: 780px;
-  text-shadow: 0 1px 16px rgba(0, 0, 0, 0.6);
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(32px, 4.4vw, 52px);
+  line-height: 1.08;
+  letter-spacing: -0.012em;
+  font-weight: 400;
+  color: #0a0a0a;
+  margin: 0 0 22px;
+  max-width: 18ch;
+  text-shadow: none;
+}
+.academy__title-accent {
+  color: #58cc6f;
+  font-style: italic;
 }
 
-.academy__subtitle {
-  font-size: 15px;
+.academy__lead {
+  font-family: 'Google Sans', system-ui, sans-serif;
+  font-size: clamp(16px, 1.6vw, 18px);
   line-height: 1.6;
-  color: rgba(255, 255, 255, 0.85);
-  margin: 0 0 24px;
-  max-width: 720px;
-  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.55);
+  color: #2a2a2a;
+  margin: 0;
+  max-width: 62ch;
+  text-shadow: none;
 }
 
-.academy__hero-btn {
-  display: inline-flex;
+/* — About the Research Academy standfirst ------------------------ */
+
+.academy__standfirst {
+  margin: 0 0 clamp(64px, 8vw, 96px);
+  padding: clamp(20px, 2.4vw, 28px) 0 0;
+  border-top: 1px solid rgba(10, 10, 10, 0.12);
+  max-width: 60ch;
+}
+
+.academy__standfirst-eyebrow {
+  font-family: 'Google Sans', system-ui, sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #4a4a4a;
+  font-weight: 500;
+  margin: 0 0 10px;
+}
+
+.academy__standfirst-text {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(15px, 1.4vw, 17px);
+  line-height: 1.7;
+  font-style: italic;
+  color: #2a2a2a;
+  margin: 0;
+}
+
+/* — Featured lesson (magazine spread) ---------------------------- */
+
+.academy-feature {
+  margin: 0 0 clamp(56px, 7vw, 80px);
+  padding: 0 0 clamp(40px, 5vw, 56px);
+  border-bottom: 2px solid #0a0a0a;
+}
+
+.academy-feature__link {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+  transition: opacity 200ms ease-out;
+}
+.academy-feature__link:hover {
+  opacity: 0.92;
+}
+.academy-feature__link:hover .academy-feature__title-accent {
+  text-decoration: underline;
+  text-decoration-color: #58cc6f;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+}
+.academy-feature__link:focus-visible {
+  outline: 2px solid #58cc6f;
+  outline-offset: 6px;
+  border-radius: 2px;
+}
+
+.academy-feature__category {
+  font-family: 'Google Sans', system-ui, sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #1f6b3a;
+  font-weight: 600;
+  margin: 0 0 18px;
+  display: flex;
+  flex-wrap: wrap;
   align-items: center;
   gap: 10px;
-  padding: 14px 26px;
-  border-radius: 999px;
-  background: rgba(88, 204, 111, 0.18);
-  color: #fff;
-  border: 1px solid rgba(88, 204, 111, 0.5);
-  font-family: 'Google Sans', sans-serif;
-  font-size: 15px;
-  font-weight: 500;
-  text-decoration: none;
-  transition: transform 200ms ease, background 200ms ease, border-color 200ms ease;
-  white-space: nowrap;
-  margin-bottom: clamp(48px, 6vw, 72px);
 }
-.academy__hero-btn:hover {
-  transform: translateY(-1px);
-  background: rgba(88, 204, 111, 0.3);
-  border-color: rgba(88, 204, 111, 0.7);
-}
-.academy__hero-btn .arrow {
-  display: inline-block;
-  transition: transform 0.25s ease;
-}
-.academy__hero-btn:hover .arrow {
-  transform: translateX(3px);
+.academy-feature__methodology {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0;
+  color: #4a4a4a;
+  font-size: 13px;
 }
 
-/* Lessons subheader — visually quieter than the section title */
-.academy__lessons-header {
+.academy-feature__title {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(28px, 3.6vw, 44px);
+  line-height: 1.12;
+  letter-spacing: -0.01em;
+  font-weight: 400;
+  color: #0a0a0a;
+  margin: 0 0 20px;
+  max-width: 22ch;
+  text-shadow: none;
+}
+.academy-feature__title-accent {
+  color: #1f6b3a;
+}
+
+.academy-feature__desc {
+  font-family: 'Google Sans', system-ui, sans-serif;
+  font-size: clamp(15px, 1.4vw, 17px);
+  line-height: 1.65;
+  color: #2a2a2a;
   margin: 0 0 28px;
+  max-width: 62ch;
 }
 
-.academy__lessons-eyebrow {
-  font-family: 'Google Sans', sans-serif;
-  font-size: 11px;
-  letter-spacing: 0.18em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.55);
-  font-weight: 500;
-  margin: 0 0 8px;
-  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.55);
-}
-
-.academy__lessons-title {
-  font-family: 'Google Sans', sans-serif;
-  font-size: clamp(20px, 2.4vw, 26px);
-  line-height: 1.1;
-  font-weight: 600;
-  color: #fff;
-  margin: 0;
-  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.55);
-}
-
-/* 3x2 lesson grid */
-.academy__grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: clamp(18px, 2.2vw, 24px);
-  margin-bottom: clamp(48px, 6vw, 72px);
-}
-
-.academy__card {
-  position: relative;
-  background: rgba(15, 15, 18, 0.55);
-  border: 1px solid rgba(255, 255, 255, 0.18);
-  border-radius: 14px;
-  padding: 22px;
-  backdrop-filter: blur(14px);
-  -webkit-backdrop-filter: blur(14px);
-  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.3);
-  transition: transform 240ms ease, border-color 240ms ease, box-shadow 240ms ease;
+.academy-feature__meta {
   display: flex;
-  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 18px 28px;
+  align-items: baseline;
+  border-top: 1px solid rgba(10, 10, 10, 0.12);
+  padding: 16px 0 0;
+  font-family: 'Google Sans', system-ui, sans-serif;
 }
-
-.academy__card:hover {
-  transform: translateY(-3px);
-  border-color: transparent;
-  box-shadow:
-    0 0 0 1.5px rgba(88, 204, 111, 0.55),
-    0 0 0 3px rgba(13, 142, 166, 0.3),
-    0 14px 36px rgba(0, 0, 0, 0.4),
-    0 0 32px rgba(88, 204, 111, 0.2),
-    0 0 48px rgba(13, 142, 166, 0.18);
-}
-
-.academy__category {
-  display: inline-flex;
-  align-items: center;
-  font-family: 'Google Sans', sans-serif;
-  font-size: 11px;
-  font-weight: 600;
+.academy-feature__byline {
+  font-size: 13px;
   letter-spacing: 0.04em;
   text-transform: uppercase;
-  padding: 4px 10px;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.05);
-  color: rgba(255, 255, 255, 0.7);
-  border: 1px solid rgba(255, 255, 255, 0.14);
-  margin: 0 0 14px;
-  align-self: flex-start;
-  white-space: nowrap;
-  max-width: 100%;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-
-.academy__name {
-  font-family: 'Google Sans', sans-serif;
-  font-size: 15px;
+  color: #1f6b3a;
   font-weight: 600;
-  color: #fff;
-  margin: 0 0 10px;
-  line-height: 1.3;
-}
-
-.academy__desc {
-  font-size: 13px;
-  line-height: 1.55;
-  color: rgba(255, 255, 255, 0.78);
-  margin: 0 0 14px;
-  flex: 1;
-}
-
-.academy__date {
-  font-family: 'Google Sans', sans-serif;
-  font-size: 12px;
-  color: rgba(255, 255, 255, 0.5);
   margin: 0;
-  letter-spacing: 0.02em;
+}
+.academy-feature__date {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 14px;
+  color: #4a4a4a;
+  margin: 0;
 }
 
-@media (max-width: 991px) {
-  .academy__grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
+/* — Lessons roll (5 dated rows) ---------------------------------- */
+
+.academy-roll {
+  list-style: none;
+  margin: 0 0 clamp(96px, 12vw, 128px);
+  padding: 0;
+}
+.academy-roll > li + li {
+  border-top: 1px solid rgba(10, 10, 10, 0.1);
+}
+
+.academy-row__link {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: start;
+  column-gap: clamp(20px, 3vw, 32px);
+  padding: clamp(22px, 2.8vw, 30px) 0;
+  text-decoration: none;
+  color: inherit;
+  transition: opacity 200ms ease-out;
+  position: relative;
+}
+.academy-row__link:hover {
+  opacity: 0.94;
+}
+.academy-row__link:hover .academy-row__title {
+  color: #0a0a0a;
+}
+.academy-row__link:hover .academy-row__chevron {
+  transform: translateX(4px);
+  color: #58cc6f;
+}
+.academy-row__link:focus-visible {
+  outline: 2px solid #58cc6f;
+  outline-offset: 4px;
+  border-radius: 2px;
+}
+
+.academy-row__head {
+  grid-column: 1;
+  font-family: 'Google Sans', system-ui, sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #4a4a4a;
+  font-weight: 500;
+  margin: 0 0 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.academy-row__date {
+  color: #1f6b3a;
+  font-weight: 600;
+}
+.academy-row__sep {
+  color: rgba(10, 10, 10, 0.3);
+}
+.academy-row__category {
+  color: #4a4a4a;
+}
+
+.academy-row__title {
+  grid-column: 1;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(18px, 2vw, 22px);
+  line-height: 1.25;
+  font-weight: 400;
+  color: #2a2a2a;
+  margin: 0 0 8px;
+  max-width: 52ch;
+  transition: color 200ms ease-out;
+}
+
+.academy-row__desc {
+  grid-column: 1;
+  font-family: 'Google Sans', system-ui, sans-serif;
+  font-size: 14px;
+  line-height: 1.55;
+  color: #4a4a4a;
+  margin: 0 0 10px;
+  max-width: 62ch;
+}
+
+.academy-row__byline,
+.academy-row__methodology {
+  grid-column: 1;
+  font-family: 'Google Sans', system-ui, sans-serif;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #1f6b3a;
+  font-weight: 600;
+  margin: 0;
+}
+.academy-row__methodology {
+  font-family: Georgia, serif;
+  font-style: italic;
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: 13px;
+  font-weight: 400;
+  color: #4a4a4a;
+}
+
+.academy-row__chevron {
+  grid-column: 2;
+  grid-row: 1 / -1;
+  align-self: center;
+  font-family: 'Google Sans', system-ui, sans-serif;
+  font-size: 22px;
+  color: rgba(10, 10, 10, 0.3);
+  transition: transform 200ms ease-out, color 200ms ease-out;
+  user-select: none;
 }
 
 @media (max-width: 600px) {
-  .academy__grid {
+  .academy-row__link {
     grid-template-columns: 1fr;
+  }
+  .academy-row__chevron {
+    grid-column: 1;
+    grid-row: auto;
+    align-self: flex-start;
+    margin-top: 6px;
   }
 }
 
-/* Chronicles CTA band — sits at the bottom of the academy section,
-   mirrors the Services CTA band visual treatment for consistency. */
-.academy-cta {
+/* — Chronicles band (Drenched cooperative-green) ----------------- */
+
+.chronicles-band {
   position: relative;
   z-index: 2;
   isolation: isolate;
-  background:
-    linear-gradient(135deg, rgba(13, 36, 56, 0.95), rgba(26, 61, 44, 0.95));
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  padding: clamp(40px, 6vw, 64px) clamp(20px, 4vw, 36px);
-  color: #fff;
+  background: #58cc6f;
+  color: #0a2a18;
+  padding: clamp(56px, 8vw, 96px) clamp(20px, 4vw, 36px);
   text-align: left;
+  border-top: 8px solid #0a0a0a;
 }
 
-.academy-cta__inner {
-  max-width: 1200px;
+.chronicles-band__inner {
+  max-width: 980px;
   margin: 0 auto;
   display: grid;
   grid-template-columns: 1fr auto;
-  gap: clamp(20px, 4vw, 48px);
-  align-items: center;
+  gap: clamp(24px, 4vw, 56px);
+  align-items: end;
 }
 
-.academy-cta__copy {
+.chronicles-band__copy {
   min-width: 0;
+  max-width: 56ch;
 }
 
-.academy-cta__heading {
-  font-family: 'Google Sans', sans-serif;
-  font-size: clamp(22px, 2.8vw, 28px);
-  line-height: 1.15;
+.chronicles-band__eyebrow {
+  font-family: 'Google Sans', system-ui, sans-serif;
+  font-size: 12px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: rgba(10, 42, 24, 0.7);
   font-weight: 600;
-  color: #fff;
-  margin: 0 0 8px;
+  margin: 0 0 14px;
 }
 
-.academy-cta__text {
-  font-size: 15px;
-  line-height: 1.55;
-  color: rgba(255, 255, 255, 0.82);
+.chronicles-band__heading {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(28px, 3.6vw, 44px);
+  line-height: 1.08;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  color: #0a2a18;
+  margin: 0 0 14px;
+  max-width: 18ch;
+}
+
+.chronicles-band__text {
+  font-family: 'Google Sans', system-ui, sans-serif;
+  font-size: clamp(15px, 1.4vw, 17px);
+  line-height: 1.6;
+  color: #0a2a18;
   margin: 0;
-  max-width: 640px;
+  max-width: 56ch;
 }
 
-.academy-cta__btn {
+.chronicles-band__btn {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  padding: 14px 26px;
-  border-radius: 999px;
-  background: #fff;
-  color: #0a0a0a;
-  font-family: 'Google Sans', sans-serif;
-  font-size: 15px;
-  font-weight: 500;
+  padding: 16px 26px;
+  border-radius: 4px;
+  background: #0a0a0a;
+  color: #f6f3ec;
+  font-family: 'Google Sans', system-ui, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  letter-spacing: 0.02em;
   text-decoration: none;
-  transition: transform 200ms ease, background 200ms ease;
+  transition: background 200ms ease-out, transform 200ms ease-out;
   white-space: nowrap;
+  align-self: end;
+  margin-bottom: 4px;
 }
-.academy-cta__btn:hover {
+.chronicles-band__btn:hover {
+  background: #1f6b3a;
   transform: translateY(-1px);
-  background: #ededed;
 }
-.academy-cta__btn .arrow {
+.chronicles-band__btn:focus-visible {
+  outline: 2px solid #f6f3ec;
+  outline-offset: 3px;
+}
+.chronicles-band__btn .arrow {
   display: inline-block;
-  transition: transform 0.25s ease;
+  transition: transform 200ms ease-out;
 }
-.academy-cta__btn:hover .arrow {
+.chronicles-band__btn:hover .arrow {
   transform: translateX(3px);
 }
 
 @media (max-width: 768px) {
-  .academy-cta__inner {
+  .chronicles-band__inner {
     grid-template-columns: 1fr;
+    align-items: start;
+  }
+  .chronicles-band__btn {
+    margin-bottom: 0;
+    margin-top: 8px;
+    align-self: start;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .academy-feature__link,
+  .academy-row__link,
+  .academy-row__chevron,
+  .chronicles-band__btn,
+  .chronicles-band__btn .arrow {
+    transition: none !important;
   }
 }
 
@@ -1560,6 +1734,9 @@ body.body-2 {
   width: 44px;
   height: 44px;
   flex: none;
+  border-radius: 50%;
+  background-color: transparent;
+  object-fit: cover;
 }
 
 .site-footer__brand-name {
@@ -1696,29 +1873,7 @@ body.body-2 {
 }
 
 
-/* -------- 3. Research Academy — CTA band photo backdrop -------- */
-.academy-cta {
-  overflow: hidden;
-}
-.academy-cta__bg-img {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center 35%;
-  z-index: -2;
-  opacity: 0.4;
-}
-.academy-cta__bg-overlay {
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(135deg, rgba(13, 36, 56, 0.85), rgba(26, 61, 44, 0.85));
-  z-index: -1;
-}
-
-/* -------- 4. Contact — left info column photo backdrop -------- */
+/* -------- 3. Contact — left info column photo backdrop -------- */
 .contact__info {
   position: relative;
   isolation: isolate;
@@ -1967,9 +2122,7 @@ body.body-2 {
    keep their backplates — they need legibility on any video frame.
    =============================================================== */
 .leadership__featured,
-.leadership__card,
-.academy__hero-btn,
-.academy__card {
+.leadership__card {
   background: transparent !important;
   background-color: transparent !important;
   backdrop-filter: none !important;
@@ -1986,7 +2139,6 @@ body.body-2 {
    separate overlay element — it paints the gradient on the section
    itself, so we override that section's background directly.
    =============================================================== */
-.academy-cta__bg-overlay,
 .contact__info-bg-overlay {
   display: none !important;
 }
@@ -3707,6 +3859,51 @@ body.body-2 {
     flex-wrap: wrap;
     gap: 8px;
   }
+}
+
+/* ===============================================================
+   ACCESSIBILITY — skip link + visually-hidden utility
+   Added by $impeccable harden P0 pass: WCAG 2.4.1 (Bypass Blocks)
+   and 1.3.1 / 3.3.2 (form labels).
+   =============================================================== */
+
+/* Skip-link — first focusable element on the page. Off-screen until
+   focused, then docked to the top with a visible focus surface. */
+.skip-link {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10000;
+  padding: 12px 18px;
+  background: #0a0a0a;
+  color: #f5faf6;
+  font-family: 'Google Sans', system-ui, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: 0 0 8px 0;
+  transform: translateY(-120%);
+  transition: transform 200ms ease-out;
+}
+.skip-link:focus,
+.skip-link:focus-visible {
+  transform: translateY(0);
+  outline: 2px solid #58cc6f;
+  outline-offset: 2px;
+}
+
+/* visually-hidden — accessible-name-only labels for inputs that have
+   placeholder-only visual hints. Pattern from inclusive-components. */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 @media (prefers-reduced-motion: reduce) {

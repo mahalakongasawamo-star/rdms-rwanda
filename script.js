@@ -130,7 +130,6 @@
       document.getElementById('footerConnectBtn'),
       document.getElementById('sponsorGetInTouchBtn'),
       document.getElementById('servicesCtaBtn'),
-      document.getElementById('academyJoinBtn'),
       document.getElementById('chroniclesSubscribeBtn')
     ];
 
