@@ -180,12 +180,12 @@
        A rAF deferral gives Webflow's init one tick to finish first.
     ---------------------------------------------------------------- */
     var heroVideos = [
-      document.getElementById('hero-video'),         /* background-video-2 (hidden fallback) */
-      document.querySelector('.hero-bg-video'),      /* clip-path hero background            */
-      document.querySelector('.sponsor-bg-video'),   /* sponsor-tech section background      */
-      document.querySelector('.academy__bg-video'),  /* academy section background           */
-      document.querySelector('.contact__bg-video'),  /* contact section background           */
-      document.querySelector('.hero__photo-video')   /* hero right-side photo video          */
+      document.getElementById('hero-video'),            /* background-video-2 (hidden fallback) */
+      document.querySelector('.hero-bg-video'),         /* clip-path hero background            */
+      document.querySelector('.sponsor-bg-video'),      /* sponsor-tech section background      */
+      document.querySelector('.academy__bg-video'),     /* academy section background           */
+      document.querySelector('.contact__bg-video'),     /* contact section background           */
+      document.querySelector('.hero__photo-video')      /* hero right-side photo video          */
     ];
 
     function forcePlay(vid) {
@@ -593,4 +593,65 @@
   );
 
   sections.forEach(function (s) { observer.observe(s); });
+})();
+
+/* ============================================================
+   CREDO CAROUSEL — prev/next arrow buttons
+   Vanilla port of the Embla canScrollPrev / canScrollNext API.
+   Buttons enable/disable based on the rail's scrollLeft; clicking
+   advances by one card-width + gap. Section: .about-credo
+   ============================================================ */
+(function () {
+  var section = document.querySelector('.about-credo');
+  if (!section) return;
+  var rail = section.querySelector('.about-credo__rail');
+  var prev = section.querySelector('.about-credo__btn[data-dir="prev"]');
+  var next = section.querySelector('.about-credo__btn[data-dir="next"]');
+  if (!rail || !prev || !next) return;
+
+  function update() {
+    var max = rail.scrollWidth - rail.clientWidth;
+    prev.disabled = rail.scrollLeft <= 1;
+    next.disabled = rail.scrollLeft >= max - 1;
+  }
+
+  function step(dir) {
+    var card = rail.querySelector('.about-credo__item');
+    var gap = parseFloat(getComputedStyle(rail.querySelector('.about-credo__track')).columnGap) || 16;
+    var stride = card ? card.getBoundingClientRect().width + gap : rail.clientWidth * 0.7;
+    rail.scrollBy({ left: dir * stride, behavior: 'smooth' });
+  }
+
+  prev.addEventListener('click', function () { step(-1); });
+  next.addEventListener('click', function () { step(1); });
+  rail.addEventListener('scroll', update, { passive: true });
+  window.addEventListener('resize', update);
+  /* Disable arrows entirely if all cards already fit (no overflow). */
+  update();
+})();
+
+/* ============================================================
+   CHATBOT LAUNCHER — tuck when footer is in view
+   The fixed bottom-right launcher overlaps the footer's signature
+   line (partner logos, copyright, Made-in-Rwanda coin). When the
+   footer enters the viewport we slide the launcher off-screen so
+   the closing line reads cleanly; it returns once the user
+   scrolls back up.
+   ============================================================ */
+(function () {
+  var launcher = document.querySelector('.chatbot-launcher');
+  var footer = document.querySelector('.site-footer');
+  if (!launcher || !footer || !('IntersectionObserver' in window)) return;
+
+  var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (entry) {
+      if (entry.isIntersecting) {
+        launcher.classList.add('is-tucked');
+      } else {
+        launcher.classList.remove('is-tucked');
+      }
+    });
+  }, { rootMargin: '0px 0px -40px 0px', threshold: 0 });
+
+  observer.observe(footer);
 })();

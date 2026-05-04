@@ -236,6 +236,9 @@
   <link href="https://fonts.googleapis.com" rel="preconnect"/>
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin="anonymous"/>
 
+  <!-- Inter (variable, opsz 14..32 enables "Inter Display" optical sizing) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400..900&display=swap" rel="stylesheet"/>
+
   <!-- WebFont loader (local) -->
   <script src="assets/js/webfont.js" type="text/javascript"></script>
   <script type="text/javascript">WebFont.load({google:{families:["Montserrat:100,100italic,200,200italic,300,300italic,400,400italic,500,500italic,600,600italic,700,700italic,800,800italic,900,900italic","Google Sans:300,400,500,600,700","Google Sans Flex:300,400,500,600,700"]}});</script>
@@ -508,27 +511,54 @@
        carries them now. Info-card content dropped per Q6=B.
   ============================= -->
 
-  <!-- 1. ORIGIN & IDENTITY — Restrained, text-left + photo-right -->
-  <section class="about-origin" id="about" data-nav-theme="light" aria-labelledby="about-origin-heading">
+  <!-- 1. ORIGIN & IDENTITY — Heavy bold sans over hero video, no shadow -->
+  <section class="about-origin" id="about" data-nav-theme="dark" aria-labelledby="about-origin-heading">
     <div class="about-origin__inner">
-      <div class="about-origin__type">
-        <p class="about-origin__eyebrow">Our Story</p>
-        <h2 class="about-origin__headline" id="about-origin-heading">Why RDMS exists.</h2>
-        <div class="about-origin__body">
-          <p>In Rwanda, oral health has long existed at the margins of the national healthcare system: underfunded, underrepresented, and often invisible to the communities that need it most. Dental disease, though largely preventable, continues to affect children, adults, and vulnerable populations who lack access to even the most basic oral care.</p>
-          <p>RDMS was founded to confront this reality. Driven by the belief that oral health is inseparable from general health, we bridge dentistry and medicine, professionals and students, urban centres and rural districts. We operate from Huye and reach communities across Rwanda through field programs, research, education, and policy engagement.</p>
-        </div>
-        <p class="about-origin__tag"><em>Since 1 July 2024 &middot; Ngoma, Huye</em></p>
+      <div class="about-origin__deck" aria-hidden="true">
+        <span class="about-origin__deck-mark">RDMS</span>
+        <span>Vol. 01 / Sec. 02</span>
+        <span class="about-origin__deck-rule"></span>
+        <span>Est. 1 July 2024</span>
+        <span>Ngoma &middot; Huye &middot; Rwanda</span>
       </div>
-      <figure class="about-origin__photo">
-        <img class="reveal-photo" src="assets/img/bg-story.jpg" alt="RDMS World Ectodermal Dysplasia Day educational session, Huye 2026" loading="lazy" decoding="async"/>
-        <figcaption class="about-origin__caption">
-          <span>World Ectodermal Dysplasia Day</span>
-          <span class="about-origin__caption-meta">Huye &middot; 2026</span>
-        </figcaption>
-      </figure>
+      <article class="about-origin__spotlight">
+        <div class="about-origin__type">
+          <div class="about-origin__label">
+            <span class="about-origin__label-line" aria-hidden="true"></span>
+            <span class="about-origin__label-text">Our Story</span>
+          </div>
+          <h2 class="about-origin__headline" id="about-origin-heading">
+            <span class="about-origin__title-line about-origin__title-line--1">Why</span>
+            <span class="about-origin__title-line about-origin__title-line--2">RDMS</span>
+            <span class="about-origin__title-line about-origin__title-line--3">exists.</span>
+          </h2>
+          <div class="about-origin__body">
+            <p>In Rwanda, oral health has long existed at the margins of the national healthcare system: underfunded, underrepresented, and often invisible to the communities that need it most. Dental disease, though largely preventable, continues to affect children, adults, and vulnerable populations who lack access to even the most basic oral care.</p>
+            <p>RDMS was founded to confront this reality. Driven by the belief that oral health is inseparable from general health, we bridge dentistry and medicine, professionals and students, urban centres and rural districts. We operate from Huye and reach communities across Rwanda through field programs, research, education, and policy engagement.</p>
+          </div>
+        </div>
+        <div class="about-origin__media">
+          <span class="about-origin__media-frame" aria-hidden="true"></span>
+          <div class="about-origin__media-imgbox">
+            <span class="about-origin__media-shadow" aria-hidden="true"></span>
+            <img class="about-origin__photo-img" src="assets/img/about-section.png" alt="RDMS at work in Huye, Rwanda" loading="lazy" decoding="async"/>
+            <div class="about-origin__media-overlay" aria-hidden="true"></div>
+            <span class="about-origin__corner about-origin__corner--tl-v" aria-hidden="true"></span>
+            <span class="about-origin__corner about-origin__corner--tl-h" aria-hidden="true"></span>
+            <span class="about-origin__corner about-origin__corner--br-v" aria-hidden="true"></span>
+            <span class="about-origin__corner about-origin__corner--br-h" aria-hidden="true"></span>
+          </div>
+          <span class="about-origin__index" aria-hidden="true">01</span>
+        </div>
+      </article>
     </div>
   </section>
+
+  <div class="section-flag-bar" aria-hidden="true">
+    <span class="section-flag-bar__stripe section-flag-bar__stripe--blue"></span>
+    <span class="section-flag-bar__stripe section-flag-bar__stripe--yellow"></span>
+    <span class="section-flag-bar__stripe section-flag-bar__stripe--green"></span>
+  </div>
 
   <!-- 2. MISSION MANIFESTO — Drenched, type-dominant pull-quote -->
   <section class="about-manifesto" id="vision" data-nav-theme="dark" aria-labelledby="about-manifesto-heading">
@@ -544,50 +574,84 @@
     </div>
   </section>
 
-  <!-- 3. VALUES (CREDO) — Committed, type-only manifesto -->
+  <div class="section-flag-bar" aria-hidden="true">
+    <span class="section-flag-bar__stripe section-flag-bar__stripe--blue"></span>
+    <span class="section-flag-bar__stripe section-flag-bar__stripe--yellow"></span>
+    <span class="section-flag-bar__stripe section-flag-bar__stripe--green"></span>
+  </div>
+
+  <!-- 3. VALUES (CREDO) — Horizontal carousel, cream paper -->
   <section class="about-credo" id="values" data-nav-theme="light" aria-labelledby="about-credo-heading">
     <div class="about-credo__inner">
-      <p class="about-credo__eyebrow">What Guides Us <span class="about-credo__eyebrow-num" aria-hidden="true">/ Section 03</span></p>
-      <h2 class="about-credo__headline" id="about-credo-heading">Five principles, <span class="about-credo__headline-accent">one practice.</span></h2>
-      <ol class="about-credo__list">
-        <li class="about-credo__item">
-          <span class="about-credo__num" aria-hidden="true">01</span>
-          <div class="about-credo__item-body">
-            <h3 class="about-credo__name">Transparency &amp; Accountability</h3>
-            <p class="about-credo__desc">We operate openly: governance, finance, research, and community engagement. Trust is the foundation of everything we do.</p>
+      <header class="about-credo__header">
+        <div class="about-credo__title-block">
+          <div class="about-credo__masthead" aria-hidden="true">
+            <p class="about-credo__masthead-meta">What Guides Us</p>
+            <p class="about-credo__masthead-eyebrow">&mdash; A working credo &mdash;</p>
+            <p class="about-credo__masthead-meta about-credo__masthead-meta--right">Five principles</p>
           </div>
+          <h2 class="about-credo__headline" id="about-credo-heading">What we stand for.</h2>
+          <a class="about-credo__demo" href="#about">
+            <span>About RDMS</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+          </a>
+        </div>
+        <nav class="about-credo__nav" aria-label="Credo carousel navigation">
+          <button type="button" class="about-credo__btn" data-dir="prev" aria-label="Previous principle" disabled>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="19" y1="12" x2="5" y2="12"/><polyline points="12 19 5 12 12 5"/></svg>
+          </button>
+          <button type="button" class="about-credo__btn" data-dir="next" aria-label="Next principle">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </button>
+        </nav>
+      </header>
+    </div>
+    <div class="about-credo__rail" tabindex="0" aria-roledescription="carousel">
+      <ul class="about-credo__track">
+        <li class="about-credo__item">
+          <article class="about-credo__card">
+            <div class="about-credo__media"><img src="assets/img/transparency-accountability.png" alt="Transparency &amp; Accountability" loading="lazy" decoding="async"/></div>
+            <h3 class="about-credo__card-title">Transparency &amp; Accountability</h3>
+            <p class="about-credo__card-summary">We operate openly: governance, finance, research, and community engagement. Trust is the foundation of everything we do.</p>
+          </article>
         </li>
         <li class="about-credo__item">
-          <span class="about-credo__num" aria-hidden="true">02</span>
-          <div class="about-credo__item-body">
-            <h3 class="about-credo__name">Teamwork &amp; Collaboration</h3>
-            <p class="about-credo__desc">Progress in oral health requires collective effort. We unite professionals across disciplines, institutions, and borders.</p>
-          </div>
+          <article class="about-credo__card">
+            <div class="about-credo__media"><img src="assets/img/teamwork-collaboration.png" alt="Teamwork &amp; Collaboration" loading="lazy" decoding="async"/></div>
+            <h3 class="about-credo__card-title">Teamwork &amp; Collaboration</h3>
+            <p class="about-credo__card-summary">Progress in oral health requires collective effort. We unite dental surgeons, dental therapists, medical doctors, and public-health professionals across disciplines and institutions.</p>
+          </article>
         </li>
         <li class="about-credo__item">
-          <span class="about-credo__num" aria-hidden="true">03</span>
-          <div class="about-credo__item-body">
-            <h3 class="about-credo__name">Selflessness &amp; Compassion</h3>
-            <p class="about-credo__desc">Our work is driven by genuine care for the communities we serve. Patients and populations sit at the heart of every decision we make.</p>
-          </div>
+          <article class="about-credo__card">
+            <div class="about-credo__media"><img src="assets/img/selflessness-compassion.png" alt="Selflessness &amp; Compassion" loading="lazy" decoding="async"/></div>
+            <h3 class="about-credo__card-title">Selflessness &amp; Compassion</h3>
+            <p class="about-credo__card-summary">Our work is driven by genuine care for the communities we serve. Patients and populations sit at the heart of every decision we make.</p>
+          </article>
         </li>
         <li class="about-credo__item">
-          <span class="about-credo__num" aria-hidden="true">04</span>
-          <div class="about-credo__item-body">
-            <h3 class="about-credo__name">Equity &amp; Equality</h3>
-            <p class="about-credo__desc">Quality oral healthcare is a right, not a privilege. Geography, income, or background should never determine the care someone receives.</p>
-          </div>
+          <article class="about-credo__card">
+            <div class="about-credo__media"><img src="assets/img/equity-equality.png" alt="Equity &amp; Equality" loading="lazy" decoding="async"/></div>
+            <h3 class="about-credo__card-title">Equity &amp; Equality</h3>
+            <p class="about-credo__card-summary">Quality oral healthcare is a right, not a privilege. Geography, income, or background should never determine the care someone receives.</p>
+          </article>
         </li>
         <li class="about-credo__item">
-          <span class="about-credo__num" aria-hidden="true">05</span>
-          <div class="about-credo__item-body">
-            <h3 class="about-credo__name">Human Rights &amp; Environment</h3>
-            <p class="about-credo__desc">We uphold the dignity of every person we serve, and recognise the deep link between human and environmental health.</p>
-          </div>
+          <article class="about-credo__card">
+            <div class="about-credo__media"><img src="assets/img/human-rights-environment.png" alt="Human Rights &amp; Environment" loading="lazy" decoding="async"/></div>
+            <h3 class="about-credo__card-title">Human Rights &amp; Environment</h3>
+            <p class="about-credo__card-summary">We uphold the dignity of every person we serve, and recognise the deep link between human and environmental health.</p>
+          </article>
         </li>
-      </ol>
+      </ul>
     </div>
   </section>
+
+  <div class="section-flag-bar" aria-hidden="true">
+    <span class="section-flag-bar__stripe section-flag-bar__stripe--blue"></span>
+    <span class="section-flag-bar__stripe section-flag-bar__stripe--yellow"></span>
+    <span class="section-flag-bar__stripe section-flag-bar__stripe--green"></span>
+  </div>
 
   <!-- ============================
        LEADERSHIP — featured CEO + team grid
@@ -636,6 +700,12 @@
       </div>
     </div>
   </section>
+
+  <div class="section-flag-bar" aria-hidden="true">
+    <span class="section-flag-bar__stripe section-flag-bar__stripe--blue"></span>
+    <span class="section-flag-bar__stripe section-flag-bar__stripe--yellow"></span>
+    <span class="section-flag-bar__stripe section-flag-bar__stripe--green"></span>
+  </div>
 
   <!-- ============================
        SPONSOR / 3-COLUMN SCROLL (original Webflow IX scroll-pinned panel)
@@ -722,6 +792,12 @@
     </div><!-- /main-wrapper -->
   </div><!-- /sponsor-your-city -->
   <!-- /3-column-scroll -->
+
+  <div class="section-flag-bar" aria-hidden="true">
+    <span class="section-flag-bar__stripe section-flag-bar__stripe--blue"></span>
+    <span class="section-flag-bar__stripe section-flag-bar__stripe--yellow"></span>
+    <span class="section-flag-bar__stripe section-flag-bar__stripe--green"></span>
+  </div>
 
   <!-- ============================
        SERVICES — National Geographic feature spread per design brief
@@ -821,6 +897,12 @@
       </div>
     </div>
   </section>
+
+  <div class="section-flag-bar" aria-hidden="true">
+    <span class="section-flag-bar__stripe section-flag-bar__stripe--blue"></span>
+    <span class="section-flag-bar__stripe section-flag-bar__stripe--yellow"></span>
+    <span class="section-flag-bar__stripe section-flag-bar__stripe--green"></span>
+  </div>
 
   <!-- ============================
        PROJECTS
@@ -926,6 +1008,12 @@
     </div>
   </section>
 
+  <div class="section-flag-bar" aria-hidden="true">
+    <span class="section-flag-bar__stripe section-flag-bar__stripe--blue"></span>
+    <span class="section-flag-bar__stripe section-flag-bar__stripe--yellow"></span>
+    <span class="section-flag-bar__stripe section-flag-bar__stripe--green"></span>
+  </div>
+
   <!-- ============================
        RESEARCH ACADEMY ($impeccable craft, brief confirmed)
        Donor-first editorial publication. Featured + roll layout
@@ -940,12 +1028,6 @@
     </video>
     <div class="academy__bg-vignette" aria-hidden="true"></div>
 
-    <!-- Tricolor letterhead — Rwanda flag colors as a thin top-edge rule. -->
-    <div class="academy__flag-stripes" aria-hidden="true">
-      <span class="academy__stripe academy__stripe--blue"></span>
-      <span class="academy__stripe academy__stripe--yellow"></span>
-      <span class="academy__stripe academy__stripe--green"></span>
-    </div>
 
     <div class="academy__inner">
 
@@ -1062,6 +1144,12 @@
       </div>
     </aside>
   </section>
+
+  <div class="section-flag-bar" aria-hidden="true">
+    <span class="section-flag-bar__stripe section-flag-bar__stripe--blue"></span>
+    <span class="section-flag-bar__stripe section-flag-bar__stripe--yellow"></span>
+    <span class="section-flag-bar__stripe section-flag-bar__stripe--green"></span>
+  </div>
 
   <!-- ============================
        FAQ — two-column magazine layout: sticky category nav on the
@@ -1307,6 +1395,12 @@
     </div>
   </section>
 
+  <div class="section-flag-bar" aria-hidden="true">
+    <span class="section-flag-bar__stripe section-flag-bar__stripe--blue"></span>
+    <span class="section-flag-bar__stripe section-flag-bar__stripe--yellow"></span>
+    <span class="section-flag-bar__stripe section-flag-bar__stripe--green"></span>
+  </div>
+
   <!-- ============================
        CONTACT — Letter from Huye ($impeccable craft, brief confirmed)
        Single-column institutional letter, signed by Founder & CEO.
@@ -1435,24 +1529,12 @@
         <p class="site-footer__copyright">&copy; 2024&ndash;2026 Dento-Medical Society Rwanda (RDMS). All rights reserved.</p>
         <span class="site-footer__made">
           <span class="site-footer__made-text">Made in Rwanda</span>
-          <span class="site-footer__made-mark" aria-hidden="true">
-            <span class="site-footer__made-stripe site-footer__made-stripe--blue"></span>
-            <span class="site-footer__made-stripe site-footer__made-stripe--yellow"></span>
-            <span class="site-footer__made-stripe site-footer__made-stripe--green"></span>
+          <span class="site-footer__made-coin" aria-hidden="true">
+            <img class="site-footer__made-img" src="assets/img/bg-contact.jpg" alt="" loading="lazy" decoding="async"/>
           </span>
         </span>
       </div>
 
-    </div>
-
-    <!-- Sun-setting Rwanda flag-colors circle (legacy Webflow element,
-         repositioned to bleed off the footer's bottom-right edge). -->
-    <div class="circle-abstract" aria-hidden="true">
-      <img src="assets/img/ellipse.svg" loading="lazy" decoding="async" alt="" class="image-4"/>
-      <div class="circle-dots large"></div>
-      <div style="clip-path:circle(50% at 50% 50%);position:relative;width:100%;height:100%;overflow:hidden;border-radius:50%;" class="circle-color">
-        <img class="circle-bg-flag" src="assets/img/rwanda-flag.png" alt="" loading="lazy" decoding="async" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;z-index:2;"/>
-      </div>
     </div>
 
   </footer>

@@ -335,15 +335,30 @@ html {
   pointer-events: none;
 }
 
+/* Three Pillars headline — Option C: Inter Display 900, no shadow,
+   cream color, retired italic-second-clause tic. Overrides Webflow's
+   stock title rules. */
+.column-scroll-content-title {
+  font-family: 'Inter', 'Google Sans Flex', system-ui, sans-serif !important;
+  font-variation-settings: 'opsz' 32;
+  font-style: normal !important;
+  font-weight: 900 !important;
+  font-size: clamp(32px, 4.4vw, 56px) !important;
+  line-height: 1.08 !important;
+  letter-spacing: -0.03em !important;
+  color: #f6f3ec !important;
+  text-shadow: none !important;
+  text-wrap: balance;
+}
+
 /* White text + light line-breakers ONLY on desktop, where the bg is
    the dark Rwanda video. On mobile, Webflow paints the section in
    light grey, so we let the default dark text color through. */
 @media (min-width: 992px) {
-  .column-scroll-content-title,
   .column-scroll-content-text,
   .column-scroll-content-text strong,
   .column-scroll-content-text .bold-text-4 {
-    color: #fff !important;
+    color: #f6f3ec !important;
   }
 
   .line-breaker {
@@ -498,7 +513,7 @@ body.body-2 {
 
 .leadership__eyebrow {
   font-family: 'Google Sans', sans-serif;
-  font-size: 11px;
+  font-size: 14px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: #58cc6f;
@@ -509,9 +524,9 @@ body.body-2 {
 
 .leadership__title {
   font-family: 'Google Sans', sans-serif;
-  font-size: clamp(28px, 3.6vw, 38px);
+  font-size: clamp(48px, 6.4vw, 88px);
   line-height: 1.05;
-  letter-spacing: -0.01em;
+  letter-spacing: -0.02em;
   font-weight: 500;
   color: #fff;
   margin: 0 0 14px;
@@ -521,8 +536,8 @@ body.body-2 {
 
 .leadership__subtitle {
   font-family: 'Google Sans', sans-serif;
-  font-size: 15px;
-  line-height: 1.5;
+  font-size: clamp(17px, 1.25vw, 19px);
+  line-height: 1.55;
   color: rgba(255, 255, 255, 0.85);
   margin: 0 0 48px;
   max-width: 680px;
@@ -605,7 +620,7 @@ body.body-2 {
 
 .leadership__role {
   font-family: 'Google Sans', sans-serif;
-  font-size: 11px;
+  font-size: 14px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
   color: #58cc6f;
@@ -615,16 +630,18 @@ body.body-2 {
 
 .leadership__featured-name {
   font-family: 'Google Sans', sans-serif;
-  font-size: clamp(22px, 2.8vw, 28px);
-  line-height: 1.1;
+  font-size: clamp(32px, 4.4vw, 56px);
+  line-height: 1.05;
+  letter-spacing: -0.015em;
   font-weight: 600;
   color: #fff;
-  margin: 0 0 6px;
+  margin: 0 0 8px;
 }
 
 .leadership__featured-meta {
   font-family: 'Google Sans', sans-serif;
-  font-size: 14px;
+  font-size: clamp(14px, 1.05vw, 16px);
+  line-height: 1.5;
   color: rgba(255, 255, 255, 0.6);
   margin: 0 0 18px;
 }
@@ -636,8 +653,8 @@ body.body-2 {
 
 .leadership__featured-bio {
   font-family: 'Google Sans', sans-serif;
-  font-size: 15px;
-  line-height: 1.6;
+  font-size: clamp(16px, 1.2vw, 19px);
+  line-height: 1.65;
   color: rgba(255, 255, 255, 0.78);
   margin: 0;
   max-width: 640px;
@@ -729,16 +746,16 @@ body.body-2 {
 
 .leadership__card-name {
   font-family: 'Google Sans', sans-serif;
-  font-size: 15px;
+  font-size: clamp(19px, 1.5vw, 22px);
   font-weight: 600;
   color: #fff;
-  margin: 0 0 4px;
-  line-height: 1.25;
+  margin: 0 0 6px;
+  line-height: 1.2;
 }
 
 .leadership__card-role {
   font-family: 'Google Sans', sans-serif;
-  font-size: 13px;
+  font-size: clamp(14px, 1.05vw, 16px);
   color: rgba(255, 255, 255, 0.7);
   margin: 0 0 2px;
   line-height: 1.4;
@@ -746,7 +763,7 @@ body.body-2 {
 
 .leadership__card-discipline {
   font-family: 'Google Sans', sans-serif;
-  font-size: 12px;
+  font-size: clamp(12px, 0.9vw, 14px);
   color: rgba(255, 255, 255, 0.45);
   margin: 0;
   line-height: 1.4;
@@ -1159,32 +1176,29 @@ body.body-2 {
 }
 
 /* Tricolor letterhead — Rwanda flag stripes at the section top. */
-.academy__flag-stripes {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  z-index: 3;
+/* ===============================================================
+   SECTION FLAG BAR — reusable Rwanda tricolor strip placed between
+   major content sections. Same proportions as the Academy top bar:
+   sky-blue 6px / sun-yellow 4px / field-green 4px = 14px total.
+   Place a <div class="section-flag-bar"> after each section's
+   closing tag to act as a visual separator.
+   =============================================================== */
+.section-flag-bar {
+  position: relative;
+  z-index: 5;
   display: flex;
   flex-direction: column;
+  width: 100%;
   pointer-events: none;
 }
-.academy__stripe {
+.section-flag-bar__stripe {
   display: block;
   width: 100%;
 }
-.academy__stripe--blue {
-  height: 6px;
-  background: #00a1de;
-}
-.academy__stripe--yellow {
-  height: 4px;
-  background: #fad201;
-}
-.academy__stripe--green {
-  height: 4px;
-  background: #20603d;
-}
+.section-flag-bar__stripe--blue   { height: 6px; background: #00a1de; }
+.section-flag-bar__stripe--yellow { height: 4px; background: #fad201; }
+.section-flag-bar__stripe--green  { height: 4px; background: #20603d; }
+
 
 /* Cream-tint paper card — slightly darker than Contact's cream-paper
    so the two video-backed sections differentiate. The academy carries
@@ -2204,75 +2218,41 @@ body.body-2 {
   background: #20603d;
 }
 
-/* — Sun-setting Rwanda flag-colors circle video ----------------- */
-/* Override the legacy Webflow .circle-abstract positioning so the
-   circle bleeds off the footer's bottom-right edge as a setting
-   sun motif. Reads as a Rwandan tricolor, not a watermark. */
+/* — Made-in-Rwanda inline coin (variant 6) ---------------------- */
+/* 36px circular video tucked next to the "Made in Rwanda" text in
+   the footer's bottom strip. Replaces the prior 3-bar tricolor
+   stripe mark. Same Rwanda flag-colors source as the hero, just
+   miniaturized. Tiny enough that the GPU-compositor + circle bug
+   that broke the corner-bleed circle doesn't recur (small surface,
+   no clip-path needed since border-radius alone clips a 36px square
+   cleanly). */
 
-/* Pin the legacy 50rem .circle-abstract to a fixed bottom-right
-   sun-setting size. !important is needed because Webflow's vendor
-   rules at multiple breakpoints redefine width/height/inset.
-   Mostly visible inside the footer (only ~70px bleeds off). */
-.site-footer .circle-abstract,
-.site-footer .circle-abstract.interior,
-.site-footer .circle-abstract.interior-footer {
-  position: absolute !important;
-  inset: auto -70px -70px auto !important;
-  width: 280px !important;
-  height: 280px !important;
-  max-width: 280px !important;
-  max-height: 280px !important;
-  z-index: 1 !important;
-  opacity: 0.85;
-  pointer-events: none;
-  margin: 0 !important;
-  display: block !important;
-  overflow: hidden !important;
+.site-footer__made-coin {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  flex: 0 0 56px;
   border-radius: 50%;
+  overflow: hidden;
+  background: #0a2a18;  /* dark fallback if video fails */
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.22),
+    0 4px 12px rgba(0, 0, 0, 0.45);
+  vertical-align: middle;
 }
-.site-footer .circle-abstract .image-4,
-.site-footer .circle-abstract .circle-dots {
-  display: none !important;
-}
-.site-footer .circle-color {
-  position: absolute !important;
-  inset: 0 !important;
-  width: 100% !important;
-  height: 100% !important;
-  border-radius: 50%;
-  overflow: hidden !important;
-  filter: saturate(1.1);
-  /* Tricolor radial-gradient fallback if the video fails to load.
-     Sky-blue → sun-yellow → field-green echoes the Rwanda flag. */
-  background:
-    radial-gradient(circle at 50% 50%,
-      #00a1de 0%,
-      #fad201 50%,
-      #20603d 100%);
-}
-.site-footer .circle-bg-video {
-  position: absolute !important;
-  inset: 0 !important;
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: cover !important;
-  border-radius: 50%;
-  pointer-events: none;
+.site-footer__made-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
 }
 
 @media (max-width: 768px) {
   .site-footer__bottom {
     justify-content: flex-start;
-  }
-  .site-footer .circle-abstract,
-  .site-footer .circle-abstract.interior,
-  .site-footer .circle-abstract.interior-footer {
-    inset: auto -50px -50px auto !important;
-    width: 180px !important;
-    height: 180px !important;
-    max-width: 180px !important;
-    max-height: 180px !important;
-    opacity: 0.7;
   }
 }
 
@@ -2280,19 +2260,6 @@ body.body-2 {
   .site-footer__brand,
   .site-footer__partner {
     transition: none !important;
-  }
-  /* Hide the looping flag video for users who prefer no motion.
-     Replace with a static tricolor radial gradient — Rwandan
-     identity preserved without motion. */
-  .site-footer .circle-bg-video {
-    display: none !important;
-  }
-  .site-footer .circle-color {
-    background:
-      radial-gradient(circle at 50% 50%,
-        rgba(0, 161, 222, 0.5) 0%,
-        rgba(250, 210, 1, 0.5) 50%,
-        rgba(32, 96, 61, 0.5) 100%);
   }
 }
 
@@ -2591,16 +2558,16 @@ body.body-2 {
    Gatatu → #contact. Color: Restrained — single mint-on-dark accent.
    =============================================================== */
 
-/* Section header */
+/* Section header — Option C: Inter Display 900/600, no shadows.
+   Italic-green-second-clause tic retired: accent is color-only. */
 .three-pillars__eyebrow {
-  font-family: 'Google Sans', 'Google Sans Flex', system-ui, sans-serif;
-  font-size: 11px;
+  font-family: 'Inter', 'Google Sans Flex', system-ui, sans-serif;
+  font-size: 14px;
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: #a9e0b6;
-  font-weight: 500;
+  font-weight: 700;
   margin: 0 0 clamp(8px, 1.2vw, 14px);
-  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.55);
   text-align: left;
   display: flex;
   flex-wrap: wrap;
@@ -2612,20 +2579,24 @@ body.body-2 {
   font-weight: 400;
 }
 
+/* Headline accent — was italic Georgia, now color-only on Inter
+   Display 900 (matching the rest of the headline). */
 .three-pillars__title-accent {
-  font-family: Georgia, 'Times New Roman', serif;
-  font-style: italic;
-  font-weight: 400;
+  font-family: inherit;
+  font-style: normal;
+  font-weight: 900;
   color: #a9e0b6;
-  letter-spacing: -0.01em;
+  letter-spacing: inherit;
 }
 
 .three-pillars__lead {
   margin: 0 !important;
-  max-width: 50ch;
-  font-size: clamp(13px, 0.95vw, 14.5px) !important;
-  line-height: 1.45 !important;
-  color: rgba(255, 255, 255, 0.78);
+  max-width: 52ch;
+  font-family: 'Inter', 'Google Sans Flex', system-ui, sans-serif;
+  font-size: clamp(17px, 1.25vw, 20px) !important;
+  line-height: 1.55 !important;
+  font-weight: 600;
+  color: #f6f3ec;
   text-align: left !important;
 }
 
@@ -2676,14 +2647,15 @@ body.body-2 {
 
 .three-pillars__rw {
   display: inline-block;
-  font-family: Georgia, 'Times New Roman', serif;
-  font-style: italic;
-  font-weight: 400;
-  font-size: clamp(20px, 2.2vw, 30px);
+  font-family: 'Inter', 'Google Sans Flex', system-ui, sans-serif;
+  font-variation-settings: 'opsz' 32;
+  font-style: normal;
+  font-weight: 900;
+  font-size: clamp(32px, 3.4vw, 44px);
   line-height: 1;
+  letter-spacing: -0.02em;
   color: #a9e0b6;
   margin: 0;
-  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.55);
   text-align: left;
 }
 
@@ -2695,31 +2667,30 @@ body.body-2 {
 }
 
 .three-pillars__label {
-  font-family: 'Google Sans', 'Google Sans Flex', system-ui, sans-serif;
-  font-size: 10px;
-  font-weight: 500;
+  font-family: 'Inter', 'Google Sans Flex', system-ui, sans-serif;
+  font-size: 13px;
+  font-weight: 700;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.7);
+  color: #f6f3ec;
   margin: 0;
   display: flex;
   flex-wrap: wrap;
   gap: 0 10px;
-  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.55);
   text-align: left;
 }
-.three-pillars__num   { color: rgba(169, 224, 182, 0.85); font-weight: 600; }
-.three-pillars__sep   { color: rgba(255, 255, 255, 0.35); }
-.three-pillars__title { color: rgba(255, 255, 255, 0.92); }
+.three-pillars__num   { color: #a9e0b6; font-weight: 900; }
+.three-pillars__sep   { color: rgba(246, 243, 236, 0.5); }
+.three-pillars__title { color: #f6f3ec; }
 
 .three-pillars__desc {
-  font-family: 'Google Sans', 'Google Sans Flex', system-ui, sans-serif;
-  font-size: clamp(13px, 0.95vw, 14.5px);
-  line-height: 1.35;
-  color: rgba(255, 255, 255, 0.72);
+  font-family: 'Inter', 'Google Sans Flex', system-ui, sans-serif;
+  font-size: clamp(16px, 1.2vw, 19px);
+  line-height: 1.55;
+  font-weight: 600;
+  color: #f6f3ec;
   margin: 0;
-  max-width: 38ch;
-  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
+  max-width: 42ch;
   text-align: left;
 }
 
@@ -2729,7 +2700,41 @@ body.body-2 {
     gap: 6px;
   }
   .three-pillars__rw {
-    font-size: clamp(22px, 6vw, 28px);
+    font-size: clamp(28px, 7vw, 36px);
+  }
+}
+
+/* MOBILE COLOR OVERRIDE — Webflow paints the column-scroll section
+   with a light-grey bg below 992px (desktop has the dark Rwanda
+   video). Cream/white text is invisible on light grey, so flip
+   body copy to ink-black and shift mint accents to field-green-deep
+   for stronger contrast on the light surface. */
+@media (max-width: 991px) {
+  .column-scroll-content-title,
+  .three-pillars__lead,
+  .three-pillars__label,
+  .three-pillars__title,
+  .three-pillars__desc {
+    color: #0a0a0a !important;
+  }
+  .three-pillars__eyebrow,
+  .three-pillars__rw,
+  .three-pillars__title-accent,
+  .three-pillars__num {
+    color: #1f6b3a !important;
+  }
+  .three-pillars__eyebrow-num,
+  .three-pillars__sep {
+    color: rgba(10, 10, 10, 0.45) !important;
+  }
+  .three-pillars__list > li {
+    border-top-color: rgba(10, 10, 10, 0.18) !important;
+  }
+  .three-pillars__list > li:first-child {
+    border-top-color: rgba(31, 107, 58, 0.5) !important;
+  }
+  .three-pillars__list > li:last-child .three-pillars__item {
+    border-bottom-color: rgba(10, 10, 10, 0.18) !important;
   }
 }
 
@@ -3144,173 +3149,315 @@ body.body-2 {
    =============================================================== */
 
 /* ─────────────────── 1. ORIGIN & IDENTITY ───────────────────── */
-/* Restrained: tinted neutrals + single green accent on eyebrow.
-   Composition: text-left + photo-right (matches new hero pattern
-   per saved memory rule for visual continuity). Calm, narrative. */
+/* Heavy bold sans (Montserrat 900 / Google Sans Flex 700 fallback)
+   over the global hero video. No background image, no scrim, no
+   text-shadow — readability comes from font weight + size alone.
+   Per user spec: "RDMS" in cream, matching the rest of the headline. */
 
 .about-origin {
   position: relative;
   z-index: 2;
   isolation: isolate;
   background: transparent !important;
-  /* Big top padding pushes the About content well below the hero's
-     credibility row so the hero's bottom stays visible and the
-     transition has clear breathing room. Hairline at top reinforces
-     the section boundary without shouting. */
   border-top: 1px solid rgba(255, 255, 255, 0.18);
   margin-top: clamp(48px, 7vh, 96px);
-  padding: clamp(140px, 18vh, 220px) clamp(20px, 4vw, 48px) clamp(72px, 10vh, 120px);
-  color: rgba(255, 255, 255, 0.92);
+  padding: clamp(120px, 16vh, 200px) clamp(20px, 4vw, 56px) clamp(80px, 11vh, 140px);
+  color: #f6f3ec;
   text-align: left;
-}
-
-/* Small "Section 01" tick that reinforces the separator without
-   shouting. Sits at top-left, picks up the green eyebrow color.
-   Top offset bumped to keep it visually balanced inside the
-   larger top padding zone above the section content. */
-.about-origin::before {
-  content: "01 / Origin";
-  position: absolute;
-  top: clamp(48px, 7vh, 88px);
-  left: clamp(20px, 4vw, 48px);
-  font-family: 'Google Sans', 'Google Sans Flex', system-ui, sans-serif;
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: rgba(88, 204, 111, 0.78);
-  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.55);
-  pointer-events: none;
 }
 
 .about-origin__inner {
+  position: relative;
   max-width: 1320px;
   margin: 0 auto;
-  display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.85fr);
-  gap: clamp(28px, 4vw, 56px);
+  display: flex;
+  flex-direction: column;
+  gap: clamp(36px, 5vh, 64px);
+  text-align: left;
+}
+
+/* Masthead deck across the top. */
+.about-origin__deck {
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(12px, 2vw, 20px);
   align-items: center;
-  text-align: left;
-}
-
-.about-origin__type {
-  text-align: left;
-  grid-column: 1;
-  grid-row: 1;
-  min-width: 0;
-}
-
-.about-origin__eyebrow {
-  font-family: 'Google Sans', 'Google Sans Flex', system-ui, sans-serif;
+  font-family: 'Google Sans', 'Google Sans Flex', 'Montserrat', system-ui, sans-serif;
   font-size: 11px;
-  font-weight: 500;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: #58cc6f;  /* single green accent — Restrained strategy */
-  margin: 0 0 clamp(14px, 2vw, 22px);
-  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.55);
-  text-align: left;
+  font-weight: 600;
+  color: rgba(246, 243, 236, 0.85);
+}
+.about-origin__deck-mark {
+  color: #58cc6f;
+  font-weight: 700;
+}
+.about-origin__deck-rule {
+  flex: 1;
+  height: 1px;
+  min-width: 24px;
+  background: rgba(246, 243, 236, 0.32);
 }
 
-.about-origin__headline {
-  font-family: 'Google Sans', 'Google Sans Flex', system-ui, sans-serif;
-  font-size: clamp(28px, 4vw, 48px);
-  font-weight: 500;
-  line-height: 1.05;
-  letter-spacing: -0.015em;
-  color: #f5faf6;
-  margin: 0 0 clamp(20px, 3vw, 28px);
-  text-shadow: 0 1px 14px rgba(0, 0, 0, 0.55);
-  text-wrap: balance;
-  text-align: left;
+/* FeaturedSpotlight — vanilla port. Two-column flex composition,
+   text-left + framed-image-right. All hover animations are pure
+   CSS (no JS state). 3-line title with stagger, animated label
+   line, image scale + frame outline + 4 corner accents + "01"
+   index number. */
+.about-origin__spotlight {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: clamp(40px, 6vw, 64px);
+  align-items: flex-start;
+  cursor: default;
+}
+@media (min-width: 768px) {
+  .about-origin__spotlight {
+    flex-direction: row;
+    gap: clamp(48px, 6vw, 80px);
+    align-items: stretch;
+  }
+}
+@media (min-width: 1024px) {
+  .about-origin__spotlight { gap: clamp(64px, 7vw, 96px); }
 }
 
-.about-origin__body {
-  font-family: 'Google Sans', 'Google Sans Flex', system-ui, sans-serif;
-  font-size: clamp(15px, 1.1vw, 17px);
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.85);
-  max-width: 56ch;
-  margin: 0 0 clamp(20px, 3vw, 28px);
-  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.5);
-  text-align: left;
-}
-
-.about-origin__body p {
-  margin: 0 0 14px;
-  text-align: left;
-}
-
-.about-origin__body p:last-child {
-  margin-bottom: 0;
-}
-
-.about-origin__tag {
-  font-family: Georgia, 'Times New Roman', serif;
-  font-size: clamp(13px, 1vw, 15px);
-  font-style: italic;
-  color: rgba(255, 255, 255, 0.62);
-  margin: 0;
-  letter-spacing: 0.005em;
-  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
-  text-align: left;
-}
-
-.about-origin__photo {
+/* ─── Left: Text Block ─────────────────────────────────────────── */
+.about-origin__type {
   position: relative;
-  margin: 0;
-  height: clamp(360px, 56vh, 540px);
-  border-radius: 4px;
-  overflow: hidden;
-  box-shadow:
-    0 1px 0 rgba(255, 255, 255, 0.08) inset,
-    0 24px 60px rgba(0, 0, 0, 0.45),
-    0 0 0 1px rgba(255, 255, 255, 0.06);
-  grid-column: 2;
-  grid-row: 1;
-  min-width: 0;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 480px;
+  align-items: flex-start;
+  text-align: left;
+  flex-shrink: 0;
+}
+@media (min-width: 768px) {
+  .about-origin__type {
+    width: 440px;
+    max-width: 440px;
+    padding: 20px 0;
+  }
+}
+@media (min-width: 1024px) {
+  .about-origin__type {
+    width: 520px;
+    max-width: 520px;
+    padding: 32px 0;
+  }
 }
 
-.about-origin__photo img {
+/* "Our Story" label with animated line */
+.about-origin__label {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+@media (min-width: 768px) {
+  .about-origin__label { gap: 16px; margin-bottom: 32px; }
+}
+.about-origin__label-line {
+  display: block;
+  height: 1px;
+  width: 32px;
+  background: #f6f3ec;
+  transition: width 700ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+.about-origin__label-text {
+  font-family: 'Montserrat', 'Google Sans Flex', 'Google Sans', system-ui, sans-serif;
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.28em;
+  color: #f6f3ec;
+  transition: letter-spacing 700ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+@media (min-width: 768px) {
+  .about-origin__label-text { font-size: 14px; }
+}
+@media (min-width: 1024px) {
+  .about-origin__label-text { font-size: 15px; }
+}
+
+/* 3-line title with stagger */
+.about-origin__headline {
+  position: relative;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-weight: 400;
+  letter-spacing: -0.025em;
+  color: #f6f3ec;
+  margin: 0;
+  text-align: inherit;
+}
+.about-origin__title-line {
+  display: block;
+  font-size: clamp(48px, 7vw, 72px);
+  line-height: 1.02;
+  transition: transform 700ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+@media (min-width: 768px)  { .about-origin__title-line { font-size: clamp(64px, 7vw, 88px); } }
+@media (min-width: 1024px) { .about-origin__title-line { font-size: clamp(80px, 7.5vw, 112px); } }
+
+/* Body — bigger, heavier, full cream (clear at all states) */
+.about-origin__body {
+  font-family: 'Montserrat', 'Google Sans Flex', 'Google Sans', system-ui, sans-serif;
+  font-size: clamp(17px, 1.3vw, 20px);
+  line-height: 1.7;
+  font-weight: 600;
+  color: #f6f3ec;
+  margin: clamp(36px, 5vw, 56px) 0 0;
+  max-width: 480px;
+  text-align: inherit;
+  transition: transform 700ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+@media (min-width: 768px)  {
+  .about-origin__body { font-size: clamp(18px, 1.35vw, 21px); max-width: 440px; }
+}
+@media (min-width: 1024px) {
+  .about-origin__body { font-size: clamp(19px, 1.4vw, 22px); max-width: 520px; }
+}
+.about-origin__body p { margin: 0 0 14px; text-align: inherit; }
+.about-origin__body p:last-child { margin-bottom: 0; }
+
+/* ─── Right: Image Block ──────────────────────────────────────── */
+.about-origin__media {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  min-width: 0;
+  width: 100%;
+  transition: transform 700ms cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform;
+}
+.about-origin__media-frame {
+  position: absolute;
+  inset: -12px;
+  border: 1px solid transparent;
+  pointer-events: none;
+  transition:
+    border-color 700ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 700ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+@media (min-width: 768px) {
+  .about-origin__media-frame { inset: -16px; }
+}
+
+/* Image container — desktop: fills the remaining width after the
+   text column, height stretches to match the text column via
+   `align-items: stretch` on the spotlight flex parent. Mobile:
+   keeps a 2:3 aspect since there's no adjacent text column. */
+.about-origin__media-imgbox {
+  position: relative;
+  width: clamp(260px, 78vw, 360px);
+  aspect-ratio: 2 / 3;
+  overflow: hidden;
+}
+@media (min-width: 768px) {
+  .about-origin__media-imgbox {
+    width: 100%;
+    aspect-ratio: auto;
+    flex: 1 1 auto;
+    min-height: 480px;
+  }
+}
+@media (min-width: 1024px) {
+  .about-origin__media-imgbox {
+    min-height: 560px;
+  }
+}
+
+.about-origin__media-shadow {
+  position: absolute;
+  inset: -4px;
+  pointer-events: none;
+  transition: box-shadow 700ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.about-origin__photo-img {
   display: block;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 40%;
-  filter: contrast(1.02) saturate(0.94);
+  object-position: center;
+  transition: transform 1000ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.about-origin__caption {
+.about-origin__media-overlay {
   position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-  padding: clamp(14px, 2vw, 18px) clamp(16px, 2.4vw, 22px);
-  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.55) 60%, rgba(0, 0, 0, 0.78) 100%);
+  inset: 0;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.10) 0%, transparent 60%);
+  opacity: 0;
   pointer-events: none;
-  text-align: left;
+  transition: opacity 700ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.about-origin__caption span:first-child {
-  font-family: 'Google Sans', 'Google Sans Flex', system-ui, sans-serif;
-  font-size: 13px;
-  font-weight: 600;
-  letter-spacing: 0.02em;
-  color: #f5faf6;
-  text-align: left;
+/* 4 corner accents — top-left vert/horiz, bottom-right vert/horiz */
+.about-origin__corner {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.85);
+  opacity: 0;
+  transition:
+    opacity 500ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 500ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+.about-origin__corner--tl-v { top: 8px; left: 8px; width: 1px; height: 20px; transform: scaleY(0); transform-origin: top; transition-delay: 50ms; }
+.about-origin__corner--tl-h { top: 8px; left: 8px; width: 20px; height: 1px; transform: scaleX(0); transform-origin: left; transition-delay: 100ms; }
+.about-origin__corner--br-v { bottom: 8px; right: 8px; width: 1px; height: 20px; transform: scaleY(0); transform-origin: bottom; transition-delay: 150ms; }
+.about-origin__corner--br-h { bottom: 8px; right: 8px; width: 20px; height: 1px; transform: scaleX(0); transform-origin: right; transition-delay: 200ms; }
+@media (min-width: 768px) {
+  .about-origin__corner--tl-v, .about-origin__corner--tl-h { top: 12px; left: 12px; }
+  .about-origin__corner--br-v, .about-origin__corner--br-h { bottom: 12px; right: 12px; }
+  .about-origin__corner--tl-v, .about-origin__corner--br-v { height: 24px; }
+  .about-origin__corner--tl-h, .about-origin__corner--br-h { width: 24px; }
 }
 
-.about-origin__caption-meta {
-  font-family: 'Google Sans', 'Google Sans Flex', system-ui, sans-serif;
-  font-size: 11px;
-  font-weight: 400;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.68);
-  text-align: left;
+/* "01" index number */
+.about-origin__index {
+  position: absolute;
+  bottom: -28px;
+  right: 0;
+  font-family: 'JetBrains Mono', 'Courier New', monospace;
+  font-size: 12px;
+  font-weight: 500;
+  color: rgba(246, 243, 236, 0.7);
+  opacity: 0.4;
+  transition:
+    opacity 700ms cubic-bezier(0.16, 1, 0.3, 1),
+    transform 700ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+@media (min-width: 768px) {
+  .about-origin__index { bottom: -32px; font-size: 14px; }
+}
+
+/* ─── HOVER STATE — 12 transitions on .about-origin__spotlight:hover ── */
+.about-origin__spotlight:hover .about-origin__label-line { width: 48px; }
+.about-origin__spotlight:hover .about-origin__label-text { letter-spacing: 0.3em; }
+.about-origin__spotlight:hover .about-origin__title-line--2 { transform: translateX(12px); }
+.about-origin__spotlight:hover .about-origin__body { transform: translateY(-4px); }
+.about-origin__spotlight:hover .about-origin__media { transform: translate(4px, -4px); }
+.about-origin__spotlight:hover .about-origin__media-frame {
+  border-color: rgba(246, 243, 236, 0.18);
+  transform: scale(1.01);
+}
+.about-origin__spotlight:hover .about-origin__media-shadow {
+  box-shadow: 0 24px 64px rgba(246, 243, 236, 0.10);
+}
+.about-origin__spotlight:hover .about-origin__photo-img { transform: scale(1.03); }
+.about-origin__spotlight:hover .about-origin__media-overlay { opacity: 1; }
+.about-origin__spotlight:hover .about-origin__corner { opacity: 1; }
+.about-origin__spotlight:hover .about-origin__corner--tl-v,
+.about-origin__spotlight:hover .about-origin__corner--br-v { transform: scaleY(1); }
+.about-origin__spotlight:hover .about-origin__corner--tl-h,
+.about-origin__spotlight:hover .about-origin__corner--br-h { transform: scaleX(1); }
+.about-origin__spotlight:hover .about-origin__index {
+  opacity: 1;
+  transform: translateY(12px);
 }
 
 /* ─────────────────── 2. MISSION MANIFESTO ───────────────────── */
@@ -3417,180 +3564,306 @@ body.body-2 {
 }
 
 /* ─────────────────── 3. VALUES (CREDO) ──────────────────────── */
-/* Committed: cooperative-green carries the numerals + eyebrow.
-   Type-only manifesto, no photos. Hairline top + bottom for
-   editorial frame. Numerals italic Georgia (medical-journal style). */
+/* Horizontal carousel on cream paper. Newsprint masthead deck +
+   "What we stand for." headline + "About RDMS ↗" link sit on the
+   left of the header; prev/next arrow buttons on the right. Five
+   cards in a horizontal scroll-snap rail, each with a 4:5 portrait
+   image, large Georgia title, body summary. Vanilla port of the
+   Embla/shadcn Gallery6 pattern. */
 
 .about-credo {
   position: relative;
   z-index: 2;
   isolation: isolate;
-  /* Subtle dark band: lifts the section off the green video so the
-     mint numerals + headline italic accent have contrast. NOT
-     Drenched (S2's role) — just a tinted scrim. */
-  background:
-    linear-gradient(180deg,
-      rgba(13, 36, 56, 0) 0%,
-      rgba(13, 36, 56, 0.55) 18%,
-      rgba(13, 36, 56, 0.55) 82%,
-      rgba(13, 36, 56, 0) 100%) !important;
-  padding: clamp(72px, 11vh, 132px) clamp(20px, 4vw, 48px);
-  color: rgba(255, 255, 255, 0.92);
+  background: #f6f3ec !important;
+  padding: clamp(80px, 11vh, 128px) 0 clamp(96px, 13vh, 144px);
+  color: #2a2a2a;
   text-align: left;
 }
 
 .about-credo__inner {
-  max-width: 980px;
+  max-width: 1280px;
   margin: 0 auto;
-  /* Thicker editorial frame: 2px green hairline top, 1px white
-     hairline bottom — gives the credo asymmetric institutional
-     character (medical-journal section dividers). */
-  border-top: 2px solid rgba(88, 204, 111, 0.72);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.22);
-  padding: clamp(40px, 6vw, 64px) 0;
+  padding: 0 clamp(20px, 4vw, 32px);
   text-align: left;
 }
 
-.about-credo__eyebrow {
-  font-family: 'Google Sans', 'Google Sans Flex', system-ui, sans-serif;
-  font-size: 11px;
-  font-weight: 500;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: #a9e0b6;  /* mint-on-dark, higher contrast against green video */
-  margin: 0 0 clamp(14px, 2vw, 22px);
-  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.6);
-  text-align: left;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0 12px;
-  align-items: center;
-}
-.about-credo__eyebrow-num {
-  color: rgba(255, 255, 255, 0.42);
-  font-weight: 400;
-}
-
-.about-credo__headline {
-  font-family: 'Google Sans', 'Google Sans Flex', system-ui, sans-serif;
-  font-size: clamp(30px, 4.4vw, 50px);
-  font-weight: 500;
-  line-height: 1.05;
-  letter-spacing: -0.015em;
-  color: #f5faf6;
-  margin: 0 0 clamp(36px, 5vw, 56px);
-  text-shadow: 0 1px 14px rgba(0, 0, 0, 0.65);
-  text-wrap: balance;
-  text-align: left;
-}
-.about-credo__headline-accent {
-  font-family: Georgia, 'Times New Roman', serif;
-  font-style: italic;
-  font-weight: 400;
-  color: #a9e0b6;  /* mint serif italic — pairs with numerals */
-  letter-spacing: -0.005em;
-}
-
-.about-credo__list {
-  list-style: none;
-  margin: 0;
-  padding: 0;
+/* Header — heading-block on the left, nav buttons on the right. */
+.about-credo__header {
   display: flex;
   flex-direction: column;
-  gap: 0;
+  justify-content: space-between;
+  gap: clamp(24px, 3vw, 32px);
+  margin-bottom: clamp(40px, 5vw, 64px);
+}
+@media (min-width: 768px) {
+  .about-credo__header {
+    flex-direction: row;
+    align-items: flex-end;
+  }
 }
 
-.about-credo__item {
-  display: grid;
-  grid-template-columns: minmax(96px, 132px) 1fr;
-  gap: clamp(20px, 3vw, 36px);
-  align-items: baseline;
-  text-align: left;
-  padding: clamp(22px, 3vw, 32px) 0;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.10);
-}
-.about-credo__item:last-child {
-  border-bottom: none;
-}
-
-.about-credo__num {
-  font-family: Georgia, 'Times New Roman', serif;
-  font-style: italic;
-  font-weight: 400;
-  font-size: clamp(48px, 6.4vw, 88px);
-  line-height: 1;
-  color: #a9e0b6;  /* mint-on-dark — visible against green video */
-  letter-spacing: -0.01em;
-  text-shadow: 0 1px 14px rgba(0, 0, 0, 0.7), 0 0 24px rgba(0, 0, 0, 0.4);
-  text-align: left;
-}
-
-.about-credo__item-body {
-  text-align: left;
+.about-credo__title-block {
   min-width: 0;
 }
 
-.about-credo__name {
+/* Newsprint masthead: meta-left, italic-eyebrow-center, meta-right. */
+.about-credo__masthead {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: clamp(16px, 2vw, 24px);
+  align-items: end;
+  border-bottom: 2px solid #0a0a0a;
+  padding-bottom: clamp(14px, 1.8vw, 20px);
+  margin-bottom: clamp(20px, 2.5vw, 28px);
+  max-width: 720px;
+}
+.about-credo__masthead-meta {
   font-family: 'Google Sans', 'Google Sans Flex', system-ui, sans-serif;
-  font-size: clamp(17px, 1.4vw, 21px);
-  font-weight: 600;
-  line-height: 1.25;
-  letter-spacing: -0.005em;
-  color: #f5faf6;
-  margin: 0 0 8px;
+  font-size: 11px;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: #4a4a4a;
+  margin: 0;
   text-align: left;
-  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.5);
+}
+.about-credo__masthead-meta--right {
+  text-align: right;
+}
+.about-credo__masthead-eyebrow {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: clamp(14px, 1.1vw, 16px);
+  color: #1f6b3a;
+  margin: 0;
+  text-align: center;
+  white-space: nowrap;
 }
 
-.about-credo__desc {
+.about-credo__headline {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-weight: 400;
+  font-size: clamp(40px, 6vw, 72px);
+  line-height: 0.98;
+  letter-spacing: -0.02em;
+  color: #0a0a0a;
+  margin: 0 0 clamp(12px, 1.5vw, 18px);
+  max-width: 16ch;
+  text-wrap: balance;
+  text-align: left;
+}
+
+.about-credo__demo {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   font-family: 'Google Sans', 'Google Sans Flex', system-ui, sans-serif;
   font-size: clamp(14px, 1vw, 16px);
-  line-height: 1.55;
-  color: rgba(255, 255, 255, 0.78);
+  font-weight: 500;
+  color: #1f6b3a;
+  text-decoration: none;
+  transition: color 200ms ease-out;
+}
+.about-credo__demo:hover { color: #0a0a0a; }
+.about-credo__demo svg {
+  width: 16px;
+  height: 16px;
+  transition: transform 240ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+.about-credo__demo:hover svg { transform: translate(2px, -2px); }
+
+/* Prev/next arrow buttons — outlined, dark-fill on hover. */
+.about-credo__nav {
+  display: flex;
+  gap: 10px;
+  flex-shrink: 0;
+  margin-top: clamp(8px, 2vw, 0px);
+}
+.about-credo__btn {
+  width: 44px;
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  color: #0a0a0a;
+  border: 1px solid #0a0a0a;
+  border-radius: 8px;
+  cursor: pointer;
+  padding: 0;
+  transition:
+    background 200ms ease-out,
+    color 200ms ease-out,
+    transform 200ms ease-out,
+    opacity 200ms ease-out;
+}
+.about-credo__btn:hover:not(:disabled) {
+  background: #0a0a0a;
+  color: #f6f3ec;
+}
+.about-credo__btn:active:not(:disabled) {
+  transform: scale(0.96);
+}
+.about-credo__btn:focus-visible {
+  outline: 2px solid #1f6b3a;
+  outline-offset: 3px;
+}
+.about-credo__btn:disabled {
+  opacity: 0.3;
+  cursor: default;
+}
+.about-credo__btn svg { width: 20px; height: 20px; }
+
+/* Rail — full-bleed horizontal scroll with hidden scrollbar. */
+.about-credo__rail {
+  width: 100%;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding-bottom: 4px;
+}
+.about-credo__rail::-webkit-scrollbar { display: none; }
+
+.about-credo__track {
+  list-style: none;
+  display: flex;
+  gap: clamp(12px, 1.4vw, 20px);
+  padding: 0 clamp(20px, 4vw, 32px);
   margin: 0;
-  max-width: 60ch;
+}
+@media (min-width: 1280px) {
+  .about-credo__track {
+    padding-left: max(2rem, calc(50vw - 640px + 1rem));
+    padding-right: max(0rem, calc(50vw - 640px - 1rem));
+  }
+}
+
+.about-credo__item {
+  flex: 0 0 auto;
+  width: clamp(280px, 70vw, 420px);
+  scroll-snap-align: start;
+}
+@media (max-width: 768px) {
+  .about-credo__rail { scroll-snap-type: x proximity; }
+  .about-credo__item { width: clamp(260px, 78vw, 360px); }
+}
+
+.about-credo__card {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  text-decoration: none;
+  color: inherit;
+}
+
+.about-credo__media {
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  border-radius: 12px;
+  margin-bottom: clamp(16px, 2vw, 22px);
+  background: #ece6d6;
+}
+.about-credo .about-credo__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transform-origin: center bottom;
+  transform: scale(1) !important;
+  transition: transform 420ms cubic-bezier(0.22, 1, 0.36, 1) !important;
+  will-change: transform;
+  display: block;
+}
+.about-credo .about-credo__item:hover .about-credo__media img,
+.about-credo .about-credo__card:hover .about-credo__media img {
+  transform: scale(1.10) !important;
+}
+
+.about-credo__card-title {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-weight: 400;
+  font-size: clamp(22px, 2.2vw, 32px);
+  line-height: 1.12;
+  letter-spacing: -0.015em;
+  color: #0a0a0a;
+  margin: 0 0 clamp(10px, 1.2vw, 14px);
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
   text-align: left;
-  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.45);
+}
+
+.about-credo__card-summary {
+  font-family: 'Google Sans', 'Google Sans Flex', system-ui, sans-serif;
+  font-size: clamp(15px, 1.1vw, 17px);
+  line-height: 1.6;
+  color: #4a4a4a;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-align: left;
 }
 
 /* ─────────────────── ABOUT RESPONSIVE ───────────────────────── */
 
 @media (max-width: 991px) {
+  .about-origin {
+    padding: clamp(72px, 10vh, 120px) clamp(20px, 4vw, 32px) clamp(56px, 8vh, 96px);
+  }
   .about-origin__inner {
+    gap: clamp(28px, 4vh, 40px);
+  }
+  .about-credo__masthead {
     grid-template-columns: 1fr;
-    gap: clamp(24px, 4vw, 36px);
+    gap: 12px;
+    text-align: left;
   }
-  .about-origin__photo {
-    grid-column: 1 !important;
-    grid-row: 1 !important;
-    height: clamp(280px, 40vh, 360px);
+  .about-credo__masthead-meta--right {
+    text-align: left;
   }
-  .about-origin__type {
-    grid-column: 1 !important;
-    grid-row: 2 !important;
-  }
-  .about-credo__item {
-    grid-template-columns: minmax(60px, 80px) 1fr;
-    gap: 16px;
+  .about-credo__masthead-eyebrow {
+    text-align: left;
+    white-space: normal;
   }
 }
 
 @media (max-width: 600px) {
-  .about-credo__item {
-    grid-template-columns: 1fr;
-    gap: 6px;
+  .about-origin__deck {
+    font-size: 10px;
+    gap: 10px;
   }
-  .about-credo__num {
-    font-size: 36px;
+  .about-origin__deck-rule {
+    display: none;
   }
 }
 
 /* ─────────────────── ABOUT REDUCED MOTION ───────────────────── */
 
 @media (prefers-reduced-motion: reduce) {
-  .about-origin__photo img,
-  .about-manifesto__photo-band img {
+  .about-origin__spotlight *,
+  .about-manifesto__photo-band img,
+  .about-credo__media img,
+  .about-credo__rail {
     transition: none !important;
+    scroll-behavior: auto !important;
+  }
+  .about-credo__card:hover .about-credo__media img {
+    transform: none;
+  }
+  .about-origin__spotlight:hover .about-origin__title-line,
+  .about-origin__spotlight:hover .about-origin__body,
+  .about-origin__spotlight:hover .about-origin__media,
+  .about-origin__spotlight:hover .about-origin__photo-img,
+  .about-origin__spotlight:hover .about-origin__index {
+    transform: none !important;
   }
 }
 
@@ -3635,14 +3908,13 @@ body.body-2 {
 }
 
 .services__eyebrow {
-  font-family: 'Google Sans', 'Google Sans Flex', system-ui, sans-serif;
-  font-size: 11px;
-  font-weight: 500;
+  font-family: 'Inter', 'Google Sans Flex', system-ui, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: #58cc6f;
   margin: 0 0 clamp(16px, 2.4vw, 24px);
-  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.55);
   text-align: left;
   display: flex;
   flex-wrap: wrap;
@@ -3655,34 +3927,34 @@ body.body-2 {
 }
 
 .services__title {
-  font-family: 'Google Sans', 'Google Sans Flex', system-ui, sans-serif;
-  font-size: clamp(32px, 4.6vw, 56px);
-  font-weight: 500;
-  line-height: 1.04;
-  letter-spacing: -0.02em;
-  color: #f5faf6;
+  font-family: 'Inter', 'Google Sans Flex', system-ui, sans-serif;
+  font-variation-settings: 'opsz' 32;
+  font-size: clamp(32px, 4.4vw, 56px);
+  font-weight: 900;
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  color: #f6f3ec;
   margin: 0 0 clamp(20px, 2.8vw, 28px);
   max-width: 22ch;
-  text-shadow: 0 1px 16px rgba(0, 0, 0, 0.6);
   text-wrap: balance;
   text-align: left;
 }
 .services__title-accent {
-  font-family: Georgia, 'Times New Roman', serif;
-  font-style: italic;
-  font-weight: 400;
-  color: #a9e0b6;  /* mint-on-dark accent */
-  letter-spacing: -0.01em;
+  font-family: inherit;
+  font-style: normal;
+  font-weight: 900;
+  color: #a9e0b6;
+  letter-spacing: inherit;
 }
 
 .services__lead {
-  font-family: 'Google Sans', 'Google Sans Flex', system-ui, sans-serif;
-  font-size: clamp(15px, 1.1vw, 17px);
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.85);
+  font-family: 'Inter', 'Google Sans Flex', system-ui, sans-serif;
+  font-size: clamp(17px, 1.25vw, 20px);
+  line-height: 1.55;
+  font-weight: 600;
+  color: #f6f3ec;
   margin: 0;
   max-width: 60ch;
-  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.55);
   text-align: left;
 }
 
@@ -3707,52 +3979,52 @@ body.body-2 {
 }
 
 .service__num {
-  font-family: Georgia, 'Times New Roman', serif;
-  font-style: italic;
-  font-weight: 400;
-  font-size: clamp(28px, 3.4vw, 44px);
+  font-family: 'Inter', 'Google Sans Flex', system-ui, sans-serif;
+  font-variation-settings: 'opsz' 32;
+  font-style: normal;
+  font-weight: 900;
+  font-size: clamp(32px, 3.4vw, 44px);
   line-height: 1;
   color: #a9e0b6;
   margin: 0 0 clamp(12px, 1.6vw, 18px);
-  letter-spacing: -0.01em;
-  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.55);
+  letter-spacing: -0.02em;
   text-align: left;
   display: flex;
   align-items: baseline;
   gap: 16px;
 }
 .service__num-label {
-  font-family: 'Google Sans', 'Google Sans Flex', system-ui, sans-serif;
+  font-family: 'Inter', 'Google Sans Flex', system-ui, sans-serif;
   font-style: normal;
-  font-size: 11px;
-  font-weight: 500;
+  font-size: 13px;
+  font-weight: 700;
   letter-spacing: 0.22em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.62);
+  color: #f6f3ec;
 }
 
 .service__name {
-  font-family: 'Google Sans', 'Google Sans Flex', system-ui, sans-serif;
-  font-size: clamp(22px, 2.6vw, 32px);
-  font-weight: 600;
-  line-height: 1.18;
-  letter-spacing: -0.01em;
-  color: #f5faf6;
+  font-family: 'Inter', 'Google Sans Flex', system-ui, sans-serif;
+  font-variation-settings: 'opsz' 32;
+  font-size: clamp(24px, 2.8vw, 36px);
+  font-weight: 800;
+  line-height: 1.12;
+  letter-spacing: -0.02em;
+  color: #f6f3ec;
   margin: 0 0 clamp(14px, 2vw, 20px);
-  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.55);
   max-width: 22ch;
   text-align: left;
   text-wrap: balance;
 }
 
 .service__desc {
-  font-family: 'Google Sans', 'Google Sans Flex', system-ui, sans-serif;
-  font-size: clamp(15px, 1.05vw, 16.5px);
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.85);
+  font-family: 'Inter', 'Google Sans Flex', system-ui, sans-serif;
+  font-size: clamp(16px, 1.2vw, 19px);
+  line-height: 1.55;
+  font-weight: 600;
+  color: #f6f3ec;
   margin: 0 0 clamp(16px, 2vw, 22px);
   max-width: 56ch;
-  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.5);
   text-align: left;
 }
 
@@ -3769,13 +4041,13 @@ body.body-2 {
 }
 
 .service__evidence li {
-  font-family: 'Google Sans', 'Google Sans Flex', system-ui, sans-serif;
-  font-size: clamp(13px, 0.95vw, 14.5px);
+  font-family: 'Inter', 'Google Sans Flex', system-ui, sans-serif;
+  font-size: clamp(14px, 1.05vw, 16px);
   line-height: 1.5;
-  color: rgba(255, 255, 255, 0.78);
+  font-weight: 600;
+  color: #f6f3ec;
   padding-left: 18px;
   position: relative;
-  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
   text-align: left;
 }
 .service__evidence li::before {
@@ -3838,20 +4110,20 @@ body.body-2 {
   text-align: left;
 }
 .service__photo-caption span:first-child {
-  font-family: 'Google Sans', 'Google Sans Flex', system-ui, sans-serif;
-  font-size: 13px;
-  font-weight: 600;
+  font-family: 'Inter', 'Google Sans Flex', system-ui, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
   letter-spacing: 0.02em;
-  color: #f5faf6;
+  color: #f6f3ec;
   text-align: left;
 }
 .service__photo-caption-meta {
-  font-family: 'Google Sans', 'Google Sans Flex', system-ui, sans-serif;
-  font-size: 11px;
-  font-weight: 400;
-  letter-spacing: 0.06em;
+  font-family: 'Inter', 'Google Sans Flex', system-ui, sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.68);
+  color: rgba(246, 243, 236, 0.78);
   text-align: left;
 }
 
@@ -3927,22 +4199,23 @@ body.body-2 {
   margin: 0 0 8px;
 }
 .service-link__name {
-  font-family: 'Google Sans', 'Google Sans Flex', system-ui, sans-serif;
-  font-size: clamp(17px, 1.4vw, 20px);
-  font-weight: 600;
+  font-family: 'Inter', 'Google Sans Flex', system-ui, sans-serif;
+  font-variation-settings: 'opsz' 32;
+  font-size: clamp(18px, 1.5vw, 22px);
+  font-weight: 800;
   line-height: 1.2;
-  color: #f5faf6;
+  letter-spacing: -0.02em;
+  color: #f6f3ec;
   margin: 0 0 8px;
-  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.5);
   text-align: left;
 }
 .service-link__hint {
-  font-family: 'Google Sans', 'Google Sans Flex', system-ui, sans-serif;
-  font-size: 13.5px;
+  font-family: 'Inter', 'Google Sans Flex', system-ui, sans-serif;
+  font-size: 14px;
   line-height: 1.5;
-  color: rgba(255, 255, 255, 0.72);
+  font-weight: 600;
+  color: #f6f3ec;
   margin: 0;
-  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.45);
   text-align: left;
 }
 .service-link__arrow {
@@ -4052,14 +4325,13 @@ body.body-2 {
 }
 
 .projects__eyebrow {
-  font-family: 'Google Sans', 'Google Sans Flex', system-ui, sans-serif;
-  font-size: 11px;
-  font-weight: 500;
+  font-family: 'Inter', 'Google Sans Flex', system-ui, sans-serif;
+  font-size: 14px;
+  font-weight: 700;
   letter-spacing: 0.22em;
   text-transform: uppercase;
   color: #58cc6f;
   margin: 0 0 clamp(16px, 2.4vw, 24px);
-  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.55);
   text-align: left;
   display: flex;
   flex-wrap: wrap;
@@ -4072,34 +4344,34 @@ body.body-2 {
 }
 
 .projects__title {
-  font-family: 'Google Sans', 'Google Sans Flex', system-ui, sans-serif;
-  font-size: clamp(32px, 4.6vw, 56px);
-  font-weight: 500;
-  line-height: 1.04;
-  letter-spacing: -0.02em;
-  color: #f5faf6;
+  font-family: 'Inter', 'Google Sans Flex', system-ui, sans-serif;
+  font-variation-settings: 'opsz' 32;
+  font-size: clamp(32px, 4.4vw, 56px);
+  font-weight: 900;
+  line-height: 1.08;
+  letter-spacing: -0.03em;
+  color: #f6f3ec;
   margin: 0 0 clamp(20px, 2.8vw, 28px);
   max-width: 22ch;
-  text-shadow: 0 1px 16px rgba(0, 0, 0, 0.6);
   text-wrap: balance;
   text-align: left;
 }
 .projects__title-accent {
-  font-family: Georgia, 'Times New Roman', serif;
-  font-style: italic;
-  font-weight: 400;
+  font-family: inherit;
+  font-style: normal;
+  font-weight: 900;
   color: #a9e0b6;
-  letter-spacing: -0.01em;
+  letter-spacing: inherit;
 }
 
 .projects__lead {
-  font-family: 'Google Sans', 'Google Sans Flex', system-ui, sans-serif;
-  font-size: clamp(15px, 1.1vw, 17px);
-  line-height: 1.6;
-  color: rgba(255, 255, 255, 0.85);
+  font-family: 'Inter', 'Google Sans Flex', system-ui, sans-serif;
+  font-size: clamp(17px, 1.25vw, 20px);
+  line-height: 1.55;
+  font-weight: 600;
+  color: #f6f3ec;
   margin: 0;
   max-width: 60ch;
-  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.55);
   text-align: left;
 }
 
@@ -4124,26 +4396,25 @@ body.body-2 {
 }
 
 .proj-band__heading {
-  font-family: 'Google Sans', 'Google Sans Flex', system-ui, sans-serif;
-  font-size: clamp(22px, 2.6vw, 32px);
-  font-weight: 600;
+  font-family: 'Inter', 'Google Sans Flex', system-ui, sans-serif;
+  font-variation-settings: 'opsz' 32;
+  font-size: clamp(24px, 2.8vw, 36px);
+  font-weight: 800;
   line-height: 1.1;
-  letter-spacing: -0.005em;
+  letter-spacing: -0.02em;
   text-transform: none;
-  color: #f5faf6;
+  color: #f6f3ec;
   margin: 0;
-  text-shadow: 0 1px 12px rgba(0, 0, 0, 0.6);
   text-align: left;
 }
 
 .proj-band__count {
-  font-family: 'Google Sans', 'Google Sans Flex', system-ui, sans-serif;
-  font-size: clamp(11px, 0.9vw, 13px);
-  font-weight: 500;
+  font-family: 'Inter', 'Google Sans Flex', system-ui, sans-serif;
+  font-size: 13px;
+  font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.5);
-  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.55);
+  color: #f6f3ec;
   flex: none;
   white-space: nowrap;
 }
@@ -4169,15 +4440,14 @@ body.body-2 {
 }
 
 .proj-entry__date {
-  font-family: 'Google Sans', 'Google Sans Flex', system-ui, sans-serif;
-  font-size: clamp(17px, 1.4vw, 22px);
-  font-weight: 600;
+  font-family: 'Inter', 'Google Sans Flex', system-ui, sans-serif;
+  font-size: clamp(18px, 1.5vw, 24px);
+  font-weight: 800;
   line-height: 1.2;
-  letter-spacing: 0.005em;
-  color: rgba(255, 255, 255, 0.85);
+  letter-spacing: -0.01em;
+  color: #f6f3ec;
   margin: 0;
   white-space: nowrap;
-  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.6);
   text-align: left;
 }
 
@@ -4187,37 +4457,36 @@ body.body-2 {
 }
 
 .proj-entry__category {
-  font-family: 'Google Sans', 'Google Sans Flex', system-ui, sans-serif;
-  font-size: 11px;
-  font-weight: 500;
+  font-family: 'Inter', 'Google Sans Flex', system-ui, sans-serif;
+  font-size: 13px;
+  font-weight: 700;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.5);
+  color: #f6f3ec;
   margin: 0 0 8px;
-  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.55);
   text-align: left;
 }
 
 .proj-entry__name {
-  font-family: 'Google Sans', 'Google Sans Flex', system-ui, sans-serif;
-  font-size: clamp(17px, 1.5vw, 22px);
-  font-weight: 600;
-  line-height: 1.25;
-  letter-spacing: -0.005em;
-  color: #f5faf6;
+  font-family: 'Inter', 'Google Sans Flex', system-ui, sans-serif;
+  font-variation-settings: 'opsz' 32;
+  font-size: clamp(20px, 1.8vw, 28px);
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+  color: #f6f3ec;
   margin: 0 0 10px;
-  text-shadow: 0 1px 10px rgba(0, 0, 0, 0.55);
   text-align: left;
 }
 
 .proj-entry__desc {
-  font-family: 'Google Sans', 'Google Sans Flex', system-ui, sans-serif;
-  font-size: clamp(14px, 1vw, 16px);
+  font-family: 'Inter', 'Google Sans Flex', system-ui, sans-serif;
+  font-size: clamp(16px, 1.2vw, 19px);
   line-height: 1.55;
-  color: rgba(255, 255, 255, 0.78);
+  font-weight: 600;
+  color: #f6f3ec;
   margin: 0;
   max-width: 60ch;
-  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
   text-align: left;
 }
 
@@ -4232,11 +4501,11 @@ body.body-2 {
   color: #58cc6f;
 }
 .proj-band--active .proj-band__count {
-  color: rgba(169, 224, 182, 0.85);
+  color: #a9e0b6;
 }
 .proj-band--active .proj-entry__date {
   color: #a9e0b6;
-  font-weight: 700;
+  font-weight: 900;
 }
 .proj-band--active .proj-entry__date::before {
   content: "";
@@ -4252,30 +4521,32 @@ body.body-2 {
 
 /* Recently Completed: Restrained — neutral, factual */
 .proj-band--completed .proj-band__heading {
-  color: rgba(255, 255, 255, 0.92);
+  color: #f6f3ec;
 }
 
-/* Coming Next: Restrained-faded — italic Georgia dates, lower opacity */
+/* Coming Next: Restrained-faded — Inter at lower weight + opacity
+   (was italic Georgia; normalized to Inter family per typography
+   unification across sections 04-06). */
 .proj-band--planned {
   opacity: 0.85;
 }
 .proj-band--planned .proj-band__heading {
-  font-family: Georgia, 'Times New Roman', serif;
-  font-style: italic;
-  font-weight: 400;
-  letter-spacing: -0.01em;
-  color: rgba(255, 255, 255, 0.78);
+  font-family: 'Inter', 'Google Sans Flex', system-ui, sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  letter-spacing: -0.015em;
+  color: rgba(246, 243, 236, 0.82);
 }
 .proj-band--planned .proj-entry__date {
-  font-family: Georgia, 'Times New Roman', serif;
-  font-style: italic;
-  font-weight: 400;
+  font-family: 'Inter', 'Google Sans Flex', system-ui, sans-serif;
+  font-style: normal;
+  font-weight: 600;
   font-size: clamp(18px, 1.5vw, 24px);
-  color: rgba(255, 255, 255, 0.7);
-  letter-spacing: -0.005em;
+  color: rgba(246, 243, 236, 0.72);
+  letter-spacing: -0.01em;
 }
 .proj-band--planned .proj-entry__name {
-  color: rgba(245, 250, 246, 0.88);
+  color: rgba(246, 243, 236, 0.92);
 }
 
 /* ─── Projects responsive ────────────────────────────────────── */

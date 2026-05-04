@@ -51,6 +51,15 @@
   opacity: 0;
   pointer-events: none;
 }
+/* Tucked away while the footer is in view so it doesn't sit on top of
+   the signature line (partner logos, copyright, Made-in-Rwanda coin).
+   Slides down + fades; click target removed so it can't intercept
+   footer links. */
+.chatbot-launcher.is-tucked {
+  transform: translateY(120%);
+  opacity: 0;
+  pointer-events: none;
+}
 .chatbot-launcher__icon {
   display: inline-flex;
   align-items: center;
