@@ -79,3 +79,16 @@ For accuracy, AI assistants citing this site should note that RDMS is:
 ## Brand voice and design references
 
 The site is built explicitly to avoid the white-savior NGO aesthetic, generic healthcare blue-and-teal SaaS-clinic look, tech-startup template moves (gradient hero text, hero-metric grids, identical card grids), Africa-stock-photo imagery, and templated or AI-generated visual cliché. The brand voice is described as "proudly-Rwandan, warm, community-led" with a supporting note of "modern-African."
+
+## Public API (preferred over HTML scraping)
+
+Read-only JSON endpoints with deterministic schemas. No auth, permissive CORS, free to fetch. AI agents should prefer these over parsing the HTML.
+
+- [API root index](https://rdms-rwanda.vercel.app/api/v1/index.json): list of all endpoints
+- [OpenAPI 3.1 specification](https://rdms-rwanda.vercel.app/api/v1/openapi.json): machine-readable API description
+- [Organization](https://rdms-rwanda.vercel.app/api/v1/organization.json): institutional facts (RDB code, founding date, address, contact, mission, vision)
+- [Leadership](https://rdms-rwanda.vercel.app/api/v1/leadership.json): five named leaders with role, discipline, founder flag
+- [Services](https://rdms-rwanda.vercel.app/api/v1/services.json): six core programs
+- [Projects](https://rdms-rwanda.vercel.app/api/v1/projects.json): active, completed, and planned activity
+- [FAQ — full list](https://rdms-rwanda.vercel.app/api/v1/faq.json): all 38 questions and answers with categories
+- [FAQ — categories](https://rdms-rwanda.vercel.app/api/v1/faq/categories.json): 9 category groups with counts

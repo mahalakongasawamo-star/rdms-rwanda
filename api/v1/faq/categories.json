@@ -1,0 +1,111 @@
+{
+  "categories": [
+    {
+      "id": "about",
+      "name": "About RDMS",
+      "count": 8,
+      "item_ids": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7,
+        8
+      ]
+    },
+    {
+      "id": "services",
+      "name": "Services",
+      "count": 5,
+      "item_ids": [
+        9,
+        10,
+        11,
+        12,
+        13
+      ]
+    },
+    {
+      "id": "school-screenings",
+      "name": "School screenings",
+      "count": 3,
+      "item_ids": [
+        14,
+        15,
+        16
+      ]
+    },
+    {
+      "id": "preventive-care",
+      "name": "Preventive care",
+      "count": 4,
+      "item_ids": [
+        17,
+        18,
+        19,
+        20
+      ]
+    },
+    {
+      "id": "research-academy",
+      "name": "Research Academy",
+      "count": 6,
+      "item_ids": [
+        21,
+        22,
+        23,
+        24,
+        25,
+        26
+      ]
+    },
+    {
+      "id": "research-data",
+      "name": "Research & data",
+      "count": 3,
+      "item_ids": [
+        27,
+        28,
+        29
+      ]
+    },
+    {
+      "id": "partnerships",
+      "name": "Partnerships & donors",
+      "count": 3,
+      "item_ids": [
+        30,
+        31,
+        32
+      ]
+    },
+    {
+      "id": "events",
+      "name": "Events & campaigns",
+      "count": 3,
+      "item_ids": [
+        33,
+        34,
+        35
+      ]
+    },
+    {
+      "id": "oral-health",
+      "name": "General oral health",
+      "count": 3,
+      "item_ids": [
+        36,
+        37,
+        38
+      ]
+    }
+  ],
+  "_meta": {
+    "generated": "2026-05-04",
+    "license": "Public — facts about a registered Rwandan non-profit",
+    "source": "https://rdms-rwanda.vercel.app",
+    "schema_version": "v1"
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "services": [
+    {
+      "id": "school-screenings",
+      "number": "01",
+      "category": "Field Service",
+      "name": "School-Based Dental Screenings",
+      "description": "Systematic dental screenings at primary and secondary schools across Rwanda. Teams arrive with portable equipment, assess students, identify untreated caries and developmental issues, and connect families with local follow-up care.",
+      "evidence": [
+        "Active in primary and secondary schools in Huye District",
+        "Portable equipment, free to community",
+        "Follow-up referrals to local dental services"
+      ]
+    },
+    {
+      "id": "preventive-care",
+      "number": "02",
+      "category": "Education",
+      "name": "Preventive Care Programs",
+      "description": "Daily oral health messaging, fluoride application sessions, hygiene kit distribution, and community workshops on brushing, diet, and dental habits.",
+      "evidence": []
+    },
+    {
+      "id": "research",
+      "number": "03",
+      "category": "Research",
+      "name": "Oral Health Research & Data Collection",
+      "description": "Cross-sectional studies on disease prevalence, care access, and health behaviours across Rwanda. RDMS partners with academic institutions, hospitals, and international research bodies.",
+      "evidence": []
+    },
+    {
+      "id": "mobile-clinics",
+      "number": "04",
+      "category": "Outreach",
+      "name": "Community Mobile Clinics",
+      "description": "Mobile dental units deployed into underserved rural and peri-urban communities. Free examinations, extractions, fluoride treatment, and oral hygiene supplies.",
+      "evidence": [
+        "Active across rural districts",
+        "Free dental examinations and extractions",
+        "Oral hygiene supplies distributed on-site"
+      ]
+    },
+    {
+      "id": "research-academy",
+      "number": "05",
+      "category": "Knowledge",
+      "name": "RDMS Research Academy",
+      "description": "Curated research lessons and continuing professional development for dental and health professionals.",
+      "evidence": []
+    },
+    {
+      "id": "chronicles",
+      "number": "06",
+      "category": "Publication",
+      "name": "Dental Medicine Chronicles",
+      "description": "Clinical case studies, public health updates, and policy commentary from Rwandan dental and medical professionals.",
+      "evidence": []
+    }
+  ],
+  "_meta": {
+    "generated": "2026-05-04",
+    "license": "Public — facts about a registered Rwandan non-profit",
+    "source": "https://rdms-rwanda.vercel.app",
+    "schema_version": "v1"
+  }
+}

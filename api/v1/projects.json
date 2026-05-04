@@ -1,0 +1,62 @@
+{
+  "active": [
+    {
+      "id": "oral-systemic-baseline-2025-2026",
+      "category": "Research",
+      "name": "Oral-Systemic Health Baseline Study, Rwanda",
+      "description": "A cross-sectional research study documenting the prevalence of dental conditions and their systemic health correlations in Rwandan adults.",
+      "date": "2025-2026",
+      "date_iso": "2025"
+    },
+    {
+      "id": "daily-messaging-2026",
+      "category": "Preventive Care",
+      "name": "Daily Oral Health Messaging Campaign",
+      "description": "Automated daily preventive care messages distributed to community members via SMS and social media platforms.",
+      "date": "Ongoing 2026",
+      "date_iso": "2026"
+    },
+    {
+      "id": "huye-screening-q1-2026",
+      "category": "Screenings",
+      "name": "Huye District School Dental Screening Drive",
+      "description": "Systematic oral health screenings across 7 primary schools in Huye District, identifying untreated caries and periodontal conditions.",
+      "date": "Q1 2026",
+      "date_iso": "2026-Q1"
+    }
+  ],
+  "completed": [
+    {
+      "id": "world-ed-day-2026",
+      "category": "Awareness",
+      "name": "World Ectodermal Dysplasia Day 2026",
+      "description": "Community awareness event raising support for individuals and families affected by Ectodermal Dysplasia in Rwanda and beyond.",
+      "date": "20 Feb 2026",
+      "date_iso": "2026-02-20"
+    }
+  ],
+  "planned": [
+    {
+      "id": "mobile-clinic-q1-2026",
+      "category": "Outreach",
+      "name": "Mobile Dental Clinic, Rural Outreach Q1",
+      "description": "Mobile dental unit providing free extractions, fluoride treatment, and oral hygiene kits to communities in underserved areas.",
+      "date": "March 2026",
+      "date_iso": "2026-03"
+    },
+    {
+      "id": "interdisciplinary-workshop-q2-2026",
+      "category": "Training",
+      "name": "Interdisciplinary Health Workshop Series",
+      "description": "Training workshops for dental and medical professionals on integrating oral and systemic health in patient care.",
+      "date": "Q2 2026",
+      "date_iso": "2026-Q2"
+    }
+  ],
+  "_meta": {
+    "generated": "2026-05-04",
+    "license": "Public — facts about a registered Rwandan non-profit",
+    "source": "https://rdms-rwanda.vercel.app",
+    "schema_version": "v1"
+  }
+}

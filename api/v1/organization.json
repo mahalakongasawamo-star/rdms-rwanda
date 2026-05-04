@@ -1,0 +1,62 @@
+{
+  "@id": "https://rdms-rwanda.vercel.app/api/v1/organization.json",
+  "name": "Dento-Medical Society Rwanda",
+  "abbreviation": "RDMS",
+  "type": "Non-Profit Limited by Guarantee",
+  "founded": "2024-07-01",
+  "registration": {
+    "authority": "Rwanda Development Board (RDB)",
+    "code": "143885158",
+    "country": "RW"
+  },
+  "address": {
+    "street": "Ngoma",
+    "locality": "Huye",
+    "region": "Amajyepfo (Southern Province)",
+    "country": "Rwanda",
+    "country_code": "RW"
+  },
+  "contact": {
+    "phone": "+250791853120",
+    "phone_display": "+250 791 853 120",
+    "email": [
+      "rdmspresident13@gmail.com",
+      "igisubizojimmy@gmail.com"
+    ],
+    "languages": [
+      "en",
+      "rw",
+      "fr"
+    ]
+  },
+  "social": {
+    "twitter": "https://x.com/RDMS_rw",
+    "twitter_handle": "@RDMS_rw",
+    "instagram": "https://www.instagram.com/rdms_rw/",
+    "linkedin": "https://www.linkedin.com/in/rdms-dento-medical-society-rwanda-24035029b",
+    "tiktok": "https://www.tiktok.com/@rdmsrw"
+  },
+  "website": "https://rdms-rwanda.vercel.app",
+  "logo": "https://rdms-rwanda.vercel.app/assets/img/rdms-logo.png",
+  "mission": "To unite dental surgeons, dental therapists, and public-health professionals in advancing oral-systemic health through collaborative education, research, outreach, and policy advocacy.",
+  "vision": "To become a multidisciplinary center of excellence for the integration of oral health and general health in Rwanda, ensuring a healthier nation through unified care and innovation.",
+  "description": "A non-profit professional society uniting dental surgeons, dental therapists, medical doctors, and public-health professionals to advance oral and public health across Rwanda.",
+  "area_served": "Rwanda",
+  "topics": [
+    "oral health",
+    "dental medicine",
+    "public health",
+    "preventive dentistry",
+    "oral-systemic health",
+    "dental research",
+    "ectodermal dysplasia",
+    "school dental screenings",
+    "community mobile clinics"
+  ],
+  "_meta": {
+    "generated": "2026-05-04",
+    "license": "Public — facts about a registered Rwandan non-profit",
+    "source": "https://rdms-rwanda.vercel.app",
+    "schema_version": "v1"
+  }
+}

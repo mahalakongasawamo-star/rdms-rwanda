@@ -1,0 +1,38 @@
+{
+  "name": "RDMS Rwanda Public API",
+  "description": "Read-only JSON endpoints with institutional facts about the Dento-Medical Society Rwanda. AI-friendly: no auth, permissive CORS, deterministic schema, generated from the homepage content at deploy time.",
+  "version": "v1",
+  "documentation": "https://rdms-rwanda.vercel.app/api/v1/openapi.json",
+  "endpoints": [
+    {
+      "name": "Organization",
+      "url": "https://rdms-rwanda.vercel.app/api/v1/organization.json"
+    },
+    {
+      "name": "Leadership",
+      "url": "https://rdms-rwanda.vercel.app/api/v1/leadership.json"
+    },
+    {
+      "name": "Services",
+      "url": "https://rdms-rwanda.vercel.app/api/v1/services.json"
+    },
+    {
+      "name": "Projects",
+      "url": "https://rdms-rwanda.vercel.app/api/v1/projects.json"
+    },
+    {
+      "name": "FAQ — full list",
+      "url": "https://rdms-rwanda.vercel.app/api/v1/faq.json"
+    },
+    {
+      "name": "FAQ — categories",
+      "url": "https://rdms-rwanda.vercel.app/api/v1/faq/categories.json"
+    }
+  ],
+  "_meta": {
+    "generated": "2026-05-04",
+    "license": "Public — facts about a registered Rwandan non-profit",
+    "source": "https://rdms-rwanda.vercel.app",
+    "schema_version": "v1"
+  }
+}

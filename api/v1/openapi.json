@@ -1,0 +1,101 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "RDMS Rwanda Public API",
+    "version": "1.0.0",
+    "description": "Read-only JSON endpoints with institutional facts about RDMS (Dento-Medical Society Rwanda). Static files; no auth required; permissive CORS.",
+    "contact": {
+      "name": "RDMS Rwanda",
+      "email": "rdmspresident13@gmail.com",
+      "url": "https://rdms-rwanda.vercel.app"
+    },
+    "license": {
+      "name": "Public — facts about a registered non-profit"
+    }
+  },
+  "servers": [
+    {
+      "url": "https://rdms-rwanda.vercel.app/api/v1",
+      "description": "Production"
+    }
+  ],
+  "paths": {
+    "/index.json": {
+      "get": {
+        "summary": "API root index",
+        "description": "List of endpoints and metadata.",
+        "responses": {
+          "200": {
+            "description": "Index document"
+          }
+        }
+      }
+    },
+    "/organization.json": {
+      "get": {
+        "summary": "Organization facts",
+        "description": "Institutional registration, contact, address, mission, vision, social.",
+        "responses": {
+          "200": {
+            "description": "Organization document"
+          }
+        }
+      }
+    },
+    "/leadership.json": {
+      "get": {
+        "summary": "Leadership roster",
+        "description": "Five named leaders with role, discipline, founder flag.",
+        "responses": {
+          "200": {
+            "description": "List of leaders"
+          }
+        }
+      }
+    },
+    "/services.json": {
+      "get": {
+        "summary": "Six core services",
+        "description": "Programs offered: screenings, preventive care, research, mobile clinics, Academy, Chronicles.",
+        "responses": {
+          "200": {
+            "description": "List of services"
+          }
+        }
+      }
+    },
+    "/projects.json": {
+      "get": {
+        "summary": "Activity log",
+        "description": "Active, completed, and planned project entries grouped by status.",
+        "responses": {
+          "200": {
+            "description": "Projects grouped by status"
+          }
+        }
+      }
+    },
+    "/faq.json": {
+      "get": {
+        "summary": "All 38 FAQ entries",
+        "description": "Question, answer (plain text + html), category metadata.",
+        "responses": {
+          "200": {
+            "description": "List of FAQ items"
+          }
+        }
+      }
+    },
+    "/faq/categories.json": {
+      "get": {
+        "summary": "FAQ categories",
+        "description": "Nine category groups with item counts.",
+        "responses": {
+          "200": {
+            "description": "List of categories"
+          }
+        }
+      }
+    }
+  }
+}

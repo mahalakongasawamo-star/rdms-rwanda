@@ -1,0 +1,51 @@
+{
+  "leaders": [
+    {
+      "id": "igisubizo-jimmy-confiance",
+      "name": "Igisubizo Jimmy Confiance",
+      "role": "CEO & President",
+      "is_founder": true,
+      "discipline": "Dental Surgeon",
+      "bio": "Dental professional and public health advocate committed to transforming oral healthcare access across Rwanda. Founder and driving force behind RDMS since its establishment in 2024.",
+      "photo": "https://rdms-rwanda.vercel.app/assets/img/team-igisubizo-jimmy.jpg"
+    },
+    {
+      "id": "natukunda-sharon",
+      "name": "Natukunda Sharon",
+      "role": "General Secretary",
+      "is_founder": false,
+      "discipline": "Medicine",
+      "photo": "https://rdms-rwanda.vercel.app/assets/img/team-natukunda-sharon.jpg"
+    },
+    {
+      "id": "dushimitanga-luc",
+      "name": "Dushimitanga Luc",
+      "role": "VP of Finance",
+      "is_founder": false,
+      "discipline": "Medicine",
+      "photo": "https://rdms-rwanda.vercel.app/assets/img/team-dushimitanga-luc.jpg"
+    },
+    {
+      "id": "kubwimana-steven",
+      "name": "Kubwimana Steven",
+      "role": "VP of External Affairs",
+      "is_founder": false,
+      "discipline": "Dental Surgeon",
+      "photo": "https://rdms-rwanda.vercel.app/assets/img/team-kubwimana-steven.jpg"
+    },
+    {
+      "id": "mbagoroziki-samuel",
+      "name": "Mbagoroziki Samuel",
+      "role": "VP of Internal Affairs",
+      "is_founder": false,
+      "discipline": "Dental Surgeon",
+      "photo": "https://rdms-rwanda.vercel.app/assets/img/team-mbagoroziki-samuel.jpg"
+    }
+  ],
+  "_meta": {
+    "generated": "2026-05-04",
+    "license": "Public — facts about a registered Rwandan non-profit",
+    "source": "https://rdms-rwanda.vercel.app",
+    "schema_version": "v1"
+  }
+}
