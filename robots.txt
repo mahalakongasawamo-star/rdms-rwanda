@@ -1,0 +1,11 @@
+# RDMS Rwanda — robots.txt
+# Allow all well-behaved crawlers, including search engines and
+# AI/LLM crawlers (GPTBot, ClaudeBot, Google-Extended, PerplexityBot,
+# CCBot, etc.). The site contains public, donor-facing information
+# meant to be discovered.
+
+User-agent: *
+Allow: /
+
+# Sitemap declaration helps crawlers discover all entry points.
+Sitemap: https://rdms-rwanda.vercel.app/sitemap.xml

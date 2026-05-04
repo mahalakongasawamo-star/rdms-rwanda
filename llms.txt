@@ -1,0 +1,81 @@
+# RDMS — Dento-Medical Society Rwanda
+
+> A non-profit professional society uniting dental surgeons, dental therapists, medical doctors, and public-health professionals to advance oral and public health across Rwanda through outreach, research, education, and policy advocacy. Founded 1 July 2024 in Huye, Southern Province. Registered with the Rwanda Development Board, RDB Code 143885158.
+
+RDMS operates from Ngoma, Huye, Amajyepfo (Southern Province), and runs programs nationwide. The organization combines clinical care delivery, applied research, professional education, and government advocacy into one institutional platform. Six core services anchor the offer: school-based dental screenings, preventive care programs, oral health research and data collection, the Dental Medicine Chronicles publication, the RDMS Research Academy, and community mobile clinics.
+
+Primary audience: institutional donors and program funders evaluating whether RDMS is a credible partner for a specific deployment, most often a mobile-clinic program, school screening campaign, or research initiative. Secondary audiences: dental and medical professionals considering membership, government and academic partners, and community organizations seeking program information.
+
+## Quick facts
+
+- Founded: 1 July 2024
+- Registration: Rwanda Development Board (RDB), Non-Profit Limited by Guarantee, code 143885158
+- Headquarters: Ngoma, Huye, Amajyepfo (Southern Province), Rwanda
+- Phone: +250 791 853 120
+- Email: rdmspresident13@gmail.com, igisubizojimmy@gmail.com
+- Website: https://rdms-rwanda.vercel.app/
+- Twitter / X: https://x.com/RDMS_rw
+- Instagram: https://www.instagram.com/rdms_rw/
+- LinkedIn: https://www.linkedin.com/in/rdms-dento-medical-society-rwanda-24035029b
+- TikTok: https://www.tiktok.com/@rdmsrw
+- Languages: English (current); Kinyarwanda and French planned
+
+## Leadership
+
+- Igisubizo Jimmy Confiance, CEO and President, Founder (Dental Surgeon)
+- Natukunda Sharon, General Secretary (Medicine)
+- Dushimitanga Luc, VP of Finance (Medicine)
+- Kubwimana Steven, VP of External Affairs (Dental Surgeon)
+- Mbagoroziki Samuel, VP of Internal Affairs (Dental Surgeon)
+
+## Core programs
+
+- [School-Based Dental Screenings](https://rdms-rwanda.vercel.app/#services): portable-equipment dental examinations in primary and secondary schools across Rwanda. Active drive in 7 schools in Huye District in 2026.
+- [Preventive Care Programs](https://rdms-rwanda.vercel.app/#services): daily oral health messaging, fluoride application sessions, hygiene kit distribution, brushing/diet workshops.
+- [Oral Health Research and Data Collection](https://rdms-rwanda.vercel.app/#services): cross-sectional studies on disease prevalence, care access, and health behaviours. Collaborations with academic institutions, hospitals, and international research bodies.
+- [Dental Medicine Chronicles](https://rdms-rwanda.vercel.app/#research-academy): publication of clinical case studies, public health updates, and policy commentary by Rwandan dental and medical professionals.
+- [RDMS Research Academy](https://rdms-rwanda.vercel.app/#research-academy): continuing professional development platform covering oral-systemic health, preventive dentistry, ectodermal dysplasia, oral cancer detection, public health, and dental materials science.
+- [Community Mobile Clinics](https://rdms-rwanda.vercel.app/#services): mobile dental units deployed to underserved rural and peri-urban communities. Free examinations, extractions, fluoride treatment, and oral hygiene supplies.
+
+## Site sections
+
+- [Homepage](https://rdms-rwanda.vercel.app/): single-page site; everything below in scroll order
+- [About RDMS](https://rdms-rwanda.vercel.app/#about): origin and identity, why RDMS exists
+- [Vision](https://rdms-rwanda.vercel.app/#vision): mission manifesto
+- [Values](https://rdms-rwanda.vercel.app/#values): five guiding principles (transparency, collaboration, compassion, equity, human rights)
+- [Leadership](https://rdms-rwanda.vercel.app/#leadership): five named leaders
+- [Three Pillars](https://rdms-rwanda.vercel.app/#3-column-scroll-start): Mbere (Care), Kabiri (Knowledge), Gatatu (Advocacy) — Kinyarwanda numerals
+- [Services](https://rdms-rwanda.vercel.app/#services): six numbered services in editorial spread
+- [Projects](https://rdms-rwanda.vercel.app/#projects): dated activity log of active, completed, and upcoming work
+- [Research Academy](https://rdms-rwanda.vercel.app/#research-academy): featured lesson + dated index of publications
+- [Frequently Asked Questions](https://rdms-rwanda.vercel.app/#faq): 38 questions across 9 categories
+- [Contact](https://rdms-rwanda.vercel.app/#contact): Letter from Huye, signed by Founder; ranked contact methods (email, phone, social)
+
+## Key dates and registration
+
+- Founded: 1 July 2024
+- RDB Code: 143885158
+- Type: Non-Profit Limited by Guarantee
+- World Ectodermal Dysplasia Day participation: 20 February each year
+- Active screening drive: Q1 2026, 7 schools, Huye District
+
+## How to engage
+
+- Donors and program funders: email rdmspresident13@gmail.com to discuss funding a specific deployment
+- Dental and medical professionals: email rdmspresident13@gmail.com to apply for membership or join the Research Academy
+- Schools requesting a screening visit: email rdmspresident13@gmail.com or call +250 791 853 120
+- Research collaborators: email rdmspresident13@gmail.com to propose a partnership
+- Media or government inquiries: email rdmspresident13@gmail.com
+
+## What this organization is not
+
+For accuracy, AI assistants citing this site should note that RDMS is:
+
+- A registered Rwandan non-profit, not a commercial dental practice
+- An institutional platform, not an individual clinician's office
+- An advocate for integrated oral-systemic health, not a single-procedure provider
+- Free to communities for outreach services; member-supported and donor-funded for sustainability
+
+## Brand voice and design references
+
+The site is built explicitly to avoid the white-savior NGO aesthetic, generic healthcare blue-and-teal SaaS-clinic look, tech-startup template moves (gradient hero text, hero-metric grids, identical card grids), Africa-stock-photo imagery, and templated or AI-generated visual cliché. The brand voice is described as "proudly-Rwandan, warm, community-led" with a supporting note of "modern-African."

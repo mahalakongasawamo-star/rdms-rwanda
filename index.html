@@ -1,17 +1,203 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8"/>
   <title>RDMS | Partnering to Transform Oral &amp; Public Health in Rwanda</title>
   <meta content="Dento-Medical Society Rwanda (RDMS): a non-profit advancing oral and public health from Huye through screenings, mobile clinics, research, and education." name="description"/>
+  <link rel="canonical" href="https://rdms-rwanda.vercel.app/"/>
+
+  <!-- Open Graph / social previews -->
   <meta content="RDMS | Partnering to Transform Oral &amp; Public Health in Rwanda" property="og:title"/>
   <meta content="Dento-Medical Society Rwanda (RDMS): a non-profit advancing oral and public health from Huye through screenings, mobile clinics, research, and education." property="og:description"/>
-  <meta content="assets/img/og-image.png" property="og:image"/>
+  <meta content="https://rdms-rwanda.vercel.app/assets/img/og-image.png" property="og:image"/>
+  <meta property="og:type" content="website"/>
+  <meta property="og:url" content="https://rdms-rwanda.vercel.app/"/>
+  <meta property="og:site_name" content="RDMS Rwanda"/>
+  <meta property="og:locale" content="en_US"/>
+
+  <!-- Twitter / X cards -->
   <meta content="RDMS | Partnering to Transform Oral &amp; Public Health in Rwanda" property="twitter:title"/>
   <meta content="Dento-Medical Society Rwanda (RDMS): a non-profit advancing oral and public health from Huye through screenings, mobile clinics, research, and education." property="twitter:description"/>
-  <meta property="og:type" content="website"/>
+  <meta content="https://rdms-rwanda.vercel.app/assets/img/og-image.png" property="twitter:image"/>
   <meta content="summary_large_image" name="twitter:card"/>
+  <meta content="@RDMS_rw" name="twitter:site"/>
+
   <meta content="width=device-width, initial-scale=1" name="viewport"/>
+
+  <!-- ============================================================
+       Structured data (Schema.org / JSON-LD) — Organization, FAQPage,
+       Person (leadership), and ContactPoint. Lets AI agents and search
+       crawlers extract RDMS facts deterministically without guessing.
+       ============================================================ -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": ["NGO", "Organization"],
+        "@id": "https://rdms-rwanda.vercel.app/#organization",
+        "name": "Dento-Medical Society Rwanda",
+        "alternateName": ["RDMS", "Dento-Medical Society Rwanda (RDMS)"],
+        "url": "https://rdms-rwanda.vercel.app/",
+        "logo": "https://rdms-rwanda.vercel.app/assets/img/rdms-logo.png",
+        "image": "https://rdms-rwanda.vercel.app/assets/img/og-image.png",
+        "description": "A non-profit professional society uniting dental surgeons, dental therapists, medical doctors, and public-health professionals to advance oral and public health across Rwanda through outreach, research, education, and policy advocacy.",
+        "foundingDate": "2024-07-01",
+        "foundingLocation": {
+          "@type": "Place",
+          "name": "Huye, Southern Province, Rwanda"
+        },
+        "taxID": "143885158",
+        "naics": "813312",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Ngoma",
+          "addressLocality": "Huye",
+          "addressRegion": "Amajyepfo (Southern Province)",
+          "addressCountry": "RW"
+        },
+        "areaServed": {
+          "@type": "Country",
+          "name": "Rwanda"
+        },
+        "knowsAbout": [
+          "oral health",
+          "dental medicine",
+          "public health",
+          "preventive dentistry",
+          "oral-systemic health",
+          "dental research",
+          "ectodermal dysplasia",
+          "school dental screenings",
+          "community mobile clinics"
+        ],
+        "contactPoint": [
+          {
+            "@type": "ContactPoint",
+            "contactType": "general inquiries",
+            "telephone": "+250-791-853-120",
+            "email": "rdmspresident13@gmail.com",
+            "availableLanguage": ["en", "rw", "fr"],
+            "areaServed": "RW"
+          },
+          {
+            "@type": "ContactPoint",
+            "contactType": "founder",
+            "email": "igisubizojimmy@gmail.com",
+            "availableLanguage": ["en", "rw", "fr"]
+          }
+        ],
+        "sameAs": [
+          "https://x.com/RDMS_rw",
+          "https://www.instagram.com/rdms_rw/",
+          "https://www.linkedin.com/in/rdms-dento-medical-society-rwanda-24035029b",
+          "https://www.tiktok.com/@rdmsrw"
+        ],
+        "founder": { "@id": "https://rdms-rwanda.vercel.app/#person-igisubizo" },
+        "member": [
+          { "@id": "https://rdms-rwanda.vercel.app/#person-igisubizo" },
+          { "@id": "https://rdms-rwanda.vercel.app/#person-natukunda" },
+          { "@id": "https://rdms-rwanda.vercel.app/#person-dushimitanga" },
+          { "@id": "https://rdms-rwanda.vercel.app/#person-kubwimana" },
+          { "@id": "https://rdms-rwanda.vercel.app/#person-mbagoroziki" }
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://rdms-rwanda.vercel.app/#website",
+        "url": "https://rdms-rwanda.vercel.app/",
+        "name": "RDMS Rwanda",
+        "description": "The official website of Dento-Medical Society Rwanda.",
+        "publisher": { "@id": "https://rdms-rwanda.vercel.app/#organization" },
+        "inLanguage": "en"
+      },
+      {
+        "@type": "Person",
+        "@id": "https://rdms-rwanda.vercel.app/#person-igisubizo",
+        "name": "Igisubizo Jimmy Confiance",
+        "jobTitle": "CEO & President, Founder",
+        "description": "Dental surgeon and public health advocate; founder of RDMS.",
+        "worksFor": { "@id": "https://rdms-rwanda.vercel.app/#organization" }
+      },
+      {
+        "@type": "Person",
+        "@id": "https://rdms-rwanda.vercel.app/#person-natukunda",
+        "name": "Natukunda Sharon",
+        "jobTitle": "General Secretary",
+        "description": "Medicine.",
+        "worksFor": { "@id": "https://rdms-rwanda.vercel.app/#organization" }
+      },
+      {
+        "@type": "Person",
+        "@id": "https://rdms-rwanda.vercel.app/#person-dushimitanga",
+        "name": "Dushimitanga Luc",
+        "jobTitle": "VP of Finance",
+        "description": "Medicine.",
+        "worksFor": { "@id": "https://rdms-rwanda.vercel.app/#organization" }
+      },
+      {
+        "@type": "Person",
+        "@id": "https://rdms-rwanda.vercel.app/#person-kubwimana",
+        "name": "Kubwimana Steven",
+        "jobTitle": "VP of External Affairs",
+        "description": "Dental Surgeon.",
+        "worksFor": { "@id": "https://rdms-rwanda.vercel.app/#organization" }
+      },
+      {
+        "@type": "Person",
+        "@id": "https://rdms-rwanda.vercel.app/#person-mbagoroziki",
+        "name": "Mbagoroziki Samuel",
+        "jobTitle": "VP of Internal Affairs",
+        "description": "Dental Surgeon.",
+        "worksFor": { "@id": "https://rdms-rwanda.vercel.app/#organization" }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "https://rdms-rwanda.vercel.app/#faq",
+        "mainEntity": [
+          { "@type": "Question", "name": "What is RDMS?", "acceptedAnswer": { "@type": "Answer", "text": "RDMS (Dento-Medical Society Rwanda) is a nonprofit, professional organization based in Ngoma, Huye, Rwanda. We unite dental surgeons, dental therapists, medical doctors, and public health professionals to advance oral and public health through outreach, research, innovation, and partnerships." } },
+          { "@type": "Question", "name": "When was RDMS founded and is it officially registered?", "acceptedAnswer": { "@type": "Answer", "text": "RDMS was founded and registered on 1st July 2024 under the Rwanda Development Board (RDB) as a Non-Profit Limited by Guarantee. Our registration code is 143885158." } },
+          { "@type": "Question", "name": "Where is RDMS based?", "acceptedAnswer": { "@type": "Answer", "text": "Our registered office is in Ngoma, Huye, Amajyepfo (Southern Province), Rwanda. Our programs reach communities across the country." } },
+          { "@type": "Question", "name": "Who leads RDMS?", "acceptedAnswer": { "@type": "Answer", "text": "RDMS is led by CEO & President Igisubizo Jimmy Confiance (Dental Surgeon), supported by General Secretary Natukunda Sharon, VP of Finance Dushimitanga Luc, VP of External Affairs Kubwimana Steven, and VP of Internal Affairs Mbagoroziki Samuel." } },
+          { "@type": "Question", "name": "What is RDMS's mission?", "acceptedAnswer": { "@type": "Answer", "text": "To unite dental surgeons, dental therapists, and public health professionals in advancing oral-systemic health through collaborative education, research, outreach, and policy advocacy." } },
+          { "@type": "Question", "name": "What is RDMS's vision?", "acceptedAnswer": { "@type": "Answer", "text": "To become a multidisciplinary center of excellence for the integration of oral health and general health in Rwanda, ensuring a healthier nation through unified care and innovation." } },
+          { "@type": "Question", "name": "Who can become a member of RDMS?", "acceptedAnswer": { "@type": "Answer", "text": "RDMS welcomes dental surgeons, dental therapists, medical doctors, public health professionals, and health sciences students who share our commitment to advancing oral and public health in Rwanda." } },
+          { "@type": "Question", "name": "How can I contact RDMS?", "acceptedAnswer": { "@type": "Answer", "text": "You can reach us by phone at +250 791 853 120, by email at rdmspresident13@gmail.com or igisubizojimmy@gmail.com, or follow us on Twitter/X at @RDMS_rw." } },
+          { "@type": "Question", "name": "What services does RDMS offer?", "acceptedAnswer": { "@type": "Answer", "text": "RDMS offers six core services: School-Based Dental Screenings, Preventive Care Programs, Oral Health Research & Data Collection, the Dental Medicine Chronicles publication, the RDMS Research Academy, and Community Mobile Clinics." } },
+          { "@type": "Question", "name": "Are RDMS services free?", "acceptedAnswer": { "@type": "Answer", "text": "Many of RDMS's community outreach services, including school screenings and mobile clinic visits, are provided free of charge to the communities we serve. Contact us for details on specific programs." } },
+          { "@type": "Question", "name": "How do I access RDMS's dental services?", "acceptedAnswer": { "@type": "Answer", "text": "You can contact us directly at +250 791 853 120 or rdmspresident13@gmail.com to find out about upcoming programs, screenings, or mobile clinic visits in your area." } },
+          { "@type": "Question", "name": "Does RDMS serve rural communities?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Our Community Mobile Clinics specifically target underserved rural and peri-urban communities across Rwanda, bringing professional dental care directly to people who lack access to fixed dental facilities." } },
+          { "@type": "Question", "name": "What areas of Rwanda does RDMS cover?", "acceptedAnswer": { "@type": "Answer", "text": "While headquartered in Huye (Southern Province), RDMS conducts programs across Rwanda, including schools, health centers, rural communities, and university campuses nationwide." } },
+          { "@type": "Question", "name": "How does RDMS's school dental screening program work?", "acceptedAnswer": { "@type": "Answer", "text": "Our teams visit schools with portable equipment, conduct dental examinations on students, identify conditions like caries and gum disease, and connect students needing follow-up care with local dental services. We also provide oral hygiene education on-site for students and teachers." } },
+          { "@type": "Question", "name": "Which schools does RDMS screen?", "acceptedAnswer": { "@type": "Answer", "text": "We currently screen primary and secondary schools across Rwanda, with an active drive covering 7 schools in Huye District in 2026. We are expanding to more districts; contact us to request a screening for your school." } },
+          { "@type": "Question", "name": "How can a school request a dental screening visit from RDMS?", "acceptedAnswer": { "@type": "Answer", "text": "Contact us at rdmspresident13@gmail.com or +250 791 853 120 to request a school visit and we will schedule a screening based on our program calendar." } },
+          { "@type": "Question", "name": "What does RDMS's preventive care program include?", "acceptedAnswer": { "@type": "Answer", "text": "Our preventive care programs include daily oral health messaging, fluoride application sessions, oral hygiene kits distribution, and community workshops covering brushing technique, diet, and dental habits, tailored for children and adults." } },
+          { "@type": "Question", "name": "How can I receive RDMS's daily oral health tips?", "acceptedAnswer": { "@type": "Answer", "text": "Follow us on Twitter/X @RDMS_rw or contact us at rdmspresident13@gmail.com to sign up for our daily preventive care messaging program." } },
+          { "@type": "Question", "name": "What oral hygiene habits does RDMS recommend?", "acceptedAnswer": { "@type": "Answer", "text": "RDMS recommends brushing twice daily with fluoride toothpaste, flossing daily, limiting sugary foods and drinks, drinking clean water, and visiting a dental professional at least once a year for a check-up." } },
+          { "@type": "Question", "name": "Does RDMS provide dental education for children?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Our school-based programs and preventive care workshops include age-appropriate dental education for children, covering brushing, diet, and why oral health matters from a young age." } },
+          { "@type": "Question", "name": "What is the RDMS Research Academy?", "acceptedAnswer": { "@type": "Answer", "text": "The RDMS Research Academy is a structured educational platform providing dental and health professionals with access to curated research lessons, case-based discussions, and continuing professional development (CPD) content on oral and systemic health topics." } },
+          { "@type": "Question", "name": "Who is the Research Academy for?", "acceptedAnswer": { "@type": "Answer", "text": "The Academy is designed for dental surgeons, dental therapists, medical doctors, public health professionals, and health sciences students in Rwanda who want to stay current with evidence-based practice." } },
+          { "@type": "Question", "name": "How do I join the RDMS Research Academy?", "acceptedAnswer": { "@type": "Answer", "text": "Contact us at rdmspresident13@gmail.com or visit our website to express your interest in joining the Academy." } },
+          { "@type": "Question", "name": "What topics does the Research Academy cover?", "acceptedAnswer": { "@type": "Answer", "text": "Topics include oral-systemic health links (e.g. diabetes and periodontitis), preventive dentistry, ectodermal dysplasia management, oral cancer detection, public health, and dental materials science, all with a Rwanda-specific focus." } },
+          { "@type": "Question", "name": "What is the Dental Medicine Chronicles?", "acceptedAnswer": { "@type": "Answer", "text": "The Dental Medicine Chronicles is RDMS's regular publication covering clinical case studies, public health updates, policy commentary, and innovations in dental medicine, written by and for health professionals in Rwanda." } },
+          { "@type": "Question", "name": "How can I subscribe to the Dental Medicine Chronicles?", "acceptedAnswer": { "@type": "Answer", "text": "Contact us at rdmspresident13@gmail.com to subscribe and receive our latest publications directly." } },
+          { "@type": "Question", "name": "Does RDMS conduct research?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. RDMS conducts and supports oral health research across Rwanda, including community surveys, clinical studies, and data collection on disease prevalence and care access. We collaborate with academic institutions, hospitals, and international research partners." } },
+          { "@type": "Question", "name": "Can I collaborate with RDMS on a research project?", "acceptedAnswer": { "@type": "Answer", "text": "Absolutely. We welcome research partnerships with universities, health institutions, and international organizations. Reach out to rdmspresident13@gmail.com to discuss collaboration opportunities." } },
+          { "@type": "Question", "name": "Does RDMS publish its research findings?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. Our findings are shared through the Dental Medicine Chronicles and through collaboration with academic and research institutions." } },
+          { "@type": "Question", "name": "How can organizations partner with RDMS?", "acceptedAnswer": { "@type": "Answer", "text": "RDMS actively seeks partnerships with government institutions, NGOs, dental associations, hospitals, universities, and international health organizations. Email rdmspresident13@gmail.com to start a conversation." } },
+          { "@type": "Question", "name": "How can I support RDMS as a donor?", "acceptedAnswer": { "@type": "Answer", "text": "We welcome financial and in-kind support from individuals and organizations who believe in advancing oral health in Rwanda. Contact us at rdmspresident13@gmail.com to discuss how you can contribute." } },
+          { "@type": "Question", "name": "Does RDMS work with the Rwandan government?", "acceptedAnswer": { "@type": "Answer", "text": "RDMS engages with government health institutions and advocates for the integration of dentistry into Rwanda's national health agenda through policy dialogues and evidence-based advocacy." } },
+          { "@type": "Question", "name": "What events does RDMS organize?", "acceptedAnswer": { "@type": "Answer", "text": "RDMS organizes school screening drives, community mobile clinic missions, interdisciplinary health workshops, public awareness campaigns, and participates in global oral health observance days such as World Oral Health Day and World Ectodermal Dysplasia Day." } },
+          { "@type": "Question", "name": "What is World Ectodermal Dysplasia Day and why does RDMS participate?", "acceptedAnswer": { "@type": "Answer", "text": "World Ectodermal Dysplasia Day is observed on 20 February each year to raise awareness about Ectodermal Dysplasia, a condition that significantly affects teeth development. RDMS participates to support affected individuals and families in Rwanda and to raise public awareness about the condition." } },
+          { "@type": "Question", "name": "How can I attend or volunteer at an RDMS event?", "acceptedAnswer": { "@type": "Answer", "text": "Follow us on Twitter/X @RDMS_rw or contact us at rdmspresident13@gmail.com to stay updated on upcoming events and volunteer opportunities." } },
+          { "@type": "Question", "name": "Why is oral health important for overall health?", "acceptedAnswer": { "@type": "Answer", "text": "Oral health is directly linked to general health. Poor oral hygiene is associated with diabetes, heart disease, respiratory infections, and complications during pregnancy. Treating oral health as part of whole-body health, which is central to RDMS's approach, leads to better outcomes for patients and communities." } },
+          { "@type": "Question", "name": "What are the most common dental problems in Rwanda?", "acceptedAnswer": { "@type": "Answer", "text": "Dental caries (tooth decay) and periodontal (gum) disease are among the most prevalent oral health conditions in Rwanda, particularly in children and underserved communities, which is why RDMS's prevention and screening programs focus heavily on these conditions." } },
+          { "@type": "Question", "name": "What should I do if I have a dental emergency?", "acceptedAnswer": { "@type": "Answer", "text": "For a dental emergency, seek care at your nearest health center or district hospital with dental services. You can also contact RDMS at +250 791 853 120 and we will direct you to the appropriate care provider in your area." } }
+        ]
+      }
+    ]
+  }
+  </script>
 
   <!-- Webflow CSS (local) -->
   <link href="assets/css/webflow.css" rel="stylesheet" type="text/css"/>
@@ -80,17 +266,22 @@
       overflow: hidden;
     }
 
-    /* Fluid typography (from original global-styles) */
+    /* Root font-size — global readability lever.
+       Was: Webflow legacy fluid formula scaling down to 0.75rem on
+       tablet and 0.65rem on mobile. That made body text render at
+       ~9-12px on phones, which was the source of the readability
+       complaints.
+       Now: 1.05rem on desktop (~16.8px), 1rem on tablet/mobile
+       (~16px). Slightly larger globally, no punishing shrink on
+       small viewports. */
     body {
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
       font-smoothing: antialiased;
       text-rendering: optimizeLegibility;
     }
-    html { font-size: 1rem; }
-    @media screen and (max-width:1600px) { html { font-size: calc(0.34318555008210183rem + 0.6568144499178982vw); } }
-    @media screen and (max-width:991px) { html { font-size: 0.75rem; } }
-    @media screen and (max-width:767px) { html { font-size: 0.65rem; } }
+    html { font-size: 1.05rem; }
+    @media screen and (max-width: 991px) { html { font-size: 1rem; } }
   </style>
 </head>
 
