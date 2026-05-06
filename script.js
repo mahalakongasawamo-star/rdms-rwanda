@@ -132,8 +132,7 @@
       document.getElementById('chroniclesSubscribeBtn'),
       document.getElementById('contactWriteBtn'),
       document.getElementById('navWriteBtn'),
-      document.getElementById('heroPartnerBtn'),
-      document.getElementById('heroMembershipBtn')
+      document.getElementById('heroPartnerBtn')
     ];
 
     function openOverlay(e) {
